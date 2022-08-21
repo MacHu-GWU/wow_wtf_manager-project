@@ -19,8 +19,19 @@ class Macro(AttrsClass):
     content: str = attr.ib()
 
     @property
+    def header(self) -> str:
+        return f"MACRO {self.id} \"{self.name}\" {self.icon}"
+
+    @property
+    def footer(self) -> str:
+        return "END"
+
+    @property
     def content_lines(self) -> T.List[str]:
         return self.content.split("\n")
+
+    def dump(self) -> str:
+        return "\n".join([self.header, self.content, self.footer])
 
 
 @attr.s

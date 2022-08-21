@@ -35,6 +35,30 @@ class TestMacroTxt:
         # print(macro_txt)
 
 
+class TestMacro:
+    def test_dump(self):
+        macro = Macro(
+            id=1,
+            name="Invite Team",
+            icon="INV_Misc_QuestionMark",
+            content=(
+                "/inv char2\n"
+                "/inv char3\n"
+                "/inv char4\n"
+                "/inv char5"
+            )
+        )
+        assert len(macro.content_lines) == 4
+        assert macro.dump() == (
+            'MACRO 1 "Invite Team" INV_Misc_QuestionMark\n'
+            '/inv char2\n'
+            '/inv char3\n'
+            '/inv char4\n'
+            '/inv char5\n'
+            'END'
+        )
+
+
 if __name__ == "__main__":
     import sys
     import subprocess
