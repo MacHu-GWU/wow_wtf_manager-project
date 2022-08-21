@@ -6,35 +6,6 @@ from wow_wtf_manager.paths import dir_tests
 from wow_wtf_manager.exp.e03_wotlk.macro import MacroTxt, Macro
 
 
-class TestMacroTxt:
-    def test_parse_header(self):
-        macro_id, name, icon = MacroTxt._parse_header(
-            'MACRO 123 "MyMacro" INV_Misc_QuestionMark'
-        )
-        assert macro_id == 123
-        assert name == "MyMacro"
-        assert icon == "INV_Misc_QuestionMark"
-
-        macro_id, name, icon = MacroTxt._parse_header(
-            'MACRO 456 "My Other Macro" INV_Misc_QuestionMark'
-        )
-        assert macro_id == 456
-        assert name == "My Other Macro"
-        assert icon == "INV_Misc_QuestionMark"
-
-    def test_is_macro_header(self):
-        assert MacroTxt._is_macro_header('MACRO 123 "MyMacro" INV_Misc_QuestionMark') is True
-        assert MacroTxt._is_macro_header('MACRO abc "MyMacro" INV_Misc_QuestionMark') is False
-        assert MacroTxt._is_macro_header('macro abc "MyMacro" INV_Misc_QuestionMark') is False
-
-    def test_parse(self):
-        macro_txt = MacroTxt.parse((dir_tests / "macro" / "account-macro.txt"))
-        assert macro_txt.macros[0].id == 3
-        assert macro_txt.macros[1].id == 1
-
-        # print(macro_txt)
-
-
 class TestMacro:
     def test_dump(self):
         macro = Macro(
@@ -57,6 +28,35 @@ class TestMacro:
             '/inv char5\n'
             'END'
         )
+
+
+class TestMacroTxt:
+    def test_parse_header(self):
+        macro_id, name, icon = MacroTxt._parse_header(
+            'MACRO 123 "MyMacro" INV_Misc_QuestionMark'
+        )
+        assert macro_id == 123
+        assert name == "MyMacro"
+        assert icon == "INV_Misc_QuestionMark"
+
+        macro_id, name, icon = MacroTxt._parse_header(
+            'MACRO 456 "My Other Macro" INV_Misc_QuestionMark'
+        )
+        assert macro_id == 456
+        assert name == "My Other Macro"
+        assert icon == "INV_Misc_QuestionMark"
+
+    def test_is_macro_header(self):
+        assert MacroTxt._is_macro_header('MACRO 123 "MyMacro" INV_Misc_QuestionMark') is True
+        assert MacroTxt._is_macro_header('MACRO abc "MyMacro" INV_Misc_QuestionMark') is False
+        assert MacroTxt._is_macro_header('macro abc "MyMacro" INV_Misc_QuestionMark') is False
+
+    def test_parse(self):
+        macro_txt_file = dir_tests / "macro" / "account-macro.txt"
+        macro_txt = MacroTxt.parse(macro_txt_file.abspath)
+        assert macro_txt.macros[0].id == 3
+        assert macro_txt.macros[1].id == 1
+        assert macro_txt.dump() == macro_txt_file.read_text()
 
 
 if __name__ == "__main__":
