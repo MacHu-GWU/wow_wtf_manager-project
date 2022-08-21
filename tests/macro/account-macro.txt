@@ -1,0 +1,9 @@
+MACRO 3 "InviteTeam" INV_Misc_QuestionMark
+/inv char2
+/inv char3
+/inv char4
+/inv char5
+END
+MACRO 1 "BuyItem" INV_Misc_QuestionMark
+/y want to buy abc item!
+END
