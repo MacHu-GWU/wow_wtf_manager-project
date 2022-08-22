@@ -3,6 +3,7 @@ wow_wtf_manager_venv/
 wow_wtf_manager.egg-info/
 wow_wtf_manager-*/
 tmp/
+debug/
 
 
 # Byte-compiled / optimized / DLL files
