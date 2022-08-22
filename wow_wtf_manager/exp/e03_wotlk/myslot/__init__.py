@@ -13,7 +13,7 @@ from attrs_mate import AttrsClass
 import yaml
 from pathlib_mate import Path
 
-from ..runtime import IS_WINDOWS, IS_MACOS
+from ....runtime import IS_WINDOWS, IS_MACOS
 
 dir_here = Path.dir_here(__file__)
 dir_home = Path.home()
@@ -70,7 +70,6 @@ def huffman_decode(
     subprocess.run([
         lua_executable, f"{path_humbase64_decode_exec_lua}"
     ])
-
 
 
 def is_lua_table(obj) -> bool:
@@ -241,7 +240,7 @@ class Keybind(AttrsClass):
 
 
 @attr.s
-class MySlotLuaData(AttrsClass):
+class MySlotPythonData(AttrsClass):
     slot_item_list: T.List[SlotItem] = SlotItem.ib_list_of_nested()
     keybind_list: T.List[Keybind] = Keybind.ib_list_of_nested()
 
@@ -253,7 +252,27 @@ class MySlotLuaData(AttrsClass):
             keybind.to_lua_syntax() for keybind in self.keybind_list
         ]
         keybind_syntax = "[999]={%s}," % ("".join(keybind_syntax_list),)
-        return "{" + "".join(slot_item_syntax_list + [keybind_syntax, ]) + "}"
+        return "".join(slot_item_syntax_list + [keybind_syntax, ])
+
+    @classmethod
+    def from_lua_syntax(cls, lua_syntax: str) -> 'MySlotPythonData':
+        table = lua.eval("{" + lua_syntax + "}")
+        table_data = lua_table_to_dict(table)
+
+        slot_item_list: T.List[SlotItem] = list()
+        for k, v in table_data.items():
+            if k != 999:
+                slot_item = SlotItem.parse_dict(k, v)
+                slot_item_list.append(slot_item)
+            else:
+                keybind_list = [
+                    Keybind(key=key, action=action)
+                    for key, action in v.items()
+                ]
+        return cls(
+            slot_item_list=slot_item_list,
+            keybind_list=keybind_list,
+        )
 
 
 @attr.s
@@ -273,26 +292,4 @@ class MySlotLuaSyntax(AttrsClass):
 
     大概长这个样子: ``[1]={["a"]="S",["b"]="Hunter's Mark(Rank 3)",}, ..., [999]={["W"]="MOVEFORWARD", ...,},``
     """
-    pass
-
-
-# my_slot_huffman_encoded = MySlotHuffmanEncoded(content=Path(dir_here, "flychicken.txt").read_text(encoding="ascii").strip())
-# print(humbase64.dec(Path(dir_here, "flychicken.txt").read_text(encoding="ascii")))
-
-# data_lua = Path("flychicken-format.lua")
-# data = lua.eval(data_lua.read_text())
-# table_data = lua_table_to_dict(data)
-#
-# slot_item_list: T.List[SlotItem] = list()
-# for k, v in table_data.items():
-#     if k != 999:
-#         slot_item = SlotItem.parse_dict(k, v)
-#         slot_item_list.append(slot_item)
-#     else:
-#         keybind_list = [
-#             Keybind(key=key, action=action)
-#             for key, action in v.items()
-#         ]
-# myslot_lua_data = MySlotLuaData(slot_item_list=slot_item_list, keybind_list=keybind_list)
-# myslot_lua_syntax = myslot_lua_data.to_lua_syntax()
-# Path("flychicken-format-dump.lua").write_text(myslot_lua_syntax)
+    content: str = attr.ib()
