@@ -54,9 +54,27 @@ class TestMacroTxt:
     def test_parse(self):
         macro_txt_file = dir_tests / "macro" / "account-macro.txt"
         macro_txt = MacroTxt.parse(macro_txt_file.abspath)
+
         assert macro_txt.macros[0].id == 3
+        assert macro_txt.macros[0].content == (
+            "/inv char2\n"
+            "/inv char3\n"
+            "/inv char4\n"
+            "/inv char5"
+        )
         assert macro_txt.macros[1].id == 1
-        assert macro_txt.dump() == macro_txt_file.read_text()
+        assert macro_txt.macros[1].content == "/y want to buy abc item!"
+        assert macro_txt.dump() == (
+            "MACRO 3 \"InviteTeam\" INV_Misc_QuestionMark\n"
+            "/inv char2\n"
+            "/inv char3\n"
+            "/inv char4\n"
+            "/inv char5\n"
+            "END\n"
+            "MACRO 1 \"BuyItem\" INV_Misc_QuestionMark\n"
+            "/y want to buy abc item!\n"
+            "END"
+        )
 
 
 def test_apply_macros_cache_txt():

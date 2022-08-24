@@ -137,13 +137,13 @@ class MacroTxt(AttrsClass):
         Path(path).write_text(self.dump())
 
     def has_duplicate_id(self) -> bool:
-        return len({macro.id for macro in self.macros}) == len(self.macros)
+        return len({macro.id for macro in self.macros}) < len(self.macros)
 
     def has_duplicate_name(self) -> bool:
-        return len({macro.name for macro in self.macros}) == len(self.macros)
+        return len({macro.name for macro in self.macros}) < len(self.macros)
 
     def ensure_no_duplicate_id(self):
-        if self.has_duplicate_id():
+        if self.has_duplicate_id():  # pragma: no cover
             raise ValueError
         else:
             self.macros_id_mapper = {
@@ -152,7 +152,7 @@ class MacroTxt(AttrsClass):
             }
 
     def ensure_no_duplicate_name(self):
-        if self.has_duplicate_name():
+        if self.has_duplicate_name():  # pragma: no cover
             raise ValueError
         else:
             self.macros_name_mapper = {
@@ -191,8 +191,8 @@ def apply_macros_cache_txt(
     macro_txt_game_client.ensure_no_duplicate_name()
 
     for macro1 in macro_txt_data.macros:
-        if macro1.name in macro_txt_game_client.macros_mapper:
-            macro2 = macro_txt_game_client.macros_mapper[macro1.name]
+        if macro1.name in macro_txt_game_client.macros_name_mapper:
+            macro2 = macro_txt_game_client.macros_name_mapper[macro1.name]
             macro2.icon = macro1.icon
             macro2.content = macro1.content
         else:
@@ -201,4 +201,3 @@ def apply_macros_cache_txt(
             macro_txt_game_client.macros.append(macro1)
 
     macro_txt_game_client.to_file()
-

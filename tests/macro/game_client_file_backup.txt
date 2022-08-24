@@ -1,6 +1,6 @@
-MACRO 1 "InviteTeam" INV_Misc_QuestionMark
-/s InviteTeam1
+MACRO 2 "Bob" INV_Misc_QuestionMark
+/s Bob1
 END
-MACRO 2 "BuyItem" INV_Misc_QuestionMark
-/s BuyItem1
+MACRO 3 "Cathy" INV_Misc_QuestionMark
+/s Cathy1
 END
