@@ -1,0 +1,6 @@
+MACRO 1 "InviteTeam" INV_Misc_QuestionMark
+/s InviteTeam2
+END
+MACRO 2 "BuyItem" INV_Misc_QuestionMark
+/s BuyItem2
+END

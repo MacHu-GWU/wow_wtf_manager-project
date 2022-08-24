@@ -3,7 +3,7 @@
 import os
 
 from wow_wtf_manager.paths import dir_tests
-from wow_wtf_manager.exp.e03_wotlk.macro import MacroTxt, Macro
+from wow_wtf_manager.exp.e03_wotlk.macro import MacroTxt, Macro, apply_macros_cache_txt
 
 
 class TestMacro:
@@ -57,6 +57,14 @@ class TestMacroTxt:
         assert macro_txt.macros[0].id == 3
         assert macro_txt.macros[1].id == 1
         assert macro_txt.dump() == macro_txt_file.read_text()
+
+
+def test_apply_macros_cache_txt():
+    macros_data_file = dir_tests / "macro" / "macros_data_file.txt"
+    game_client_file_backup = dir_tests / "macro" / "game_client_file_backup.txt"
+    game_client_file = dir_tests / "macro" / "game_client_file.txt"
+    game_client_file.write_text(game_client_file_backup.read_text())
+    apply_macros_cache_txt(macros_data_file, game_client_file)
 
 
 if __name__ == "__main__":
