@@ -6,7 +6,7 @@ CombuctorDB2 = {
 	["version"] = "2.2.2",
 	["profiles"] = {
 		{% for character in all_characters %}
-		["{{ character.char }} - {{ character.realm}}"] = {
+		["{{ character.character }} - {{ character.server }}"] = {
 			["inventory"] = {
 				["exclude"] = {
 					["All"] = {

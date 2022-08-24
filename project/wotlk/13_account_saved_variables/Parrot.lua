@@ -2,7 +2,7 @@
 ParrotDB = {
 	["profileKeys"] = {
 		{% for character in all_characters %}
-		["{{ character.char }} - {{ character.realm}}"] = "MyDefault",
+		["{{ character.character }} - {{ character.server }}"] = "MyDefault",
 		{% endfor %}
 	},
 	["namespaces"] = {

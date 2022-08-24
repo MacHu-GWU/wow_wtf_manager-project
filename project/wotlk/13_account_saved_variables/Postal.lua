@@ -8,7 +8,7 @@ Postal3DB = {
 	},
 	["profileKeys"] = {
 		{% for character in all_characters %}
-		["{{ character.char }} - {{ character.realm}}"] = "MyDefault",
+		["{{ character.character }} - {{ character.server }}"] = "MyDefault",
 		{% endfor %}
 	},
 	["profiles"] = {
@@ -16,7 +16,7 @@ Postal3DB = {
 			["BlackBook"] = {
 				["recent"] = {
 					{% for character in all_characters %}
-					"{{ character.char }}",
+					"{{ character.character }}",
 					{% endfor %}
 				},
 			},
