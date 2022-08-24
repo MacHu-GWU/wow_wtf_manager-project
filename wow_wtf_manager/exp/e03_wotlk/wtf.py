@@ -6,7 +6,8 @@ import attr
 from attrs_mate import AttrsClass
 from pathlib_mate import Path
 
-Pathlike = T.Union[str, Path]
+if T.TYPE_CHECKING:
+    from .group import CharacterGroup
 
 
 # ------------------------------------------------------------------------------
@@ -26,7 +27,9 @@ class BaseConfig(AttrsClass):
     - 宏命令
     - 插件的 SavedVariables
     """
-    pass
+
+    def apply(self, cg: 'CharacterGroup', context: dict = None):
+        raise NotImplementedError
 
 
 @attr.s
@@ -62,6 +65,10 @@ class GameClientConfig(BaseGameClientConfig):
     @property
     def path(self) -> str:
         return self.dir_wtf / "Config.wtf"
+
+    # def apply(self, cg: 'CharacterGroup', context: dict = None):
+    #     for char in cg.char_list:
+    #         char
 
 
 # --- Per Account Level

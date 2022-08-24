@@ -72,415 +72,421 @@ Fatmulti24_Icecrown_lgsmn = Character.from_string("Fatmulti24.Icecrown.lgsmn")
 Fatmulti25_Icecrown_lgsmo = Character.from_string("Fatmulti25.Icecrown.lgsmo")
 Fatmulti26_Icecrown_lgsmp = Character.from_string("Fatmulti26.Icecrown.lgsmp")
 
-# --- Group by accounts
-cg_account_fatmulti1 = CharacterGroup([
-    Fatmulti1_Icecrown_BatleFury,
-    Fatmulti1_Icecrown_Litgoatssa,
-    Fatmulti1_Icecrown_Litgoatzsa,
-    Fatmulti1_Icecrown_Litgoatdka,
-    Fatmulti1_Icecrown_Litgoatdza,
-])
 
-cg_account_fatmulti2 = CharacterGroup([
-    Fatmulti2_Icecrown_Quentinquinn,
-    Fatmulti2_Icecrown_Litgoatssb,
-    Fatmulti2_Icecrown_Litgoatzsb,
-    Fatmulti2_Icecrown_Litgoatdkb,
-    Fatmulti2_Icecrown_Litgoatdzb,
-])
+class WarmaneGroup:
+    # --- Group by accounts
+    cg_account_fatmulti1 = CharacterGroup([
+        Fatmulti1_Icecrown_BatleFury,
+        Fatmulti1_Icecrown_Litgoatssa,
+        Fatmulti1_Icecrown_Litgoatzsa,
+        Fatmulti1_Icecrown_Litgoatdka,
+        Fatmulti1_Icecrown_Litgoatdza,
+    ])
 
-cg_account_fatmulti3 = CharacterGroup([
-    Fatmulti3_Icecrown_Opiitou,
-    Fatmulti3_Icecrown_Litgoatssc,
-    Fatmulti3_Icecrown_Litgoatzsc,
-    Fatmulti3_Icecrown_Litgoatdkc,
-    Fatmulti3_Icecrown_Litgoatdzc,
-])
+    cg_account_fatmulti2 = CharacterGroup([
+        Fatmulti2_Icecrown_Quentinquinn,
+        Fatmulti2_Icecrown_Litgoatssb,
+        Fatmulti2_Icecrown_Litgoatzsb,
+        Fatmulti2_Icecrown_Litgoatdkb,
+        Fatmulti2_Icecrown_Litgoatdzb,
+    ])
 
-cg_account_fatmulti4 = CharacterGroup([
-    Fatmulti4_Icecrown_Swagsonic,
-    Fatmulti4_Icecrown_Litgoatssd,
-    Fatmulti4_Icecrown_Litgoatzsd,
-    Fatmulti4_Icecrown_Litgoatdkd,
-    Fatmulti4_Icecrown_Litgoatdzd,
-])
+    cg_account_fatmulti3 = CharacterGroup([
+        Fatmulti3_Icecrown_Opiitou,
+        Fatmulti3_Icecrown_Litgoatssc,
+        Fatmulti3_Icecrown_Litgoatzsc,
+        Fatmulti3_Icecrown_Litgoatdkc,
+        Fatmulti3_Icecrown_Litgoatdzc,
+    ])
 
-cg_account_fatmulti5 = CharacterGroup([
-    Fatmulti5_Icecrown_Kangliu,
-    Fatmulti5_Icecrown_Litgoatsse,
-    Fatmulti5_Icecrown_Litgoatzse,
-    Fatmulti5_Icecrown_Litgoatdke,
-    Fatmulti5_Icecrown_Litgoatdze,
-])
+    cg_account_fatmulti4 = CharacterGroup([
+        Fatmulti4_Icecrown_Swagsonic,
+        Fatmulti4_Icecrown_Litgoatssd,
+        Fatmulti4_Icecrown_Litgoatzsd,
+        Fatmulti4_Icecrown_Litgoatdkd,
+        Fatmulti4_Icecrown_Litgoatdzd,
+    ])
 
-cg_account_fitsheep = CharacterGroup([
-    Fitsheep_Icecrown_Kindhearted,
-    Fitsheep_Icecrown_Bordercollie,
-    Fitsheep_Icecrown_Sweetmonk,
-    Fitsheep_Icecrown_Angorarabbit,
-    Fitsheep_Icecrown_Sheepbunny,
-    Fitsheep_Icecrown_Angrybunny,
-    Fitsheep_Icecrown_Juicysheep,
-    Fitsheep_Icecrown_Chunlily,
-])
+    cg_account_fatmulti5 = CharacterGroup([
+        Fatmulti5_Icecrown_Kangliu,
+        Fatmulti5_Icecrown_Litgoatsse,
+        Fatmulti5_Icecrown_Litgoatzse,
+        Fatmulti5_Icecrown_Litgoatdke,
+        Fatmulti5_Icecrown_Litgoatdze,
+    ])
 
-cg_account_fatmulti6 = CharacterGroup([
-    Fatmulti6_Icecrown_Kapacuk,
-    Fatmulti6_Icecrown_Litgoatssh,
-    Fatmulti6_Icecrown_HealthyMonk,
-    Fatmulti6_Icecrown_Litgoatxdh,
-])
+    cg_account_fitsheep = CharacterGroup([
+        Fitsheep_Icecrown_Kindhearted,
+        Fitsheep_Icecrown_Bordercollie,
+        Fitsheep_Icecrown_Sweetmonk,
+        Fitsheep_Icecrown_Angorarabbit,
+        Fitsheep_Icecrown_Sheepbunny,
+        Fitsheep_Icecrown_Angrybunny,
+        Fitsheep_Icecrown_Juicysheep,
+        Fitsheep_Icecrown_Chunlily,
+    ])
 
-cg_account_fatmulti8 = CharacterGroup([
-    Fatmulti8_Icecrown_Bunnysisters,
-    Fatmulti8_Icecrown_Litgoatssi,
-    Fatmulti8_Icecrown_Honeymonk,
-    Fatmulti8_Icecrown_Litgoatxdi,
-])
-cg_account_fatmulti9 = CharacterGroup([
-    Fatmulti9_Icecrown_Glowyy,
-    Fatmulti9_Icecrown_Litgoatssj,
-    Fatmulti9_Icecrown_ChubbyMonk,
-    Fatmulti9_Icecrown_Litgoatxdj,
-])
+    cg_account_fatmulti6 = CharacterGroup([
+        Fatmulti6_Icecrown_Kapacuk,
+        Fatmulti6_Icecrown_Litgoatssh,
+        Fatmulti6_Icecrown_HealthyMonk,
+        Fatmulti6_Icecrown_Litgoatxdh,
+    ])
 
-cg_account_fatmulti10 = CharacterGroup([
-    Fatmulti10_Icecrown_Luxiaofeng,
-    Fatmulti10_Icecrown_Litgoatssk,
-    Fatmulti10_Icecrown_ShinyMonk,
-    Fatmulti10_Icecrown_Litgoatxdk,
-])
+    cg_account_fatmulti8 = CharacterGroup([
+        Fatmulti8_Icecrown_Bunnysisters,
+        Fatmulti8_Icecrown_Litgoatssi,
+        Fatmulti8_Icecrown_Honeymonk,
+        Fatmulti8_Icecrown_Litgoatxdi,
+    ])
+    cg_account_fatmulti9 = CharacterGroup([
+        Fatmulti9_Icecrown_Glowyy,
+        Fatmulti9_Icecrown_Litgoatssj,
+        Fatmulti9_Icecrown_ChubbyMonk,
+        Fatmulti9_Icecrown_Litgoatxdj,
+    ])
 
-cg_account_makun7551 = CharacterGroup([
-    Makun7551_Icecrown_Laoshou,
-    Makun7551_Icecrown_Ganjj,
-])
+    cg_account_fatmulti10 = CharacterGroup([
+        Fatmulti10_Icecrown_Luxiaofeng,
+        Fatmulti10_Icecrown_Litgoatssk,
+        Fatmulti10_Icecrown_ShinyMonk,
+        Fatmulti10_Icecrown_Litgoatxdk,
+    ])
 
-cg_account_monkey130 = CharacterGroup([
-    Monkey130_Icecrown_Flydps,
-])
+    cg_account_makun7551 = CharacterGroup([
+        Makun7551_Icecrown_Laoshou,
+        Makun7551_Icecrown_Ganjj,
+    ])
 
-cg_account_fatmulti11 = CharacterGroup([
-    Fatmulti11_Icecrown_Litgugua,
-])
+    cg_account_monkey130 = CharacterGroup([
+        Monkey130_Icecrown_Flydps,
+    ])
 
-cg_account_fatmulti12 = CharacterGroup([
-    Fatmulti12_Icecrown_Litgugub,
-])
+    cg_account_fatmulti11 = CharacterGroup([
+        Fatmulti11_Icecrown_Litgugua,
+    ])
 
-cg_account_fatmulti13 = CharacterGroup([
-    Fatmulti13_Icecrown_Litguguc,
-])
+    cg_account_fatmulti12 = CharacterGroup([
+        Fatmulti12_Icecrown_Litgugub,
+    ])
 
-cg_account_fatmulti14 = CharacterGroup([
-    Fatmulti14_Icecrown_Litgugud,
-])
+    cg_account_fatmulti13 = CharacterGroup([
+        Fatmulti13_Icecrown_Litguguc,
+    ])
 
-cg_account_fatmulti15 = CharacterGroup([
-    Fatmulti15_Icecrown_Litgugue,
-])
+    cg_account_fatmulti14 = CharacterGroup([
+        Fatmulti14_Icecrown_Litgugud,
+    ])
 
-cg_account_fatmulti16 = CharacterGroup([
-    Fatmulti16_Icecrown_Litguguf,
-])
+    cg_account_fatmulti15 = CharacterGroup([
+        Fatmulti15_Icecrown_Litgugue,
+    ])
 
-cg_account_fatmulti17 = CharacterGroup([
-    Fatmulti17_Icecrown_Litgugug,
-])
+    cg_account_fatmulti16 = CharacterGroup([
+        Fatmulti16_Icecrown_Litguguf,
+    ])
 
-cg_account_fatmulti18 = CharacterGroup([
-    Fatmulti18_Icecrown_Litguguh,
-])
+    cg_account_fatmulti17 = CharacterGroup([
+        Fatmulti17_Icecrown_Litgugug,
+    ])
 
-cg_account_fatmulti19 = CharacterGroup([
-    Fatmulti19_Icecrown_lgmsi,
-])
+    cg_account_fatmulti18 = CharacterGroup([
+        Fatmulti18_Icecrown_Litguguh,
+    ])
 
-cg_account_fatmulti20 = CharacterGroup([
-    Fatmulti20_Icecrown_lgmsj,
-])
+    cg_account_fatmulti19 = CharacterGroup([
+        Fatmulti19_Icecrown_lgmsi,
+    ])
 
-cg_account_fatmulti21 = CharacterGroup([
-    Fatmulti21_Icecrown_lgmsk,
-])
+    cg_account_fatmulti20 = CharacterGroup([
+        Fatmulti20_Icecrown_lgmsj,
+    ])
 
-cg_account_fatmulti22 = CharacterGroup([
-    Fatmulti22_Icecrown_lgmsl,
-])
+    cg_account_fatmulti21 = CharacterGroup([
+        Fatmulti21_Icecrown_lgmsk,
+    ])
 
-cg_account_fatmulti23 = CharacterGroup([
-    Fatmulti23_Icecrown_lgsmm,
-])
+    cg_account_fatmulti22 = CharacterGroup([
+        Fatmulti22_Icecrown_lgmsl,
+    ])
 
-cg_account_fatmulti24 = CharacterGroup([
-    Fatmulti24_Icecrown_lgsmn,
-])
+    cg_account_fatmulti23 = CharacterGroup([
+        Fatmulti23_Icecrown_lgsmm,
+    ])
 
-cg_account_fatmulti25 = CharacterGroup([
-    Fatmulti25_Icecrown_lgsmo,
-])
+    cg_account_fatmulti24 = CharacterGroup([
+        Fatmulti24_Icecrown_lgsmn,
+    ])
 
-cg_account_fatmulti26 = CharacterGroup([
-    Fatmulti26_Icecrown_lgsmp,
-])
+    cg_account_fatmulti25 = CharacterGroup([
+        Fatmulti25_Icecrown_lgsmo,
+    ])
 
-# --- Group by all character
-cg_all_character = CharacterGroup([
-    cg_account_fatmulti1,
-    cg_account_fatmulti2,
-    cg_account_fatmulti3,
-    cg_account_fatmulti4,
-    cg_account_fatmulti5,
-    cg_account_fitsheep,
-    cg_account_fatmulti6,
-    cg_account_fatmulti8,
-    cg_account_fatmulti9,
-    cg_account_fatmulti10,
-    cg_account_makun7551,
-    cg_account_monkey130,
-    cg_account_fatmulti11,
-    cg_account_fatmulti12,
-    cg_account_fatmulti13,
-    cg_account_fatmulti14,
-    cg_account_fatmulti15,
-    cg_account_fatmulti16,
-    cg_account_fatmulti17,
-    cg_account_fatmulti18,
-    cg_account_fatmulti19,
-    cg_account_fatmulti20,
-    cg_account_fatmulti21,
-    cg_account_fatmulti22,
-    cg_account_fatmulti23,
-    cg_account_fatmulti24,
-    cg_account_fatmulti25,
-    cg_account_fatmulti26,
-])
+    cg_account_fatmulti26 = CharacterGroup([
+        Fatmulti26_Icecrown_lgsmp,
+    ])
 
-# --- Group by class
-cg_characters_warlock_pvp = CharacterGroup([
-    Fatmulti1_Icecrown_Litgoatssa,
-    Fatmulti2_Icecrown_Litgoatssb,
-    Fatmulti3_Icecrown_Litgoatssc,
-    Fatmulti4_Icecrown_Litgoatssd,
-    Fatmulti5_Icecrown_Litgoatsse,
-])
+    # --- Group by all character
+    cg_all_character = CharacterGroup([
+        cg_account_fatmulti1,
+        cg_account_fatmulti2,
+        cg_account_fatmulti3,
+        cg_account_fatmulti4,
+        cg_account_fatmulti5,
+        cg_account_fitsheep,
+        cg_account_fatmulti6,
+        cg_account_fatmulti8,
+        cg_account_fatmulti9,
+        cg_account_fatmulti10,
+        cg_account_makun7551,
+        cg_account_monkey130,
+        cg_account_fatmulti11,
+        cg_account_fatmulti12,
+        cg_account_fatmulti13,
+        cg_account_fatmulti14,
+        cg_account_fatmulti15,
+        cg_account_fatmulti16,
+        cg_account_fatmulti17,
+        cg_account_fatmulti18,
+        cg_account_fatmulti19,
+        cg_account_fatmulti20,
+        cg_account_fatmulti21,
+        cg_account_fatmulti22,
+        cg_account_fatmulti23,
+        cg_account_fatmulti24,
+        cg_account_fatmulti25,
+        cg_account_fatmulti26,
+    ])
 
-cg_characters_high_gs = CharacterGroup([
-    Fatmulti1_Icecrown_BatleFury,
-    Fatmulti2_Icecrown_Quentinquinn,
-    Fatmulti3_Icecrown_Opiitou,
-    Fatmulti4_Icecrown_Swagsonic,
-    Fatmulti5_Icecrown_Kangliu,
-    Fitsheep_Icecrown_Kindhearted,
-    Fitsheep_Icecrown_Bordercollie,
-    Fitsheep_Icecrown_Sweetmonk,
-    Fatmulti6_Icecrown_Kapacuk,
-    Fatmulti8_Icecrown_Bunnysisters,
-    Fatmulti9_Icecrown_Glowyy,
-    Fatmulti10_Icecrown_Luxiaofeng,
-])
+    # --- Group by class
+    cg_characters_warlock_pvp = CharacterGroup([
+        Fatmulti1_Icecrown_Litgoatssa,
+        Fatmulti2_Icecrown_Litgoatssb,
+        Fatmulti3_Icecrown_Litgoatssc,
+        Fatmulti4_Icecrown_Litgoatssd,
+        Fatmulti5_Icecrown_Litgoatsse,
+    ])
 
-cg_characters_8_dudu = CharacterGroup([
-    Fatmulti11_Icecrown_Litgugua,
-    Fatmulti12_Icecrown_Litgugub,
-    Fatmulti13_Icecrown_Litguguc,
-    Fatmulti14_Icecrown_Litgugud,
-    Fatmulti15_Icecrown_Litgugue,
-    Fatmulti16_Icecrown_Litguguf,
-    Fatmulti17_Icecrown_Litgugug,
-    Fatmulti18_Icecrown_Litguguh,
-])
+    cg_characters_high_gs = CharacterGroup([
+        Fatmulti1_Icecrown_BatleFury,
+        Fatmulti2_Icecrown_Quentinquinn,
+        Fatmulti3_Icecrown_Opiitou,
+        Fatmulti4_Icecrown_Swagsonic,
+        Fatmulti5_Icecrown_Kangliu,
+        Fitsheep_Icecrown_Kindhearted,
+        Fitsheep_Icecrown_Bordercollie,
+        Fitsheep_Icecrown_Sweetmonk,
+        Fatmulti6_Icecrown_Kapacuk,
+        Fatmulti8_Icecrown_Bunnysisters,
+        Fatmulti9_Icecrown_Glowyy,
+        Fatmulti10_Icecrown_Luxiaofeng,
+    ])
 
-cg_characters_4_litgugua_to_litgugud = CharacterGroup([
-    Fatmulti11_Icecrown_Litgugua,
-    Fatmulti12_Icecrown_Litgugub,
-    Fatmulti13_Icecrown_Litguguc,
-    Fatmulti14_Icecrown_Litgugud,
-])
+    cg_characters_8_dudu = CharacterGroup([
+        Fatmulti11_Icecrown_Litgugua,
+        Fatmulti12_Icecrown_Litgugub,
+        Fatmulti13_Icecrown_Litguguc,
+        Fatmulti14_Icecrown_Litgugud,
+        Fatmulti15_Icecrown_Litgugue,
+        Fatmulti16_Icecrown_Litguguf,
+        Fatmulti17_Icecrown_Litgugug,
+        Fatmulti18_Icecrown_Litguguh,
+    ])
 
-cg_characters_4_litgugue_to_litguguh = CharacterGroup([
-    Fatmulti15_Icecrown_Litgugue,
-    Fatmulti16_Icecrown_Litguguf,
-    Fatmulti17_Icecrown_Litgugug,
-    Fatmulti18_Icecrown_Litguguh,
-])
+    cg_characters_4_litgugua_to_litgugud = CharacterGroup([
+        Fatmulti11_Icecrown_Litgugua,
+        Fatmulti12_Icecrown_Litgugub,
+        Fatmulti13_Icecrown_Litguguc,
+        Fatmulti14_Icecrown_Litgugud,
+    ])
 
-cg_class_paladins = CharacterGroup([
-    Fatmulti1_Icecrown_BatleFury,
-    Fatmulti9_Icecrown_Glowyy,
-    Fatmulti6_Icecrown_HealthyMonk,
-])
+    cg_characters_4_litgugue_to_litguguh = CharacterGroup([
+        Fatmulti15_Icecrown_Litgugue,
+        Fatmulti16_Icecrown_Litguguf,
+        Fatmulti17_Icecrown_Litgugug,
+        Fatmulti18_Icecrown_Litguguh,
+    ])
 
-cg_addons_raid_mode_pala_tanks = CharacterGroup([
-    Fatmulti1_Icecrown_BatleFury,
-])
+    cg_class_paladins = CharacterGroup([
+        Fatmulti1_Icecrown_BatleFury,
+        Fatmulti9_Icecrown_Glowyy,
+        Fatmulti6_Icecrown_HealthyMonk,
+    ])
 
-cg_addons_raid_mode_non_pala_tanks = CharacterGroup([
-    Fatmulti10_Icecrown_Luxiaofeng,
-])
+    cg_addons_raid_mode_pala_tanks = CharacterGroup([
+        Fatmulti1_Icecrown_BatleFury,
+    ])
 
-cg_addons_raid_mode_pala_other_members = CharacterGroup([
-    Fatmulti9_Icecrown_Glowyy,
-    Fatmulti6_Icecrown_HealthyMonk,
-])
+    cg_addons_raid_mode_non_pala_tanks = CharacterGroup([
+        Fatmulti10_Icecrown_Luxiaofeng,
+    ])
 
-cg_addons_raid_mode_non_pala_other_members = CharacterGroup([
-    Fatmulti2_Icecrown_Quentinquinn,
-    Fatmulti3_Icecrown_Opiitou,
-    Fatmulti4_Icecrown_Swagsonic,
-    Fatmulti5_Icecrown_Kangliu,
-    Fitsheep_Icecrown_Kindhearted,
-    Fatmulti6_Icecrown_Kapacuk,
-    Fatmulti8_Icecrown_Bunnysisters,
-    Fatmulti11_Icecrown_Litgugua,
-    Fatmulti12_Icecrown_Litgugub,
-    Fatmulti13_Icecrown_Litguguc,
-    Fatmulti14_Icecrown_Litgugud,
-    Fatmulti15_Icecrown_Litgugue,
-    Fatmulti16_Icecrown_Litguguf,
-    Fatmulti17_Icecrown_Litgugug,
-    Fatmulti18_Icecrown_Litguguh,
-    Fitsheep_Icecrown_Bordercollie,
-    Fitsheep_Icecrown_Sweetmonk,
-    Fatmulti8_Icecrown_Honeymonk,
-    Fatmulti9_Icecrown_ChubbyMonk,
-    Fatmulti10_Icecrown_ShinyMonk,
-])
+    cg_addons_raid_mode_pala_other_members = CharacterGroup([
+        Fatmulti9_Icecrown_Glowyy,
+        Fatmulti6_Icecrown_HealthyMonk,
+    ])
 
-cg_addons_enable_all = CharacterGroup([
-    Fitsheep_Icecrown_Angorarabbit,
-])
+    cg_addons_raid_mode_non_pala_other_members = CharacterGroup([
+        Fatmulti2_Icecrown_Quentinquinn,
+        Fatmulti3_Icecrown_Opiitou,
+        Fatmulti4_Icecrown_Swagsonic,
+        Fatmulti5_Icecrown_Kangliu,
+        Fitsheep_Icecrown_Kindhearted,
+        Fatmulti6_Icecrown_Kapacuk,
+        Fatmulti8_Icecrown_Bunnysisters,
+        Fatmulti11_Icecrown_Litgugua,
+        Fatmulti12_Icecrown_Litgugub,
+        Fatmulti13_Icecrown_Litguguc,
+        Fatmulti14_Icecrown_Litgugud,
+        Fatmulti15_Icecrown_Litgugue,
+        Fatmulti16_Icecrown_Litguguf,
+        Fatmulti17_Icecrown_Litgugug,
+        Fatmulti18_Icecrown_Litguguh,
+        Fitsheep_Icecrown_Bordercollie,
+        Fitsheep_Icecrown_Sweetmonk,
+        Fatmulti8_Icecrown_Honeymonk,
+        Fatmulti9_Icecrown_ChubbyMonk,
+        Fatmulti10_Icecrown_ShinyMonk,
+    ])
 
-cg_addons_single_player_comprehensive_but_pallypower = CharacterGroup([
-    Fatmulti2_Icecrown_Quentinquinn,
-    Fatmulti3_Icecrown_Opiitou,
-    Fatmulti4_Icecrown_Swagsonic,
-    Fatmulti5_Icecrown_Kangliu,
-    Fitsheep_Icecrown_Kindhearted,
-    Fatmulti6_Icecrown_Kapacuk,
-    Fatmulti8_Icecrown_Bunnysisters,
-    Fatmulti10_Icecrown_Luxiaofeng,
-    Makun7551_Icecrown_Ganjj,
-    Monkey130_Icecrown_Flydps,
-    Fitsheep_Icecrown_Bordercollie,
-    Fitsheep_Icecrown_Sweetmonk,
-])
+    cg_addons_enable_all = CharacterGroup([
+        Fitsheep_Icecrown_Angorarabbit,
+    ])
 
-cg_addons_single_player_comprehensive = CharacterGroup([
-    Fatmulti1_Icecrown_BatleFury,
-    Fatmulti9_Icecrown_Glowyy,
-    Makun7551_Icecrown_Laoshou,
-])
+    cg_addons_single_player_comprehensive_but_pallypower = CharacterGroup([
+        Fatmulti2_Icecrown_Quentinquinn,
+        Fatmulti3_Icecrown_Opiitou,
+        Fatmulti4_Icecrown_Swagsonic,
+        Fatmulti5_Icecrown_Kangliu,
+        Fitsheep_Icecrown_Kindhearted,
+        Fatmulti6_Icecrown_Kapacuk,
+        Fatmulti8_Icecrown_Bunnysisters,
+        Fatmulti10_Icecrown_Luxiaofeng,
+        Makun7551_Icecrown_Ganjj,
+        Monkey130_Icecrown_Flydps,
+        Fitsheep_Icecrown_Bordercollie,
+        Fitsheep_Icecrown_Sweetmonk,
+    ])
 
-cg_addons_multibox_minimal_but_pallypower = CharacterGroup([
-    Fatmulti1_Icecrown_Litgoatssa,
-    Fatmulti1_Icecrown_Litgoatzsa,
-    Fatmulti1_Icecrown_Litgoatdka,
-    Fatmulti1_Icecrown_Litgoatdza,
-    Fatmulti2_Icecrown_Litgoatssb,
-    Fatmulti2_Icecrown_Litgoatzsb,
-    Fatmulti2_Icecrown_Litgoatdkb,
-    Fatmulti2_Icecrown_Litgoatdzb,
-    Fatmulti3_Icecrown_Litgoatssc,
-    Fatmulti3_Icecrown_Litgoatzsc,
-    Fatmulti3_Icecrown_Litgoatdkc,
-    Fatmulti3_Icecrown_Litgoatdzc,
-    Fatmulti4_Icecrown_Litgoatssd,
-    Fatmulti4_Icecrown_Litgoatzsd,
-    Fatmulti4_Icecrown_Litgoatdkd,
-    Fatmulti4_Icecrown_Litgoatdzd,
-    Fatmulti5_Icecrown_Litgoatsse,
-    Fatmulti5_Icecrown_Litgoatzse,
-    Fatmulti5_Icecrown_Litgoatdke,
-    Fatmulti5_Icecrown_Litgoatdze,
-    Fitsheep_Icecrown_Sheepbunny,
-    Fitsheep_Icecrown_Angrybunny,
-    Fitsheep_Icecrown_Juicysheep,
-    Fitsheep_Icecrown_Chunlily,
-    Fatmulti6_Icecrown_Litgoatssh,
-    Fatmulti6_Icecrown_HealthyMonk,
-    Fatmulti6_Icecrown_Litgoatxdh,
-    Fatmulti8_Icecrown_Litgoatssi,
-    Fatmulti8_Icecrown_Honeymonk,
-    Fatmulti8_Icecrown_Litgoatxdi,
-    Fatmulti9_Icecrown_Litgoatssj,
-    Fatmulti9_Icecrown_ChubbyMonk,
-    Fatmulti9_Icecrown_Litgoatxdj,
-    Fatmulti10_Icecrown_Litgoatssk,
-    Fatmulti10_Icecrown_ShinyMonk,
-    Fatmulti10_Icecrown_Litgoatxdk,
-    Fatmulti11_Icecrown_Litgugua,
-    Fatmulti12_Icecrown_Litgugub,
-    Fatmulti13_Icecrown_Litguguc,
-    Fatmulti14_Icecrown_Litgugud,
-    Fatmulti15_Icecrown_Litgugue,
-    Fatmulti16_Icecrown_Litguguf,
-    Fatmulti17_Icecrown_Litgugug,
-    Fatmulti18_Icecrown_Litguguh,
-    Fatmulti19_Icecrown_lgmsi,
-    Fatmulti20_Icecrown_lgmsj,
-    Fatmulti21_Icecrown_lgmsk,
-    Fatmulti22_Icecrown_lgmsl,
-    Fatmulti23_Icecrown_lgsmm,
-    Fatmulti24_Icecrown_lgsmn,
-    Fatmulti25_Icecrown_lgsmo,
-    Fatmulti26_Icecrown_lgsmp,
-])
+    cg_addons_single_player_comprehensive = CharacterGroup([
+        Fatmulti1_Icecrown_BatleFury,
+        Fatmulti9_Icecrown_Glowyy,
+        Makun7551_Icecrown_Laoshou,
+    ])
 
-cg_addons_multibox_super_minimal_but_pallypower = CharacterGroup([
-    Fatmulti1_Icecrown_Litgoatssa,
-    Fatmulti1_Icecrown_Litgoatdka,
-    Fatmulti2_Icecrown_Quentinquinn,
-    Fatmulti2_Icecrown_Litgoatssb,
-    Fatmulti2_Icecrown_Litgoatdkb,
-    Fatmulti3_Icecrown_Opiitou,
-    Fatmulti3_Icecrown_Litgoatssc,
-    Fatmulti3_Icecrown_Litgoatdkc,
-    Fatmulti4_Icecrown_Swagsonic,
-    Fatmulti4_Icecrown_Litgoatssd,
-    Fatmulti4_Icecrown_Litgoatdkd,
-    Fatmulti5_Icecrown_Kangliu,
-    Fatmulti5_Icecrown_Litgoatsse,
-    Fatmulti5_Icecrown_Litgoatdke,
-    Fitsheep_Icecrown_Kindhearted,
-    Fatmulti6_Icecrown_Kapacuk,
-    Fatmulti8_Icecrown_Bunnysisters,
-    Makun7551_Icecrown_Ganjj,
-    Monkey130_Icecrown_Flydps,
-    Fatmulti11_Icecrown_Litgugua,
-    Fatmulti12_Icecrown_Litgugub,
-    Fatmulti13_Icecrown_Litguguc,
-    Fatmulti14_Icecrown_Litgugud,
-    Fatmulti15_Icecrown_Litgugue,
-    Fatmulti16_Icecrown_Litguguf,
-    Fatmulti17_Icecrown_Litgugug,
-    Fatmulti18_Icecrown_Litguguh,
-    Fatmulti19_Icecrown_lgmsi,
-    Fatmulti20_Icecrown_lgmsj,
-    Fatmulti21_Icecrown_lgmsk,
-    Fatmulti22_Icecrown_lgmsl,
-    Fatmulti23_Icecrown_lgsmm,
-    Fatmulti24_Icecrown_lgsmn,
-    Fatmulti25_Icecrown_lgsmo,
-    Fatmulti26_Icecrown_lgsmp,
-])
+    cg_addons_multibox_minimal_but_pallypower = CharacterGroup([
+        Fatmulti1_Icecrown_Litgoatssa,
+        Fatmulti1_Icecrown_Litgoatzsa,
+        Fatmulti1_Icecrown_Litgoatdka,
+        Fatmulti1_Icecrown_Litgoatdza,
+        Fatmulti2_Icecrown_Litgoatssb,
+        Fatmulti2_Icecrown_Litgoatzsb,
+        Fatmulti2_Icecrown_Litgoatdkb,
+        Fatmulti2_Icecrown_Litgoatdzb,
+        Fatmulti3_Icecrown_Litgoatssc,
+        Fatmulti3_Icecrown_Litgoatzsc,
+        Fatmulti3_Icecrown_Litgoatdkc,
+        Fatmulti3_Icecrown_Litgoatdzc,
+        Fatmulti4_Icecrown_Litgoatssd,
+        Fatmulti4_Icecrown_Litgoatzsd,
+        Fatmulti4_Icecrown_Litgoatdkd,
+        Fatmulti4_Icecrown_Litgoatdzd,
+        Fatmulti5_Icecrown_Litgoatsse,
+        Fatmulti5_Icecrown_Litgoatzse,
+        Fatmulti5_Icecrown_Litgoatdke,
+        Fatmulti5_Icecrown_Litgoatdze,
+        Fitsheep_Icecrown_Sheepbunny,
+        Fitsheep_Icecrown_Angrybunny,
+        Fitsheep_Icecrown_Juicysheep,
+        Fitsheep_Icecrown_Chunlily,
+        Fatmulti6_Icecrown_Litgoatssh,
+        Fatmulti6_Icecrown_HealthyMonk,
+        Fatmulti6_Icecrown_Litgoatxdh,
+        Fatmulti8_Icecrown_Litgoatssi,
+        Fatmulti8_Icecrown_Honeymonk,
+        Fatmulti8_Icecrown_Litgoatxdi,
+        Fatmulti9_Icecrown_Litgoatssj,
+        Fatmulti9_Icecrown_ChubbyMonk,
+        Fatmulti9_Icecrown_Litgoatxdj,
+        Fatmulti10_Icecrown_Litgoatssk,
+        Fatmulti10_Icecrown_ShinyMonk,
+        Fatmulti10_Icecrown_Litgoatxdk,
+        Fatmulti11_Icecrown_Litgugua,
+        Fatmulti12_Icecrown_Litgugub,
+        Fatmulti13_Icecrown_Litguguc,
+        Fatmulti14_Icecrown_Litgugud,
+        Fatmulti15_Icecrown_Litgugue,
+        Fatmulti16_Icecrown_Litguguf,
+        Fatmulti17_Icecrown_Litgugug,
+        Fatmulti18_Icecrown_Litguguh,
+        Fatmulti19_Icecrown_lgmsi,
+        Fatmulti20_Icecrown_lgmsj,
+        Fatmulti21_Icecrown_lgmsk,
+        Fatmulti22_Icecrown_lgmsl,
+        Fatmulti23_Icecrown_lgsmm,
+        Fatmulti24_Icecrown_lgsmn,
+        Fatmulti25_Icecrown_lgsmo,
+        Fatmulti26_Icecrown_lgsmp,
+    ])
 
-cg_addons_multibox_super_minimal = CharacterGroup([
-    Fatmulti1_Icecrown_BatleFury,
-    Fatmulti9_Icecrown_Glowyy,
-    Makun7551_Icecrown_Laoshou,
-])
+    cg_addons_multibox_super_minimal_but_pallypower = CharacterGroup([
+        Fatmulti1_Icecrown_Litgoatssa,
+        Fatmulti1_Icecrown_Litgoatdka,
+        Fatmulti2_Icecrown_Quentinquinn,
+        Fatmulti2_Icecrown_Litgoatssb,
+        Fatmulti2_Icecrown_Litgoatdkb,
+        Fatmulti3_Icecrown_Opiitou,
+        Fatmulti3_Icecrown_Litgoatssc,
+        Fatmulti3_Icecrown_Litgoatdkc,
+        Fatmulti4_Icecrown_Swagsonic,
+        Fatmulti4_Icecrown_Litgoatssd,
+        Fatmulti4_Icecrown_Litgoatdkd,
+        Fatmulti5_Icecrown_Kangliu,
+        Fatmulti5_Icecrown_Litgoatsse,
+        Fatmulti5_Icecrown_Litgoatdke,
+        Fitsheep_Icecrown_Kindhearted,
+        Fatmulti6_Icecrown_Kapacuk,
+        Fatmulti8_Icecrown_Bunnysisters,
+        Makun7551_Icecrown_Ganjj,
+        Monkey130_Icecrown_Flydps,
+        Fatmulti11_Icecrown_Litgugua,
+        Fatmulti12_Icecrown_Litgugub,
+        Fatmulti13_Icecrown_Litguguc,
+        Fatmulti14_Icecrown_Litgugud,
+        Fatmulti15_Icecrown_Litgugue,
+        Fatmulti16_Icecrown_Litguguf,
+        Fatmulti17_Icecrown_Litgugug,
+        Fatmulti18_Icecrown_Litguguh,
+        Fatmulti19_Icecrown_lgmsi,
+        Fatmulti20_Icecrown_lgmsj,
+        Fatmulti21_Icecrown_lgmsk,
+        Fatmulti22_Icecrown_lgmsl,
+        Fatmulti23_Icecrown_lgsmm,
+        Fatmulti24_Icecrown_lgsmn,
+        Fatmulti25_Icecrown_lgsmo,
+        Fatmulti26_Icecrown_lgsmp,
+    ])
 
-cg_keybinding_warrior_and_dk = CharacterGroup([
-    Fitsheep_Icecrown_Sweetmonk,
-    Fatmulti1_Icecrown_Litgoatdka,
-    Fatmulti2_Icecrown_Litgoatdkb,
-    Fatmulti3_Icecrown_Litgoatdkc,
-    Fatmulti4_Icecrown_Litgoatdkd,
-    Fatmulti5_Icecrown_Litgoatdke,
-    Fatmulti10_Icecrown_Luxiaofeng,
-    Fatmulti10_Icecrown_Luxiaofeng,
-    Fatmulti10_Icecrown_Luxiaofeng,
-    Monkey130_Icecrown_Flydps,
-    Makun7551_Icecrown_Ganjj,
-])
+    cg_addons_multibox_super_minimal = CharacterGroup([
+        Fatmulti1_Icecrown_BatleFury,
+        Fatmulti9_Icecrown_Glowyy,
+        Makun7551_Icecrown_Laoshou,
+    ])
+
+    cg_keybinding_warrior_and_dk = CharacterGroup([
+        Fitsheep_Icecrown_Sweetmonk,
+        Fatmulti1_Icecrown_Litgoatdka,
+        Fatmulti2_Icecrown_Litgoatdkb,
+        Fatmulti3_Icecrown_Litgoatdkc,
+        Fatmulti4_Icecrown_Litgoatdkd,
+        Fatmulti5_Icecrown_Litgoatdke,
+        Fatmulti10_Icecrown_Luxiaofeng,
+        Fatmulti10_Icecrown_Luxiaofeng,
+        Fatmulti10_Icecrown_Luxiaofeng,
+        Monkey130_Icecrown_Flydps,
+        Makun7551_Icecrown_Ganjj,
+    ])
+
+    cg_test = CharacterGroup([
+        pass
+    ])
