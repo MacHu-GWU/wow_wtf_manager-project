@@ -46,6 +46,11 @@ class BaseGameClientConfig(BaseConfig):
             account=account,
         )
 
+    def to_game_client_config(self, input_path: Path) -> 'GameClientConfig':
+        kwargs = self.to_dict()
+        kwargs["input_path"] = input_path
+        return GameClientConfig(**kwargs)
+
 
 @attr.s
 class GameClientConfig(BaseGameClientConfig):
