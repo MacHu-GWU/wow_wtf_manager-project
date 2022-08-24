@@ -72,6 +72,15 @@ Fatmulti24_Icecrown_lgsmn = Character.from_string("Fatmulti24.Icecrown.lgsmn")
 Fatmulti25_Icecrown_lgsmo = Character.from_string("Fatmulti25.Icecrown.lgsmo")
 Fatmulti26_Icecrown_lgsmp = Character.from_string("Fatmulti26.Icecrown.lgsmp")
 
+# ------------------------------------------------------------------------------
+# Lordaeron
+# ------------------------------------------------------------------------------
+Fatmulti1_Lordaeron_Lgqsa = Character.from_string("Fatmulti1.Lordaeron.Lgqsa")
+Fatmulti2_Lordaeron_Lgqsb = Character.from_string("Fatmulti2.Lordaeron.Lgqsb")
+Fatmulti3_Lordaeron_Lgqsc = Character.from_string("Fatmulti3.Lordaeron.Lgqsc")
+Fatmulti4_Lordaeron_Lgqsd = Character.from_string("Fatmulti4.Lordaeron.Lgqsd")
+Fatmulti5_Lordaeron_Lgqse = Character.from_string("Fatmulti5.Lordaeron.Lgqse")
+
 
 class WarmaneGroup:
     # --- Group by accounts
@@ -488,5 +497,9 @@ class WarmaneGroup:
     ])
 
     cg_test = CharacterGroup([
-        pass
+        Fatmulti1_Lordaeron_Lgqsa,
+        Fatmulti2_Lordaeron_Lgqsb,
+        Fatmulti3_Lordaeron_Lgqsc,
+        Fatmulti4_Lordaeron_Lgqsd,
+        Fatmulti5_Lordaeron_Lgqse,
     ])

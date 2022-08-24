@@ -1,9 +1,9 @@
 
 Quartz3DB = {
 	["profileKeys"] = {
-		{% for character in all_characters %}
+		{%- for character in all_characters %}
 		["{{ character.character }} - {{ character.server }}"] = "MyDefault",
-		{% endfor %}
+		{%- endfor %}
 	},
 	["namespaces"] = {
 		["Swing"] = {

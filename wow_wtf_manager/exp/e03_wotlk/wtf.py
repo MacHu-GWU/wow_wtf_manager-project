@@ -14,6 +14,8 @@ import typing as T
 import attr
 from attrs_mate import AttrsClass
 from pathlib_mate import Path
+from jinja2 import Template
+from rich import print
 
 if T.TYPE_CHECKING:
     from .group import Character, CharacterGroup
@@ -173,10 +175,52 @@ class AccountSavedVariablesConfig(BaseAccountConfig):
     全账号级别的插件配置: 对应: ``WTF/Account/${AccountName}/SavedVariables/``
     """
     input_path: Path = attr.ib(default=None)
+    include_list: T.List[str] = attr.ib(factory=list)
+    exclude_list: T.List[str] = attr.ib(factory=list)
 
     @property
     def path(self) -> Path:
         return self.dir_account / "SavedVariables"
+
+    def evolve(
+        self,
+        include_list: T.Optional[T.List[str]] = None,
+        exclude_list: T.Optional[T.List[str]] = None,
+    ):
+        config = attr.evolve(self)
+        if include_list:
+            config.include_list = include_list
+        if exclude_list:
+            config.exclude_list = exclude_list
+        return config
+
+    @property
+    def lua_file_list(self) -> T.List[Path]:
+        if self.include_list:
+            include_list = list(self.include_list)
+        else:
+            include_list = [
+                p.fname
+                for p in self.input_path.select_by_ext(".lua")
+            ]
+        for addon in self.exclude_list:
+            try:
+                include_list.remove(addon)
+            except ValueError:
+                pass
+        return [
+            self.input_path / f"{addon}.lua"
+            for addon in include_list
+        ]
+
+    def apply(self, cg: 'CharacterKeybindingConfig', context: dict = None):
+        for char in cg.char_list:
+            config: CharacterAddonConfig = evolve_config(self, char)
+            config.path.mkdir_if_not_exists()
+            for p in self.lua_file_list:
+                tpl = Template(p.read_text())
+                content = tpl.render(all_characters=context["all_characters"])
+                (config.path / p.basename).write_text(content)
 
 
 # --- Per Character Level
@@ -222,6 +266,12 @@ class CharacterKeybindingConfig(BaseCharacterConfig):
     def path(self) -> Path:
         return self.dir_char / "binding-cache.wtf"
 
+    def apply(self, cg: 'CharacterGroup', context: dict = None):
+        for char in cg.char_list:
+            config: CharacterKeybindingConfig = evolve_config(self, char)
+            config.path.parent.mkdir_if_not_exists()
+            config.path.write_text(config.input_path.read_text())
+
 
 @attr.s
 class CharacterAddonConfig(BaseCharacterConfig):
@@ -233,6 +283,12 @@ class CharacterAddonConfig(BaseCharacterConfig):
     @property
     def path(self) -> Path:
         return self.dir_char / "AddOns.txt"
+
+    def apply(self, cg: 'CharacterGroup', context: dict = None):
+        for char in cg.char_list:
+            config: CharacterAddonConfig = evolve_config(self, char)
+            config.path.parent.mkdir_if_not_exists()
+            config.path.write_text(config.input_path.read_text())
 
 
 @attr.s
@@ -262,13 +318,9 @@ class CharacterUserInterfaceConfig(BaseCharacterConfig):
 
     def apply(self, cg: 'CharacterGroup', context: dict = None):
         for char in cg.char_list:
-            config: CharacterUserInterfaceConfig = attr.evolve(self)
-            config.account = char.account
-            config.server = char.server
-            config.character = char.character
-            print(config)
-
-        raise NotImplementedError
+            config: CharacterUserInterfaceConfig = evolve_config(self, char)
+            config.path.parent.mkdir_if_not_exists()
+            config.path.write_text(config.input_path.read_text())
 
 
 @attr.s
@@ -284,6 +336,12 @@ class CharacterLayoutConfig(BaseCharacterConfig):
     def path(self) -> Path:
         return self.dir_char / "layout-local.txt"
 
+    def apply(self, cg: 'CharacterGroup', context: dict = None):
+        for char in cg.char_list:
+            config: CharacterLayoutConfig = evolve_config(self, char)
+            config.path.parent.mkdir_if_not_exists()
+            config.path.write_text(config.input_path.read_text())
+
 
 @attr.s
 class CharacterChatConfig(BaseCharacterConfig):
@@ -298,6 +356,12 @@ class CharacterChatConfig(BaseCharacterConfig):
     def path(self) -> Path:
         return self.dir_char / "chat-cache.txt"
 
+    def apply(self, cg: 'CharacterGroup', context: dict = None):
+        for char in cg.char_list:
+            config: CharacterChatConfig = evolve_config(self, char)
+            config.path.parent.mkdir_if_not_exists()
+            config.path.write_text(config.input_path.read_text())
+
 
 @attr.s
 class CharacterSavedVariablesConfig(BaseCharacterConfig):
@@ -309,3 +373,23 @@ class CharacterSavedVariablesConfig(BaseCharacterConfig):
     @property
     def path(self) -> Path:
         return self.dir_char / "SavedVariables"
+
+
+def evolve_config(config: BaseConfig, char: 'Character') -> BaseConfig:
+    """
+    从 Character 对象中获得 账号, 服务器, 角色名 等信息, 并对 Config 对象进行更新.
+
+    该函数用于 WtfForm 中的 apply 方法.
+    """
+    config = attr.evolve(config)
+    if isinstance(config, BaseCharacterConfig):
+        config.account = char.account
+        config.server = char.server
+        config.character = char.character
+    elif isinstance(config, BaseAccountConfig):
+        config.account = char.account
+    elif isinstance(config, BaseGameClientConfig):
+        pass
+    else:
+        pass
+    return config

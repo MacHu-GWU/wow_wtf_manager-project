@@ -38,7 +38,23 @@ class WarmaneWTF:
     #     )
 
     class CharacterUserInterface:
-        default = dir_21_character_user_interface / "default.txt"
+        default = wtf.CharacterUserInterfaceConfig(input_path=dir_21_character_user_interface / "default.txt")
+
+    class CharacterChat:
+        default = wtf.CharacterChatConfig(input_path=dir_22_character_chat / "default.txt")
+
+    class CharacterKeybinding:
+        default = wtf.CharacterKeybindingConfig(input_path=dir_23_character_keybindings / "default.txt")
+        warrior_and_dk = wtf.CharacterKeybindingConfig(input_path=dir_23_character_keybindings / "warrior-and-dk.txt")
+
+    class CharacterLayout:
+        default = wtf.CharacterLayoutConfig(input_path=dir_24_character_layout / "default.txt")
+
+    class CharacterAddons:
+        multibox_minimal = wtf.CharacterAddonConfig(input_path=dir_25_character_addons / "05-multibox-minimal.txt")
+
+    class AccountSavedVariables:
+        account_saved_variables = wtf.AccountSavedVariablesConfig(input_path=dir_13_account_saved_variables)
 
     # class Test:
     #     base

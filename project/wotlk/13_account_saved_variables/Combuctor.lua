@@ -5,7 +5,7 @@ CombuctorDB2 = {
 	},
 	["version"] = "2.2.2",
 	["profiles"] = {
-		{% for character in all_characters %}
+		{%- for character in all_characters %}
 		["{{ character.character }} - {{ character.server }}"] = {
 			["inventory"] = {
 				["exclude"] = {
@@ -78,7 +78,7 @@ CombuctorDB2 = {
 				},
 			},
 		},
-		{% endfor %}
+		{%- endfor %}
 	},
 }
 CombuctorVersion = nil
