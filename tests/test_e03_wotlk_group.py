@@ -2,7 +2,6 @@
 
 import os
 
-from wow_wtf_manager.paths import dir_tests
 from wow_wtf_manager.exp.e03_wotlk.group import Character, CharacterGroup
 
 
@@ -47,15 +46,15 @@ class TestCharacterGroup:
 
         cg = CharacterGroup.union(cg_a, cg_b)
         assert len(cg.char_list) == 3
-        assert cg.char_list[2].name == "Char3"
+        assert cg.char_list[2].character == "Char3"
 
         cg = CharacterGroup.intersect(cg_a, cg_b)
         assert len(cg.char_list) == 1
-        assert cg.char_list[0].name == "Char2"
+        assert cg.char_list[0].character == "Char2"
 
         cg = CharacterGroup.difference(cg_a, cg_b)
         assert len(cg.char_list) == 1
-        assert cg.char_list[0].name == "Char1"
+        assert cg.char_list[0].character == "Char1"
 
 
 if __name__ == "__main__":

@@ -1,5 +1,14 @@
 # -*- coding: utf-8 -*-
 
+"""
+该模块主要实现了对 WTF 中的各种配置文件的抽象.
+
+``BaseConfig`` 是所有配置文件对象的基类. 每一个具体的配置文件就是一个 ``BaseConfig`` 子类
+的的实例. 这个实例是除了包含具体的配置文件引用自哪个文本文件, 同时也包含了 Wow dir,
+Account, Server, Character 的信息. 有了这些信息, 程序就知道将这些配置应用拷贝到哪个客户端
+文件的位置.
+"""
+
 import typing as T
 
 import attr
@@ -7,7 +16,7 @@ from attrs_mate import AttrsClass
 from pathlib_mate import Path
 
 if T.TYPE_CHECKING:
-    from .group import CharacterGroup
+    from .group import Character, CharacterGroup
 
 
 # ------------------------------------------------------------------------------
@@ -250,6 +259,16 @@ class CharacterUserInterfaceConfig(BaseCharacterConfig):
     @property
     def path(self) -> Path:
         return self.dir_char / "config-cache.txt"
+
+    def apply(self, cg: 'CharacterGroup', context: dict = None):
+        for char in cg.char_list:
+            config: CharacterUserInterfaceConfig = attr.evolve(self)
+            config.account = char.account
+            config.server = char.server
+            config.character = char.character
+            print(config)
+
+        raise NotImplementedError
 
 
 @attr.s

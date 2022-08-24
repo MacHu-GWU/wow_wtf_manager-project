@@ -3,11 +3,9 @@
 [run]
 omit =
     wow_wtf_manager/_version.py
-    wow_wtf_manager/cli.py
-    wow_wtf_manager/pkg/*
     wow_wtf_manager/docs/*
     wow_wtf_manager/tests/*
-    wow_wtf_manager/handlers/*
+    wow_wtf_manager/app/*
 
 [report]
 # Regexes for lines to exclude from consideration

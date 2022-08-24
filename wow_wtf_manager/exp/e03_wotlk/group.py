@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+"""
+这个模块是主要是实现了对 游戏角色的 抽象.
+"""
+
 import typing as T
 import functools
 
@@ -19,9 +23,14 @@ def right_zfill(s: str) -> str:
 @functools.total_ordering
 @attr.s(frozen=True, order=False)
 class Character(AttrsClass):
+    """
+    代表着一个具体的游戏角色. 一个角色是唯一的, 也是可排序的. 一个角色的 Key 在
+    ``sort_key`` 的方法中被定义. 同时我们也提供了一个工厂函数, 方便开发者从形如
+    ``account.server.character`` 的字符串创建对象.
+    """
     account: str = attr.ib(converter=titleize)
     server: str = attr.ib(converter=titleize)
-    name: str = attr.ib(converter=titleize)
+    character: str = attr.ib(converter=titleize)
 
     @classmethod
     def from_string(cls, s: str) -> 'Character':
@@ -32,7 +41,7 @@ class Character(AttrsClass):
 
     @property
     def sort_key(self) -> str:
-        return f"{right_zfill(self.account)}.{right_zfill(self.server)}.{right_zfill(self.name)}"
+        return f"{right_zfill(self.account)}.{right_zfill(self.server)}.{right_zfill(self.character)}"
 
     def __gt__(self, other: 'Character'):
         return self.sort_key > other.sort_key
@@ -43,6 +52,11 @@ class Character(AttrsClass):
 
 @attr.s
 class CharacterGroup(AttrsClass):
+    """
+    代表着多个游戏角色的集合. 成员可以是 "游戏角色", 也可以是 "游戏角色组" 本身.
+    由 ``char_list`` 方法来对里面的 "游戏角色" 成员进行遍历. 它本身支持集合中的
+    交, 并, 补 操作.
+    """
     char_or_group_list: T.List[T.Union[Character, 'CharacterGroup']] = attr.ib(factory=list)
 
     @property
