@@ -39,7 +39,7 @@ class WarmaneWTF:
 
     class AccountUserInterface:
         default = wtf.AccountUserInterfaceConfig(
-            input_path=dir_12_account_macros / "default.txt"
+            input_path=dir_11_account_user_interface / "default.txt"
         )
 
     class AccountMacros:
@@ -78,6 +78,17 @@ class WarmaneWTF:
     class CharacterAddons:
         multibox_minimal = wtf.CharacterAddonConfig(
             input_path=dir_25_character_addons / "05-multibox-minimal.txt"
+        )
+
+    class CharacterMacros:
+        paladin_prot_pve_and_retri_pve_lv80 = wtf.CharacterMacroConfig(
+            input_path=dir_26_character_macros / "paladin-lgqsa-prot-pve-and-retri-pve-lv80.txt"
+        )
+        paladin_retri_pve_and_prot_pve_lv80 = wtf.CharacterMacroConfig(
+            input_path=dir_26_character_macros / "paladin-lgqs-bcd-retri-pve-and-prot-pve-lv80.txt"
+        )
+        paladin_holy_pve_and_retri_pve_lv80 = wtf.CharacterMacroConfig(
+            input_path=dir_26_character_macros / "paladin-lgqse-holy-pve-and-retri-pve-lv80.txt"
         )
 
     class CharacterSavedVariables:

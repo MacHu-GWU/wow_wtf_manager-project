@@ -171,6 +171,14 @@ class AccountGroup:
         fatmulti30,
     ])
 
+    ag_fatmulti_1_to_5 = OrderedSet([
+        fatmulti1,
+        fatmulti2,
+        fatmulti3,
+        fatmulti4,
+        fatmulti5,
+    ])
+
 
 class CharacterGroup:
     """
@@ -394,6 +402,20 @@ class CharacterGroup:
         Fatmulti10_Icecrown_Luxiaofeng,
         Makun7551_Icecrown_Ganjj,
         Monkey130_Icecrown_Flydps,
+    ])
+
+    cg_class_paladin_prot_pve_and_retri_pve = OrderedSet([
+        Fatmulti1_Lordaeron_Lgqsa,
+    ])
+
+    cg_class_paladin_retri_pve_and_prot_pve = OrderedSet([
+        Fatmulti2_Lordaeron_Lgqsb,
+        Fatmulti3_Lordaeron_Lgqsc,
+        Fatmulti4_Lordaeron_Lgqsd,
+    ])
+
+    cg_class_paladin_holy_pve_and_retri_pve = OrderedSet([
+        Fatmulti5_Lordaeron_Lgqse,
     ])
 
     cg_class_shaman = OrderedSet([

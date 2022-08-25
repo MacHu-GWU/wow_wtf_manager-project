@@ -183,7 +183,13 @@ def apply_macros_cache_txt(
     所以我们在合并的时候, 要根据宏的名字来定位, 如果对已经存在的宏进行修改, 我们不能修改 ID.
     """
     macro_txt_data = MacroTxt.parse(macros_data_file)
-    macro_txt_game_client = MacroTxt.parse(game_client_file)
+    if Path(game_client_file).exists():
+        macro_txt_game_client = MacroTxt.parse(game_client_file)
+    else:
+        macro_txt_game_client = MacroTxt(
+            path=game_client_file,
+            macros=[],
+        )
 
     macro_txt_data.ensure_no_duplicate_id()
     macro_txt_data.ensure_no_duplicate_name()

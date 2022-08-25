@@ -18,7 +18,7 @@ from jinja2 import Template
 from rich import print
 
 if T.TYPE_CHECKING:
-    from .group import Character, CharacterGroup
+    from .group import Account, Character
 
 
 # ------------------------------------------------------------------------------
@@ -74,12 +74,8 @@ class GameClientConfig(BaseGameClientConfig):
     input_path: Path = attr.ib(default=None)
 
     @property
-    def path(self) -> Path:
+    def output_path(self) -> Path:
         return self.dir_wtf / "Config.wtf"
-
-    def apply(self, cg: 'CharacterGroup', context: dict = None):
-        self.path.parent.mkdir_if_not_exists()
-        self.path.write_text(self.input_path.read_text())
 
 
 # --- Per Account Level
@@ -125,17 +121,8 @@ class AccountKeybindingConfig(BaseAccountConfig):
     input_path: Path = attr.ib(default=None)
 
     @property
-    def path(self) -> Path:
+    def output_path(self) -> Path:
         return self.dir_account / "bindings-cache.wtf"
-
-    def apply(self, cg: 'CharacterGroup', context: dict = None):
-        account_set = set()
-        for char in cg.char_list:
-            if char.account not in account_set:
-                config: AccountKeybindingConfig = evolve_config(self, char)
-                config.path.parent.mkdir_if_not_exists()
-                config.path.write_text(config.input_path.read_text())
-                account_set.add(char.account)
 
 
 @attr.s
@@ -146,7 +133,7 @@ class AccountMacroConfig(BaseAccountConfig):
     input_path: Path = attr.ib(default=None)
 
     @property
-    def path(self) -> Path:
+    def output_path(self) -> Path:
         return self.dir_account / "macro-cache.txt"
 
 
@@ -160,17 +147,8 @@ class AccountUserInterfaceConfig(BaseAccountConfig):
     input_path: Path = attr.ib(default=None)
 
     @property
-    def path(self) -> Path:
+    def output_path(self) -> Path:
         return self.dir_account / "config-cache.txt"
-
-    def apply(self, cg: 'CharacterGroup', context: dict = None):
-        account_set = set()
-        for char in cg.char_list:
-            if char.account not in account_set:
-                config: AccountUserInterfaceConfig = evolve_config(self, char)
-                config.path.parent.mkdir_if_not_exists()
-                config.path.write_text(config.input_path.read_text())
-                account_set.add(char.account)
 
 
 @attr.s
@@ -183,7 +161,7 @@ class AccountCacheConfig(BaseAccountConfig):
     input_path: Path = attr.ib(default=None)
 
     @property
-    def path(self) -> Path:
+    def output_path(self) -> Path:
         return self.dir_account / "cache.md5"
 
 
@@ -197,7 +175,7 @@ class AccountSavedVariablesConfig(BaseAccountConfig):
     exclude_list: T.List[str] = attr.ib(factory=list)
 
     @property
-    def path(self) -> Path:
+    def output_path(self) -> Path:
         return self.dir_account / "SavedVariables"
 
     def evolve(
@@ -230,15 +208,6 @@ class AccountSavedVariablesConfig(BaseAccountConfig):
             self.input_path / f"{addon}.lua"
             for addon in include_list
         ]
-
-    def apply(self, cg: 'CharacterGroup', context: dict = None):
-        for char in cg.char_list:
-            config: AccountSavedVariablesConfig = evolve_config(self, char)
-            config.path.mkdir_if_not_exists()
-            for p in self.lua_file_list:
-                tpl = Template(p.read_text())
-                content = tpl.render(all_characters=context["all_characters"])
-                (config.path / p.basename).write_text(content)
 
 
 # --- Per Character Level
@@ -281,14 +250,8 @@ class CharacterKeybindingConfig(BaseCharacterConfig):
     input_path: Path = attr.ib(default=None)
 
     @property
-    def path(self) -> Path:
+    def output_path(self) -> Path:
         return self.dir_char / "binding-cache.wtf"
-
-    def apply(self, cg: 'CharacterGroup', context: dict = None):
-        for char in cg.char_list:
-            config: CharacterKeybindingConfig = evolve_config(self, char)
-            config.path.parent.mkdir_if_not_exists()
-            config.path.write_text(config.input_path.read_text())
 
 
 @attr.s
@@ -299,14 +262,8 @@ class CharacterAddonConfig(BaseCharacterConfig):
     input_path: Path = attr.ib(default=None)
 
     @property
-    def path(self) -> Path:
+    def output_path(self) -> Path:
         return self.dir_char / "AddOns.txt"
-
-    def apply(self, cg: 'CharacterGroup', context: dict = None):
-        for char in cg.char_list:
-            config: CharacterAddonConfig = evolve_config(self, char)
-            config.path.parent.mkdir_if_not_exists()
-            config.path.write_text(config.input_path.read_text())
 
 
 @attr.s
@@ -317,7 +274,7 @@ class CharacterMacroConfig(BaseCharacterConfig):
     input_path: Path = attr.ib(default=None)
 
     @property
-    def path(self) -> Path:
+    def output_path(self) -> Path:
         return self.dir_char / "macros-cache.txt"
 
 
@@ -331,14 +288,8 @@ class CharacterUserInterfaceConfig(BaseCharacterConfig):
     input_path: Path = attr.ib(default=None)
 
     @property
-    def path(self) -> Path:
+    def output_path(self) -> Path:
         return self.dir_char / "config-cache.txt"
-
-    def apply(self, cg: 'CharacterGroup', context: dict = None):
-        for char in cg.char_list:
-            config: CharacterUserInterfaceConfig = evolve_config(self, char)
-            config.path.parent.mkdir_if_not_exists()
-            config.path.write_text(config.input_path.read_text())
 
 
 @attr.s
@@ -351,14 +302,8 @@ class CharacterLayoutConfig(BaseCharacterConfig):
     input_path: Path = attr.ib(default=None)
 
     @property
-    def path(self) -> Path:
+    def output_path(self) -> Path:
         return self.dir_char / "layout-local.txt"
-
-    def apply(self, cg: 'CharacterGroup', context: dict = None):
-        for char in cg.char_list:
-            config: CharacterLayoutConfig = evolve_config(self, char)
-            config.path.parent.mkdir_if_not_exists()
-            config.path.write_text(config.input_path.read_text())
 
 
 @attr.s
@@ -371,14 +316,8 @@ class CharacterChatConfig(BaseCharacterConfig):
     input_path: Path = attr.ib(default=None)
 
     @property
-    def path(self) -> Path:
+    def output_path(self) -> Path:
         return self.dir_char / "chat-cache.txt"
-
-    def apply(self, cg: 'CharacterGroup', context: dict = None):
-        for char in cg.char_list:
-            config: CharacterChatConfig = evolve_config(self, char)
-            config.path.parent.mkdir_if_not_exists()
-            config.path.write_text(config.input_path.read_text())
 
 
 @attr.s
@@ -391,7 +330,7 @@ class CharacterSavedVariablesConfig(BaseCharacterConfig):
     exclude_list: T.List[str] = attr.ib(factory=list)
 
     @property
-    def path(self) -> Path:
+    def output_path(self) -> Path:
         return self.dir_char / "SavedVariables"
 
     def evolve(
@@ -425,31 +364,22 @@ class CharacterSavedVariablesConfig(BaseCharacterConfig):
             for addon in include_list
         ]
 
-    def apply(self, cg: 'CharacterGroup', context: dict = None):
-        for char in cg.char_list:
-            config: CharacterSavedVariablesConfig = evolve_config(self, char)
-            config.path.mkdir_if_not_exists()
-            for p in self.lua_file_list:
-                tpl = Template(p.read_text())
-                content = tpl.render(all_characters=context["all_characters"])
-                (config.path / p.basename).write_text(content)
 
-
-def evolve_config(config: BaseConfig, char: 'Character') -> BaseConfig:
+def evolve_from_account(config: BaseAccountConfig, account: 'Account') -> BaseAccountConfig:
     """
-    从 Character 对象中获得 账号, 服务器, 角色名 等信息, 并对 Config 对象进行更新.
-
-    该函数用于 WtfForm 中的 apply 方法.
+    从 Account 对象中获得 账号 信息, 并对 Config 对象进行更新.
     """
     config = attr.evolve(config)
-    if isinstance(config, BaseCharacterConfig):
-        config.account = char.account
-        config.server = char.server
-        config.character = char.character
-    elif isinstance(config, BaseAccountConfig):
-        config.account = char.account
-    elif isinstance(config, BaseGameClientConfig):
-        pass
-    else:
-        pass
+    config.account = account.account
+    return config
+
+
+def evolve_from_character(config: BaseCharacterConfig, character: 'Character') -> BaseCharacterConfig:
+    """
+    从 Character 对象中获得 账号, 服务器, 角色名 等信息, 并对 Config 对象进行更新.
+    """
+    config = attr.evolve(config)
+    config.account = character.account
+    config.server = character.server
+    config.character = character.character
     return config
