@@ -1,5 +1,28 @@
 # -*- coding: utf-8 -*-
 
+"""
+MySlot 是一款能将保存在服务器端的: "动作条上的按钮", "宏命令", "快捷键" 序列化成字符串
+并导出. 然后随时可以导入恢复的魔兽世界插件. 不过你是无法自己编辑这个导入的数据的.
+
+本模块用 Python 实现了一些接口, 使得你可以自己把 MySlot 的动作条数据导出, 自己在本地编辑,
+然后转回 MySlot 字符串导入.
+
+我们用 :class:`MySlotPythonData` 类来表示对 MySlot 导出字符串数据的抽象. 你能在
+:class:`MySlotPythonData` 和 MySlot 导出的字符串之间相互转化.
+
+:class:`MySlotPythonData` 本质上就是个数据容器, 里面记录了 120 个 :class:`SlotItem`,
+分别对应 10 个动作条上的 120 个按键, 以及所有的 :class:`Keybind`.
+
+而每个 :class:`SlotItem` 可能有四种情况:
+
+1. :class:`SpellAction`: 一个法术技能
+2. :class:`MacroAction`: 一个宏命令, 其中包含宏命令的具体信息
+3. :class:`ItemAction`: 一个物品, 点击为使用或者装备
+4. :class:`CompanionAction`: 一个坐骑或者小宠物
+
+我们分别对其进行数据建模, 并且实现在 Python 对象以及 Lua 对象之间的转化.
+"""
+
 import typing as T
 import os
 import enum
@@ -45,8 +68,8 @@ def huffman_encode(
     path_encode_output_file = Path(encode_output_file)
     path_humbase64_encode_exec_lua.write_text(
         path_humbase64_encode_lua.read_text()
-        .replace("{{ encode_input_file }}", path_encode_input_file.abspath)
-        .replace("{{ encode_output_file }}", path_encode_output_file.abspath)
+            .replace("{{ encode_input_file }}", path_encode_input_file.abspath)
+            .replace("{{ encode_output_file }}", path_encode_output_file.abspath)
     )
     subprocess.run([
         lua_executable, f"{path_humbase64_encode_exec_lua}"
@@ -64,8 +87,8 @@ def huffman_decode(
     path_decode_output_file = Path(decode_output_file)
     path_humbase64_decode_exec_lua.write_text(
         path_humbase64_decode_lua.read_text()
-        .replace("{{ decode_input_file }}", path_decode_input_file.abspath)
-        .replace("{{ decode_output_file }}", path_decode_output_file.abspath)
+            .replace("{{ decode_input_file }}", path_decode_input_file.abspath)
+            .replace("{{ decode_output_file }}", path_decode_output_file.abspath)
     )
     subprocess.run([
         lua_executable, f"{path_humbase64_decode_exec_lua}"
@@ -94,7 +117,7 @@ def lua_table_to_dict(lua_table) -> dict:
 
 class ActionTypeEnum(enum.Enum):
     """
-    枚举所有动作条上的按钮类型
+    枚举所有动作条上的按钮类型. 分别是: 法术, 宏, 物品, 坐骑
 
     Reference:
 
@@ -102,13 +125,15 @@ class ActionTypeEnum(enum.Enum):
     """
     spell = "S"
     macro = "M"
-    companion = "C"
     item = "I"
+    companion = "C"
 
 
 @attr.s
 class SlotItem(AttrsClass):
     """
+    代表了一个动作条上的格子.
+
     :param id: 动作条格子的序号, 是 1 ~ 120 中的一个值
     :param type: 这个格子里的按钮是什么类型? 是 ActionTypeEnum 的成员.
     :param action: 这个格子里的东西到底是什么动作, 有很多种不同的可能, 宏, 技能, 坐骑
@@ -157,7 +182,8 @@ class Action(AttrsClass):
 @attr.s
 class SpellAction(Action):
     """
-
+    :param name: 法术的名字, 命名规律为 ``${spell_name}(Rank ${level})`` 或是
+        ``${spell_name}``
     """
     name: str = attr.ib()
 
@@ -196,6 +222,17 @@ class CompanionType(enum.Enum):
 
 
 @attr.s
+class ItemAction(Action):
+    """
+    代表一个动作条上的物品.
+    """
+    id: str = attr.ib()
+
+    def to_lua_syntax(self) -> str:
+        return f"\"{self.id}\""
+
+
+@attr.s
 class CompanionAction(Action):
     """
     代表动作条上的坐骑或小宠物.
@@ -212,18 +249,13 @@ class CompanionAction(Action):
 
 
 @attr.s
-class ItemAction(Action):
-    """
-    代表一个动作条上的物品.
-    """
-    id: str = attr.ib()
-
-    def to_lua_syntax(self) -> str:
-        return f"\"{self.id}\""
-
-
-@attr.s
 class Keybind(AttrsClass):
+    """
+    代表一个快捷键绑定.
+
+    :param key: 快捷键
+    :param action: 快捷键对应的功能
+    """
     key: str = attr.ib()
     action: str = attr.ib()
 
