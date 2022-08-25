@@ -13,8 +13,26 @@ from pathlib_mate import Path
 
 from .group import Character, CharacterGroup
 from .wtf import (
-    BaseConfig, BaseGameClientConfig, BaseAccountConfig, BaseCharacterConfig,
-    AccountSavedVariablesConfig, CharacterSavedVariablesConfig,
+    BaseConfig,
+    BaseGameClientConfig,
+    BaseAccountConfig,
+    BaseCharacterConfig,
+
+    GameClientConfig,
+
+    AccountUserInterfaceConfig,
+    AccountMacroConfig,
+    AccountSavedVariablesConfig,
+    AccountKeybindingConfig,
+    AccountCacheConfig,
+
+    CharacterUserInterfaceConfig,
+    CharacterChatConfig,
+    CharacterKeybindingConfig,
+    CharacterLayoutConfig,
+    CharacterAddonConfig,
+    CharacterMacroConfig,
+    CharacterSavedVariablesConfig,
 )
 
 
@@ -46,17 +64,115 @@ class WtfForm(AttrsClass):
     def plan(self):
         pass
 
+    def apply_game_client_config(self, associations: T.List[Asso]):
+        for asso in associations:
+            asso.config
+
+    def apply_account_user_interface_config(self, associations: T.List[Asso]):
+        pass
+
+    def apply_account_macro_config(self, associations: T.List[Asso]):
+        pass
+
+    def apply_account_saved_variables_config(self, associations: T.List[Asso]):
+        pass
+
+    def apply_account_keybinding_config(self, associations: T.List[Asso]):
+        pass
+
+    def apply_account_cache_config(self, associations: T.List[Asso]):
+        pass
+
+    def apply_character_user_interface_config(self, associations: T.List[Asso]):
+        pass
+
+    def apply_character_chat_config(self, associations: T.List[Asso]):
+        pass
+
+    def apply_character_keybinding_config(self, associations: T.List[Asso]):
+        pass
+
+    def apply_character_layout_config(self, associations: T.List[Asso]):
+        pass
+
+    def apply_character_addon_config(self, associations: T.List[Asso]):
+        pass
+
+    def apply_character_macro_config(self, associations: T.List[Asso]):
+        pass
+
+    def apply_character_saved_variables_config(self, associations: T.List[Asso]):
+        pass
+
     def apply(self):
+        groups: T.Dict[str, dict] = {
+            GameClientConfig.__name__: {
+                "method": "apply_game_client_config",
+                "associations": [],
+            },
+            AccountUserInterfaceConfig.__name__: {
+                "method": "apply_account_user_interface_config",
+                "associations": [],
+            },
+            AccountMacroConfig.__name__: {
+                "method": "apply_account_macro_config",
+                "associations": [],
+            },
+            AccountSavedVariablesConfig.__name__: {
+                "method": "apply_account_saved_variables_config",
+                "associations": [],
+            },
+            AccountKeybindingConfig.__name__: {
+                "method": "apply_account_keybinding_config",
+                "associations": [],
+            },
+            AccountCacheConfig.__name__: {
+                "method": "apply_account_cache_config",
+                "associations": [],
+            },
+            CharacterUserInterfaceConfig.__name__: {
+                "method": "apply_character_user_interface_config",
+                "associations": [],
+            },
+            CharacterChatConfig.__name__: {
+                "method": "apply_character_chat_config",
+                "associations": [],
+            },
+            CharacterKeybindingConfig.__name__: {
+                "method": "apply_character_keybinding_config",
+                "associations": [],
+            },
+            CharacterLayoutConfig.__name__: {
+                "method": "apply_character_layout_config",
+                "associations": [],
+            },
+            CharacterAddonConfig.__name__: {
+                "method": "apply_character_addon_config",
+                "associations": [],
+            },
+            CharacterMacroConfig.__name__: {
+                "method": "apply_character_macro_config",
+                "associations": [],
+            },
+            CharacterSavedVariablesConfig.__name__: {
+                "method": "apply_character_saved_variables_config",
+                "associations": [],
+            },
+        }
         for asso in self.associations:
-            asso.config.apply(
-                asso.group,
-                context={
-                    "all_characters": self.all_characters
-                }
-            )
+            groups[asso.config.__class__.__name__]["associations"].append(asso)
+
+        for key, value in groups.items():
+            getattr(self, value["method"])(value["associations"])
 
     @functools.cached_property
     def all_characters(self) -> T.List[Character]:
+        """
+        把所有在 WtfForm 中所有涉及到的 Character 收集起来, 去重后形成一个列表后返回.
+
+        这是因为在 SavedVariables 里面插件的配置是用 Profile 来管理的. 然后你用不同的角色
+        登录后就根据 Profile Name 选择已经定义好的或是默认值. 这就需要虽然我们只对一个
+        """
         char_set = set()
         for asso in self.associations:
             for char in asso.group.char_list:

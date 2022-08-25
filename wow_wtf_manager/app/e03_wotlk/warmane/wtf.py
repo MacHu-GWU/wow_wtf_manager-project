@@ -23,38 +23,64 @@ base_game_client_config = wtf.BaseGameClientConfig(dir_wow=dir_wow)
 
 
 class WarmaneWTF:
-    # class GameClient:
-    #     c01_1920_1080_max = base_game_client_config.to_game_client_config(
-    #         dir_01_game_client / "1920-1080-max-graphic-sound.txt"
-    #     )
-    #     c2_1920_1080_minimal = base_game_client_config.to_game_client_config(
-    #         dir_01_game_client / "1920-1080-minimal-graphic-sound.txt"
-    #     )
-    #     c3_1600_900_minimal = base_game_client_config.to_game_client_config(
-    #         dir_01_game_client / "1600-900-minimal-graphic-sound.txt"
-    #     )
-    #     c4_1176_664_minimal = base_game_client_config.to_game_client_config(
-    #         dir_01_game_client / "1176-664-minimal-graphic-sound.txt"
-    #     )
+    class GameClient:
+        c01_1920_1080_max = wtf.GameClientConfig(
+            input_path=dir_01_game_client / "1920-1080-max-graphic-sound.txt"
+        )
+        c2_1920_1080_minimal = wtf.GameClientConfig(
+            input_path=dir_01_game_client / "1920-1080-minimal-graphic-sound.txt"
+        )
+        c3_1600_900_minimal = wtf.GameClientConfig(
+            input_path=dir_01_game_client / "1600-900-minimal-graphic-sound.txt"
+        )
+        c4_1176_664_minimal = wtf.GameClientConfig(
+            input_path=dir_01_game_client / "1176-664-minimal-graphic-sound.txt"
+        )
 
-    class CharacterUserInterface:
-        default = wtf.CharacterUserInterfaceConfig(input_path=dir_21_character_user_interface / "default.txt")
+    class AccountUserInterface:
+        default = wtf.AccountUserInterfaceConfig(
+            input_path=dir_12_account_macros / "default.txt"
+        )
 
-    class CharacterChat:
-        default = wtf.CharacterChatConfig(input_path=dir_22_character_chat / "default.txt")
-
-    class CharacterKeybinding:
-        default = wtf.CharacterKeybindingConfig(input_path=dir_23_character_keybindings / "default.txt")
-        warrior_and_dk = wtf.CharacterKeybindingConfig(input_path=dir_23_character_keybindings / "warrior-and-dk.txt")
-
-    class CharacterLayout:
-        default = wtf.CharacterLayoutConfig(input_path=dir_24_character_layout / "default.txt")
-
-    class CharacterAddons:
-        multibox_minimal = wtf.CharacterAddonConfig(input_path=dir_25_character_addons / "05-multibox-minimal.txt")
+    class AccountMacros:
+        default = wtf.AccountMacroConfig(
+            input_path=dir_12_account_macros / "default.txt"
+        )
 
     class AccountSavedVariables:
-        account_saved_variables = wtf.AccountSavedVariablesConfig(input_path=dir_13_account_saved_variables)
+        account_saved_variables = wtf.AccountSavedVariablesConfig(
+            input_path=dir_13_account_saved_variables
+        )
 
-    # class Test:
-    #     base
+    class CharacterUserInterface:
+        default = wtf.CharacterUserInterfaceConfig(
+            input_path=dir_21_character_user_interface / "default.txt"
+        )
+
+    class CharacterChat:
+        default = wtf.CharacterChatConfig(
+            input_path=dir_22_character_chat / "default.txt"
+        )
+
+    class CharacterKeybinding:
+        default = wtf.CharacterKeybindingConfig(
+            input_path=dir_23_character_keybindings / "default.txt"
+        )
+        warrior_and_dk = wtf.CharacterKeybindingConfig(
+            input_path=dir_23_character_keybindings / "warrior-and-dk.txt"
+        )
+
+    class CharacterLayout:
+        default = wtf.CharacterLayoutConfig(
+            input_path=dir_24_character_layout / "default.txt"
+        )
+
+    class CharacterAddons:
+        multibox_minimal = wtf.CharacterAddonConfig(
+            input_path=dir_25_character_addons / "05-multibox-minimal.txt"
+        )
+
+    class CharacterSavedVariables:
+        character_saved_variables = wtf.CharacterSavedVariablesConfig(
+            input_path=dir_27_character_saved_variables
+        )

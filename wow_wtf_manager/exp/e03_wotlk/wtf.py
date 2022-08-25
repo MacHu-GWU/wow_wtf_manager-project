@@ -74,12 +74,12 @@ class GameClientConfig(BaseGameClientConfig):
     input_path: Path = attr.ib(default=None)
 
     @property
-    def path(self) -> str:
+    def path(self) -> Path:
         return self.dir_wtf / "Config.wtf"
 
-    # def apply(self, cg: 'CharacterGroup', context: dict = None):
-    #     for char in cg.char_list:
-    #         char
+    def apply(self, cg: 'CharacterGroup', context: dict = None):
+        self.path.parent.mkdir_if_not_exists()
+        self.path.write_text(self.input_path.read_text())
 
 
 # --- Per Account Level
@@ -125,8 +125,17 @@ class AccountKeybindingConfig(BaseAccountConfig):
     input_path: Path = attr.ib(default=None)
 
     @property
-    def path(self) -> str:
+    def path(self) -> Path:
         return self.dir_account / "bindings-cache.wtf"
+
+    def apply(self, cg: 'CharacterGroup', context: dict = None):
+        account_set = set()
+        for char in cg.char_list:
+            if char.account not in account_set:
+                config: AccountKeybindingConfig = evolve_config(self, char)
+                config.path.parent.mkdir_if_not_exists()
+                config.path.write_text(config.input_path.read_text())
+                account_set.add(char.account)
 
 
 @attr.s
@@ -137,7 +146,7 @@ class AccountMacroConfig(BaseAccountConfig):
     input_path: Path = attr.ib(default=None)
 
     @property
-    def path(self) -> str:
+    def path(self) -> Path:
         return self.dir_account / "macro-cache.txt"
 
 
@@ -153,6 +162,15 @@ class AccountUserInterfaceConfig(BaseAccountConfig):
     @property
     def path(self) -> Path:
         return self.dir_account / "config-cache.txt"
+
+    def apply(self, cg: 'CharacterGroup', context: dict = None):
+        account_set = set()
+        for char in cg.char_list:
+            if char.account not in account_set:
+                config: AccountUserInterfaceConfig = evolve_config(self, char)
+                config.path.parent.mkdir_if_not_exists()
+                config.path.write_text(config.input_path.read_text())
+                account_set.add(char.account)
 
 
 @attr.s
@@ -213,9 +231,9 @@ class AccountSavedVariablesConfig(BaseAccountConfig):
             for addon in include_list
         ]
 
-    def apply(self, cg: 'CharacterKeybindingConfig', context: dict = None):
+    def apply(self, cg: 'CharacterGroup', context: dict = None):
         for char in cg.char_list:
-            config: CharacterAddonConfig = evolve_config(self, char)
+            config: AccountSavedVariablesConfig = evolve_config(self, char)
             config.path.mkdir_if_not_exists()
             for p in self.lua_file_list:
                 tpl = Template(p.read_text())
@@ -369,10 +387,52 @@ class CharacterSavedVariablesConfig(BaseCharacterConfig):
     全账号级别的插件配置: 对应: ``WTF/Account/${AccountName}/${ServerName}/${CharName}/SavedVariables/``
     """
     input_path: Path = attr.ib(default=None)
+    include_list: T.List[str] = attr.ib(factory=list)
+    exclude_list: T.List[str] = attr.ib(factory=list)
 
     @property
     def path(self) -> Path:
         return self.dir_char / "SavedVariables"
+
+    def evolve(
+        self,
+        include_list: T.Optional[T.List[str]] = None,
+        exclude_list: T.Optional[T.List[str]] = None,
+    ):
+        config = attr.evolve(self)
+        if include_list:
+            config.include_list = include_list
+        if exclude_list:
+            config.exclude_list = exclude_list
+        return config
+
+    @property
+    def lua_file_list(self) -> T.List[Path]:
+        if self.include_list:
+            include_list = list(self.include_list)
+        else:
+            include_list = [
+                p.fname
+                for p in self.input_path.select_by_ext(".lua")
+            ]
+        for addon in self.exclude_list:
+            try:
+                include_list.remove(addon)
+            except ValueError:
+                pass
+        return [
+            self.input_path / f"{addon}.lua"
+            for addon in include_list
+        ]
+
+    def apply(self, cg: 'CharacterGroup', context: dict = None):
+        for char in cg.char_list:
+            config: CharacterSavedVariablesConfig = evolve_config(self, char)
+            config.path.mkdir_if_not_exists()
+            for p in self.lua_file_list:
+                tpl = Template(p.read_text())
+                content = tpl.render(all_characters=context["all_characters"])
+                (config.path / p.basename).write_text(content)
 
 
 def evolve_config(config: BaseConfig, char: 'Character') -> BaseConfig:
