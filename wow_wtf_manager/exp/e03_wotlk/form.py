@@ -231,7 +231,6 @@ class WtfForm(AttrsClass):
         登录后就根据 Profile Name 选择已经定义好的或是默认值. 这就需要虽然我们只对一个
         """
         char_set_list = [self.all_characters, ]
-        char_set_list = list()
         for key, value in attr.asdict(self, recurse=False).items():
             if key.startswith("character_"):
                 for _, char_set in value:

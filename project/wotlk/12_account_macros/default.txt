@@ -71,6 +71,12 @@ END
 MACRO 106 "MB-FollowFcs" Ability_Hunter_Pet_Boar
 /follow focus
 END
+MACRO 117 "MB-FPSHigh" Ability_Druid_Eclipse
+/console maxfps 30
+END
+MACRO 118 "MB-FPSLow" Ability_Druid_EclipseOrange
+/console maxfps 5
+END
 MACRO 88 "MB-LeaveParty" Spell_Shaman_BlessingOfEternals
 /script LeaveParty()
 END
@@ -91,6 +97,7 @@ MACRO 67 "MB-TgtW01" Ability_Hunter_MarkedForDeath
 /tar batlefury
 /tar litgoatssa
 /tar litgoatdka
+/tar lgsqa
 END
 MACRO 94 "MB-TgtW03" Ability_Hunter_MarkedForDeath
 /tar opiitou
@@ -107,9 +114,10 @@ MACRO 97 "MB-TgtW09" Ability_Hunter_MarkedForDeath
 END
 MACRO 95 "MB-TgtW10" Ability_Hunter_MarkedForDeath
 /tar luxiaofeng
-/tar laoshou
-/tar ganjj
 /tar flydps
+/tar stophealling
+/tar ganjj
+/tar laoshou
 END
 MACRO 96 "MB-TgtW11" Ability_Hunter_MarkedForDeath
 /tar litgugua
