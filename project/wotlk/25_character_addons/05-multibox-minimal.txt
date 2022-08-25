@@ -60,6 +60,7 @@ PallyPower: enabled
 Parrot: disabled
 Quartz: disabled
 RatingBuster: disabled
+Recount: disabled
 Skada: disabled
 SkadaAbsorbs: disabled
 SkadaCC: disabled

@@ -20,8 +20,8 @@ END
 MACRO 16777223 "MB-BuffSelf" INV_Misc_QuestionMark
 #showtooltip
 /target player
-/castsequence [spec1] reset=target Seal of Vengeance, !Retribution Aura, Greater Blessing of Kings
-/castsequence [spec2] reset=target Righteous Fury, Seal of Vengeance, !Devotion Aura, Greater Blessing of Sanctuary
+/castsequence [spec:1] reset=target Seal of Vengeance, !Retribution Aura, Greater Blessing of Kings
+/castsequence [spec:2] reset=target Righteous Fury, Seal of Vengeance, !Devotion Aura, Greater Blessing of Sanctuary
 END
 MACRO 16777221 "MB-Shield" INV_Misc_QuestionMark
 #showtooltip
