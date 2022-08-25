@@ -1,8 +1,54 @@
 # -*- coding: utf-8 -*-
 
-from wow_wtf_manager.exp.e03_wotlk.group import Character, CharacterGroup
+"""
+枚举我在 Warmane 的各个服务器上拥有的所有 账号, 角色.
+然后将其分组, 以便于我在 WtfForm 的设置中将其排列组合, 应用不同的设置.
+"""
 
-# --- Define Characters
+from ordered_set import OrderedSet
+from wow_wtf_manager.exp.e03_wotlk.group import Account, Character
+
+# ==============================================================================
+# Define Individual Account / Character
+# ==============================================================================
+# All Account
+fatmulti1 = Account("fatmulti1")
+fatmulti2 = Account("fatmulti2")
+fatmulti3 = Account("fatmulti3")
+fatmulti4 = Account("fatmulti4")
+fatmulti5 = Account("fatmulti5")
+fitsheep = Account("fitsheep")
+fatmulti6 = Account("fatmulti6")
+fatmulti8 = Account("fatmulti8")
+fatmulti9 = Account("fatmulti9")
+fatmulti10 = Account("fatmulti10")
+makun7551 = Account("makun7551")
+monkey130 = Account("monkey130")
+fatmulti11 = Account("fatmulti11")
+fatmulti12 = Account("fatmulti12")
+fatmulti13 = Account("fatmulti13")
+fatmulti14 = Account("fatmulti14")
+fatmulti15 = Account("fatmulti15")
+fatmulti16 = Account("fatmulti16")
+fatmulti17 = Account("fatmulti17")
+fatmulti18 = Account("fatmulti18")
+fatmulti19 = Account("fatmulti19")
+fatmulti20 = Account("fatmulti20")
+fatmulti21 = Account("fatmulti21")
+fatmulti22 = Account("fatmulti22")
+fatmulti23 = Account("fatmulti23")
+fatmulti24 = Account("fatmulti24")
+fatmulti25 = Account("fatmulti25")
+fatmulti26 = Account("fatmulti26")
+fatmulti27 = Account("fatmulti27")
+fatmulti28 = Account("fatmulti28")
+fatmulti29 = Account("fatmulti29")
+fatmulti30 = Account("fatmulti30")
+
+# All Characters
+# ------------------------------------------------------------------------------
+# Icecrown Server
+# ------------------------------------------------------------------------------
 Fatmulti1_Icecrown_BatleFury = Character.from_string("Fatmulti1.Icecrown.BatleFury")
 Fatmulti1_Icecrown_Litgoatssa = Character.from_string("Fatmulti1.Icecrown.Litgoatssa")
 Fatmulti1_Icecrown_Litgoatzsa = Character.from_string("Fatmulti1.Icecrown.Litgoatzsa")
@@ -73,7 +119,7 @@ Fatmulti25_Icecrown_lgsmo = Character.from_string("Fatmulti25.Icecrown.lgsmo")
 Fatmulti26_Icecrown_lgsmp = Character.from_string("Fatmulti26.Icecrown.lgsmp")
 
 # ------------------------------------------------------------------------------
-# Lordaeron
+# Lordaeron Server
 # ------------------------------------------------------------------------------
 Fatmulti1_Lordaeron_Lgqsa = Character.from_string("Fatmulti1.Lordaeron.Lgqsa")
 Fatmulti2_Lordaeron_Lgqsb = Character.from_string("Fatmulti2.Lordaeron.Lgqsb")
@@ -82,49 +128,107 @@ Fatmulti4_Lordaeron_Lgqsd = Character.from_string("Fatmulti4.Lordaeron.Lgqsd")
 Fatmulti5_Lordaeron_Lgqse = Character.from_string("Fatmulti5.Lordaeron.Lgqse")
 
 
-class WarmaneGroup:
+# ==============================================================================
+# Define Account / Character Groups
+# ==============================================================================
+class AccountGroup:
+    """
+    ``ag_`` stands for account group is the common prefix,
+    can be used for search using PyCharm.
+    """
+    ag_all_account = OrderedSet([
+        fatmulti1,
+        fatmulti2,
+        fatmulti3,
+        fatmulti4,
+        fatmulti5,
+        fitsheep,
+        fatmulti6,
+        fatmulti8,
+        fatmulti9,
+        fatmulti10,
+        makun7551,
+        monkey130,
+        fatmulti11,
+        fatmulti12,
+        fatmulti13,
+        fatmulti14,
+        fatmulti15,
+        fatmulti16,
+        fatmulti17,
+        fatmulti18,
+        fatmulti19,
+        fatmulti20,
+        fatmulti21,
+        fatmulti22,
+        fatmulti23,
+        fatmulti24,
+        fatmulti25,
+        fatmulti26,
+        fatmulti27,
+        fatmulti28,
+        fatmulti29,
+        fatmulti30,
+    ])
+
+
+class CharacterGroup:
+    """
+    ``cg_`` stands for character group is the common prefix,
+    can be used for search using PyCharm.
+    """
     # --- Group by accounts
-    cg_account_fatmulti1 = CharacterGroup([
+    cg_account_fatmulti1 = OrderedSet([
         Fatmulti1_Icecrown_BatleFury,
         Fatmulti1_Icecrown_Litgoatssa,
         Fatmulti1_Icecrown_Litgoatzsa,
         Fatmulti1_Icecrown_Litgoatdka,
         Fatmulti1_Icecrown_Litgoatdza,
+
+        Fatmulti1_Lordaeron_Lgqsa,
     ])
 
-    cg_account_fatmulti2 = CharacterGroup([
+    cg_account_fatmulti2 = OrderedSet([
         Fatmulti2_Icecrown_Quentinquinn,
         Fatmulti2_Icecrown_Litgoatssb,
         Fatmulti2_Icecrown_Litgoatzsb,
         Fatmulti2_Icecrown_Litgoatdkb,
         Fatmulti2_Icecrown_Litgoatdzb,
+
+        Fatmulti2_Lordaeron_Lgqsb,
     ])
 
-    cg_account_fatmulti3 = CharacterGroup([
+    cg_account_fatmulti3 = OrderedSet([
         Fatmulti3_Icecrown_Opiitou,
         Fatmulti3_Icecrown_Litgoatssc,
         Fatmulti3_Icecrown_Litgoatzsc,
         Fatmulti3_Icecrown_Litgoatdkc,
         Fatmulti3_Icecrown_Litgoatdzc,
+
+        Fatmulti3_Lordaeron_Lgqsc,
     ])
 
-    cg_account_fatmulti4 = CharacterGroup([
+    cg_account_fatmulti4 = OrderedSet([
         Fatmulti4_Icecrown_Swagsonic,
         Fatmulti4_Icecrown_Litgoatssd,
         Fatmulti4_Icecrown_Litgoatzsd,
         Fatmulti4_Icecrown_Litgoatdkd,
         Fatmulti4_Icecrown_Litgoatdzd,
+
+        Fatmulti4_Lordaeron_Lgqsd,
     ])
 
-    cg_account_fatmulti5 = CharacterGroup([
+    cg_account_fatmulti5 = OrderedSet([
         Fatmulti5_Icecrown_Kangliu,
         Fatmulti5_Icecrown_Litgoatsse,
         Fatmulti5_Icecrown_Litgoatzse,
         Fatmulti5_Icecrown_Litgoatdke,
         Fatmulti5_Icecrown_Litgoatdze,
+
+        Fatmulti5_Lordaeron_Lgqse,
     ])
 
-    cg_account_fitsheep = CharacterGroup([
+    cg_account_fitsheep = OrderedSet([
         Fitsheep_Icecrown_Kindhearted,
         Fitsheep_Icecrown_Bordercollie,
         Fitsheep_Icecrown_Sweetmonk,
@@ -135,108 +239,108 @@ class WarmaneGroup:
         Fitsheep_Icecrown_Chunlily,
     ])
 
-    cg_account_fatmulti6 = CharacterGroup([
+    cg_account_fatmulti6 = OrderedSet([
         Fatmulti6_Icecrown_Kapacuk,
         Fatmulti6_Icecrown_Litgoatssh,
         Fatmulti6_Icecrown_HealthyMonk,
         Fatmulti6_Icecrown_Litgoatxdh,
     ])
 
-    cg_account_fatmulti8 = CharacterGroup([
+    cg_account_fatmulti8 = OrderedSet([
         Fatmulti8_Icecrown_Bunnysisters,
         Fatmulti8_Icecrown_Litgoatssi,
         Fatmulti8_Icecrown_Honeymonk,
         Fatmulti8_Icecrown_Litgoatxdi,
     ])
-    cg_account_fatmulti9 = CharacterGroup([
+    cg_account_fatmulti9 = OrderedSet([
         Fatmulti9_Icecrown_Glowyy,
         Fatmulti9_Icecrown_Litgoatssj,
         Fatmulti9_Icecrown_ChubbyMonk,
         Fatmulti9_Icecrown_Litgoatxdj,
     ])
 
-    cg_account_fatmulti10 = CharacterGroup([
+    cg_account_fatmulti10 = OrderedSet([
         Fatmulti10_Icecrown_Luxiaofeng,
         Fatmulti10_Icecrown_Litgoatssk,
         Fatmulti10_Icecrown_ShinyMonk,
         Fatmulti10_Icecrown_Litgoatxdk,
     ])
 
-    cg_account_makun7551 = CharacterGroup([
+    cg_account_makun7551 = OrderedSet([
         Makun7551_Icecrown_Laoshou,
         Makun7551_Icecrown_Ganjj,
     ])
 
-    cg_account_monkey130 = CharacterGroup([
+    cg_account_monkey130 = OrderedSet([
         Monkey130_Icecrown_Flydps,
     ])
 
-    cg_account_fatmulti11 = CharacterGroup([
+    cg_account_fatmulti11 = OrderedSet([
         Fatmulti11_Icecrown_Litgugua,
     ])
 
-    cg_account_fatmulti12 = CharacterGroup([
+    cg_account_fatmulti12 = OrderedSet([
         Fatmulti12_Icecrown_Litgugub,
     ])
 
-    cg_account_fatmulti13 = CharacterGroup([
+    cg_account_fatmulti13 = OrderedSet([
         Fatmulti13_Icecrown_Litguguc,
     ])
 
-    cg_account_fatmulti14 = CharacterGroup([
+    cg_account_fatmulti14 = OrderedSet([
         Fatmulti14_Icecrown_Litgugud,
     ])
 
-    cg_account_fatmulti15 = CharacterGroup([
+    cg_account_fatmulti15 = OrderedSet([
         Fatmulti15_Icecrown_Litgugue,
     ])
 
-    cg_account_fatmulti16 = CharacterGroup([
+    cg_account_fatmulti16 = OrderedSet([
         Fatmulti16_Icecrown_Litguguf,
     ])
 
-    cg_account_fatmulti17 = CharacterGroup([
+    cg_account_fatmulti17 = OrderedSet([
         Fatmulti17_Icecrown_Litgugug,
     ])
 
-    cg_account_fatmulti18 = CharacterGroup([
+    cg_account_fatmulti18 = OrderedSet([
         Fatmulti18_Icecrown_Litguguh,
     ])
 
-    cg_account_fatmulti19 = CharacterGroup([
+    cg_account_fatmulti19 = OrderedSet([
         Fatmulti19_Icecrown_lgmsi,
     ])
 
-    cg_account_fatmulti20 = CharacterGroup([
+    cg_account_fatmulti20 = OrderedSet([
         Fatmulti20_Icecrown_lgmsj,
     ])
 
-    cg_account_fatmulti21 = CharacterGroup([
+    cg_account_fatmulti21 = OrderedSet([
         Fatmulti21_Icecrown_lgmsk,
     ])
 
-    cg_account_fatmulti22 = CharacterGroup([
+    cg_account_fatmulti22 = OrderedSet([
         Fatmulti22_Icecrown_lgmsl,
     ])
 
-    cg_account_fatmulti23 = CharacterGroup([
+    cg_account_fatmulti23 = OrderedSet([
         Fatmulti23_Icecrown_lgsmm,
     ])
 
-    cg_account_fatmulti24 = CharacterGroup([
+    cg_account_fatmulti24 = OrderedSet([
         Fatmulti24_Icecrown_lgsmn,
     ])
 
-    cg_account_fatmulti25 = CharacterGroup([
+    cg_account_fatmulti25 = OrderedSet([
         Fatmulti25_Icecrown_lgsmo,
     ])
 
-    cg_account_fatmulti26 = CharacterGroup([
+    cg_account_fatmulti26 = OrderedSet([
         Fatmulti26_Icecrown_lgsmp,
     ])
 
     # --- Group by all character
-    cg_all_character = CharacterGroup([
+    cg_all_character = OrderedSet.union(
         cg_account_fatmulti1,
         cg_account_fatmulti2,
         cg_account_fatmulti3,
@@ -265,10 +369,73 @@ class WarmaneGroup:
         cg_account_fatmulti24,
         cg_account_fatmulti25,
         cg_account_fatmulti26,
+    )
+
+    # --- Group by server
+    cg_server_icecrown = OrderedSet([
+        char
+        for char in cg_all_character
+        if char.server == "Icecrown"
+    ])
+
+    cg_server_lordaeron = OrderedSet([
+        char
+        for char in cg_all_character
+        if char.server == "Lordaeron"
     ])
 
     # --- Group by class
-    cg_characters_warlock_pvp = CharacterGroup([
+    cg_class_dk = OrderedSet([
+        Fatmulti1_Icecrown_Litgoatdka,
+        Fatmulti2_Icecrown_Litgoatdkb,
+        Fatmulti3_Icecrown_Litgoatdkc,
+        Fatmulti4_Icecrown_Litgoatdkd,
+        Fatmulti5_Icecrown_Litgoatdke,
+        Fatmulti10_Icecrown_Luxiaofeng,
+        Makun7551_Icecrown_Ganjj,
+        Monkey130_Icecrown_Flydps,
+    ])
+
+    cg_class_shaman = OrderedSet([
+        Fatmulti2_Icecrown_Quentinquinn,
+        Fatmulti23_Icecrown_lgsmm,
+        Fatmulti24_Icecrown_lgsmn,
+        Fatmulti25_Icecrown_lgsmo,
+        Fatmulti26_Icecrown_lgsmp,
+    ])
+
+    cg_class_druid = OrderedSet([
+        Fatmulti3_Icecrown_Opiitou,
+        Fatmulti8_Icecrown_Bunnysisters,
+        Fatmulti11_Icecrown_Litgugua,
+        Fatmulti12_Icecrown_Litgugub,
+        Fatmulti13_Icecrown_Litguguc,
+        Fatmulti14_Icecrown_Litgugud,
+        Fatmulti15_Icecrown_Litgugue,
+        Fatmulti16_Icecrown_Litguguf,
+        Fatmulti17_Icecrown_Litgugug,
+        Fatmulti18_Icecrown_Litguguh,
+    ])
+
+    cg_class_warlock = OrderedSet([
+        Fatmulti1_Icecrown_Litgoatssa,
+        Fatmulti2_Icecrown_Litgoatssb,
+        Fatmulti3_Icecrown_Litgoatssc,
+        Fatmulti4_Icecrown_Litgoatssd,
+        Fatmulti5_Icecrown_Litgoatsse,
+        Fitsheep_Icecrown_Kindhearted,
+    ])
+
+    cg_class_priest = OrderedSet([
+        Fatmulti5_Icecrown_Kangliu,
+        Fitsheep_Icecrown_Bordercollie,
+        Fatmulti19_Icecrown_lgmsi,
+        Fatmulti20_Icecrown_lgmsj,
+        Fatmulti21_Icecrown_lgmsk,
+        Fatmulti22_Icecrown_lgmsl,
+    ])
+
+    cg_characters_warlock_pvp = OrderedSet([
         Fatmulti1_Icecrown_Litgoatssa,
         Fatmulti2_Icecrown_Litgoatssb,
         Fatmulti3_Icecrown_Litgoatssc,
@@ -276,7 +443,7 @@ class WarmaneGroup:
         Fatmulti5_Icecrown_Litgoatsse,
     ])
 
-    cg_characters_high_gs = CharacterGroup([
+    cg_characters_high_gs = OrderedSet([
         Fatmulti1_Icecrown_BatleFury,
         Fatmulti2_Icecrown_Quentinquinn,
         Fatmulti3_Icecrown_Opiitou,
@@ -291,7 +458,7 @@ class WarmaneGroup:
         Fatmulti10_Icecrown_Luxiaofeng,
     ])
 
-    cg_characters_8_dudu = CharacterGroup([
+    cg_characters_8_dudu = OrderedSet([
         Fatmulti11_Icecrown_Litgugua,
         Fatmulti12_Icecrown_Litgugub,
         Fatmulti13_Icecrown_Litguguc,
@@ -302,40 +469,40 @@ class WarmaneGroup:
         Fatmulti18_Icecrown_Litguguh,
     ])
 
-    cg_characters_4_litgugua_to_litgugud = CharacterGroup([
+    cg_characters_4_litgugua_to_litgugud = OrderedSet([
         Fatmulti11_Icecrown_Litgugua,
         Fatmulti12_Icecrown_Litgugub,
         Fatmulti13_Icecrown_Litguguc,
         Fatmulti14_Icecrown_Litgugud,
     ])
 
-    cg_characters_4_litgugue_to_litguguh = CharacterGroup([
+    cg_characters_4_litgugue_to_litguguh = OrderedSet([
         Fatmulti15_Icecrown_Litgugue,
         Fatmulti16_Icecrown_Litguguf,
         Fatmulti17_Icecrown_Litgugug,
         Fatmulti18_Icecrown_Litguguh,
     ])
 
-    cg_class_paladins = CharacterGroup([
+    cg_class_paladins = OrderedSet([
         Fatmulti1_Icecrown_BatleFury,
         Fatmulti9_Icecrown_Glowyy,
         Fatmulti6_Icecrown_HealthyMonk,
     ])
 
-    cg_addons_raid_mode_pala_tanks = CharacterGroup([
+    cg_addons_raid_mode_pala_tanks = OrderedSet([
         Fatmulti1_Icecrown_BatleFury,
     ])
 
-    cg_addons_raid_mode_non_pala_tanks = CharacterGroup([
+    cg_addons_raid_mode_non_pala_tanks = OrderedSet([
         Fatmulti10_Icecrown_Luxiaofeng,
     ])
 
-    cg_addons_raid_mode_pala_other_members = CharacterGroup([
+    cg_addons_raid_mode_pala_other_members = OrderedSet([
         Fatmulti9_Icecrown_Glowyy,
         Fatmulti6_Icecrown_HealthyMonk,
     ])
 
-    cg_addons_raid_mode_non_pala_other_members = CharacterGroup([
+    cg_addons_raid_mode_non_pala_other_members = OrderedSet([
         Fatmulti2_Icecrown_Quentinquinn,
         Fatmulti3_Icecrown_Opiitou,
         Fatmulti4_Icecrown_Swagsonic,
@@ -358,11 +525,11 @@ class WarmaneGroup:
         Fatmulti10_Icecrown_ShinyMonk,
     ])
 
-    cg_addons_enable_all = CharacterGroup([
+    cg_addons_enable_all = OrderedSet([
         Fitsheep_Icecrown_Angorarabbit,
     ])
 
-    cg_addons_single_player_comprehensive_but_pallypower = CharacterGroup([
+    cg_addons_single_player_comprehensive_but_pallypower = OrderedSet([
         Fatmulti2_Icecrown_Quentinquinn,
         Fatmulti3_Icecrown_Opiitou,
         Fatmulti4_Icecrown_Swagsonic,
@@ -377,13 +544,13 @@ class WarmaneGroup:
         Fitsheep_Icecrown_Sweetmonk,
     ])
 
-    cg_addons_single_player_comprehensive = CharacterGroup([
+    cg_addons_single_player_comprehensive = OrderedSet([
         Fatmulti1_Icecrown_BatleFury,
         Fatmulti9_Icecrown_Glowyy,
         Makun7551_Icecrown_Laoshou,
     ])
 
-    cg_addons_multibox_minimal_but_pallypower = CharacterGroup([
+    cg_addons_multibox_minimal_but_pallypower = OrderedSet([
         Fatmulti1_Icecrown_Litgoatssa,
         Fatmulti1_Icecrown_Litgoatzsa,
         Fatmulti1_Icecrown_Litgoatdka,
@@ -438,7 +605,7 @@ class WarmaneGroup:
         Fatmulti26_Icecrown_lgsmp,
     ])
 
-    cg_addons_multibox_super_minimal_but_pallypower = CharacterGroup([
+    cg_addons_multibox_super_minimal_but_pallypower = OrderedSet([
         Fatmulti1_Icecrown_Litgoatssa,
         Fatmulti1_Icecrown_Litgoatdka,
         Fatmulti2_Icecrown_Quentinquinn,
@@ -476,13 +643,13 @@ class WarmaneGroup:
         Fatmulti26_Icecrown_lgsmp,
     ])
 
-    cg_addons_multibox_super_minimal = CharacterGroup([
+    cg_addons_multibox_super_minimal = OrderedSet([
         Fatmulti1_Icecrown_BatleFury,
         Fatmulti9_Icecrown_Glowyy,
         Makun7551_Icecrown_Laoshou,
     ])
 
-    cg_keybinding_warrior_and_dk = CharacterGroup([
+    cg_keybinding_warrior_and_dk = OrderedSet([
         Fitsheep_Icecrown_Sweetmonk,
         Fatmulti1_Icecrown_Litgoatdka,
         Fatmulti2_Icecrown_Litgoatdkb,
@@ -496,7 +663,7 @@ class WarmaneGroup:
         Makun7551_Icecrown_Ganjj,
     ])
 
-    cg_test = CharacterGroup([
+    cg_test = OrderedSet([
         Fatmulti1_Lordaeron_Lgqsa,
         Fatmulti2_Lordaeron_Lgqsb,
         Fatmulti3_Lordaeron_Lgqsc,
