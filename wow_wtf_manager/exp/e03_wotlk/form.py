@@ -41,6 +41,10 @@ from .wtf import (
 class WtfForm(AttrsClass):
     """
     一个具体的 WTF 表格, 定义了哪些角色使用哪些配置.
+
+    :param apply_macros_cache_txt: 对于不同的资料片, 宏命令的格式是有所不同的.
+        这里我们没办法把这个做成一个基类, 所以只能把这个逻辑做成一个属性了. TODO: 把
+        这个函数解耦, 作为工厂函数传入.
     """
 
     dir_wow: Path = attr.ib()
@@ -87,6 +91,7 @@ class WtfForm(AttrsClass):
 
     all_characters: OrderedSet[Character] = attr.ib(factory=OrderedSet)
     verbose: bool = attr.ib(default=True)
+    apply_macros_cache_txt: callable = attr.ib(default=None)
 
     def __attrs_post_init__(self):
         self.game_client_config.dir_wow = self.dir_wow

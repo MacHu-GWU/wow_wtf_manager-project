@@ -2,7 +2,6 @@
 
 import os
 
-from ordered_set import OrderedSet
 from wow_wtf_manager.paths import dir_wotlk_project
 from wow_wtf_manager.app.e03_wotlk.warmane.form import warmane_wtf_form
 

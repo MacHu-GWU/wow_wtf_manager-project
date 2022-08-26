@@ -2,6 +2,7 @@
 
 from pathlib_mate import Path
 from wow_wtf_manager.exp.e03_wotlk.form import WtfForm
+from wow_wtf_manager.exp.e03_wotlk.macro import apply_macros_cache_txt
 
 from .wtf import WarmaneWTF
 from .group import AccountGroup, CharacterGroup
@@ -84,4 +85,5 @@ warmane_wtf_form = WtfForm(
             CharacterGroup.cg_test,
         )
     ],
+    apply_macros_cache_txt=apply_macros_cache_txt,
 )
