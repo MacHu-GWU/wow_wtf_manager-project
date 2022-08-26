@@ -2,8 +2,9 @@
 
 from pathlib_mate import Path
 from wow_wtf_manager.exp.e03_wotlk.form import WtfForm
-from wow_wtf_manager.app.e03_wotlk.warmane.wtf import WarmaneWTF
-from wow_wtf_manager.app.e03_wotlk.warmane.group import AccountGroup, CharacterGroup
+
+from .wtf import WarmaneWTF
+from .group import AccountGroup, CharacterGroup
 
 warmane_wtf_form = WtfForm(
     dir_wow=Path(r"C:\Users\husan\Documents\Games\WoW-Root\Client\World-of-Warcraft-3.3.5-enUS-Warmane"),
