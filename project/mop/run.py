@@ -6,9 +6,9 @@ from wow_wtf_manager.exp.e03_wotlk.form import WtfForm
 from wow_wtf_manager.app.e05_mop.tauri.wtf import WarmaneWTF
 from wow_wtf_manager.app.e05_mop.tauri.group import AccountGroup, CharacterGroup
 
-warmane_wtf_form = WtfForm(
-    # dir_wow=Path(r"/Users/sanhehu/Documents/GitHub/wow_wtf_manager-project/project/wotlk/world-of-warcraft"),
-    dir_wow=Path(r"C:\Users\husan\Documents\Games\WoW-Root\Client\World-of-Warcraft-5.4.8-Tauri"),
+tauri_wtf_form = WtfForm(
+    dir_wow=Path(r"/Users/sanhehu/Documents/GitHub/wow_wtf_manager-project/project/mop/world-of-warcraft"),
+    # dir_wow=Path(r"C:\Users\husan\Documents\Games\WoW-Root\Client\World-of-Warcraft-5.4.8-Tauri"),
     game_client_config=WarmaneWTF.GameClient.c01_2560_1400_high_graphic_sound,
     all_characters=CharacterGroup.cg_account_fatmulti_1_to_5,
     account_user_interface_config=[
@@ -88,5 +88,5 @@ warmane_wtf_form = WtfForm(
         )
     ],
 )
-# warmane_wtf_form.plan()
-warmane_wtf_form.apply()
+tauri_wtf_form.plan()
+# tauri_wtf_form.apply()

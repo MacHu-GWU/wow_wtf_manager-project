@@ -18,10 +18,6 @@ from ..e03_wotlk.macro import apply_macros_cache_txt
 
 from .group import Account, Character
 from .wtf import (
-    BaseConfig,
-    BaseGameClientConfig,
-    BaseAccountConfig,
-    BaseCharacterConfig,
     GameClientConfig,
     AccountUserInterfaceConfig,
     AccountMacroConfig,
@@ -185,31 +181,36 @@ class WtfForm(AttrsClass):
     def apply_character_user_interface_config(self, plan=False):
         self._print_header(f"apply Character User Interface Config '{CharacterUserInterfaceConfig._file}'")
         self._apply_character_single_file_config(
-            attr="character_user_interface_config"
+            attr="character_user_interface_config",
+            plan=plan,
         )
 
     def apply_character_chat_config(self, plan=False):
         self._print_header(f"apply Character Chat Config '{CharacterChatConfig._file}'")
         self._apply_character_single_file_config(
-            attr="character_chat_config"
+            attr="character_chat_config",
+            plan=plan,
         )
 
     def apply_character_keybinding_config(self, plan=False):
         self._print_header(f"apply Character Keybinding Config '{CharacterKeybindingConfig._file}'")
         self._apply_character_single_file_config(
-            attr="character_keybinding_config"
+            attr="character_keybinding_config",
+            plan=plan,
         )
 
     def apply_character_layout_config(self, plan=False):
         self._print_header(f"apply Character Layout Config '{CharacterLayoutConfig._file}'")
         self._apply_character_single_file_config(
-            attr="character_layout_config"
+            attr="character_layout_config",
+            plan=plan,
         )
 
     def apply_character_addon_config(self, plan=False):
         self._print_header(f"apply Character Addon Config '{CharacterAddonConfig._file}'")
         self._apply_character_single_file_config(
-            attr="character_addon_config"
+            attr="character_addon_config",
+            plan=plan,
         )
 
     def apply_character_macro_config(self, plan=False):
