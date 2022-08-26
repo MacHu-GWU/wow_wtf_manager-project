@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from pathlib_mate import Path
-from ordered_set import OrderedSet
 from wow_wtf_manager.exp.e03_wotlk.form import WtfForm
 from wow_wtf_manager.app.e03_wotlk.warmane.wtf import WarmaneWTF
 from wow_wtf_manager.app.e03_wotlk.warmane.group import AccountGroup, CharacterGroup
 
 warmane_wtf_form = WtfForm(
-    # dir_wow=Path(r"/Users/sanhehu/Documents/GitHub/wow_wtf_manager-project/project/wotlk/world-of-warcraft"),
     dir_wow=Path(r"C:\Users\husan\Documents\Games\WoW-Root\Client\World-of-Warcraft-3.3.5-enUS-Warmane"),
     game_client_config=WarmaneWTF.GameClient.c3_1600_900_minimal,
     all_characters=CharacterGroup.cg_all_character,
@@ -86,5 +84,3 @@ warmane_wtf_form = WtfForm(
         )
     ],
 )
-# warmane_wtf_form.plan()
-warmane_wtf_form.apply()

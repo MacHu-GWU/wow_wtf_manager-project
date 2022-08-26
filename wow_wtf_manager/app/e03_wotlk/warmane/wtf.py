@@ -1,21 +1,19 @@
 # -*- coding: utf-8 -*-
 
-from pathlib_mate import Path
 from wow_wtf_manager.exp.e03_wotlk import wtf
-from wow_wtf_manager.paths import dir_project_root
+from wow_wtf_manager.paths import dir_wotlk_project
 
-dir_app = dir_project_root / "project" / "wotlk"
-dir_01_game_client = dir_app / "01_game_client"
-dir_11_account_user_interface = dir_app / "11_account_user_interface"
-dir_12_account_macros = dir_app / "12_account_macros"
-dir_13_account_saved_variables = dir_app / "13_account_saved_variables"
-dir_21_character_user_interface = dir_app / "21_character_user_interface"
-dir_22_character_chat = dir_app / "22_character_chat"
-dir_23_character_keybindings = dir_app / "23_character_keybindings"
-dir_24_character_layout = dir_app / "24_character_layout"
-dir_25_character_addons = dir_app / "25_character_addons"
-dir_26_character_macros = dir_app / "26_character_macros"
-dir_27_character_saved_variables = dir_app / "27_character_saved_variables"
+dir_01_game_client = dir_wotlk_project / "01_game_client"
+dir_11_account_user_interface = dir_wotlk_project / "11_account_user_interface"
+dir_12_account_macros = dir_wotlk_project / "12_account_macros"
+dir_13_account_saved_variables = dir_wotlk_project / "13_account_saved_variables"
+dir_21_character_user_interface = dir_wotlk_project / "21_character_user_interface"
+dir_22_character_chat = dir_wotlk_project / "22_character_chat"
+dir_23_character_keybindings = dir_wotlk_project / "23_character_keybindings"
+dir_24_character_layout = dir_wotlk_project / "24_character_layout"
+dir_25_character_addons = dir_wotlk_project / "25_character_addons"
+dir_26_character_macros = dir_wotlk_project / "26_character_macros"
+dir_27_character_saved_variables = dir_wotlk_project / "27_character_saved_variables"
 
 
 class WarmaneWTF:

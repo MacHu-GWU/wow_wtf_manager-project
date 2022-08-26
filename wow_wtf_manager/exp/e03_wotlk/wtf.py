@@ -15,7 +15,7 @@ import attr
 from attrs_mate import AttrsClass
 from pathlib_mate import Path
 
-if T.TYPE_CHECKING:
+if T.TYPE_CHECKING:  # pragma: no cover
     from .group import Account, Character
 
 
@@ -36,9 +36,6 @@ class BaseConfig(AttrsClass):
     - 宏命令
     - 插件的 SavedVariables
     """
-
-    def apply(self, cg: 'CharacterGroup', context: dict = None):
-        raise NotImplementedError
 
 
 @attr.s
