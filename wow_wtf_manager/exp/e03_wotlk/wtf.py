@@ -134,7 +134,7 @@ class AccountMacroConfig(BaseAccountConfig):
 
     @property
     def output_path(self) -> Path:
-        return self.dir_account / "macro-cache.txt"
+        return self.dir_account / "macros-cache.txt"
 
 
 @attr.s
@@ -148,7 +148,7 @@ class AccountUserInterfaceConfig(BaseAccountConfig):
 
     @property
     def output_path(self) -> Path:
-        return self.dir_account / "config-cache.txt"
+        return self.dir_account / "config-cache.wtf"
 
 
 @attr.s
@@ -251,7 +251,7 @@ class CharacterKeybindingConfig(BaseCharacterConfig):
 
     @property
     def output_path(self) -> Path:
-        return self.dir_char / "binding-cache.wtf"
+        return self.dir_char / "bindings-cache.wtf"
 
 
 @attr.s
@@ -289,7 +289,7 @@ class CharacterUserInterfaceConfig(BaseCharacterConfig):
 
     @property
     def output_path(self) -> Path:
-        return self.dir_char / "config-cache.txt"
+        return self.dir_char / "config-cache.wtf"
 
 
 @attr.s

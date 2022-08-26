@@ -24,7 +24,7 @@ fatmulti5 = Account("fatmulti5")
 # ------------------------------------------------------------------------------
 Fatmulti1_Evermoon_Carrotflower = Character.from_string("Fatmulti1.[EN] Evermoon.Carrotflower")
 Fatmulti2_Evermoon_Carrotroot = Character.from_string("Fatmulti2.[EN] Evermoon.Carrotroot")
-Fatmulti3_Evermoon_Carrotstem = Character.from_string("Fatmulti3.[EN] Evermoon.Carrotstem")
+Fatmulti3_Evermoon_Carrotstem = Character.from_string("Famulti3.[EN] Evermoon.Carrotstem")
 Fatmulti4_Evermoon_Carrotleaf = Character.from_string("Fatmulti4.[EN] Evermoon.Carrotleaf")
 Fatmulti5_Evermoon_Carrotseed = Character.from_string("Fatmulti5.[EN] Evermoon.Carrotseed")
 

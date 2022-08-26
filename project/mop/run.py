@@ -56,6 +56,7 @@ warmane_wtf_form = WtfForm(
             CharacterGroup.cg_account_fatmulti_1_to_5,
         )
     ],
+
     # character_addon_config=[
     #     (
     #         WarmaneWTF.CharacterAddons.multibox_minimal,
@@ -76,6 +77,7 @@ warmane_wtf_form = WtfForm(
     #         CharacterGroup.cg_class_paladin_holy_pve_and_retri_pve,
     #     ),
     # ],
+
     character_saved_variables_config=[
         (
             WarmaneWTF.CharacterSavedVariables.character_saved_variables.evolve(
