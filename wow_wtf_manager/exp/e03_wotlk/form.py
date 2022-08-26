@@ -137,6 +137,7 @@ class WtfForm(AttrsClass):
                     apply_macros_cache_txt(
                         macros_data_file=config.input_path.abspath,
                         game_client_file=config.output_path.abspath,
+                        plan=plan,
                     )
 
     def apply_account_saved_variables_config(self, plan=False):
@@ -225,6 +226,7 @@ class WtfForm(AttrsClass):
                     apply_macros_cache_txt(
                         macros_data_file=config.input_path.abspath,
                         game_client_file=config.output_path.abspath,
+                        plan=plan,
                     )
 
     def apply_character_saved_variables_config(self, plan=False):
