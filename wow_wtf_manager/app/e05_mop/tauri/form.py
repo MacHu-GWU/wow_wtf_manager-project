@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 
 from pathlib_mate import Path
-from ordered_set import OrderedSet
 from wow_wtf_manager.exp.e03_wotlk.form import WtfForm
+from wow_wtf_manager.exp.e05_mop.macro import apply_macros_cache_txt
 
 from .wtf import WarmaneWTF
 from .group import AccountGroup, CharacterGroup
 
 tauri_wtf_form = WtfForm(
-    # dir_wow=Path(r"/Users/sanhehu/Documents/GitHub/wow_wtf_manager-project/project/mop/world-of-warcraft"),
     dir_wow=Path(r"C:\Users\husan\Documents\Games\WoW-Root\Client\World-of-Warcraft-5.4.8-Tauri"),
     game_client_config=WarmaneWTF.GameClient.c01_2560_1400_high_graphic_sound,
     all_characters=CharacterGroup.cg_account_fatmulti_1_to_5,
@@ -88,4 +87,5 @@ tauri_wtf_form = WtfForm(
             CharacterGroup.cg_account_fatmulti_1_to_5,
         )
     ],
+    apply_macros_cache_txt=apply_macros_cache_txt,
 )

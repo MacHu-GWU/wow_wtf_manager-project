@@ -144,7 +144,7 @@ class WtfForm(AttrsClass):
                     print(f"  to {config.output_path.abspath}")
                 if plan is False:
                     config.output_path.parent.mkdir_if_not_exists()
-                    apply_macros_cache_txt(
+                    self.apply_macros_cache_txt(
                         macros_data_file=config.input_path.abspath,
                         game_client_file=config.output_path.abspath,
                         plan=plan,
@@ -246,7 +246,7 @@ class WtfForm(AttrsClass):
                     print(f"  to {config.output_path.abspath}")
                 if plan is False:
                     config.output_path.parent.mkdir_if_not_exists()
-                    apply_macros_cache_txt(
+                    self.apply_macros_cache_txt(
                         macros_data_file=config.input_path.abspath,
                         game_client_file=config.output_path.abspath,
                         plan=plan,
