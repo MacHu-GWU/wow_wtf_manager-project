@@ -11,12 +11,14 @@ from wow_wtf_manager.exp.e03_wotlk.myslot import (
     MySlotPythonData,
 )
 
+dir_root = dir_tests / "e03_wotlk" / "myslot"
+
 
 def test_huffman_encode_decode():
-    decode_input_file = dir_tests / "myslot" / "flychicken.txt"
-    decode_output_file = dir_tests / "myslot" / "flychicken.lua"
-    encode_input_file = dir_tests / "myslot" / "flychicken.lua"
-    encode_output_file = dir_tests / "myslot" / "flychicken-enc.txt"
+    decode_input_file = dir_root / "flychicken.txt"
+    decode_output_file = dir_root / "flychicken.lua"
+    encode_input_file = dir_root / "flychicken.lua"
+    encode_output_file = dir_root / "flychicken-enc.txt"
 
     huffman_decode(decode_input_file, decode_output_file)
     huffman_encode(encode_input_file, encode_output_file)
@@ -25,8 +27,8 @@ def test_huffman_encode_decode():
 
 class TestMySlotPythonData:
     def test(self):
-        decode_input_file = dir_tests / "myslot" / "flychicken.txt"
-        decode_output_file = dir_tests / "myslot" / "flychicken.lua"
+        decode_input_file = dir_root / "flychicken.txt"
+        decode_output_file = dir_root / "flychicken.lua"
         huffman_decode(decode_input_file, decode_output_file)
 
         my_slot_python_data = MySlotPythonData.from_lua_syntax(

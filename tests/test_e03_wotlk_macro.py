@@ -5,6 +5,8 @@ import os
 from wow_wtf_manager.paths import dir_tests
 from wow_wtf_manager.exp.e03_wotlk.macro import MacroTxt, Macro, apply_macros_cache_txt
 
+dir_root = dir_tests / "e03_wotlk" / "macro"
+
 
 class TestMacro:
     def test_dump(self):
@@ -52,7 +54,7 @@ class TestMacroTxt:
         assert MacroTxt._is_macro_header('macro abc "MyMacro" INV_Misc_QuestionMark') is False
 
     def test_parse(self):
-        macro_txt_file = dir_tests / "macro" / "account-macro.txt"
+        macro_txt_file = dir_root / "account-macro.txt"
         macro_txt = MacroTxt.parse(macro_txt_file.abspath)
 
         assert macro_txt.macros[0].id == 3
@@ -78,9 +80,9 @@ class TestMacroTxt:
 
 
 def test_apply_macros_cache_txt():
-    macros_data_file = dir_tests / "macro" / "macros_data_file.txt"
-    game_client_file_backup = dir_tests / "macro" / "game_client_file_backup.txt"
-    game_client_file = dir_tests / "macro" / "game_client_file.txt"
+    macros_data_file = dir_root / "macros_data_file.txt"
+    game_client_file_backup = dir_root / "game_client_file_backup.txt"
+    game_client_file = dir_root / "game_client_file.txt"
     game_client_file.write_text(game_client_file_backup.read_text())
     apply_macros_cache_txt(macros_data_file, game_client_file)
 
