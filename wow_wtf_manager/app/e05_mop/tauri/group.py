@@ -52,7 +52,7 @@ class CharacterGroup:
     can be used for search using PyCharm.
     """
     # --- Group by accounts
-    cg_account_fatmulti1 = OrderedSet([
+    cg_account_fatmulti_1_to_5 = OrderedSet([
         Fatmulti1_Evermoon_Carrotflower,
         Fatmulti2_Evermoon_Carrotroot,
         Fatmulti3_Evermoon_Carrotstem,

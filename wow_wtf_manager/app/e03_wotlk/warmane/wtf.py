@@ -4,8 +4,6 @@ from pathlib_mate import Path
 from wow_wtf_manager.exp.e03_wotlk import wtf
 from wow_wtf_manager.paths import dir_project_root
 
-dir_wow = Path(r"C:\Games\World of Warcraft")
-
 dir_app = dir_project_root / "project" / "wotlk"
 dir_01_game_client = dir_app / "01_game_client"
 dir_11_account_user_interface = dir_app / "11_account_user_interface"
@@ -18,8 +16,6 @@ dir_24_character_layout = dir_app / "24_character_layout"
 dir_25_character_addons = dir_app / "25_character_addons"
 dir_26_character_macros = dir_app / "26_character_macros"
 dir_27_character_saved_variables = dir_app / "27_character_saved_variables"
-
-base_game_client_config = wtf.BaseGameClientConfig(dir_wow=dir_wow)
 
 
 class WarmaneWTF:
