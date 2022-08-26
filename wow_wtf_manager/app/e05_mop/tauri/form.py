@@ -3,8 +3,9 @@
 from pathlib_mate import Path
 from ordered_set import OrderedSet
 from wow_wtf_manager.exp.e03_wotlk.form import WtfForm
-from wow_wtf_manager.app.e05_mop.tauri.wtf import WarmaneWTF
-from wow_wtf_manager.app.e05_mop.tauri.group import AccountGroup, CharacterGroup
+
+from .wtf import WarmaneWTF
+from .group import AccountGroup, CharacterGroup
 
 tauri_wtf_form = WtfForm(
     # dir_wow=Path(r"/Users/sanhehu/Documents/GitHub/wow_wtf_manager-project/project/mop/world-of-warcraft"),
