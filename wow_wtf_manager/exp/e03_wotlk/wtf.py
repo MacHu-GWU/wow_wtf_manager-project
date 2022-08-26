@@ -62,9 +62,11 @@ class GameClientConfig(BaseGameClientConfig):
     """
     input_path: Path = attr.ib(default=None)
 
+    _file = "Config.wtf"
+
     @property
     def output_path(self) -> Path:
-        return self.dir_wtf / "Config.wtf"
+        return self.dir_wtf / self._file
 
 
 # --- Per Account Level
@@ -86,9 +88,11 @@ class AccountKeybindingConfig(BaseAccountConfig):
     """
     input_path: Path = attr.ib(default=None)
 
+    _file = "bindings-cache.wtf"
+
     @property
     def output_path(self) -> Path:
-        return self.dir_account / "bindings-cache.wtf"
+        return self.dir_account / self._file
 
 
 @attr.s
@@ -98,9 +102,11 @@ class AccountMacroConfig(BaseAccountConfig):
     """
     input_path: Path = attr.ib(default=None)
 
+    _file = "macros-cache.txt"
+
     @property
     def output_path(self) -> Path:
-        return self.dir_account / "macros-cache.txt"
+        return self.dir_account / self._file
 
 
 @attr.s
@@ -112,9 +118,11 @@ class AccountUserInterfaceConfig(BaseAccountConfig):
     """
     input_path: Path = attr.ib(default=None)
 
+    _file = "config-cache.wtf"
+
     @property
     def output_path(self) -> Path:
-        return self.dir_account / "config-cache.wtf"
+        return self.dir_account / self._file
 
 
 @attr.s
@@ -126,9 +134,11 @@ class AccountCacheConfig(BaseAccountConfig):
     """
     input_path: Path = attr.ib(default=None)
 
+    _file = "cache.md5"
+
     @property
     def output_path(self) -> Path:
-        return self.dir_account / "cache.md5"
+        return self.dir_account / self._file
 
 
 @attr.s
@@ -140,9 +150,11 @@ class AccountSavedVariablesConfig(BaseAccountConfig):
     include_list: T.List[str] = attr.ib(factory=list)
     exclude_list: T.List[str] = attr.ib(factory=list)
 
+    _file = "SavedVariables"
+
     @property
     def output_path(self) -> Path:
-        return self.dir_account / "SavedVariables"
+        return self.dir_account / self._file
 
     def evolve(
         self,
@@ -194,9 +206,11 @@ class CharacterKeybindingConfig(BaseCharacterConfig):
     """
     input_path: Path = attr.ib(default=None)
 
+    _file = "bindings-cache.wtf"
+
     @property
     def output_path(self) -> Path:
-        return self.dir_char / "bindings-cache.wtf"
+        return self.dir_char / self._file
 
 
 @attr.s
@@ -206,9 +220,11 @@ class CharacterAddonConfig(BaseCharacterConfig):
     """
     input_path: Path = attr.ib(default=None)
 
+    _file = "AddOns.txt"
+
     @property
     def output_path(self) -> Path:
-        return self.dir_char / "AddOns.txt"
+        return self.dir_char / self._file
 
 
 @attr.s
@@ -218,9 +234,11 @@ class CharacterMacroConfig(BaseCharacterConfig):
     """
     input_path: Path = attr.ib(default=None)
 
+    _file = "macros-cache.txt"
+
     @property
     def output_path(self) -> Path:
-        return self.dir_char / "macros-cache.txt"
+        return self.dir_char / self._file
 
 
 @attr.s
@@ -232,9 +250,11 @@ class CharacterUserInterfaceConfig(BaseCharacterConfig):
     """
     input_path: Path = attr.ib(default=None)
 
+    _file = "config-cache.wtf"
+
     @property
     def output_path(self) -> Path:
-        return self.dir_char / "config-cache.wtf"
+        return self.dir_char / self._file
 
 
 @attr.s
@@ -246,9 +266,11 @@ class CharacterLayoutConfig(BaseCharacterConfig):
     """
     input_path: Path = attr.ib(default=None)
 
+    _file = "layout-local.txt"
+
     @property
     def output_path(self) -> Path:
-        return self.dir_char / "layout-local.txt"
+        return self.dir_char / self._file
 
 
 @attr.s
@@ -260,9 +282,11 @@ class CharacterChatConfig(BaseCharacterConfig):
     """
     input_path: Path = attr.ib(default=None)
 
+    _file = "chat-cache.txt"
+
     @property
     def output_path(self) -> Path:
-        return self.dir_char / "chat-cache.txt"
+        return self.dir_char / self._file
 
 
 @attr.s
@@ -274,9 +298,11 @@ class CharacterSavedVariablesConfig(BaseCharacterConfig):
     include_list: T.List[str] = attr.ib(factory=list)
     exclude_list: T.List[str] = attr.ib(factory=list)
 
+    _file = "SavedVariables"
+
     @property
     def output_path(self) -> Path:
-        return self.dir_char / "SavedVariables"
+        return self.dir_char / self._file
 
     def evolve(
         self,

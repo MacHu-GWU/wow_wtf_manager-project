@@ -12,6 +12,7 @@ import attr
 from attrs_mate import AttrsClass
 from pathlib_mate import Path
 from jinja2 import Template
+from rich import print
 
 from ..e03_wotlk.macro import apply_macros_cache_txt
 
@@ -97,36 +98,56 @@ class WtfForm(AttrsClass):
                 for config, _ in value:
                     config.dir_wow = self.dir_wow
 
-    def plan(self):
-        pass
+    def _print_header(self, msg: str):
+        msg = f" {msg} "
+        print(f"{msg:=^80}")
 
-    def apply_game_client_config(self):
+    def _print_input_output_file(self, input_file: Path, output_file: Path):
+        print(f"write from {input_file.abspath}")
+        print(f"  to {output_file.abspath}")
+
+    def apply_game_client_config(self, plan=False):
+        self._print_header(f"apply Game Client Config '{GameClientConfig._file}'")
         game_client_config = self.game_client_config
-        game_client_config.output_path.parent.mkdir_if_not_exists()
-        game_client_config.output_path.write_text(
-            game_client_config.input_path.read_text()
-        )
+        print(f"copy from {game_client_config.input_path.abspath}")
+        print(f"  to {game_client_config.output_path.abspath}")
+        if plan is False:
+            game_client_config.output_path.parent.mkdir_if_not_exists()
+            game_client_config.output_path.write_text(
+                game_client_config.input_path.read_text()
+            )
 
-    def apply_account_user_interface_config(self):
+    def apply_account_user_interface_config(self, plan=False):
+        self._print_header(f"apply Account User Interface Config '{AccountUserInterfaceConfig._file}'")
         for config, account_orderedset in self.account_user_interface_config:
+            print(f"copy from {config.input_path.abspath}")
             config_content = config.input_path.read_text()
             for account in account_orderedset:
                 config = evolve_from_account(config, account)
-                config.output_path.parent.mkdir_if_not_exists()
-                config.output_path.write_text(config_content)
+                print(f"  to {config.output_path.abspath}")
+                if plan is False:
+                    config.output_path.parent.mkdir_if_not_exists()
+                    config.output_path.write_text(config_content)
 
-    def apply_account_macro_config(self):
+    def apply_account_macro_config(self, plan=False):
+        self._print_header(f"apply Account Macro Config '{AccountMacroConfig._file}'")
         for config, account_orderedset in self.account_macro_config:
+            print(f"copy from {config.input_path.abspath}")
             for account in account_orderedset:
                 config = evolve_from_account(config, account)
-                config.output_path.parent.mkdir_if_not_exists()
-                apply_macros_cache_txt(
-                    macros_data_file=config.input_path.abspath,
-                    game_client_file=config.output_path.abspath,
-                )
+                print(f"  to {config.output_path.abspath}")
+                if plan is False:
+                    config.output_path.parent.mkdir_if_not_exists()
+                    apply_macros_cache_txt(
+                        macros_data_file=config.input_path.abspath,
+                        game_client_file=config.output_path.abspath,
+                    )
 
-    def apply_account_saved_variables_config(self):
+    def apply_account_saved_variables_config(self, plan=False):
+        self._print_header(f"apply Account SavedVariable Config '{AccountSavedVariablesConfig._file}'")
         for config, account_orderedset in self.account_saved_variables_config:
+            print(f"copy from {config.input_path.abspath}")
+
             config_content_mapper: T.Dict[str, str] = dict()
             for p in config.lua_file_list:
                 tpl = Template(p.read_text())
@@ -135,63 +156,80 @@ class WtfForm(AttrsClass):
 
             for account in account_orderedset:
                 config = evolve_from_account(config, account)
-                config.output_path.mkdir_if_not_exists()
+                if plan is False:
+                    config.output_path.mkdir_if_not_exists()
                 for p in config.lua_file_list:
-                    (config.output_path / p.basename).write_text(
-                        config_content_mapper[p.basename]
-                    )
+                    print(f"  to {(config.output_path / p.basename).abspath}")
+                    if plan is False:
+                        (config.output_path / p.basename).write_text(
+                            config_content_mapper[p.basename]
+                        )
 
-    def apply_account_keybinding_config(self):
+    def apply_account_keybinding_config(self, plan=False):
         pass
 
-    def apply_account_cache_config(self):
+    def apply_account_cache_config(self, plan=False):
         pass
 
-    def _apply_character_single_file_config(self, attr: str):
+    def _apply_character_single_file_config(self, attr: str, plan=False):
         for config, character_orderedset in getattr(self, attr):
+            print(f"copy from {config.input_path.abspath}")
             config_content = config.input_path.read_text()
             for character in character_orderedset:
                 config = evolve_from_character(config, character)
-                config.output_path.parent.mkdir_if_not_exists()
-                config.output_path.write_text(config_content)
+                print(f"  to {config.output_path.abspath}")
+                if plan is False:
+                    config.output_path.parent.mkdir_if_not_exists()
+                    config.output_path.write_text(config_content)
 
-    def apply_character_user_interface_config(self):
+    def apply_character_user_interface_config(self, plan=False):
+        self._print_header(f"apply Character User Interface Config '{CharacterUserInterfaceConfig._file}'")
         self._apply_character_single_file_config(
             attr="character_user_interface_config"
         )
 
-    def apply_character_chat_config(self):
+    def apply_character_chat_config(self, plan=False):
+        self._print_header(f"apply Character Chat Config '{CharacterChatConfig._file}'")
         self._apply_character_single_file_config(
             attr="character_chat_config"
         )
 
-    def apply_character_keybinding_config(self):
+    def apply_character_keybinding_config(self, plan=False):
+        self._print_header(f"apply Character Keybinding Config '{CharacterKeybindingConfig._file}'")
         self._apply_character_single_file_config(
             attr="character_keybinding_config"
         )
 
-    def apply_character_layout_config(self):
+    def apply_character_layout_config(self, plan=False):
+        self._print_header(f"apply Character Layout Config '{CharacterLayoutConfig._file}'")
         self._apply_character_single_file_config(
             attr="character_layout_config"
         )
 
-    def apply_character_addon_config(self):
+    def apply_character_addon_config(self, plan=False):
+        self._print_header(f"apply Character Addon Config '{CharacterAddonConfig._file}'")
         self._apply_character_single_file_config(
             attr="character_addon_config"
         )
 
-    def apply_character_macro_config(self):
+    def apply_character_macro_config(self, plan=False):
+        self._print_header(f"apply Character Macro Config '{CharacterMacroConfig._file}'")
         for config, character_orderedset in self.character_macro_config:
+            print(f"copy from {config.input_path.abspath}")
             for character in character_orderedset:
                 config = evolve_from_character(config, character)
-                config.output_path.parent.mkdir_if_not_exists()
-                apply_macros_cache_txt(
-                    macros_data_file=config.input_path.abspath,
-                    game_client_file=config.output_path.abspath,
-                )
+                print(f"  to {config.output_path.abspath}")
+                if plan is False:
+                    config.output_path.parent.mkdir_if_not_exists()
+                    apply_macros_cache_txt(
+                        macros_data_file=config.input_path.abspath,
+                        game_client_file=config.output_path.abspath,
+                    )
 
-    def apply_character_saved_variables_config(self):
+    def apply_character_saved_variables_config(self, plan=False):
+        self._print_header(f"apply Character SavedVariable Config '{CharacterSavedVariablesConfig._file}'")
         for config, character_orderedset in self.character_saved_variables_config:
+            print(f"copy from {config.input_path.abspath}")
             config_content_mapper: T.Dict[str, str] = dict()
             for p in config.lua_file_list:
                 tpl = Template(p.read_text())
@@ -200,27 +238,33 @@ class WtfForm(AttrsClass):
 
             for character in character_orderedset:
                 config = evolve_from_character(config, character)
-                config.output_path.mkdir_if_not_exists()
+                if plan is False:
+                    config.output_path.mkdir_if_not_exists()
                 for p in config.lua_file_list:
-                    (config.output_path / p.basename).write_text(
-                        config_content_mapper[p.basename]
-                    )
+                    print(f"  to {(config.output_path / p.basename).abspath}")
+                    if plan is False:
+                        (config.output_path / p.basename).write_text(
+                            config_content_mapper[p.basename]
+                        )
 
-    def apply(self):
-        self.apply_game_client_config()
-        self.apply_account_user_interface_config()
-        self.apply_account_macro_config()
-        self.apply_account_saved_variables_config()
+    def apply(self, plan=False):
+        self.apply_game_client_config(plan=plan)
+        self.apply_account_user_interface_config(plan=plan)
+        self.apply_account_macro_config(plan=plan)
+        self.apply_account_saved_variables_config(plan=plan)
         # self.apply_account_keybinding_config()
         # self.apply_account_cache_config()
 
-        self.apply_character_user_interface_config()
-        self.apply_character_chat_config()
-        self.apply_character_keybinding_config()
-        self.apply_character_layout_config()
-        self.apply_character_addon_config()
-        self.apply_character_macro_config()
-        self.apply_character_saved_variables_config()
+        self.apply_character_user_interface_config(plan=plan)
+        self.apply_character_chat_config(plan=plan)
+        self.apply_character_keybinding_config(plan=plan)
+        self.apply_character_layout_config(plan=plan)
+        self.apply_character_addon_config(plan=plan)
+        self.apply_character_macro_config(plan=plan)
+        self.apply_character_saved_variables_config(plan=plan)
+
+    def plan(self):
+        return self.apply(plan=True)
 
     @functools.cached_property
     def _all_characters(self) -> OrderedSet[Character]:
