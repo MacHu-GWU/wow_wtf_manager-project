@@ -170,6 +170,7 @@ class MacroTxt(AttrsClass):
 def apply_macros_cache_txt(
     macros_data_file: str,
     game_client_file: str,
+    plan: bool = False,
 ):
     """
     把一个自定义的 macros-cache.txt 中的宏定义合并到游戏客户端中的 macros-cache.txt
@@ -206,4 +207,5 @@ def apply_macros_cache_txt(
             macro1.id = new_macro_id
             macro_txt_game_client.macros.append(macro1)
 
-    macro_txt_game_client.to_file()
+    if plan is False:
+        macro_txt_game_client.to_file()
