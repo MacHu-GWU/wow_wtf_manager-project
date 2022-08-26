@@ -10,10 +10,6 @@ import attr
 from attrs_mate import AttrsClass
 
 
-def titleize(s: str) -> str:
-    return s[0].upper() + s[1:].lower()
-
-
 def right_zfill(s: str) -> str:
     return s + "0" * (20 - len(s))
 
@@ -24,7 +20,7 @@ class Account(AttrsClass):
     """
     代表着一个具体账号. 也是可哈希, 可排序的.
     """
-    account: str = attr.ib(converter=titleize)
+    account: str = attr.ib()
 
     def __gt__(self, other: 'Account'):
         return self.account > other.account
@@ -39,9 +35,9 @@ class Character(AttrsClass):
     同时我们也提供了一个工厂函数, 方便开发者从形如 ``account.server.character``
     的字符串创建对象.
     """
-    account: str = attr.ib(converter=titleize)
-    server: str = attr.ib(converter=titleize)
-    character: str = attr.ib(converter=titleize)
+    account: str = attr.ib()
+    server: str = attr.ib()
+    character: str = attr.ib()
 
     @classmethod
     def from_string(cls, s: str) -> 'Character':

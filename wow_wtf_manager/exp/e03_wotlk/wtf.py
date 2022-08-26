@@ -85,7 +85,7 @@ class BaseAccountConfig(BaseGameClientConfig):
 
     @property
     def dir_account(self) -> Path:
-        return self.dir_wtf / "Account" / self.account
+        return self.dir_wtf / "Account" / uppercase(self.account)
 
     def make_base_character_config(self, server: str, character: str) -> 'BaseCharacterConfig':
         return BaseCharacterConfig(
@@ -363,6 +363,14 @@ class CharacterSavedVariablesConfig(BaseCharacterConfig):
             self.input_path / f"{addon}.lua"
             for addon in include_list
         ]
+
+
+def uppercase(s: str) -> str:
+    return s.upper()
+
+
+def titleize(s: str) -> str:
+    return s[0].upper() + s[1:].lower()
 
 
 def evolve_from_account(config: BaseAccountConfig, account: 'Account') -> BaseAccountConfig:
