@@ -1,0 +1,12 @@
+VER 3 000000000015331D "InvT1" "Spell_Shadow_Twilight"
+/inv carrotflower
+/inv carrotroot
+/inv carrotstem
+/inv carrotleaf
+/inv carrotseed
+END
+VER 3 0000000000625EE2 "InvT2" "Spell_Shadow_Twilight"
+/s hi
+END
+VER 3 0000000000238DA5 "InvT3" "Spell_Shadow_Twilight"
+END
