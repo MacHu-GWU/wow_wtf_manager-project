@@ -12,11 +12,11 @@ from wow_wtf_manager.exp.e03_wotlk.group import Account, Character
 # Define Individual Account / Character
 # ==============================================================================
 # All Account
-fatmulti1 = Account("fatmulti1")
-fatmulti2 = Account("fatmulti2")
-fatmulti3 = Account("fatmulti3")
-fatmulti4 = Account("fatmulti4")
-fatmulti5 = Account("fatmulti5")
+fatmulti1 = Account("Fatmulti1")
+fatmulti2 = Account("Fatmulti2")
+fatmulti3 = Account("Famulti3")
+fatmulti4 = Account("Fatmulti4")
+fatmulti5 = Account("Fatmulti5")
 
 # All Characters
 # ------------------------------------------------------------------------------
