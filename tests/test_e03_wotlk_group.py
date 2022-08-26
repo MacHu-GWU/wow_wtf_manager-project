@@ -30,7 +30,7 @@ class TestAccount:
 
         l = [acc2, acc1]
         l.sort()
-        assert l[0].account == "Acc1"
+        assert l[0].account == "acc1"
 
 
 class TestCharacter:
@@ -57,7 +57,7 @@ class TestCharacter:
 
         l = [char2, char1]
         l.sort()
-        assert l[0].account == "Acc1"
+        assert l[0].account == "acc1"
 
 
 if __name__ == "__main__":

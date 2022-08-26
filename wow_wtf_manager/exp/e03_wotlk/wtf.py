@@ -54,17 +54,6 @@ class BaseGameClientConfig(BaseConfig):
     def dir_wtf(self) -> Path:
         return self.dir_wow / "WTF"
 
-    def make_base_account_config(self, account: str) -> 'BaseAccountConfig':
-        return BaseAccountConfig(
-            dir_wow=self.dir_wow,
-            account=account,
-        )
-
-    def to_game_client_config(self, input_path: Path) -> 'GameClientConfig':
-        kwargs = self.to_dict()
-        kwargs["input_path"] = input_path
-        return GameClientConfig(**kwargs)
-
 
 @attr.s
 class GameClientConfig(BaseGameClientConfig):
@@ -86,29 +75,6 @@ class BaseAccountConfig(BaseGameClientConfig):
     @property
     def dir_account(self) -> Path:
         return self.dir_wtf / "Account" / uppercase(self.account)
-
-    def make_base_character_config(self, server: str, character: str) -> 'BaseCharacterConfig':
-        return BaseCharacterConfig(
-            dir_wow=self.dir_wow,
-            account=self.account,
-            server=server,
-            character=character,
-        )
-
-    def to_keybinding_config(self) -> 'AccountKeybindingConfig':
-        return AccountKeybindingConfig(**self.to_dict())
-
-    def to_cache_config(self) -> 'AccountCacheConfig':
-        return AccountCacheConfig(**self.to_dict())
-
-    def to_macro_config(self) -> 'AccountMacroConfig':
-        return AccountMacroConfig(**self.to_dict())
-
-    def to_saved_variables_config(self) -> 'AccountSavedVariablesConfig':
-        return AccountSavedVariablesConfig(**self.to_dict())
-
-    def to_user_interface_config(self) -> 'AccountUserInterfaceConfig':
-        return AccountUserInterfaceConfig(**self.to_dict())
 
 
 @attr.s
@@ -219,27 +185,6 @@ class BaseCharacterConfig(BaseAccountConfig):
     @property
     def dir_char(self) -> Path:
         return self.dir_account / self.server / self.character
-
-    def to_keybinding_config(self) -> 'CharacterKeybindingConfig':
-        return CharacterKeybindingConfig(**self.to_dict())
-
-    def to_addon_config(self) -> 'CharacterAddonConfig':
-        return CharacterAddonConfig(**self.to_dict())
-
-    def to_chat_config(self) -> 'CharacterChatConfig':
-        return CharacterChatConfig(**self.to_dict())
-
-    def to_layout_config(self) -> 'CharacterLayoutConfig':
-        return CharacterLayoutConfig(**self.to_dict())
-
-    def to_macro_config(self) -> 'CharacterMacroConfig':
-        return CharacterMacroConfig(**self.to_dict())
-
-    def to_saved_variables_config(self) -> 'CharacterSavedVariablesConfig':
-        return CharacterSavedVariablesConfig(**self.to_dict())
-
-    def to_user_interface_config(self) -> 'CharacterUserInterfaceConfig':
-        return CharacterUserInterfaceConfig(**self.to_dict())
 
 
 @attr.s
