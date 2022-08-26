@@ -9,7 +9,8 @@ from wow_wtf_manager.app.e03_wotlk.warmane.form import warmane_wtf_form
 
 class TestWtfForm:
     def test(self):
-        warmane_wtf_form.dir_wow = dir_wotlk_project / "world-of-warcraft",
+        warmane_wtf_form.dir_wow = dir_wotlk_project / "world-of-warcraft"
+        warmane_wtf_form.__attrs_post_init__()
         warmane_wtf_form.verbose = False
         warmane_wtf_form.apply()
 
