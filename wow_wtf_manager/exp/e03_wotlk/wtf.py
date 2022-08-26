@@ -14,8 +14,6 @@ import typing as T
 import attr
 from attrs_mate import AttrsClass
 from pathlib_mate import Path
-from jinja2 import Template
-from rich import print
 
 if T.TYPE_CHECKING:
     from .group import Account, Character
