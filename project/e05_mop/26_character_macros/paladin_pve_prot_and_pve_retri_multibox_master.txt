@@ -1,0 +1,22 @@
+VER 3 0100000000000002 "MakeThreat" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [mod:alt] Crusader Strike; Hammer of the Righteous
+END
+VER 3 0100000000000001 "MB-BuffSelf" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/target player
+/castsequence reset=target !Seal of Truth
+END
+VER 3 0100000000000004 "Mount-Down" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cancelaura Summon Warhorse
+/cancelaura Summon Warhorse
+# /cancelaura Swift Flight Form # non Druid don't need
+END
+VER 3 0100000000000003 "Mount-Up" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopmacro [mounted]
+# /stopmacro [stance:6] # For Druid, Balance = 6, Feral = 5, non Druid don't need
+/cast [flyable] Summon Warhorse
+/cast [noflyable] Summon Warhorse
+END

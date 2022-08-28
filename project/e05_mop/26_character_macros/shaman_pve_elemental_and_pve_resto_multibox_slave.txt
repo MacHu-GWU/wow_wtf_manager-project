@@ -1,0 +1,18 @@
+VER 3 0100000000000001 "Interrupt" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/cast [target=focus,harm] Wind Shear; [target=focustarget,harm] Wind Shear; [] Wind Shear
+END
+VER 3 0100000000000003 "Mount-Down" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cancelaura Gray Elekk
+/cancelaura Gray Elekk
+# /cancelaura Swift Flight Form # non Druid don't need
+END
+VER 3 0100000000000002 "Mount-Up" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopmacro [mounted]
+# /stopmacro [stance:6] # For Druid, Balance = 6, Feral = 5, non Druid don't need
+/cast [flyable] Gray Elekk
+/cast [noflyable] Gray Elekk
+END
