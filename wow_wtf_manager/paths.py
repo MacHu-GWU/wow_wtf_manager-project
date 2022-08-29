@@ -11,4 +11,5 @@ dir_tests = dir_project_root / "tests"
 _dir_project = dir_project_root / "project"
 
 dir_wotlk_project = _dir_project / "e03_wotlk"
+dir_wotlk_dalan335_project = _dir_project / "e03_wotlk_dalan335"
 dir_mop_project = _dir_project / "e05_mop"
