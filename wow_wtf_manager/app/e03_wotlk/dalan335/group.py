@@ -56,3 +56,19 @@ class CharacterGroup:
         fat04_maocore_qsd,
         fat05_maocore_qse,
     ])
+
+    cg_paladin_prot_pve_and_retri_pve = OrderedSet([
+        fat01_maocore_qsa,
+    ])
+
+    cg_paladin_retri_pve_and_prot_pve = OrderedSet([
+        fat02_maocore_qsb,
+        fat03_maocore_qsc,
+        fat04_maocore_qsd,
+    ])
+
+    cg_paladin_holy_pve_and_retri_pve = OrderedSet([
+        fat05_maocore_qse,
+    ])
+
+

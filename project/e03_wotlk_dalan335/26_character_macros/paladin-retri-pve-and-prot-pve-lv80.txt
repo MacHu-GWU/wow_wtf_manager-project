@@ -1,72 +1,45 @@
-MACRO 16777235 "ClearDebuff" INV_Misc_QuestionMark
-#showtooltip
-/cancelaura Divine Shield
-/cast Divine Shield
-END
-MACRO 16777218 "Heal" INV_Misc_QuestionMark
-#showtooltip
-/cast [modifier:alt,target=mouseover,help][modifier:alt,help][modifier:alt,target=targettarget,help][modifier:alt] Holy Light; [target=mouseover,help][help][target=targettarget,help][] Flash of Light
-END
-MACRO 16777240 "Info" INV_Misc_QuestionMark
-/s 战士麻烦吼个个血, 多谢!
-#/s 我要嘲讽了, 治疗注意奶防骑!
-#/s 骑士被瓦尔琪抓了, 注意补控!
-END
-MACRO 16777219 "MB-AOE" INV_Misc_QuestionMark
+MACRO 26639642 "Act1" INV_Misc_QuestionMark
 #showtooltip
 /startattack
-/cast [mod:alt] Holy Wrath; Consecration
+/cast [spec:1,mod:alt] 清算之手; 智慧审判
 END
-MACRO 16777223 "MB-BuffSelf" INV_Misc_QuestionMark
+MACRO 26639643 "Act2" INV_Misc_QuestionMark
+#showtooltip
+/startattack
+/cast [spec:1,mod:alt] 正义盾击; 十字军打击
+END
+MACRO 26639644 "Act3" INV_Misc_QuestionMark
+#showtooltip
+/startattack
+/cast [spec:1,mod:alt] 公正审判; 神圣风暴
+END
+MACRO 26639645 "Act4" INV_Misc_QuestionMark
+#showtooltip
+/startattack
+/cast [spec:1,mod:alt] 神圣愤怒; 奉献
+END
+MACRO 26639650 "ClearDebuff" INV_Misc_QuestionMark
+#showtooltip
+/cancelaura 圣盾术
+/cast 圣盾术
+END
+MACRO 26639647 "Heal" Spell_Holy_FlashHeal
+/cast [modifier:alt,target=mouseover,help][modifier:alt,help][modifier:alt,target=targettarget,help][modifier:alt] 圣光术; [target=mouseover,help][help][target=targettarget,help][] 圣光闪现
+END
+MACRO 26639646 "MB-BuffSelf" INV_Misc_QuestionMark
 #showtooltip
 /target player
-/castsequence [spec:1] reset=target Seal of Vengeance, !Retribution Aura, Greater Blessing of Kings
-/castsequence [spec:2] reset=target Righteous Fury, Seal of Vengeance, !Devotion Aura, Greater Blessing of Sanctuary
+/castsequence [spec:1] reset=target 复仇圣印, !惩戒光环, 强效王者祝福
+/castsequence [spec:1] reset=target 正义之怒, 复仇圣印, !虔诚光环, 强效庇护祝福
 END
-MACRO 16777221 "MB-Shield" INV_Misc_QuestionMark
+MACRO 26639648 "MountDown" INV_Misc_QuestionMark
 #showtooltip
-/startattack
-/cast [mod:alt] Avenger's Shield; Holy Shield
+/cancelaura [mounted] 无敌
+/cancelaura [mounted] 无敌
 END
-MACRO 16777241 "MountDown" INV_Misc_QuestionMark
-#showtooltip
-/cancelaura [mounted] Swift Zulian Tiger
-/cancelaura [mounted] Swift Red Gryphon
-END
-MACRO 16777217 "MountUp" INV_Misc_QuestionMark
+MACRO 26639649 "MountUp" INV_Misc_QuestionMark
 #showtooltip
 /stopmacro [mounted]
-/cast [flyable] Swift Red Gryphon
-/cast [noflyable] Swift Zulian Tiger
-END
-MACRO 16777220 "NM-Hammer" INV_Misc_QuestionMark
-#showtooltip
-/startattack
-/cast [mod:alt] Shield of Righteousness; Hammer of the Righteous
-END
-MACRO 16777228 "NM-JOW" INV_Misc_QuestionMark
-#showtooltip
-/startattack
-/cast [mod:alt] Hand of Reckoning; Judgement of wisdom
-END
-MACRO 16777229 "NM-JOL" INV_Misc_QuestionMark
-#showtooltip
-/startattack
-/cast [mod:alt] Hand of Reckoning; Judgement of Light
-END
-MACRO 16777222 "NM-JOJ" INV_Misc_QuestionMark
-#showtooltip
-/startattack
-/cast [mod:alt] Hand of Reckoning; Judgement of Justice
-END
-MACRO 16777233 "NM-Crusader" INV_Misc_QuestionMark
-#showtooltip
-/startattack
-/cast [mod:alt] Shield of Righteousness; Crusader Strike
-END
-MACRO 16777238 "TankRotate" INV_Misc_QuestionMark
-#showtooltip
-/startattack
-#/castsequence Hammer of the Righteous,Shield of Righteousness,Judgement of Wisdom,Holy Shield
-/castsequence Hammer of the Righteous,Shield of Righteousness,Judgement of Light,Holy Shield
+/cast [flyable] 无敌
+/cast [noflyable] 无敌
 END

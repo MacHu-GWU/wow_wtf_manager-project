@@ -1,69 +1,45 @@
-MACRO 16777234 "DSac" INV_Misc_QuestionMark
+MACRO 26579091 "Act1" INV_Misc_QuestionMark
 #showtooltip
-/cancelaura Divine Sacrifice
-/cast Divine Sacrifice
+/startattack
+/cast [spec:1,mod:alt] 清算之手; 智慧审判
 END
-MACRO 16777219 "MB-BuffSelf" INV_Misc_QuestionMark
+MACRO 26579092 "Act2" INV_Misc_QuestionMark
+#showtooltip
+/startattack
+/cast [spec:1,mod:alt] 正义盾击; 十字军打击
+END
+MACRO 26579093 "Act3" INV_Misc_QuestionMark
+#showtooltip
+/startattack
+/cast [spec:1,mod:alt] 公正审判; 神圣风暴
+END
+MACRO 26579094 "Act4" INV_Misc_QuestionMark
+#showtooltip
+/startattack
+/cast [spec:1,mod:alt] 神圣愤怒; 奉献
+END
+MACRO 26579099 "ClearDebuff" INV_Misc_QuestionMark
+#showtooltip
+/cancelaura 圣盾术
+/cast 圣盾术
+END
+MACRO 26579096 "Heal" Spell_Holy_FlashHeal
+/cast [modifier:alt,target=mouseover,help][modifier:alt,help][modifier:alt,target=targettarget,help][modifier:alt] 圣光术; [target=mouseover,help][help][target=targettarget,help][] 圣光闪现
+END
+MACRO 26579095 "MB-BuffSelf" INV_Misc_QuestionMark
 #showtooltip
 /target player
-/castsequence reset=target Righteous Fury, Seal of Wisdom, !Concentration Aura, Greater Blessing of Wisdom
+/castsequence [spec:1] reset=target 复仇圣印, !惩戒光环, 强效王者祝福
+/castsequence [spec:1] reset=target 正义之怒, 复仇圣印, !虔诚光环, 强效庇护祝福
 END
-MACRO 16777223 "MB-Burst" INV_Misc_QuestionMark
+MACRO 26579097 "MountDown" INV_Misc_QuestionMark
 #showtooltip
-/cast Divine Illumination
-/use Binding Light
-/use Talisman of Resurgence
+/cancelaura [mounted] 无敌
+/cancelaura [mounted] 无敌
 END
-MACRO 16777233 "MB-HealFocus" INV_Misc_QuestionMark
-#showtooltip
-/cast [target=focus,noharm] Holy Light; [target=focustarget,noharm] Holy Light
-/target [target=focus,noharm] focus; [] focustarget
-END
-MACRO 16777222 "MB-HealRaid" INV_Misc_QuestionMark
-#showtooltip
-/targetraid
-#/castsequence Holy Light, Flash of Light, Flash of Light, Flash of Light
-/cast Holy Light
-END
-MACRO 16777229 "MB-HPalaJudge" INV_Misc_QuestionMark
-#showtooltip
-/cast [target=focustarget,harm][target=focus,harm][] Judgement of Light
-#/cast [target=focustarget,harm][target=focus,harm][] Judgement of Wisdom
-#/cast [target=focustarget,harm][target=focus,harm][] Judgement of Justice
-END
-MACRO 16777225 "MB-PeriodBuffMT" INV_Misc_QuestionMark
-#showtooltip
-/target focus
-/castsequence Beacon of Light,,,,,,,,,,,,,,,,,,
-END
-MACRO 16777226 "MB-PeriodJudge" INV_Misc_QuestionMark
-#showtooltip
-/assist focus
-/startattack
-/castsequence Judgement of Light,,Judgement of Light,,Sacred Shield,,
-END
-MACRO 16777237 "MountDown" INV_Misc_QuestionMark
-#showtooltip
-/cancelaura [mounted] Swift Red Gryphon
-/cancelaura [mounted] Charger
-END
-MACRO 16777217 "MountUp" INV_Misc_QuestionMark
+MACRO 26579098 "MountUp" INV_Misc_QuestionMark
 #showtooltip
 /stopmacro [mounted]
-/cast [flyable] Swift Red Gryphon
-/cast [noflyable] Charger
-END
-MACRO 16777231 "NM-ClearDebuff" INV_Misc_QuestionMark
-#showtooltip
-/cancelaura Divine Shield
-/cast Divine Shield
-END
-MACRO 16777221 "NM-Heal" INV_Misc_QuestionMark
-#showtooltip
-/cast [modifier:alt,target=mouseover,help][modifier:alt,help][modifier:alt,target=targettarget,help][modifier:alt] Holy Light; [target=mouseover,help][help][target=targettarget,help][] Flash of Light
-END
-MACRO 16777232 "Sacrifice" INV_Misc_QuestionMark
-#showtooltip
-/target Stophealing
-/cast Hand of Sacrifice
+/cast [flyable] 无敌
+/cast [noflyable] 无敌
 END

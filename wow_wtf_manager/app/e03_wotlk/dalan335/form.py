@@ -63,18 +63,18 @@ warmane_wtf_form = WtfForm(
         )
     ],
     character_macro_config=[
-        # (
-        #     WarmaneWTF.CharacterMacros.paladin_prot_pve_and_retri_pve_lv80,
-        #     CharacterGroup.cg_class_paladin_prot_pve_and_retri_pve,
-        # ),
-        # (
-        #     WarmaneWTF.CharacterMacros.paladin_retri_pve_and_prot_pve_lv80,
-        #     CharacterGroup.cg_class_paladin_retri_pve_and_prot_pve,
-        # ),
-        # (
-        #     WarmaneWTF.CharacterMacros.paladin_holy_pve_and_retri_pve_lv80,
-        #     CharacterGroup.cg_class_paladin_holy_pve_and_retri_pve,
-        # ),
+        (
+            WarmaneWTF.CharacterMacros.paladin_prot_pve_and_retri_pve_lv80,
+            CharacterGroup.cg_paladin_prot_pve_and_retri_pve,
+        ),
+        (
+            WarmaneWTF.CharacterMacros.paladin_retri_pve_and_prot_pve_lv80,
+            CharacterGroup.cg_paladin_retri_pve_and_prot_pve,
+        ),
+        (
+            WarmaneWTF.CharacterMacros.paladin_holy_pve_and_retri_pve_lv80,
+            CharacterGroup.cg_paladin_holy_pve_and_retri_pve,
+        ),
     ],
     character_saved_variables_config=[
         (

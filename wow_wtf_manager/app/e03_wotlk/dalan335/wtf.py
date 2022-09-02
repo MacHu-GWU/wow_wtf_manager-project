@@ -79,7 +79,7 @@ class WarmaneWTF:
             input_path=dir_26_character_macros / "paladin-prot-pve-and-retri-pve-lv80.txt"
         )
         paladin_retri_pve_and_prot_pve_lv80 = wtf.CharacterMacroConfig(
-            input_path=dir_26_character_macros / "paladin-bcd-retri-pve-and-prot-pve-lv80.txt"
+            input_path=dir_26_character_macros / "paladin-retri-pve-and-prot-pve-lv80.txt"
         )
         paladin_holy_pve_and_retri_pve_lv80 = wtf.CharacterMacroConfig(
             input_path=dir_26_character_macros / "paladin-holy-pve-and-retri-pve-lv80.txt"

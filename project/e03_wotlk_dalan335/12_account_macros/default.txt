@@ -90,10 +90,17 @@ MACRO 86 "MB-TgtRaid" Ability_Hunter_SniperShot
 /targetraid
 END
 MACRO 67 "MB-TgtW01" Ability_Hunter_MarkedForDeath
-/tar batlefury
-/tar litgoatssa
-/tar litgoatdka
-/tar lgsqa
+/tar qsa
+END
+MACRO 75934 "Summon" Spell_Shadow_TwistedFaith
+.summon qsb
+.summon qsc
+.summon qsd
+.summon qse
+END
+MACRO 75936 "临时" INV_Misc_QuestionMark
+.modify money 30000000
+.add 23162 11
 END
 MACRO 29 "传撒" Spell_Arcane_TeleportShattrath
 .go -1834 5303 -12.43 530
