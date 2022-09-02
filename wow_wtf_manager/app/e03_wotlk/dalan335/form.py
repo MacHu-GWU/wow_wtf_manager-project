@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
 from pathlib_mate import Path
+from ordered_set import OrderedSet
 from wow_wtf_manager.exp.e03_wotlk.form import WtfForm
 from wow_wtf_manager.exp.e03_wotlk.macro import apply_macros_cache_txt
 
 from .wtf import WarmaneWTF
 from .group import AccountGroup, CharacterGroup
+from . import group
 
 warmane_wtf_form = WtfForm(
     dir_wow=Path(r"C:\Users\husan\Documents\Games\WoW-Root\Client\World-of-Warcraft-3.3.5-zhCN"),
@@ -29,7 +31,9 @@ warmane_wtf_form = WtfForm(
                 exclude_list=[
                 ],
             ),
-            AccountGroup.ag_all_account,
+            OrderedSet([
+                WarmaneWTF.
+            ])
         )
     ],
     character_user_interface_config=[
