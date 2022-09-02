@@ -9,7 +9,7 @@ from .group import AccountGroup, CharacterGroup
 
 warmane_wtf_form = WtfForm(
     dir_wow=Path(r"C:\Users\husan\Documents\Games\WoW-Root\Client\World-of-Warcraft-3.3.5-zhCN"),
-    game_client_config=WarmaneWTF.GameClient.c3_1600_900_minimal,
+    game_client_config=WarmaneWTF.GameClient.c01_1920_1080_max,
     all_characters=CharacterGroup.cg_all_character,
     account_user_interface_config=[
         (

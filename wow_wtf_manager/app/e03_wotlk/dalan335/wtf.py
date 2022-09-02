@@ -71,7 +71,7 @@ class WarmaneWTF:
 
     class CharacterAddons:
         multibox_minimal = wtf.CharacterAddonConfig(
-            input_path=dir_25_character_addons / "05-multibox-minimal.txt"
+            input_path=dir_25_character_addons / "01-multiboxer-buser.txt"
         )
 
     class CharacterMacros:

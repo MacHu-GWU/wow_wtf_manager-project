@@ -7,16 +7,17 @@ Omen3DB = {
 	},
 	["profiles"] = {
 		["MyDefault"] = {
-			["PositionW"] = 221.3526829100494,
-			["PositionH"] = 103.3512956065097,
+			["PositionW"] = 221.3526654029161,
+			["PositionH"] = 103.351286852943,
 			["VGrip2"] = 127.2777944450514,
-			["PositionY"] = 393.8524456405221,
+			["PositionY"] = 341.0580044836042,
 			["Locked"] = true,
+			["Shown"] = true,
 			["ShowWith"] = {
 				["Alone"] = true,
 			},
 			["VGrip1"] = 94.07489154634233,
-			["PositionX"] = 1636.410517382976,
+			["PositionX"] = 1447.858271549452,
 		},
 	},
 }
