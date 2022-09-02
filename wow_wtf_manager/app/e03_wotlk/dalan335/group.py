@@ -19,11 +19,11 @@ fat04 = Account("Fat04")
 fat05 = Account("Fat05")
 
 # All Characters
-fat01_maocore_qsa = Character.from_string("Fat01.Maocore plbot.qsa")
-fat02_maocore_qsb = Character.from_string("Fat02.Maocore plbot.qsb")
-fat03_maocore_qsc = Character.from_string("Fat03.Maocore plbot.qsc")
-fat04_maocore_qsd = Character.from_string("Fat04.Maocore plbot.qsd")
-fat05_maocore_qse = Character.from_string("Fat05.Maocore plbot.qse")
+fat01_maocore_qsa = Character.from_string("Fat01.AzerothCore.qsa")
+fat02_maocore_qsb = Character.from_string("Fat02.AzerothCore.qsb")
+fat03_maocore_qsc = Character.from_string("Fat03.AzerothCore.qsc")
+fat04_maocore_qsd = Character.from_string("Fat04.AzerothCore.qsd")
+fat05_maocore_qse = Character.from_string("Fat05.AzerothCore.qse")
 
 
 # ==============================================================================
