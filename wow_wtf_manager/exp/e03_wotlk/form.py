@@ -164,14 +164,15 @@ class WtfForm(AttrsClass):
                 config_content_mapper[p.basename] = content
 
             for account in account_orderedset:
-                config = evolve_from_account(config, account)
+                config: AccountSavedVariablesConfig = evolve_from_account(config, account)
                 if plan is False:
                     config.output_path.mkdir_if_not_exists()
                 for p in config.lua_file_list:
+                    p_output = config.output_path / (p.fname.split("_")[0] + p.ext)
                     if self.verbose:
-                        print(f"  to {(config.output_path / p.basename).abspath}")
+                        print(f"  to {p_output.abspath}")
                     if plan is False:
-                        (config.output_path / p.basename).write_text(
+                        p_output.write_text(
                             config_content_mapper[p.basename]
                         )
 
@@ -265,14 +266,15 @@ class WtfForm(AttrsClass):
                 config_content_mapper[p.basename] = content
 
             for character in character_orderedset:
-                config = evolve_from_character(config, character)
+                config: CharacterSavedVariablesConfig = evolve_from_character(config, character)
                 if plan is False:
                     config.output_path.mkdir_if_not_exists()
                 for p in config.lua_file_list:
+                    p_output = config.output_path / (p.fname.split("_")[0] + p.ext)
                     if self.verbose:
-                        print(f"  to {(config.output_path / p.basename).abspath}")
+                        print(f"  to {p_output.abspath}")
                     if plan is False:
-                        (config.output_path / p.basename).write_text(
+                        p_output.write_text(
                             config_content_mapper[p.basename]
                         )
 
