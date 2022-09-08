@@ -45,16 +45,6 @@ MACRO 7 " X32" Spell_Fire_BurningSpeed
 .modify speed all 32
 /targetlasttarget
 END
-MACRO 43 "Decursive" INV_Misc_QuestionMark
-/script Dcr:Println('没有相关技能')
-END
-MACRO 75933 "InvT1" Spell_Shadow_Twilight
-/inv qsa
-/inv qsb
-/inv qsc
-/inv qsd
-/inv qse
-END
 MACRO 42 "MB-Confirm" Spell_ChargePositive
 /click StaticPopup1Button1
 END
@@ -73,9 +63,6 @@ END
 MACRO 118 "MB-FPSLow" Ability_Druid_EclipseOrange
 /console maxfps 5
 END
-MACRO 88 "MB-LeaveParty" Spell_Shaman_BlessingOfEternals
-/script LeaveParty()
-END
 MACRO 40 "MB-TgtFcsTgt" Ability_Hunter_SniperTraining
 /assist focus
 END
@@ -92,27 +79,47 @@ END
 MACRO 67 "MB-TgtW01" Ability_Hunter_MarkedForDeath
 /tar qsa
 END
-MACRO 75934 "Summon" Spell_Shadow_TwistedFaith
-.summon qsb
-.summon qsc
-.summon qsd
-.summon qse
+MACRO 75937 "MB-TgtW10" Ability_Hunter_MarkedForDeath
+/tar dkj
+END
+MACRO 75934 "T召" achievement_reputation_01
+.summon smb
+.summon xdc
+.summon fsd
+.summon mse
+.summon ssf
+.summon lrg
+.summon xdh
+.summon qsi
+.summon dkj
+END
+MACRO 88 "T离" Spell_Shaman_BlessingOfEternals
+/script LeaveParty()
+END
+MACRO 75933 "T邀" Spell_Shadow_Twilight
+/inv smb
+/inv xdc
+/inv fsd
+/inv mse
+/inv ssf
+/inv lrg
+/inv xdh
+/inv qsi
+/inv dkj
 END
 MACRO 75936 "临时" INV_Misc_QuestionMark
-.modify money 30000000
-.add 23162 11
 END
 MACRO 29 "传撒" Spell_Arcane_TeleportShattrath
-.go -1834 5303 -12.43 530
+.go xyz -1834 5303 -12.43 530
 END
 MACRO 26 "传苏" Spell_Arcane_TeleportDarnassus
-.go 8643 845 23.5 1
+.go xyz 8643 845 23.5 1
 END
 MACRO 30 "传达" Spell_Arcane_TeleportDalaran
-.go 5813 448 658.75 571
+.go xyz 5813 448 658.75 571
 END
 MACRO 25 "传铁" Spell_Arcane_TeleportIronForge
-.go -4822 -1157 502.21 0
+.go xyz -4822 -1157 502.21 0
 END
 MACRO 2 "飞上" Ability_Mount_Drake_Twilight
 /target player

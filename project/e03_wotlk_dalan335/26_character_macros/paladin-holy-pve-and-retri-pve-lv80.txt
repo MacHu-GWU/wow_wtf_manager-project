@@ -18,6 +18,11 @@ MACRO 26579094 "Act4" INV_Misc_QuestionMark
 /startattack
 /cast [spec:1,mod:alt] 神圣愤怒; 奉献
 END
+MACRO 26579100 "BuffMT" INV_Misc_QuestionMark
+#showtooltip
+/target focus
+/castsequence 圣光道标,,,,,,,,,,,,,,,,,,
+END
 MACRO 26579099 "ClearDebuff" INV_Misc_QuestionMark
 #showtooltip
 /cancelaura 圣盾术
@@ -29,8 +34,8 @@ END
 MACRO 26579095 "MB-BuffSelf" INV_Misc_QuestionMark
 #showtooltip
 /target player
-/castsequence [spec:1] reset=target 复仇圣印, !惩戒光环, 强效王者祝福
-/castsequence [spec:1] reset=target 正义之怒, 复仇圣印, !虔诚光环, 强效庇护祝福
+/castsequence [spec:1] reset=target 智慧圣印, !专注光环, 强效智慧祝福
+/castsequence [spec:2] reset=target 正义之怒, 复仇圣印, !虔诚光环, 强效庇护祝福
 END
 MACRO 26579097 "MountDown" INV_Misc_QuestionMark
 #showtooltip
@@ -42,4 +47,10 @@ MACRO 26579098 "MountUp" INV_Misc_QuestionMark
 /stopmacro [mounted]
 /cast [flyable] 无敌
 /cast [noflyable] 无敌
+END
+MACRO 26579101 "PeriodicJudge" INV_Misc_QuestionMark
+#showtooltip
+/assist focus
+/startattack
+/castsequence 圣光审判,,圣光审判,,圣洁护盾,,
 END
