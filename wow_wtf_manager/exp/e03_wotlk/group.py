@@ -48,7 +48,16 @@ class Character(AttrsClass):
 
     @property
     def sort_key(self) -> str:
-        return f"{right_zfill(self.account)}.{right_zfill(self.server)}.{right_zfill(self.character)}"
+        """
+        逻辑上我们希望先按照 account 排序, 然后按照 server, 最后按照 character 角色名
+        排序. 但是由于字符串的长度可能不一定, 所以我们用 zfill 在右边尾部添 0 直到 20 个
+        字符的长度
+        """
+        return ".".join([
+            right_zfill(self.account),
+            right_zfill(self.server),
+            right_zfill(self.character),
+        ])
 
     def __gt__(self, other: 'Character'):
         return self.sort_key > other.sort_key

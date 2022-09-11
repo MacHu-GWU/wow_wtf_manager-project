@@ -14,10 +14,10 @@ from .group import (
     AccountSavedVariableGroup,
 )
 
-
 warmane_wtf_form = WtfForm(
     dir_wow=Path(r"C:\Users\husan\Documents\Games\WoW-Root\Client\World-of-Warcraft-3.3.5-zhCN"),
     game_client_config=WarmaneWTF.GameClient.c01_1920_1080_max,
+    # game_client_config=WarmaneWTF.GameClient.c2_1920_1080_minimal,
     all_characters=CharacterGroup.cg_all_character,
     account_user_interface_config=[
         (
@@ -35,35 +35,43 @@ warmane_wtf_form = WtfForm(
         (
             WarmaneWTF.AccountSavedVariables.account_saved_variables.evolve(
                 include_list=AccountSavedVariableGroup.common_include_list + [
-                    # "SuperDuperMacro_paladin_prot_pve_and_retri_pve"
+                    # "SuperDuperMacro_paladin_holy_pve_and_retri_pve"
                 ]
             ),
-            OrderedSet([
-                AccountEnum.fat01,
-            ])
-        ),
-        (
-            WarmaneWTF.AccountSavedVariables.account_saved_variables.evolve(
-                include_list=AccountSavedVariableGroup.common_include_list + [
-                    # "SuperDuperMacro_paladin_retri_pve_and_prot_pve"
-                ]
-            ),
-            OrderedSet([
-                AccountEnum.fat02,
-                AccountEnum.fat03,
-                AccountEnum.fat04,
-            ])
-        ),
-        (
-            WarmaneWTF.AccountSavedVariables.account_saved_variables.evolve(
-                include_list=AccountSavedVariableGroup.common_include_list + [
-                    "SuperDuperMacro_paladin_holy_pve_and_retri_pve"
-                ]
-            ),
-            OrderedSet([
-                AccountEnum.fat05,
-            ])
+            AccountGroup.ag_all_account,
         )
+        # (
+        #     WarmaneWTF.AccountSavedVariables.account_saved_variables.evolve(
+        #         include_list=AccountSavedVariableGroup.common_include_list + [
+        #             # "SuperDuperMacro_paladin_prot_pve_and_retri_pve"
+        #         ]
+        #     ),
+        #     OrderedSet([
+        #         AccountEnum.fat01,
+        #     ])
+        # ),
+        # (
+        #     WarmaneWTF.AccountSavedVariables.account_saved_variables.evolve(
+        #         include_list=AccountSavedVariableGroup.common_include_list + [
+        #             # "SuperDuperMacro_paladin_retri_pve_and_prot_pve"
+        #         ]
+        #     ),
+        #     OrderedSet([
+        #         AccountEnum.fat02,
+        #         AccountEnum.fat03,
+        #         AccountEnum.fat04,
+        #     ])
+        # ),
+        # (
+        #     WarmaneWTF.AccountSavedVariables.account_saved_variables.evolve(
+        #         include_list=AccountSavedVariableGroup.common_include_list + [
+        #             # "SuperDuperMacro_paladin_holy_pve_and_retri_pve"
+        #         ]
+        #     ),
+        #     OrderedSet([
+        #         AccountEnum.fat05,
+        #     ])
+        # )
     ],
     character_user_interface_config=[
         (
@@ -99,14 +107,6 @@ warmane_wtf_form = WtfForm(
         (
             WarmaneWTF.CharacterMacros.paladin_prot_pve_and_retri_pve_lv80,
             CharacterGroup.cg_paladin_prot_pve_and_retri_pve,
-        ),
-        (
-            WarmaneWTF.CharacterMacros.paladin_retri_pve_and_prot_pve_lv80,
-            CharacterGroup.cg_paladin_retri_pve_and_prot_pve,
-        ),
-        (
-            WarmaneWTF.CharacterMacros.paladin_holy_pve_and_retri_pve_lv80,
-            CharacterGroup.cg_paladin_holy_pve_and_retri_pve,
         ),
     ],
     character_saved_variables_config=[

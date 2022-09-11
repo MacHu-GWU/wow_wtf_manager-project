@@ -2,13 +2,15 @@
 
 import os
 
-from wow_wtf_manager.paths import dir_wotlk_warmane_project
-from wow_wtf_manager.app.e03_wotlk.warmane.form import warmane_wtf_form
+from wow_wtf_manager.paths import dir_wotlk_acore_project
+from wow_wtf_manager.app.e03_wotlk.acore.form import warmane_wtf_form
 
 
 class TestWtfForm:
     def test(self):
-        warmane_wtf_form.dir_wow = dir_wotlk_warmane_project / "world-of-warcraft"
+        # 在单元测试里我们不希望将生成的 WTF 文件覆盖游戏客户端中的文件,
+        # 所以我们将生成的 WTF 文件放在 本地的测试文件夹
+        warmane_wtf_form.dir_wow = dir_wotlk_acore_project / "world-of-warcraft"
         warmane_wtf_form.__attrs_post_init__()
         warmane_wtf_form.verbose = False
         warmane_wtf_form.apply()
