@@ -77,35 +77,37 @@ MACRO 86 "MB-TgtRaid" Ability_Hunter_SniperShot
 /targetraid
 END
 MACRO 67 "MB-TgtW01" Ability_Hunter_MarkedForDeath
-/tar qsa
+/tar ra
 END
 MACRO 75937 "MB-TgtW10" Ability_Hunter_MarkedForDeath
-/tar dkj
+/tar rj
 END
 MACRO 75934 "T召" achievement_reputation_01
-.summon smb
-.summon xdc
-.summon fsd
-.summon mse
-.summon ssf
-.summon lrg
-.summon xdh
-.summon qsi
-.summon dkj
+.summon ra
+.summon rb
+.summon rc
+.summon rd
+.summon re
+.summon rf
+.summon rg
+.summon rh
+.summon ri
+.summon rj
 END
 MACRO 88 "T离" Spell_Shaman_BlessingOfEternals
 /script LeaveParty()
 END
 MACRO 75933 "T邀" Spell_Shadow_Twilight
-/inv smb
-/inv xdc
-/inv fsd
-/inv mse
-/inv ssf
-/inv lrg
-/inv xdh
-/inv qsi
-/inv dkj
+/inv ra
+/inv rb
+/inv rc
+/inv rd
+/inv re
+/inv rf
+/inv rg
+/inv rh
+/inv ri
+/inv rj
 END
 MACRO 75936 "临时" INV_Misc_QuestionMark
 END
