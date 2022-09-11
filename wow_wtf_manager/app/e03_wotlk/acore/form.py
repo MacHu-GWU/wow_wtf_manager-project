@@ -14,7 +14,7 @@ from .group import (
     AccountSavedVariableGroup,
 )
 
-warmane_wtf_form = WtfForm(
+acore_wtf_form = WtfForm(
     dir_wow=Path(r"C:\Users\husan\Documents\Games\WoW-Root\Client\World-of-Warcraft-3.3.5-zhCN"),
     game_client_config=WarmaneWTF.GameClient.c01_1920_1080_max,
     # game_client_config=WarmaneWTF.GameClient.c2_1920_1080_minimal,
