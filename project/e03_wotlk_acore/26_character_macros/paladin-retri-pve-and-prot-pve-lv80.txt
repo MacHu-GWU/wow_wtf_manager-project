@@ -23,6 +23,10 @@ MACRO 26639650 "ClearDebuff" INV_Misc_QuestionMark
 /cancelaura 圣盾术
 /cast 圣盾术
 END
+MACRO 26639651 "DPS-Rotate" INV_Misc_QuestionMark
+#showtooltip
+/castsequence reset=10 智慧审判,神圣风暴,十字军打击,奉献,十字军打击,智慧审判,神圣风暴,十字军打击,十字军打击
+END
 MACRO 26639647 "Heal" Spell_Holy_FlashHeal
 /cast [modifier:alt,target=mouseover,help][modifier:alt,help][modifier:alt,target=targettarget,help][modifier:alt] 圣光术; [target=mouseover,help][help][target=targettarget,help][] 圣光闪现
 END

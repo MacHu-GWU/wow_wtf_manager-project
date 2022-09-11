@@ -120,3 +120,4 @@ warmane_wtf_form = WtfForm(
     ],
     apply_macros_cache_txt=apply_macros_cache_txt,
 )
+
