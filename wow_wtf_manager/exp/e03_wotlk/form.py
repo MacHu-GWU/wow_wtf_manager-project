@@ -283,8 +283,8 @@ class WtfForm(AttrsClass):
         self.apply_account_user_interface_config(plan=plan)
         self.apply_account_macro_config(plan=plan)
         self.apply_account_saved_variables_config(plan=plan)
-        # self.apply_account_keybinding_config()
-        # self.apply_account_cache_config()
+        self.apply_account_keybinding_config()
+        self.apply_account_cache_config()
 
         self.apply_character_user_interface_config(plan=plan)
         self.apply_character_chat_config(plan=plan)

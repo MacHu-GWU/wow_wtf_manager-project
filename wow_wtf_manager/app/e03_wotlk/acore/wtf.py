@@ -30,6 +30,9 @@ class WarmaneWTF:
         c4_1176_664_minimal = wtf.GameClientConfig(
             input_path=dir_01_game_client / "1176-664-minimal-graphic-sound.txt"
         )
+        c5_3840_2160_max = wtf.GameClientConfig(
+            input_path=dir_01_game_client / "3840-2160-max-graphic-sound.txt"
+        )
 
     class AccountUserInterface:
         default = wtf.AccountUserInterfaceConfig(

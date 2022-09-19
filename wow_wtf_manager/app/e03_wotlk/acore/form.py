@@ -15,9 +15,9 @@ from .group import (
 )
 
 acore_wtf_form = WtfForm(
-    dir_wow=Path(r"C:\Users\husan\Documents\Games\WoW-Root\Client\World-of-Warcraft-3.3.5-zhCN"),
-    game_client_config=WarmaneWTF.GameClient.c01_1920_1080_max,
-    # game_client_config=WarmaneWTF.GameClient.c2_1920_1080_minimal,
+    # 之所以用台服客户端是因为国服客户端不支持 BOT 程序 PTR
+    dir_wow=Path(r"C:\Users\husan\Documents\Games\WoW-Root\Client\World-of-Warcraft-3.3.5-zhTW"),
+    game_client_config=WarmaneWTF.GameClient.c5_3840_2160_max,
     all_characters=CharacterGroup.cg_all_character,
     account_user_interface_config=[
         (
