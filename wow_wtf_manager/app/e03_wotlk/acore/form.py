@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+"""
+Acore 客户端的 WTF 配置的具体定义.
+"""
+
 from pathlib_mate import Path
 from ordered_set import OrderedSet
 from wow_wtf_manager.exp.e03_wotlk.form import WtfForm

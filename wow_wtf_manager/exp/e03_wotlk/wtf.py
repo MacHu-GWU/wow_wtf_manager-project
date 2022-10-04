@@ -339,7 +339,10 @@ def titleize(s: str) -> str:
     return s[0].upper() + s[1:].lower()
 
 
-def evolve_from_account(config: BaseAccountConfig, account: 'Account') -> BaseAccountConfig:
+def evolve_from_account(
+    config: BaseAccountConfig,
+    account: 'Account',
+) -> BaseAccountConfig:
     """
     从 Account 对象中获得 账号 信息, 并对 Config 对象进行更新.
     """

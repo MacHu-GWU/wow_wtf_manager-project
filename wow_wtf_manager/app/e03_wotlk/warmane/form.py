@@ -85,5 +85,4 @@ warmane_wtf_form = WtfForm(
             CharacterGroup.cg_test,
         )
     ],
-    apply_macros_cache_txt=apply_macros_cache_txt,
 )
