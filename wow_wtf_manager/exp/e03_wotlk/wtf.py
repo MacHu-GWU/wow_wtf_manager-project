@@ -348,9 +348,16 @@ def evolve_from_account(config: BaseAccountConfig, account: 'Account') -> BaseAc
     return config
 
 
-def evolve_from_character(config: BaseCharacterConfig, character: 'Character') -> BaseCharacterConfig:
+def evolve_from_character(
+    config: BaseCharacterConfig,
+    character: 'Character',
+) -> BaseCharacterConfig:
     """
     从 Character 对象中获得 账号, 服务器, 角色名 等信息, 并对 Config 对象进行更新.
+
+    **重要**
+
+    该函数不是修改已有的 ``BaseCharacterConfig`` 实例, 而是创建一个新的实例.
     """
     config = attr.evolve(config)
     config.account = character.account

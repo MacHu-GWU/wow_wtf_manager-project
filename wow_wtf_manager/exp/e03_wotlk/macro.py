@@ -174,7 +174,7 @@ def apply_macros_cache_txt(
 ):
     """
     把一个自定义的 macros-cache.txt 中的宏定义合并到游戏客户端中的 macros-cache.txt
-    中去.
+    中去. 该函数是底层实现, 会被其他函数所调用.
 
     这里要非常注意. 游戏客户端中的宏都是有 ID 的, 这些 ID 是服务器端给自动指定的. 动作条
     上的按钮需要靠这些 ID 来找到到底使用哪个宏命令. 如果你有一个宏的内容改了, 名字不变, 但是
@@ -182,6 +182,10 @@ def apply_macros_cache_txt(
     也变了, 导致动作条上已经放好的按钮消失了. 我们希望避免这一情况.
 
     所以我们在合并的时候, 要根据宏的名字来定位, 如果对已经存在的宏进行修改, 我们不能修改 ID.
+
+    :param macros_data_file: 新增和修改的数据
+    :param game_client_file: 被修改的源文件
+    :param plan: 是否是 dry_run? (True = dry_run)
     """
     macro_txt_data = MacroTxt.parse(macros_data_file)
     if Path(game_client_file).exists():

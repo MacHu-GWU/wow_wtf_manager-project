@@ -22,15 +22,16 @@ acore_wtf_form = WtfForm(
     account_user_interface_config=[
         (
             WarmaneWTF.AccountUserInterface.default,
-            AccountGroup.ag_all_account,
+            # AccountGroup.ag_all_account,
+            AccountGroup.ag_fat_11_to_25,
         )
     ],
-    account_macro_config=[
-        (
-            WarmaneWTF.AccountMacros.default,
-            AccountGroup.ag_all_account,
-        )
-    ],
+    # account_macro_config=[
+    #     (
+    #         WarmaneWTF.AccountMacros.default,
+    #         AccountGroup.ag_all_account,
+    #     )
+    # ],
     account_saved_variables_config=[
         (
             WarmaneWTF.AccountSavedVariables.account_saved_variables.evolve(
@@ -38,7 +39,8 @@ acore_wtf_form = WtfForm(
                     # "SuperDuperMacro_paladin_holy_pve_and_retri_pve"
                 ]
             ),
-            AccountGroup.ag_all_account,
+            # AccountGroup.ag_all_account,
+            AccountGroup.ag_fat_11_to_25,
         )
         # (
         #     WarmaneWTF.AccountSavedVariables.account_saved_variables.evolve(
@@ -76,48 +78,53 @@ acore_wtf_form = WtfForm(
     character_user_interface_config=[
         (
             WarmaneWTF.CharacterUserInterface.default,
-            CharacterGroup.cg_all_character,
+            # CharacterGroup.cg_all_character,
+            CharacterGroup.cg_rk_to_ry,
         )
     ],
     character_chat_config=[
         (
             WarmaneWTF.CharacterChat.default,
-            CharacterGroup.cg_all_character,
+            # CharacterGroup.cg_all_character,
+            CharacterGroup.cg_rk_to_ry,
         )
     ],
     character_keybinding_config=[
         (
             WarmaneWTF.CharacterKeybinding.default,
-            CharacterGroup.cg_all_character,
+            # CharacterGroup.cg_all_character,
+            CharacterGroup.cg_rk_to_ry,
         )
     ],
     character_layout_config=[
         (
             WarmaneWTF.CharacterLayout.default,
-            CharacterGroup.cg_all_character,
+            # CharacterGroup.cg_all_character,
+            CharacterGroup.cg_rk_to_ry,
         )
     ],
     character_addon_config=[
         (
             WarmaneWTF.CharacterAddons.multibox_minimal,
-            CharacterGroup.cg_all_character,
+            # CharacterGroup.cg_all_character,
+            CharacterGroup.cg_rk_to_ry,
         )
     ],
-    character_macro_config=[
-        (
-            WarmaneWTF.CharacterMacros.paladin_prot_pve_and_retri_pve_lv80,
-            CharacterGroup.cg_paladin_prot_pve_and_retri_pve,
-        ),
-    ],
+    # character_macro_config=[
+    #     (
+    #         WarmaneWTF.CharacterMacros.paladin_prot_pve_and_retri_pve_lv80,
+    #         CharacterGroup.cg_paladin_prot_pve_and_retri_pve,
+    #     ),
+    # ],
     character_saved_variables_config=[
         (
             WarmaneWTF.CharacterSavedVariables.character_saved_variables.evolve(
                 exclude_list=[
                 ],
             ),
-            CharacterGroup.cg_all_character,
+            # CharacterGroup.cg_all_character,
+            CharacterGroup.cg_rk_to_ry,
         )
     ],
-    apply_macros_cache_txt=apply_macros_cache_txt,
 )
 

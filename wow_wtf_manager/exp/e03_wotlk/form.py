@@ -91,7 +91,6 @@ class WtfForm(AttrsClass):
 
     all_characters: OrderedSet[Character] = attr.ib(factory=OrderedSet)
     verbose: bool = attr.ib(default=True)
-    apply_macros_cache_txt: callable = attr.ib(default=None)
 
     def __attrs_post_init__(self):
         self.game_client_config.dir_wow = self.dir_wow
@@ -144,7 +143,7 @@ class WtfForm(AttrsClass):
                     print(f"  to {config.output_path.abspath}")
                 if plan is False:
                     config.output_path.parent.mkdir_if_not_exists()
-                    self.apply_macros_cache_txt(
+                    apply_macros_cache_txt(
                         macros_data_file=config.input_path.abspath,
                         game_client_file=config.output_path.abspath,
                         plan=plan,
@@ -247,7 +246,7 @@ class WtfForm(AttrsClass):
                     print(f"  to {config.output_path.abspath}")
                 if plan is False:
                     config.output_path.parent.mkdir_if_not_exists()
-                    self.apply_macros_cache_txt(
+                    apply_macros_cache_txt(
                         macros_data_file=config.input_path.abspath,
                         game_client_file=config.output_path.abspath,
                         plan=plan,
