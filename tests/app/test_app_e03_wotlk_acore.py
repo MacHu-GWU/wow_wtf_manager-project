@@ -3,7 +3,37 @@
 import os
 
 from wow_wtf_manager.paths import dir_wotlk_acore_project
-from wow_wtf_manager.app.e03_wotlk.acore.form import acore_wtf_form
+from wow_wtf_manager.app.e03_wotlk.acore.group import (
+    AccountGroup, CharacterGroup, AccountSavedVariableGroup
+)
+from wow_wtf_manager.app.e03_wotlk.acore.form import (
+    acore_wtf_form,
+)
+
+
+class TestCharacterGroup:
+    def test(self):
+        assert sum([
+            len(CharacterGroup.cg_paladin),
+            len(CharacterGroup.cg_non_paladin),
+        ]) == len(CharacterGroup.cg_all_character)
+
+        assert sum([
+            len(CharacterGroup.cg_warrior_and_dk),
+            len(CharacterGroup.cg_non_warrior_and_dk),
+        ]) == len(CharacterGroup.cg_all_character)
+
+        assert sum([
+            len(CharacterGroup.cg_multibox_master_paladin),
+            len(CharacterGroup.cg_multibox_master_non_paladin),
+        ]) == 2
+
+        assert sum([
+            len(CharacterGroup.cg_multibox_master_paladin),
+            len(CharacterGroup.cg_multibox_master_non_paladin),
+            len(CharacterGroup.cg_multibox_slave_paladin),
+            len(CharacterGroup.cg_multibox_slave_non_paladin),
+        ]) == len(CharacterGroup.cg_all_character)
 
 
 class TestWtfForm:
@@ -13,7 +43,13 @@ class TestWtfForm:
         acore_wtf_form.dir_wow = dir_wotlk_acore_project / "world-of-warcraft"
         acore_wtf_form.__attrs_post_init__()
         acore_wtf_form.verbose = False
-        acore_wtf_form.apply()
+        # acore_wtf_form.apply()
+
+        acore_wtf_form.apply_account_saved_variables_config()
+
+        acore_wtf_form.apply_character_addon_config()
+        acore_wtf_form.apply_character_layout_config()
+        acore_wtf_form.apply_character_saved_variables_config()
 
 
 if __name__ == "__main__":

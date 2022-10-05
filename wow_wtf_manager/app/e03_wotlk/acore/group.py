@@ -39,6 +39,7 @@ class AccountEnum:
     fat24 = Account("Fat24")
     fat25 = Account("Fat25")
 
+
 class CharacterEnum:
     fat01_acore_ra = Character.from_string("Fat01.AzerothCore.Ra")
     fat02_acore_rb = Character.from_string("Fat02.AzerothCore.Rb")
@@ -135,13 +136,12 @@ class AccountGroup:
     ])
 
 
-
 class CharacterGroup:
     """
     ``cg_`` stands for character group is the common prefix,
     can be used for search using PyCharm.
     """
-    # --- Group by accounts
+    # --- by accounts 按照账号分类
     cg_all_character = OrderedSet([
         CharacterEnum.fat01_acore_ra,
         CharacterEnum.fat02_acore_rb,
@@ -170,6 +170,7 @@ class CharacterGroup:
         CharacterEnum.fat25_acore_ry,
     ])
 
+    # 前 10 个角色
     cg_ra_to_rj = OrderedSet([
         CharacterEnum.fat01_acore_ra,
         CharacterEnum.fat02_acore_rb,
@@ -183,6 +184,7 @@ class CharacterGroup:
         CharacterEnum.fat10_acore_rj,
     ])
 
+    # 后 15 个角色
     cg_rk_to_ry = OrderedSet([
         CharacterEnum.fat11_acore_rk,
         CharacterEnum.fat12_acore_rl,
@@ -201,6 +203,22 @@ class CharacterGroup:
         CharacterEnum.fat25_acore_ry,
     ])
 
+    # --- by class 按照职业分类
+    cg_paladin = OrderedSet([
+        CharacterEnum.fat01_acore_ra,
+        CharacterEnum.fat09_acore_ri,
+        CharacterEnum.fat24_acore_rx,
+    ])
+
+    cg_non_paladin = cg_all_character.difference(cg_paladin)
+
+    cg_warrior_and_dk = OrderedSet([
+        CharacterEnum.fat10_acore_rj,
+    ])
+
+    cg_non_warrior_and_dk = cg_all_character.difference(cg_warrior_and_dk)
+
+    # --- by talent 按照天赋分类
     cg_paladin_prot_pve_and_retri_pve = OrderedSet([
         CharacterEnum.fat01_acore_ra,
     ])
@@ -259,22 +277,51 @@ class CharacterGroup:
         CharacterEnum.fat13_acore_rm,
     ])
 
+    # --- by play style
+    cg_multibox_master_paladin = OrderedSet([
+        CharacterEnum.fat01_acore_ra,
+    ])
+
+    cg_multibox_master_non_paladin = OrderedSet([
+        CharacterEnum.fat10_acore_rj,
+    ])
+
+    cg_multibox_slave_paladin = cg_paladin.difference(cg_multibox_master_paladin)
+
+    cg_multibox_slave_non_paladin = cg_non_paladin.difference(cg_multibox_master_non_paladin)
+
+
+class SavedVariableEnum:
+    AtlasLoot = "AtlasLoot"
+    Combuctor = "Combuctor"
+    Dominos = "Dominos"
+    HealBot = "HealBot"
+    Mappy = "Mappy"
+    MobInfo2 = "MobInfo2"
+    oCC = "oCC"
+    Omen = "Omen"
+    PallyPower = "PallyPower"
+    Parrot = "Parrot"
+    Postal = "Postal"
+    Quartz = "Quartz"
+    RatingBuster = "RatingBuster"
+    Skada = "Skada"
+    SlideBar = "SlideBar"
+
 
 class AccountSavedVariableGroup:
-    common_include_list = [
-        "AtlasLoot",
-        "Combuctor",
-        "Dominos",
-        "HealBot",
-        "Mappy",
-        "MobInfo2",
-        "oCC",
-        "Omen",
-        "PallyPower",
-        "Parrot",
-        "Postal",
-        "Quartz",
-        "RatingBuster",
-        "Skada",
-        "SlideBar",
-    ]
+    common_include_list = OrderedSet([
+        SavedVariableEnum.AtlasLoot,
+        SavedVariableEnum.Combuctor,
+        SavedVariableEnum.Dominos,
+        SavedVariableEnum.HealBot,
+        SavedVariableEnum.Mappy,
+        SavedVariableEnum.oCC,
+        SavedVariableEnum.Omen,
+        SavedVariableEnum.Parrot,
+        SavedVariableEnum.Postal,
+        SavedVariableEnum.Quartz,
+        SavedVariableEnum.RatingBuster,
+        SavedVariableEnum.Skada,
+        SavedVariableEnum.SlideBar,
+    ])
