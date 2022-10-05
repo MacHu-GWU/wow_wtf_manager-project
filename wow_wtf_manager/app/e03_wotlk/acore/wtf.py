@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 
+"""
+对 ${root}/project/e03_wotlk_acore 下的配置文件的枚举. 然后就可以在 form.py 文件中
+对它们进行排列组合了
+"""
+
 from wow_wtf_manager.exp.e03_wotlk import wtf
 from wow_wtf_manager.paths import dir_wotlk_acore_project
 

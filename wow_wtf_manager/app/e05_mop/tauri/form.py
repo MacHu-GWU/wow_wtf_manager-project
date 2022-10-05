@@ -87,5 +87,4 @@ tauri_wtf_form = WtfForm(
             CharacterGroup.cg_account_fatmulti_1_to_5,
         )
     ],
-    apply_macros_cache_txt=apply_macros_cache_txt,
 )
