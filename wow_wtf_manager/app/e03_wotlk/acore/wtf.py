@@ -73,8 +73,17 @@ class WarmaneWTF:
         )
 
     class CharacterAddons:
-        multibox_minimal = wtf.CharacterAddonConfig(
-            input_path=dir_25_character_addons / "01-multiboxer-buser.txt"
+        multiboxer_master_paladin = wtf.CharacterAddonConfig(
+            input_path=dir_25_character_addons / "01-multiboxer-master-paladin.txt"
+        )
+        multiboxer_master_non_paladin = wtf.CharacterAddonConfig(
+            input_path=dir_25_character_addons / "02-multiboxer-master-non-paladin.txt"
+        )
+        multiboxer_slave_paladin = wtf.CharacterAddonConfig(
+            input_path=dir_25_character_addons / "03-multiboxer-slave-paladin.txt"
+        )
+        multiboxer_slave_non_paladin = wtf.CharacterAddonConfig(
+            input_path=dir_25_character_addons / "04-multiboxer-slave-non-paladin.txt"
         )
 
     class CharacterMacros:
