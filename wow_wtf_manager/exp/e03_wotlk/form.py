@@ -12,7 +12,7 @@ import attr
 from attrs_mate import AttrsClass
 from pathlib_mate import Path
 from jinja2 import Template
-from rich import print
+from rich import print as rprint
 
 from ..e03_wotlk.macro import apply_macros_cache_txt
 

@@ -133,3 +133,5 @@ acore_wtf_form.character_saved_variables_config = [
         CharacterGroup.cg_rk_to_ry,
     )
 ]
+
+acore_wtf_form.__attrs_post_init__()
