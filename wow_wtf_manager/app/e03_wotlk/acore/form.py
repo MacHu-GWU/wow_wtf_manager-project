@@ -31,8 +31,7 @@ __account_user_interface = None
 acore_wtf_form.account_user_interface_config = [
     (
         WarmaneWTF.AccountUserInterface.default,
-        # AccountGroup.ag_all_account,
-        AccountGroup.ag_fat_11_to_25,
+        AccountGroup.ag_all_account,
     )
 ]
 
@@ -53,7 +52,8 @@ acore_wtf_form.account_saved_variables_config = [
             )
         ),
         # AccountGroup.ag_all_account,
-        AccountGroup.ag_fat_11_to_25,
+        # AccountGroup.ag_fat_11_to_25,
+        AccountGroup.ag_rab_01_to_05,
     )
 ]
 
@@ -69,8 +69,7 @@ __character_chat = None
 acore_wtf_form.character_chat_config = [
     (
         WarmaneWTF.CharacterChat.default,
-        # CharacterGroup.cg_all_character,
-        CharacterGroup.cg_rk_to_ry,
+        CharacterGroup.cg_all_character,
     )
 ]
 
@@ -130,7 +129,8 @@ acore_wtf_form.character_saved_variables_config = [
             ],
         ),
         # CharacterGroup.cg_all_character,
-        CharacterGroup.cg_rk_to_ry,
+        # CharacterGroup.cg_rk_to_ry,
+        CharacterGroup.cg_sa_to_se,
     )
 ]
 

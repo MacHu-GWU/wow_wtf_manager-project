@@ -43,7 +43,7 @@ class TestWtfForm:
         acore_wtf_form.dir_wow = dir_wotlk_acore_project / "world-of-warcraft"
         acore_wtf_form.__attrs_post_init__()
         acore_wtf_form.verbose = False
-        # acore_wtf_form.apply()
+        acore_wtf_form.apply()
 
         acore_wtf_form.apply_account_saved_variables_config()
 

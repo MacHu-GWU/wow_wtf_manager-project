@@ -39,6 +39,12 @@ class AccountEnum:
     fat24 = Account("Fat24")
     fat25 = Account("Fat25")
 
+    rab01 = Account("Rab01")
+    rab02 = Account("Rab02")
+    rab03 = Account("Rab03")
+    rab04 = Account("Rab04")
+    rab05 = Account("Rab05")
+
 
 class CharacterEnum:
     fat01_acore_ra = Character.from_string("Fat01.AzerothCore.Ra")
@@ -66,6 +72,12 @@ class CharacterEnum:
     fat23_acore_rw = Character.from_string("Fat23.AzerothCore.Rw")
     fat24_acore_rx = Character.from_string("Fat24.AzerothCore.Rx")
     fat25_acore_ry = Character.from_string("Fat25.AzerothCore.Ry")
+
+    rab01_acore_sa = Character.from_string("Rab01.AzerothCore.Sa")
+    rab02_acore_sb = Character.from_string("Rab02.AzerothCore.Sb")
+    rab03_acore_sc = Character.from_string("Rab03.AzerothCore.Sc")
+    rab04_acore_sd = Character.from_string("Rab04.AzerothCore.Sd")
+    rab05_acore_se = Character.from_string("Rab05.AzerothCore.Se")
 
 
 # ==============================================================================
@@ -102,6 +114,12 @@ class AccountGroup:
         AccountEnum.fat23,
         AccountEnum.fat24,
         AccountEnum.fat25,
+
+        AccountEnum.rab01,
+        AccountEnum.rab02,
+        AccountEnum.rab03,
+        AccountEnum.rab04,
+        AccountEnum.rab05,
     ])
 
     ag_fat_01_to_10 = OrderedSet([
@@ -133,6 +151,14 @@ class AccountGroup:
         AccountEnum.fat23,
         AccountEnum.fat24,
         AccountEnum.fat25,
+    ])
+
+    ag_rab_01_to_05 = OrderedSet([
+        AccountEnum.rab01,
+        AccountEnum.rab02,
+        AccountEnum.rab03,
+        AccountEnum.rab04,
+        AccountEnum.rab05,
     ])
 
 
@@ -168,6 +194,12 @@ class CharacterGroup:
         CharacterEnum.fat23_acore_rw,
         CharacterEnum.fat24_acore_rx,
         CharacterEnum.fat25_acore_ry,
+
+        CharacterEnum.rab01_acore_sa,
+        CharacterEnum.rab02_acore_sb,
+        CharacterEnum.rab03_acore_sc,
+        CharacterEnum.rab04_acore_sd,
+        CharacterEnum.rab05_acore_se,
     ])
 
     # 前 10 个角色
@@ -203,11 +235,21 @@ class CharacterGroup:
         CharacterEnum.fat25_acore_ry,
     ])
 
+    cg_sa_to_se = OrderedSet([
+        CharacterEnum.rab01_acore_sa,
+        CharacterEnum.rab02_acore_sb,
+        CharacterEnum.rab03_acore_sc,
+        CharacterEnum.rab04_acore_sd,
+        CharacterEnum.rab05_acore_se,
+    ])
+
     # --- by class 按照职业分类
     cg_paladin = OrderedSet([
         CharacterEnum.fat01_acore_ra,
         CharacterEnum.fat09_acore_ri,
         CharacterEnum.fat24_acore_rx,
+
+        CharacterEnum.rab01_acore_sa,
     ])
 
     cg_non_paladin = cg_all_character.difference(cg_paladin)
@@ -280,6 +322,8 @@ class CharacterGroup:
     # --- by play style
     cg_multibox_master_paladin = OrderedSet([
         CharacterEnum.fat01_acore_ra,
+
+        CharacterEnum.rab01_acore_sa,
     ])
 
     cg_multibox_master_non_paladin = OrderedSet([
