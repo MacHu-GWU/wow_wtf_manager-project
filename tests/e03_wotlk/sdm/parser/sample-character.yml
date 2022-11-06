@@ -1,8 +1,13 @@
 name: interrupt
+character:
+  name: Admin
+  realm: Azerothcore
+type: b
+id:
 icon:
 description: |
   cancel casting spell, interrupt enemy casting immediately!
-content: |
+text: |
   #showtooltip
   /stopcasting
   /cast Counterspell

@@ -1,30 +1,53 @@
 # -*- coding: utf-8 -*-
 
 import os
-
-from wow_wtf_manager.paths import dir_tests
+from pathlib_mate import Path
 from wow_wtf_manager.exp.e03_wotlk.sdm.model import (
-    SDMMacro, SDMMacroFile,
+    SDMMacroTypeEnum, SDMMacro, SDMMacroFile,
     render_sdm_lua,
 )
 
-dir_sdm = dir_tests / "e03_wotlk" / "sdm"
+dir_here = Path.dir_here(__file__)
 
 
 class TestSDMMacroFile:
     def test(self):
-        path = dir_sdm / "sample.yml"
+        # --- sample-global.yml
+        path = dir_here / "parser" / "sample-global.yml"
+
+        # test parser
         macro = SDMMacro.parse_file(path)
         assert macro.name == "interrupt"
-        assert macro.content == (
+        assert macro.character.name is None
+        assert macro.id == 0
+        assert macro.type == SDMMacroTypeEnum.button
+        assert macro.icon == 1
+        assert macro.text == (
             "#showtooltip\n"
             "/stopcasting\n"
             "/cast Counterspell"
         )
-        print(render_sdm_lua([macro,]))
+        lua_code = macro.render()
+        _ = lua_code
 
+        # --- sample-character.yml
+        path = dir_here / "parser" / "sample-character.yml"
 
-
+        # test parser
+        macro = SDMMacro.parse_file(path)
+        assert macro.name == "interrupt"
+        assert macro.character.name == "Admin"
+        assert macro.character.realm == "Azerothcore"
+        assert macro.id == 0
+        assert macro.type == SDMMacroTypeEnum.button
+        assert macro.icon == 1
+        assert macro.text == (
+            "#showtooltip\n"
+            "/stopcasting\n"
+            "/cast Counterspell"
+        )
+        lua_code = macro.render()
+        _ = lua_code
 
 
 if __name__ == "__main__":

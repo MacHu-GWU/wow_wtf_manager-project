@@ -3,7 +3,9 @@
 import typing as T
 from functools import cached_property
 
-from yaml import load, Loader
+from rich import print as rprint
+import yaml
+from yaml import load, dump, Loader, Dumper
 import attr
 from attrs_mate import AttrsClass
 from pathlib_mate import Path
@@ -16,15 +18,50 @@ sdm_template = Template(path_sdm_template.read_text())
 
 
 @attr.s
+class SDMCharacter(AttrsClass):
+    name: str = attr.ib(default="")
+    realm: str = attr.ib(default="")
+
+
+class SDMMacroTypeEnum:
+    button = "b"
+    floating = "f"
+    script = "s"
+
+
+_DEFAULT_TYPE = SDMMacroTypeEnum.button
+_DEFAULT_ID = 0
+_DEFAULT_ICON = 1
+
+
+@attr.s
 class SDMMacro(AttrsClass):
     """
     定义了一个魔兽世界中的 SDM 宏命令的抽象, 目前只支持 Button + Global 这一种模式.
     """
     name: str = attr.ib()
-    content: str = attr.ib()
+    character: SDMCharacter = AttrsClass.ib_nested()
+    type: str = attr.ib(default=_DEFAULT_TYPE)
+    id: int = attr.ib(default=_DEFAULT_ID)  # SDM macro ID starts from 0
+    icon: int = attr.ib(default=_DEFAULT_ICON)  # 1 is the Question Mark Icon
+    text: str = attr.ib(default="")
+
+    def is_global(self) -> bool:
+        """
+        Is this SDM macro a global macro or character macro
+        """
+        if self.character is None:
+            return True
+        elif (self.character.name is None) or (self.character.realm is None):
+            return True
+        else:
+            return False
 
     def encode_text(self) -> str:
-        return self.content.replace("\n", "\\n")
+        """
+        Encode macro text to single-ling Lua string.
+        """
+        return self.text.replace("\n", "\\n")
 
     @classmethod
     def parse_file(cls, path: Path) -> 'SDMMacro':
@@ -32,8 +69,31 @@ class SDMMacro(AttrsClass):
         data = load(content, Loader)
         return cls(
             name=data["name"],
-            content=data["content"]
+            character=SDMCharacter(**data["character"]),
+            type=data["type"] if data["type"] else _DEFAULT_TYPE,
+            id=data["id"] if data["id"] else _DEFAULT_ID,
+            icon=data["icon"] if data["icon"] else _DEFAULT_ICON,
+            text=data["text"].strip(),
         )
+
+    def render(self) -> str:
+        """
+        Render the corresponding SuperDupeMacro.lua code
+        """
+        lines: T.List[str] = list()
+        lines.append(f"[{self.id}] = {{")
+        lines.append(f'    ["type"] = "{self.type}",')
+        lines.append(f'    ["name"] = "{self.name}",')
+        if self.is_global() is False:
+            lines.append(f'    ["character"] = {{')
+            lines.append(f'        ["name"] = "{self.character.name}",')
+            lines.append(f'        ["realm"] = "{self.character.realm}",')
+            lines.append(f'    }},')
+        lines.append(f'    ["ID"] = {self.id},')
+        lines.append(f'    ["icon"] = {self.icon},')
+        lines.append(f'    ["text"] = "{self.encode_text()}",')
+        lines.append(f'}},')
+        return "\n".join(lines)
 
 
 @attr.s
