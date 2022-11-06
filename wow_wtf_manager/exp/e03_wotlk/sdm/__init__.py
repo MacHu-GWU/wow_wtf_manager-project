@@ -5,5 +5,7 @@ SuperDuperMacro
 """
 
 from .model import (
-    Macro, MacroFile, render_sdm,
+    SDMMacro,
+    SDMMacroFile,
+    render_sdm_lua,
 )

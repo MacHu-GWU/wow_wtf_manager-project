@@ -19,7 +19,7 @@ sdm_macros = {
         ["type"] = "b",
 		["name"] = "{{ macro.name }}",
 		["ID"] = {{ loop.index - 1 }},
-		["text"] = "{{ macro.encode_content() }}",
+		["text"] = "{{ macro.encode_text() }}",
 		["icon"] = 1,
     }
 {%- endfor %}

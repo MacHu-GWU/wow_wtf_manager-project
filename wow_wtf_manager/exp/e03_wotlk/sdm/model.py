@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import typing as T
+from functools import cached_property
+
+from yaml import load, Loader
 import attr
 from attrs_mate import AttrsClass
 from pathlib_mate import Path
@@ -13,31 +16,41 @@ sdm_template = Template(path_sdm_template.read_text())
 
 
 @attr.s
-class Macro:
+class SDMMacro(AttrsClass):
     """
     定义了一个魔兽世界中的 SDM 宏命令的抽象, 目前只支持 Button + Global 这一种模式.
     """
     name: str = attr.ib()
     content: str = attr.ib()
 
-    def encode_content(self) -> str:
+    def encode_text(self) -> str:
         return self.content.replace("\n", "\\n")
 
-
-def render_sdm(macro_list: T.List[Macro]) -> str:
-    return sdm_template.render(macro_list=macro_list)
+    @classmethod
+    def parse_file(cls, path: Path) -> 'SDMMacro':
+        content = path.read_text()
+        data = load(content, Loader)
+        return cls(
+            name=data["name"],
+            content=data["content"]
+        )
 
 
 @attr.s
-class MacroFile:
+class SDMMacroFile(AttrsClass):
     """
-    以文件形式存在的一个宏.
+    以 YAML 文件形式存在的一个 SDM 宏.
     """
-    path: Path
+    path: Path = attr.ib()
 
-    @property
-    def macro(self) -> Macro:
-        return Macro(
-            name=self.path.basename,
-            content=self.path.read_text(encoding="utf-8").strip()
-        )
+    @cached_property
+    def macro(self) -> SDMMacro:
+        return SDMMacro.parse_file(self.path)
+
+
+def render_sdm_lua(macro_list: T.List[SDMMacro]) -> str:
+    return sdm_template.render(macro_list=macro_list)
+
+
+def parse_sdm_lua(content: str):
+    pass

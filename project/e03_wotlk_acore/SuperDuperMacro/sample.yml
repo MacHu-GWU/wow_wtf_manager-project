@@ -1,0 +1,8 @@
+name: interrupt
+icon:
+description: |
+  cancel casting spell, interrupt enemy casting immediately!
+content: |
+  #showtooltip
+  /stopcasting
+  /cast Counterspell
