@@ -1,0 +1,12 @@
+name: Act2
+character:
+  name:
+  realm:
+type: b
+id: 19303
+icon:
+description: |
+
+text: |
+  #showtooltip
+  /cast [nochanneling,mod:alt] 噬靈瘟疫; [nochanneling] 精神鞭笞
