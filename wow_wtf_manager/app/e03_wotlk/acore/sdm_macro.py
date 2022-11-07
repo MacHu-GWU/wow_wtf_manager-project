@@ -37,3 +37,8 @@ class Macros:
     sdm_00_common____1174_tele_undercity = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "1174-tele-undercity.yml"))
     sdm_00_common____1175_tele_shattrath = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "1175-tele-shattrath.yml"))
     sdm_00_common____1176_tele_dalaran = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "1176-tele-dalaran.yml"))
+    sdm_00_common____2001_buff_physics_dps = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "2001-buff-physics-dps.yml"))
+    sdm_00_common____2002_buff_caster_dps = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "2002-buff-caster-dps.yml"))
+    sdm_00_common____2003_buff_tank = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "2003-buff-tank.yml"))
+    sdm_00_common____2004_buff_healer = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "2004-buff-healer.yml"))
+    sdm_07_druid____balance____6301_buff_self_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "07-druid", "balance", "6301-buff-self-zhTW.yml"))
