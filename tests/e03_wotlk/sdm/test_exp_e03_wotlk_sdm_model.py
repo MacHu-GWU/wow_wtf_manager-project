@@ -12,6 +12,7 @@ dir_here = Path.dir_here(__file__)
 
 class TestSDMMacroFile:
     def test(self):
+        macro_list = list()
         # --- sample-global.yml
         path = dir_here / "parser" / "sample-global.yml"
 
@@ -29,6 +30,7 @@ class TestSDMMacroFile:
         )
         lua_code = macro.render()
         _ = lua_code
+        macro_list.append(macro)
 
         # --- sample-character.yml
         path = dir_here / "parser" / "sample-character.yml"
@@ -48,6 +50,11 @@ class TestSDMMacroFile:
         )
         lua_code = macro.render()
         _ = lua_code
+
+        macro.id = 1
+        macro_list.append(macro)
+
+        print(render_sdm_lua(macro_list))
 
 
 if __name__ == "__main__":

@@ -15,12 +15,6 @@ sdm_mainContents = {
 }
 sdm_macros = {
 {%- for macro in macro_list %}
-    [{{ loop.index - 1 }}] = {
-        ["type"] = "b",
-		["name"] = "{{ macro.name }}",
-		["ID"] = {{ loop.index - 1 }},
-		["text"] = "{{ macro.encode_text() }}",
-		["icon"] = 1,
-    }
+    {{ macro.render() | indent(4) }}
 {%- endfor %}
 }
