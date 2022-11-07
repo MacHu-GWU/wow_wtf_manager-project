@@ -1,0 +1,129 @@
+MACRO 17 " 1刷" Spell_Shadow_SummonVoidWalker
+/cleartarget
+.respawn
+END
+MACRO 18 " 2假" Ability_Rogue_FeignDeath
+/target player
+.aura 5384
+/targetlasttarget
+END
+MACRO 19 " 3冷" Ability_Creature_Cursed_04
+/target player
+.cooldown
+/targetlasttarget
+END
+MACRO 20 " 4清" Spell_Frost_Frost
+/target player
+.aura 45438
+.unaura 45438
+/targetlasttarget
+END
+MACRO 21 " 5活" Spell_Holy_Resurrection
+/g .revive
+END
+MACRO 22 " 6隐" INV_Misc_QuestionMark
+/target player
+.aura 32612
+END
+MACRO 23 " 7置" Spell_Holy_SummonChampion
+.instance unbind all
+END
+MACRO 3 " X32" Spell_Fire_BurningSpeed
+/target player
+.modify speed all 32
+/targetlasttarget
+END
+MACRO 8 "MB-Confirm" Spell_ChargePositive
+/click StaticPopup1Button1
+END
+MACRO 10 "MB-FocusClear" Spell_Shadow_SoulLeech_2
+/clearfocus
+END
+MACRO 9 "MB-FocusSet" Ability_Creature_Cursed_04
+/focus
+END
+MACRO 13 "MB-FollowFcs" Ability_Hunter_Pet_Boar
+/follow focus
+END
+MACRO 11 "MB-FPSHigh" Ability_Druid_Eclipse
+/console maxfps 30
+END
+MACRO 12 "MB-FPSLow" Ability_Druid_EclipseOrange
+/console maxfps 5
+END
+MACRO 6 "MB-TgtFcsTgt" Ability_Hunter_SniperTraining
+/assist focus
+END
+MACRO 7 "MB-TgtFcsTgtTgt" Ability_Hunter_SniperTraining
+/assist focus
+/assist
+END
+MACRO 4 "MB-TgtParty" Ability_Hunter_SniperShot
+/targetparty
+END
+MACRO 5 "MB-TgtRaid" Ability_Hunter_SniperShot
+/targetraid
+END
+MACRO 29 "MB-TgtW01" Ability_Hunter_MarkedForDeath
+/tar ra
+END
+MACRO 30 "MB-TgtW10" Ability_Hunter_MarkedForDeath
+/tar rj
+END
+MACRO 15 "T召" Spell_Shaman_AncestralAwakening
+.summon ra
+.summon rb
+.summon rc
+.summon rd
+.summon re
+.summon rf
+.summon rg
+.summon rh
+.summon ri
+.summon rj
+END
+MACRO 16 "T离" Spell_Shaman_BlessingOfEternals
+/script LeaveParty()
+END
+MACRO 14 "T邀" Spell_Shadow_Twilight
+/inv ra
+/inv rb
+/inv rc
+/inv rd
+/inv re
+/inv rf
+/inv rg
+/inv rh
+/inv ri
+/inv rj
+END
+MACRO 31 "临时" INV_Misc_QuestionMark
+END
+MACRO 26 "传撒" Spell_Arcane_TeleportShattrath
+.go xyz -1834 5303 -12.43 530
+END
+MACRO 25 "传苏" Spell_Arcane_TeleportDarnassus
+.go xyz 8643 845 23.5 1
+END
+MACRO 27 "传达" Spell_Arcane_TeleportDalaran
+.go xyz 5813 448 658.75 571
+END
+MACRO 24 "传铁" Spell_Arcane_TeleportIronForge
+.go xyz -4822 -1157 502.21 0
+END
+MACRO 1 "飞上" Ability_Mount_Drake_Twilight
+/target player
+# 其拉飞行坦克
+.aura 31700
+/targetlasttarget
+END
+MACRO 2 "飞下" Ability_Mount_Drake_Twilight
+/target player
+/dismount
+.modify speed all 1
+# speed x4
+# .unaura 39870
+# speed x4
+# .aura 39870
+/targetlasttarget
+END
