@@ -30,12 +30,12 @@ for account, character in [
             Macros.sdm_07_druid____1_balance_resto____16301_buff_self_zhTW.macro,
             Macros.sdm_07_druid____1_balance_resto____16302_buff_raid_zhTW.macro,
             Macros.sdm_07_druid____1_balance_resto____16303_multibox_main_rotate_zhTW.macro,
-            Macros.sdm_07_druid____1_balance_resto____16331_MB_Special1_ICC_1_zhTW.macro,
         ],
     )
     for macro in account_sdm_setup.macros:
         macro.set_char(name=character.character, realm=character.server)
     accounts.append(account_sdm_setup)
+
 
 # for account in AccountGroup.ag_fat_01_to_25:
 for account_sdm_setup in accounts:
@@ -76,7 +76,15 @@ for account_sdm_setup in accounts:
         Macros.sdm_00_common____1175_tele_shattrath.macro,
         Macros.sdm_00_common____1176_tele_dalaran.macro,
     ]
-    account_sdm_setup.macros = common_macros + account_sdm_setup.macros
+
+    special_macros = [
+        Macros.sdm_00_common____6001_mb_special1.macro,
+        Macros.sdm_00_common____6002_mb_special2.macro,
+        Macros.sdm_00_common____6003_mb_special3.macro,
+    ]
+
+    account_sdm_setup.macros = common_macros + account_sdm_setup.macros + special_macros
+
 
 client_sdm_setup = ClientSDMSetup(
     dir_wow=dir_wow,
