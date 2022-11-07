@@ -125,7 +125,11 @@ class SDMMacroFile(AttrsClass):
 def render_sdm_lua(macro_list: T.List[SDMMacro]) -> str:
     id_set = {macro.id for macro in macro_list}
     if len(id_set) != len(macro_list):
-        raise ValueError("Cannot render SDM lua! Found duplicate id in 'macro_list'.")
+        macro_id_list = [macro.id for macro in macro_list]
+        raise ValueError(
+            "Cannot render SDM lua! Found duplicate id in 'macro_list'."
+            f"macro id list: {macro_id_list}"
+        )
     return sdm_template.render(macro_list=macro_list)
 
 
@@ -142,6 +146,7 @@ class ClientSDMSetup(AttrsClass):
 
     def apply(self, plan=True):
         for account in self.accounts:
+            print(f"working on account: {account.account}")
             path = self.dir_wow / "WTF" / "Account" / account.account.account / "SavedVariables" / "SuperDuperMacro.lua"
             content = render_sdm_lua(account.macros)
             if plan is False:

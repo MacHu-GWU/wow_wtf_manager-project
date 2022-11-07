@@ -17,7 +17,7 @@ accounts: T.List[AccountSDMSetup] = list()
 # ------------------------------------------------------------------------------
 # Character
 # ------------------------------------------------------------------------------
-# Balance Druid
+# --- Balance Druid
 for account, character in [
     (AccountEnum.fat11, CharacterEnum.fat11_acore_rk),
     # (AccountEnum.fat12, CharacterEnum.fat12_acore_rl),
@@ -41,6 +41,36 @@ for account, character in [
         macro.set_char(name=character.character, realm=character.server)
     accounts.append(account_sdm_setup)
 
+# --- Shadow Priest
+for account, character in [
+    (AccountEnum.fat14, CharacterEnum.fat14_acore_rn),
+    # (AccountEnum.fat15, CharacterEnum.fat15_acore_ro),
+    # (AccountEnum.fat16, CharacterEnum.fat16_acore_rp),
+    # (AccountEnum.fat17, CharacterEnum.fat17_acore_rq),
+    # (AccountEnum.fat18, CharacterEnum.fat18_acore_rr),
+    # (AccountEnum.fat19, CharacterEnum.fat19_acore_rs),
+    # (AccountEnum.fat20, CharacterEnum.fat20_acore_rt),
+    # (AccountEnum.fat21, CharacterEnum.fat21_acore_ru),
+    # (AccountEnum.fat22, CharacterEnum.fat22_acore_rv),
+]:
+    account_sdm_setup = AccountSDMSetup(
+        account=account,
+        macros=[
+            Macros.sdm_00_common____2002_buff_caster_dps.macro,
+            Macros.sdm_10_priest____0_common____19101_consumable.macro,
+            Macros.sdm_10_priest____0_common____19102_buff_team_zhTW.macro,
+            Macros.sdm_10_priest____1_shadow_disco____19302_act1_zhTW.macro,
+            Macros.sdm_10_priest____1_shadow_disco____19303_act2_zhTW.macro,
+            Macros.sdm_10_priest____1_shadow_disco____19306_multibox_main_rotate_zhTW.macro,
+
+            Macros.sdm_00_common____6001_mb_special1.macro,
+            Macros.sdm_00_common____6002_mb_special2.macro,
+            Macros.sdm_00_common____6003_mb_special3.macro,
+        ],
+    )
+    for macro in account_sdm_setup.macros:
+        macro.set_char(name=character.character, realm=character.server)
+    accounts.append(account_sdm_setup)
 
 # for account in AccountGroup.ag_fat_01_to_25:
 for account_sdm_setup in accounts:
@@ -83,7 +113,6 @@ for account_sdm_setup in accounts:
     ]
 
     account_sdm_setup.macros = common_macros + account_sdm_setup.macros
-
 
 client_sdm_setup = ClientSDMSetup(
     dir_wow=dir_wow,
