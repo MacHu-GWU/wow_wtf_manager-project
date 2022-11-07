@@ -7,6 +7,7 @@ from wow_wtf_manager.paths import dir_wotlk_acore_project
 
 def test():
     client_sdm_setup.dir_wow = dir_wotlk_acore_project / "world-of-warcraft"
+    client_sdm_setup.apply(plan=False)
 
 
 if __name__ == "__main__":

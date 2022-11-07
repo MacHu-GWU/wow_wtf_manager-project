@@ -123,6 +123,9 @@ class SDMMacroFile(AttrsClass):
 
 
 def render_sdm_lua(macro_list: T.List[SDMMacro]) -> str:
+    id_set = {macro.id for macro in macro_list}
+    if len(id_set) != len(macro_list):
+        raise ValueError("Cannot render SDM lua! Found duplicate id in 'macro_list'.")
     return sdm_template.render(macro_list=macro_list)
 
 
@@ -136,3 +139,10 @@ class AccountSDMSetup(AttrsClass):
 class ClientSDMSetup(AttrsClass):
     dir_wow: Path = attr.ib()
     accounts: T.List[AccountSDMSetup] = AccountSDMSetup.ib_list_of_nested()
+
+    def apply(self, plan=True):
+        for account in self.accounts:
+            path = self.dir_wow / "WTF" / "Account" / account.account.account / "SavedVariables" / "SuperDuperMacro.lua"
+            content = render_sdm_lua(account.macros)
+            if plan is False:
+                path.write_text(content)

@@ -20,15 +20,15 @@ lines = [
 
 dir_sdm = dir_wotlk_acore_project / "SuperDuperMacro"
 for dir in dir_sdm.select_dir(recursive=False):
-    for p in dir.select_by_ext(ext=".yml"):
+    for p in Path.sort_by_fname(dir.select_by_ext(ext=".yml")):
         relpath = p.relative_to(dir_sdm)
         key = "sdm_" + (
-            str(relpath)
-                .rstrip(".yml")
+            str(relpath)[:-4]
                 .replace("-", "_")
                 .replace("/", "____")
         )
-        value = "dir_wotlk_acore_project.joinpath({})".format(
+        value = "dir_wotlk_acore_project.joinpath({}, {})".format(
+            '"SuperDuperMacro"',
             ", ".join([
                 f"\"{part}\""
                 for part in relpath.parts

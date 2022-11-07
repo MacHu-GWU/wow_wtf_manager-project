@@ -88,40 +88,6 @@ class AccountGroup:
     ``ag_`` stands for account group is the common prefix,
     can be used for search using PyCharm.
     """
-    ag_all_account = OrderedSet([
-        AccountEnum.fat01,
-        AccountEnum.fat02,
-        AccountEnum.fat03,
-        AccountEnum.fat04,
-        AccountEnum.fat05,
-        AccountEnum.fat06,
-        AccountEnum.fat07,
-        AccountEnum.fat08,
-        AccountEnum.fat09,
-        AccountEnum.fat10,
-        AccountEnum.fat11,
-        AccountEnum.fat12,
-        AccountEnum.fat13,
-        AccountEnum.fat14,
-        AccountEnum.fat15,
-        AccountEnum.fat16,
-        AccountEnum.fat17,
-        AccountEnum.fat18,
-        AccountEnum.fat19,
-        AccountEnum.fat20,
-        AccountEnum.fat21,
-        AccountEnum.fat22,
-        AccountEnum.fat23,
-        AccountEnum.fat24,
-        AccountEnum.fat25,
-
-        AccountEnum.rab01,
-        AccountEnum.rab02,
-        AccountEnum.rab03,
-        AccountEnum.rab04,
-        AccountEnum.rab05,
-    ])
-
     ag_fat_01_to_10 = OrderedSet([
         AccountEnum.fat01,
         AccountEnum.fat02,
@@ -160,6 +126,9 @@ class AccountGroup:
         AccountEnum.rab04,
         AccountEnum.rab05,
     ])
+
+    ag_fat_01_to_25 = ag_fat_01_to_10 | ag_fat_11_to_25
+    ag_all_account = ag_fat_01_to_25 | ag_rab_01_to_05
 
 
 class CharacterGroup:
