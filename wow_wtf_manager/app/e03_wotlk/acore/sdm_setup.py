@@ -30,6 +30,7 @@ for account, character in [
             Macros.sdm_07_druid____1_balance_resto____16301_buff_self_zhTW.macro,
             Macros.sdm_07_druid____1_balance_resto____16302_buff_raid_zhTW.macro,
             Macros.sdm_07_druid____1_balance_resto____16303_multibox_main_rotate_zhTW.macro,
+            Macros.sdm_07_druid____1_balance_resto____16331_MB_Special1_ICC_1_zhTW.macro,
         ],
     )
     for macro in account_sdm_setup.macros:

@@ -45,6 +45,7 @@ class Macros:
     sdm_07_druid____1_balance_resto____16301_buff_self_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "07-druid", "1-balance-resto", "16301-buff-self-zhTW.yml"))
     sdm_07_druid____1_balance_resto____16302_buff_raid_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "07-druid", "1-balance-resto", "16302-buff-raid-zhTW.yml"))
     sdm_07_druid____1_balance_resto____16303_multibox_main_rotate_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "07-druid", "1-balance-resto", "16303-multibox-main-rotate-zhTW.yml"))
+    sdm_07_druid____1_balance_resto____16331_MB_Special1_ICC_1_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "07-druid", "1-balance-resto", "16331-MB-Special1-ICC-1-zhTW.yml"))
     sdm_07_druid____2_resto_and_feral____16501_buff_self_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "07-druid", "2-resto-and-feral", "16501-buff-self-zhTW.yml"))
     sdm_07_druid____2_resto_and_feral____16502_buff_raid_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "07-druid", "2-resto-and-feral", "16502-buff-raid-zhTW.yml"))
     sdm_07_druid____2_resto_and_feral____16503_multibox_main_rotate_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "07-druid", "2-resto-and-feral", "16503-multibox-main-rotate-zhTW.yml"))
