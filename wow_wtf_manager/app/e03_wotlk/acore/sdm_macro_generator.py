@@ -13,41 +13,31 @@ lines = [
     "# -*- coding: utf-8 -*-",
     "",
     "from wow_wtf_manager.paths import dir_wotlk_acore_project",
-    "from wow_wtf_manager.exp.e03_wotlk.sdm import MacroFile",
+    "from wow_wtf_manager.exp.e03_wotlk.sdm import SDMMacroFile",
     "",
     "class Macros:",
 ]
 
-"""
-# -*- coding: utf-8 -*-
-
-from wow_wtf_manager.paths import dir_wotlk_acore_project
-from wow_wtf_manager.exp.e03_wotlk.sdm import MacroFile
-
-
-class Macros:
-asdfa = dir_wotlk_acore_project.joinpath(asdfasdf)
-"""
-
 dir_sdm = dir_wotlk_acore_project / "SuperDuperMacro"
-for p in dir_sdm.select_by_ext(ext=".txt"):
-    relpath = p.relative_to(dir_sdm)
-    key = "sdm_" + (
-        str(relpath)
-            .rstrip(".txt")
-            .replace("-", "_")
-            .replace("/", "____")
-    )
-    value = "dir_wotlk_acore_project.joinpath({})".format(
-        ", ".join([
-            f"\"{part}\""
-            for part in relpath.parts
-        ])
-    )
-    line = (
-        f"    {key} = MacroFile(path={value})"
-    )
-    lines.append(line)
+for dir in dir_sdm.select_dir(recursive=False):
+    for p in dir.select_by_ext(ext=".yml"):
+        relpath = p.relative_to(dir_sdm)
+        key = "sdm_" + (
+            str(relpath)
+                .rstrip(".yml")
+                .replace("-", "_")
+                .replace("/", "____")
+        )
+        value = "dir_wotlk_acore_project.joinpath({})".format(
+            ", ".join([
+                f"\"{part}\""
+                for part in relpath.parts
+            ])
+        )
+        line = (
+            f"    {key} = SDMMacroFile(path={value})"
+        )
+        lines.append(line)
 
 dir_here = Path.dir_here(__file__)
 path_sdm_macro_py = dir_here / "sdm_macro.py"

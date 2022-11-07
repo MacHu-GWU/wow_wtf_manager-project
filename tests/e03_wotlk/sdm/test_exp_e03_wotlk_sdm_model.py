@@ -15,9 +15,10 @@ class TestSDMMacroFile:
         macro_list = list()
         # --- sample-global.yml
         path = dir_here / "parser" / "sample-global.yml"
+        content = path.read_text()
 
         # test parser
-        macro = SDMMacro.parse_file(path)
+        macro = SDMMacro.parse_yml(content)
         assert macro.name == "interrupt"
         assert macro.character.name is None
         assert macro.id == 0
@@ -34,9 +35,10 @@ class TestSDMMacroFile:
 
         # --- sample-character.yml
         path = dir_here / "parser" / "sample-character.yml"
+        content = path.read_text()
 
         # test parser
-        macro = SDMMacro.parse_file(path)
+        macro = SDMMacro.parse_yml(content)
         assert macro.name == "interrupt"
         assert macro.character.name == "Admin"
         assert macro.character.realm == "Azerothcore"
@@ -54,7 +56,8 @@ class TestSDMMacroFile:
         macro.id = 1
         macro_list.append(macro)
 
-        print(render_sdm_lua(macro_list))
+        lua_code = render_sdm_lua(macro_list)
+        # print(lua_code)
 
 
 if __name__ == "__main__":

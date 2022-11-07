@@ -26,7 +26,7 @@ class TestCharacterGroup:
         assert sum([
             len(CharacterGroup.cg_multibox_master_paladin),
             len(CharacterGroup.cg_multibox_master_non_paladin),
-        ]) == 2
+        ]) == 3
 
         assert sum([
             len(CharacterGroup.cg_multibox_master_paladin),

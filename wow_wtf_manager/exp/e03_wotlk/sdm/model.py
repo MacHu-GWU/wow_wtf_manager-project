@@ -11,6 +11,8 @@ from attrs_mate import AttrsClass
 from pathlib_mate import Path
 from jinja2 import Template
 
+from ..group import Account
+
 dir_here = Path.dir_here(__file__)
 path_sdm_template = dir_here / "sdm.tpl"
 
@@ -46,6 +48,15 @@ class SDMMacro(AttrsClass):
     icon: int = attr.ib(default=_DEFAULT_ICON)  # 1 is the Question Mark Icon
     text: str = attr.ib(default="")
 
+    def set_id(self, id: int) -> 'SDMMacro':
+        self.id = id
+        return self
+
+    def set_char(self, name: str, realm: str) -> 'SDMMacro':
+        self.character.name = name
+        self.character.realm = realm
+        return self
+
     def is_global(self) -> bool:
         """
         Is this SDM macro a global macro or character macro
@@ -64,8 +75,7 @@ class SDMMacro(AttrsClass):
         return self.text.replace("\n", "\\n")
 
     @classmethod
-    def parse_file(cls, path: Path) -> 'SDMMacro':
-        content = path.read_text()
+    def parse_yml(cls, content: str) -> 'SDMMacro':
         data = load(content, Loader)
         return cls(
             name=data["name"],
@@ -104,13 +114,25 @@ class SDMMacroFile(AttrsClass):
     path: Path = attr.ib()
 
     @cached_property
+    def content(self) -> str:
+        return self.path.read_text()
+
+    @property
     def macro(self) -> SDMMacro:
-        return SDMMacro.parse_file(self.path)
+        return SDMMacro.parse_yml(self.content)
 
 
 def render_sdm_lua(macro_list: T.List[SDMMacro]) -> str:
     return sdm_template.render(macro_list=macro_list)
 
 
-def parse_sdm_lua(content: str):
-    pass
+@attr.s
+class AccountSDMSetup(AttrsClass):
+    account: Account = Account.ib_nested()
+    macros: T.List[SDMMacro] = SDMMacro.ib_list_of_nested()
+
+
+@attr.s
+class ClientSDMSetup(AttrsClass):
+    dir_wow: Path = attr.ib()
+    accounts: T.List[AccountSDMSetup] = AccountSDMSetup.ib_list_of_nested()

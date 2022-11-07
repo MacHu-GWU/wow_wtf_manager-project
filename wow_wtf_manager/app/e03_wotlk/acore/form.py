@@ -17,9 +17,7 @@ from .group import (
     SavedVariableEnum,
     AccountSavedVariableGroup,
 )
-
-# 之所以用台服客户端是因为国服客户端不支持 PGR BOT 程序
-dir_wow = Path(r"C:\Users\husan\Documents\Games\WoW-Root\Client\World-of-Warcraft-3.3.5-zhTW")
+from .paths import dir_wow
 
 acore_wtf_form = WtfForm(
     dir_wow=dir_wow,
