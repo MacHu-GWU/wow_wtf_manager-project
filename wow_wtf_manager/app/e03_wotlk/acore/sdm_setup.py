@@ -26,7 +26,9 @@ for account in [
     account_sdm_setup = AccountSDMSetup(
         account=account,
         macros=[
-            # Macros.sdm_00_common____01_respawn.macro
+            Macros.sdm_07_druid____1_balance_resto____16401_buff_self_zhTW.macro,
+            Macros.sdm_07_druid____1_balance_resto____16402_buff_raid_zhTW.macro,
+            Macros.sdm_07_druid____1_balance_resto____16403_multibox_main_rotate_zhTW.macro,
         ],
     )
     accounts.append(account_sdm_setup)
