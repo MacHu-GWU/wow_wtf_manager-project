@@ -1,4 +1,6 @@
-- common: 0 - 999
+- common: 0 - 9999
+    - 1001
+    - multibox: 1101 - 1999
 - warrior: 10000 - 10999
 - paladin: 11000 - 11999
 - ...

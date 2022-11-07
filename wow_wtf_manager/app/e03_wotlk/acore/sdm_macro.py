@@ -14,6 +14,8 @@ class Macros:
     sdm_00_common____1008_fly_up = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "1008-fly-up.yml"))
     sdm_00_common____1009_fly_down = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "1009-fly-down.yml"))
     sdm_00_common____1010_x32_speed = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "1010-x32-speed.yml"))
+    sdm_00_common____1011_MountUp_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "1011-MountUp-zhTW.yml"))
+    sdm_00_common____1012_MountDown_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "1012-MountDown-zhTW.yml"))
     sdm_00_common____1101_target_party = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "1101-target-party.yml"))
     sdm_00_common____1102_target_raid = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "1102-target-raid.yml"))
     sdm_00_common____1103_target_focus_target = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "1103-target-focus-target.yml"))

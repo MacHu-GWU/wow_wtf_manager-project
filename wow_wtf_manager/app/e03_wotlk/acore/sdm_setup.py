@@ -44,6 +44,8 @@ for account_sdm_setup in accounts:
         Macros.sdm_00_common____1008_fly_up.macro,
         Macros.sdm_00_common____1009_fly_down.macro,
         Macros.sdm_00_common____1010_x32_speed.macro,
+        Macros.sdm_00_common____1011_MountUp_zhTW.macro,
+        Macros.sdm_00_common____1012_MountDown_zhTW.macro,
 
         Macros.sdm_00_common____1101_target_party.macro,
         Macros.sdm_00_common____1102_target_raid.macro,
