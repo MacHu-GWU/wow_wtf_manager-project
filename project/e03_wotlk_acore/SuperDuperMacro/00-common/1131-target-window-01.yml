@@ -1,0 +1,11 @@
+name: Target-Window-01
+character:
+  name:
+  realm:
+type: b
+id: 1131
+icon: 129
+description: |
+  根据名字选择特定目标
+text: |
+  /tar ra

@@ -1,0 +1,11 @@
+name: Tele-IronForge
+character:
+  name:
+  realm:
+type: b
+id: 1172
+icon: 530
+description: |
+  GM 命令, 传送铁炉堡飞行点
+text: |
+  .go xyz
