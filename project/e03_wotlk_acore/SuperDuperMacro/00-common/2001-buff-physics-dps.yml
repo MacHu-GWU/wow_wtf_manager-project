@@ -1,0 +1,27 @@
+name: Buff-Physics-DPS
+character:
+  name:
+  realm:
+type: b
+id: 2001
+icon: 806
+description: |
+  GM 命令, 物理 DPS Buff (武器/狂暴战士, 战斗/刺杀/敏锐盗贼, 猫德, 猎人, 增强萨满)
+text: |
+  /target player
+  .aura 48161
+  .aura 48469
+  .aura 47436
+  .aura 56525
+  .aura 48942
+  .aura 24932
+  .unaura 34300
+  .aura 34300
+  .aura 19506
+  .aura 75447
+  .unaura 58646
+  .aura 58646
+  .aura 55610
+  .aura 57399
+  .aura 53760
+  /targetlasttarget
