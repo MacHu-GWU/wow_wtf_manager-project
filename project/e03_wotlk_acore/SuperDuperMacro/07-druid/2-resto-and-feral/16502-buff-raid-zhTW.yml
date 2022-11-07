@@ -10,6 +10,6 @@ description: |
 text: |
   #showtooltip
   /targetraid
-  /castsequence [spec:1] reset=30 野性赐福,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術
-  #/castsequence [spec:2] reset=30 野性赐福,!巨熊形態,,,,,,,,,,,,,,,,,,,
-  /castsequence [spec:2] reset=30 野性赐福,!獵豹形態,,,,,,,,,,,,,,,,,,,
+  /castsequence [spec:1] reset=30 野性賜福,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術
+  #/castsequence [spec:2] reset=30 野性賜福,!巨熊形態,,,,,,,,,,,,,,,,,,,
+  /castsequence [spec:2] reset=30 野性賜福,!獵豹形態,,,,,,,,,,,,,,,,,,,
