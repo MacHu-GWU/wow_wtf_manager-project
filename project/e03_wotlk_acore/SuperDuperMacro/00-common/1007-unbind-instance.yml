@@ -3,7 +3,7 @@ character:
   name:
   realm:
 type: b
-id: 207
+id: 1007
 icon: 797
 description: |
   GM Command, 重置玩家的副本 CD.

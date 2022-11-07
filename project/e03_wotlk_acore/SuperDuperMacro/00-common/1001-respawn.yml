@@ -3,10 +3,11 @@ character:
   name:
   realm:
 type: b
-id: 201
+id: 1001
 icon: 1066
 description: |
   GM Command, respawn target creature. you can use ``.respawn all`` to respawn all nearby creature
 text: |
   /cleartarget
   .respawn
+  #.respawn all

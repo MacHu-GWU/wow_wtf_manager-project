@@ -1,0 +1,13 @@
+name: x32-Speed
+character:
+  name:
+  realm:
+type: b
+id: 1010
+icon: 590
+description: |
+  GM命令, 修改移动速度为 32 倍, 用于赶路
+text: |
+  /target player
+  .modify speed all 32
+  /targetlasttarget

@@ -3,7 +3,7 @@ character:
   name:
   realm:
 type: b
-id: 203
+id: 1003
 icon: 9
 description: |
   GM Command, 重置玩家的所有物品和技能的冷却时间

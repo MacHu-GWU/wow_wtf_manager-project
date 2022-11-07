@@ -1,9 +1,9 @@
-name: Feigh Death
+name: Feigh-Death
 character:
   name:
   realm:
 type: b
-id: 202
+id: 1002
 icon: 353
 description: |
   GM Command, 通过给玩家假死技能的光环效果来使用假死技能
