@@ -3,7 +3,7 @@
 import typing as T
 from wow_wtf_manager.exp.e03_wotlk.sdm import AccountSDMSetup, ClientSDMSetup
 
-from .group import AccountEnum, AccountGroup, CharacterGroup
+from .group import AccountEnum, AccountGroup, CharacterGroup, CharacterEnum
 from .sdm_macro import Macros
 from .form import dir_wow
 
@@ -18,8 +18,8 @@ accounts: T.List[AccountSDMSetup] = list()
 # Character
 # ------------------------------------------------------------------------------
 # Balance Druid
-for account in [
-    AccountEnum.fat11,
+for account, character in [
+    (AccountEnum.fat11, CharacterEnum.fat11_acore_rk),
     # AccountEnum.fat12,
     # AccountEnum.fat13,
 ]:
@@ -32,6 +32,8 @@ for account in [
             Macros.sdm_07_druid____1_balance_resto____16403_multibox_main_rotate_zhTW.macro,
         ],
     )
+    for macro in account_sdm_setup.macros:
+        macro.set_char(name=character.character, realm=character.server)
     accounts.append(account_sdm_setup)
 
 # for account in AccountGroup.ag_fat_01_to_25:

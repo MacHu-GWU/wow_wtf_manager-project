@@ -4,7 +4,7 @@ character:
   realm:
 type: b
 id: 1012
-icon:
+icon: 340
 description: |
   取消当前的坐骑
 text: |
