@@ -4,7 +4,7 @@ character:
   realm:
 type: b
 id: 201
-icon:
+icon: 1066
 description: |
   GM Command, respawn target creature. you can use ``.respawn all`` to respawn all nearby creature
 text: |

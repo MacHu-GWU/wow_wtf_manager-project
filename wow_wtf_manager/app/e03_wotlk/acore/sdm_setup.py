@@ -40,7 +40,7 @@ for account_sdm_setup in accounts:
         Macros.sdm_00_common____04_ice_block.macro,
         Macros.sdm_00_common____05_resurrection.macro,
         Macros.sdm_00_common____06_invisibility.macro,
-        Macros.sdm_00_common____07_reset.macro,
+        Macros.sdm_00_common____07_unbind_instance.macro,
     ]
     account_sdm_setup.macros = common_macros + account_sdm_setup.macros
 

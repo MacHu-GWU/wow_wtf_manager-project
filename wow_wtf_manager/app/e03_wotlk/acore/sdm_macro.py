@@ -10,4 +10,4 @@ class Macros:
     sdm_00_common____04_ice_block = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "04-ice-block.yml"))
     sdm_00_common____05_resurrection = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "05-resurrection.yml"))
     sdm_00_common____06_invisibility = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "06-invisibility.yml"))
-    sdm_00_common____07_reset = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "07-reset.yml"))
+    sdm_00_common____07_unbind_instance = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "00-common", "07-unbind-instance.yml"))

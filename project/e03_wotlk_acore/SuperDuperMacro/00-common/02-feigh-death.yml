@@ -4,7 +4,7 @@ character:
   realm:
 type: b
 id: 202
-icon:
+icon: 353
 description: |
   GM Command, 通过给玩家假死技能的光环效果来使用假死技能
 text: |
