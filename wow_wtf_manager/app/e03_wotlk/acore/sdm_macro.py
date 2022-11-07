@@ -5,7 +5,7 @@ from wow_wtf_manager.exp.e03_wotlk.sdm import SDMMacroFile
 
 class Macros:
     sdm_10_priest____0_common____19101_consumable = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "10-priest", "0-common", "19101-consumable.yml"))
-    sdm_10_priest____0_common____19102_buff_team_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "10-priest", "0-common", "19102-buff-team-zhTW.yml"))
+    sdm_10_priest____0_common____19102_buff_raid_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "10-priest", "0-common", "19102-buff-raid-zhTW.yml"))
     sdm_10_priest____1_shadow_disco____19301_buff_self_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "10-priest", "1-shadow-disco", "19301-buff-self-zhTW.yml"))
     sdm_10_priest____1_shadow_disco____19302_act1_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "10-priest", "1-shadow-disco", "19302-act1-zhTW.yml"))
     sdm_10_priest____1_shadow_disco____19303_act2_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "10-priest", "1-shadow-disco", "19303-act2-zhTW.yml"))

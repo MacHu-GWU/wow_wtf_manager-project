@@ -58,7 +58,8 @@ for account, character in [
         macros=[
             Macros.sdm_00_common____2002_buff_caster_dps.macro,
             Macros.sdm_10_priest____0_common____19101_consumable.macro,
-            Macros.sdm_10_priest____0_common____19102_buff_team_zhTW.macro,
+            Macros.sdm_10_priest____1_shadow_disco____19301_buff_self_zhTW.macro,
+            Macros.sdm_10_priest____0_common____19102_buff_raid_zhTW.macro,
             Macros.sdm_10_priest____1_shadow_disco____19302_act1_zhTW.macro,
             Macros.sdm_10_priest____1_shadow_disco____19303_act2_zhTW.macro,
             Macros.sdm_10_priest____1_shadow_disco____19306_multibox_main_rotate_zhTW.macro,
