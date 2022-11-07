@@ -26,6 +26,7 @@ for account, character in [
     account_sdm_setup = AccountSDMSetup(
         account=account,
         macros=[
+            Macros.sdm_00_common____2002_buff_caster_dps.macro,
             Macros.sdm_07_druid____0_common____16101_consumable.macro,
             Macros.sdm_07_druid____1_balance_resto____16301_buff_self_zhTW.macro,
             Macros.sdm_07_druid____1_balance_resto____16302_buff_raid_zhTW.macro,
