@@ -44,7 +44,7 @@ for account, character in [
 # --- Shadow Priest
 for account, character in [
     (AccountEnum.fat14, CharacterEnum.fat14_acore_rn),
-    # (AccountEnum.fat15, CharacterEnum.fat15_acore_ro),
+    (AccountEnum.fat15, CharacterEnum.fat15_acore_ro),
     # (AccountEnum.fat16, CharacterEnum.fat16_acore_rp),
     # (AccountEnum.fat17, CharacterEnum.fat17_acore_rq),
     # (AccountEnum.fat18, CharacterEnum.fat18_acore_rr),
