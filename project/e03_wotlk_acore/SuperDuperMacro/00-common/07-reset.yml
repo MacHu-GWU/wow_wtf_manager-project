@@ -1,0 +1,11 @@
+name: Unbind Instance
+character:
+  name:
+  realm:
+type: b
+id: 207
+icon:
+description: |
+  GM Command, 重置玩家的副本 CD.
+text: |
+  .instance unbind all

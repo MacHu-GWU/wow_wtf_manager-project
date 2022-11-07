@@ -1,0 +1,12 @@
+name: Respawn
+character:
+  name:
+  realm:
+type: b
+id: 201
+icon:
+description: |
+  GM Command, respawn target creature. you can use ``.respawn all`` to respawn all nearby creature
+text: |
+  /cleartarget
+  .respawn
