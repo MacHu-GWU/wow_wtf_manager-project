@@ -20,16 +20,16 @@ accounts: T.List[AccountSDMSetup] = list()
 # Balance Druid
 for account, character in [
     (AccountEnum.fat11, CharacterEnum.fat11_acore_rk),
-    # AccountEnum.fat12,
-    # AccountEnum.fat13,
+    # (AccountEnum.fat12, CharacterEnum.fat12_acore_rl),
+    # (AccountEnum.fat13, CharacterEnum.fat13_acore_rm),
 ]:
     account_sdm_setup = AccountSDMSetup(
         account=account,
         macros=[
             Macros.sdm_07_druid____0_common____16101_consumable.macro,
-            Macros.sdm_07_druid____1_balance_resto____16401_buff_self_zhTW.macro,
-            Macros.sdm_07_druid____1_balance_resto____16402_buff_raid_zhTW.macro,
-            Macros.sdm_07_druid____1_balance_resto____16403_multibox_main_rotate_zhTW.macro,
+            Macros.sdm_07_druid____1_balance_resto____16301_buff_self_zhTW.macro,
+            Macros.sdm_07_druid____1_balance_resto____16302_buff_raid_zhTW.macro,
+            Macros.sdm_07_druid____1_balance_resto____16303_multibox_main_rotate_zhTW.macro,
         ],
     )
     for macro in account_sdm_setup.macros:
