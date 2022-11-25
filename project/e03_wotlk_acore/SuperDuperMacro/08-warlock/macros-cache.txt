@@ -1,0 +1,88 @@
+MACRO 16777228 "Act2" INV_Misc_QuestionMark
+#showtooltip
+/cast [mod:alt] 灼熱之痛; 暗影箭
+/cast [spec:1] 魔性活化
+/stopmacro [noharm]
+.aura 54499
+.aura 47865
+.aura 22959
+.aura 33198
+.aura 31589
+END
+MACRO 16777220 "Act4" INV_Misc_QuestionMark
+#showtooltip
+/cast [mod:alt] 痛苦詛咒; 腐蝕術
+END
+MACRO 16777225 "BuffAll" Spell_Holy_PrayerOfFortitude
+/target player
+.aura 56525
+.aura 48161
+.aura 42995
+.aura 48073
+.aura 48469
+.aura 24907
+.aura 75447
+.aura 54646
+.aura 19746
+.unaura 58777
+.aura 58777
+.unaura 57663
+.aura 57663
+.unaura 2895
+.aura 2895
+.aura 57399
+.aura 53755
+/targetlasttarget
+END
+MACRO 16777218 "BuffSelf" INV_Misc_QuestionMark
+#showtooltip 極大法術石
+/cast 製造法術石
+/use 極大法術石
+/use 16
+END
+MACRO 16777223 "Burst" INV_Misc_QuestionMark
+#showtooltip
+/stopcasting
+/cast 惡魔化身
+/cast 魔性活化
+END
+MACRO 16777226 "Consumable" Ability_Mage_ConjureFoodRank12
+/target player
+.add 40211 -20
+.add 40211 20
+.add 34767 -20
+.add 34767 20
+.add 46376 -20
+.add 46376 20
+.add 6265 -20
+.add 6265 20
+/targetlasttarget
+END
+MACRO 16777217 "DPS-Rotate" INV_Misc_QuestionMark
+#showtooltip
+/castsequence [nochanneling] reset=10 獻祭,腐蝕術,暗影箭,生命分流,暗影箭,暗影箭,燒盡,燒盡,燒盡,腐蝕術,暗影箭,暗影箭,暗影箭,生命分流,燒盡,燒盡,燒盡,獻祭,腐蝕術,暗影箭,暗影箭,暗影箭,暗影箭,燒盡,燒盡,燒盡,腐蝕術,暗影箭,生命分流,暗影箭,暗影箭,燒盡,燒盡,燒盡
+/cast 魔性活化
+END
+MACRO 16777232 "DPSRotate" INV_Misc_QuestionMark
+#showtooltip
+/castsequence [nochanneling] reset=10 痛苦動盪,蝕魂術,痛苦詛咒,暗影箭,生命分流,暗影箭,暗影箭,暗影箭,暗影箭,暗影箭,暗影箭,痛苦動盪,蝕魂術,暗影箭,生命分流,暗影箭,暗影箭,暗影箭,暗影箭,暗影箭,暗影箭,暗影箭
+END
+MACRO 16777222 "MountDown" Ability_Rogue_CheatDeath
+#showtooltip
+/cancelaura [mounted] X-53型觀光火箭
+/cancelaura [mounted] 旅者的凍原長毛象
+END
+MACRO 16777224 "MountUp" INV_Misc_QuestionMark
+#showtooltip
+/stopmacro [mounted]
+/cast [flyable] X-53型觀光火箭
+/cast [noflyable] 旅者的凍原長毛象
+END
+MACRO 16777230 "诅咒1" INV_Misc_QuestionMark
+#showtooltip
+/cast [mod:alt,help] 偵測隱形; [mod:alt,harm] 虛弱詛咒; [help] 魔息術; [harm] 元素詛咒; [mod:alt] 偵測隱形; [] 魔息術
+END
+MACRO 16777231 "诅咒2" INV_Misc_QuestionMark
+#showtooltip
+/cast [mod:alt,help] 靈魂鏈結; [mod:alt,harm] 疲劳诅咒; [help] 生命通道; [harm] 語言詛咒; [mod:alt] 靈魂鏈結; [] 生命通道
+END

@@ -1,0 +1,86 @@
+MACRO 16777224 "BuffElement" Spell_Holy_PrayerOfFortitude
+/target player
+.aura 56525
+.aura 48161
+.aura 42995
+.aura 48073
+.aura 48469
+.aura 24907
+.aura 75447
+.aura 54646
+.aura 19746
+.unaura 58777
+.aura 58777
+.unaura 57663
+.aura 57663
+.unaura 2895
+.aura 2895
+.aura 57399
+.aura 53755
+/targetlasttarget
+END
+MACRO 16777228 "BuffResto" Spell_Holy_PrayerOfFortitude
+/target player
+.aura 56525
+.aura 48161
+.aura 42995
+.aura 48073
+.aura 48469
+.aura 24907
+.aura 19746
+.unaura 58777
+.aura 58777
+.unaura 57663
+.aura 57663
+.unaura 2895
+.aura 2895
+.aura 57399
+.aura 54212
+/targetlasttarget
+END
+MACRO 16777219 "BuffSelf" INV_Misc_QuestionMark
+#showtooltip
+/castsequence [spec:1] reset=target 火舌武器,水之盾
+/castsequence [spec:2] reset=target 大地生命武器,水之盾
+END
+MACRO 16777227 "Burst" INV_Misc_QuestionMark
+#showtooltips
+/stopcasting
+/cast [spec:1] 精通元素
+/cast [spec:2] 潮汐之力
+END
+MACRO 16777225 "Consumable" Ability_Mage_ConjureFoodRank12
+/target player
+.add 40211 -20
+.add 40211 20
+.add 34767 -20
+.add 34767 20
+.add 46376 -20
+.add 46376 20
+/targetlasttarget
+END
+MACRO 16777217 "DPS-Rotate" INV_Misc_QuestionMark
+#showtooltip
+#/target name
+/castsequence [nochanneling] reset=15 烈焰震擊,熔岩爆發,閃電鏈,閃電箭,閃電箭,閃電箭,閃電鏈,閃電箭,熔岩爆發,閃電箭,閃電鏈,閃電箭,閃電箭,閃電箭
+END
+MACRO 16777229 "HealRotate" INV_Misc_QuestionMark
+#showtooltip
+/castsequence reset=6 激流,治療鍊,治療波,次級治療波
+END
+MACRO 16777226 "Interrupt" INV_Misc_QuestionMark
+#showtooltip
+/stopcasting
+/cast [target=focus,harm] 削風術; [target=focustarget,harm] 削風術; [] 削風術
+END
+MACRO 16777222 "MountDown" Ability_Rogue_CheatDeath
+#showtooltip
+/cancelaura [mounted] X-53型觀光火箭
+/cancelaura [mounted] 旅者的凍原長毛象
+END
+MACRO 16777223 "MountUp" INV_Misc_QuestionMark
+#showtooltip
+/stopmacro [mounted]
+/cast [flyable] X-53型觀光火箭
+/cast [noflyable] 旅者的凍原長毛象
+END
