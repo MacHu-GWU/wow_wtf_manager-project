@@ -1,0 +1,12 @@
+name: Resto-Rotate
+character:
+  name:
+  realm:
+type: b
+id: 14112
+icon:
+description: |
+  恢复萨的治疗循环
+text: |
+  #showtooltip
+  /castsequence reset=6 激流,治療鍊,治療波,次級治療波
