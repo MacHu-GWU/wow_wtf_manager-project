@@ -1,0 +1,11 @@
+name: Rotation
+character:
+  name:
+  realm:
+type: b
+id: 19313
+icon:
+description: |
+  法师的 3 号键位
+text: |
+  #showtooltip

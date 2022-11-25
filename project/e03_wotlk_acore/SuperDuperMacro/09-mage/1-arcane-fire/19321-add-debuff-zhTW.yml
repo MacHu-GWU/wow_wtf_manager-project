@@ -9,7 +9,7 @@ description: |
   给法师的中频输出循环技能添加给敌人上 Debuff 的功能. 只能用于单机 GM, 用来模拟团队 Debuff.
 text: |
   #showtooltip
-  /cast [spec:1] 秘法飛彈
+  /cast [spec:1,nochanneling] 秘法飛彈
   /cast [spec:2] 炎爆术 
   /stopmacro [noharm]
   .aura 54499
