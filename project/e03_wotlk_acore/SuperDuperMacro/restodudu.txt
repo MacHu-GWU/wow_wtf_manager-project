@@ -1,0 +1,69 @@
+MACRO 16777222 "BuffAll" Spell_Holy_PrayerOfFortitude
+/target player
+.aura 56525
+.aura 48161
+.aura 42995
+.aura 48073
+.aura 48469
+.aura 24907
+.aura 19746
+.unaura 58777
+.aura 58777
+.unaura 57663
+.aura 57663
+.unaura 2895
+.aura 2895
+.aura 57399
+.aura 54212
+/targetlasttarget
+END
+MACRO 16777218 "BuffSelf" INV_Misc_QuestionMark
+#showtooltip
+#spec1 resto,spec2 boomkin
+/target player
+/castsequence [spec:1] reset=3 !生命之樹,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術;!梟獸形態,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術
+END
+MACRO 16777219 "BuffTeam" INV_Misc_QuestionMark
+#showtooltip
+/target player
+/castsequence reset=30 野性賜福,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術
+END
+MACRO 16777223 "Consumable" Ability_Mage_ConjureFoodRank12
+/target player
+.add 40211 -20
+.add 40211 20
+.add 34767 -20
+.add 34767 20
+.add 46376 -20
+.add 46376 20
+.add 44605 -40
+.add 44605 40
+/targetlasttarget
+END
+MACRO 16777217 "DPS-Rotate" INV_Misc_QuestionMark
+#showtooltip
+#/target name
+/cast [spec:1,stance:0/1/2/3/4] 梟獸形態
+/cast [spec:2,stance:0/1/2/3/4] 生命之树
+/castsequence reset=15 月火術,憤怒,星火術,憤怒,星火術,蟲群,憤怒,星火術,憤怒,星火術,憤怒,星火術,憤怒,星火術,憤怒,星火術,蟲群,憤怒,星火術,憤怒,星火術
+END
+MACRO 16777225 "MB-HealRaid" INV_Misc_QuestionMark
+#showtooltip
+/targetraid
+/castsequence 回春術,回春術,回春術,回春術,回春術,野性痊癒
+END
+MACRO 16777224 "MB-SlowHeal" INV_Misc_QuestionMark
+#showtooltip
+/castsequence [nochanneling] reset=target 回春術,癒合,生命之花,生命之花,生命之花,,,,
+END
+MACRO 16777220 "MountDown" Ability_Rogue_CheatDeath
+#showtooltip
+/cancelaura [mounted] X-53型觀光火箭
+/cancelaura [mounted] 旅者的凍原長毛象
+END
+MACRO 16777221 "MountUp" INV_Misc_QuestionMark
+#showtooltip
+/stopmacro [mounted]
+/cast [flyable] X-53型觀光火箭
+/cast [noflyable] 旅者的凍原長毛象
+END

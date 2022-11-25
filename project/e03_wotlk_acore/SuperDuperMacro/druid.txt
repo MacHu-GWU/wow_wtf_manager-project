@@ -1,0 +1,114 @@
+MACRO 16777238 "Act1" INV_Misc_QuestionMark
+#showtooltip
+/startattack
+/cast [mod:alt,stealth] 劫掠; [stealth] 突襲; [mod:alt,stance:1] 低吼; [stance:1] 割裂; [mod:alt,stance:3] 掃擊; [stance:3,spec:2] 割碎(獵豹形態); [stance:3] 爪擊; [mod:alt,stance:5] Regrowth; [stance:5] Rejuvenation
+END
+MACRO 16777235 "BuffAll-Bear" Spell_Holy_PrayerOfFortitude
+/target player
+.aura 48161
+.aura 48469
+.aura 47440
+.aura 25899
+.aura 48942
+.aura 24932
+.unaura 34300
+.aura 34300
+.aura 19506
+.aura 75447
+.unaura 58646
+.aura 58646
+.aura 55610
+.aura 57399
+.aura 53758
+/targetlasttarget
+END
+MACRO 16777233 "BuffAll-Moonkin" Spell_Holy_PrayerOfFortitude
+/target player
+.aura 56525
+.aura 48161
+.aura 42995
+.aura 48073
+.aura 48469
+.aura 24907
+.aura 75447
+.aura 54646
+.aura 19746
+.unaura 58777
+.aura 58777
+.unaura 57663
+.aura 57663
+.unaura 2895
+.aura 2895
+.aura 57399
+.aura 53755
+/targetlasttarget
+END
+MACRO 16777228 "BuffSelf" INV_Misc_QuestionMark
+#showtooltip
+#spec1 boomkin,spec2 resto
+/target player
+/castsequence [spec:1] reset=3 !梟獸形態,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術
+/castsequence [spec:2] reset=3 !巨熊形態(變身)
+END
+MACRO 16777229 "BuffTeam" INV_Misc_QuestionMark
+#showtooltip
+/target player
+/castsequence reset=30 野性賜福,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術
+END
+MACRO 16777234 "Consumable" Ability_Mage_ConjureFoodRank12
+/target player
+.add 40211 -20
+.add 40211 20
+.add 34767 -20
+.add 34767 20
+.add 46376 -20
+.add 46376 20
+.add 44605 -20
+.add 44605 20
+/targetlasttarget
+END
+MACRO 16777231 "MountDown" Ability_Rogue_CheatDeath
+#showtooltip
+/cancelaura [mounted] X-53型觀光火箭
+/cancelaura [mounted] 旅者的凍原長毛象
+END
+MACRO 16777232 "MountUp" INV_Misc_QuestionMark
+#showtooltip
+/stopmacro [mounted]
+/cast [flyable] X-53型觀光火箭
+/cast [noflyable] 旅者的凍原長毛象
+END
+MACRO 16777241 "Rotate-Bear1" INV_Misc_QuestionMark
+#showtooltip
+/startattack
+/cast [stance:0/2/3/4/5] 巨熊形態(變身)
+/castsequence reset=15 割碎(熊形態),割裂,揮擊(熊形態),割裂,揮擊(熊形態)
+/cast 槌擊
+END
+MACRO 16777242 "Rotate-Bear2" INV_Misc_QuestionMark
+#showtooltip
+/startattack
+/cast [stance:0/2/3/4/5] 巨熊形態(變身)
+/castsequence reset=6 割碎(熊形態),割裂,割裂,割裂,割裂
+END
+MACRO 16777226 "Rotate-Moonkin" INV_Misc_QuestionMark
+#showtooltip
+#/target name
+/cast [stance:0/1/2/3/4] 梟獸形態
+/castsequence reset=15 月火術,憤怒,星火術,憤怒,星火術,蟲群,憤怒,星火術,憤怒,星火術,憤怒,星火術,憤怒,星火術,憤怒,星火術,蟲群,憤怒,星火術,憤怒,星火術
+END
+MACRO 16777237 "冲锋" INV_Misc_QuestionMark
+#showtooltip
+/cast [stance:1] 野性衝鋒 - 熊形態
+/cast [stance:3] 野性衝鋒 - 獵豹形態
+END
+MACRO 16777239 "潜行" INV_Misc_QuestionMark
+#showtooltip
+/cast [stance:0/1/2/4/5] 獵豹形態(變身)
+/cast [stabce:3] !潛行
+END
+MACRO 16777240 "疾跑" INV_Misc_QuestionMark
+#showtooltip
+/cast [stance:0/1/2/4/5] 獵豹形態(變身)
+/cast [stabce:3] 突進
+END
