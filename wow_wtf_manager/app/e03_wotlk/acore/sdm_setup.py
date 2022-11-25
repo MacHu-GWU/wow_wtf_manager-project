@@ -41,6 +41,81 @@ for account, character in [
         macro.set_char(name=character.character, realm=character.server)
     accounts.append(account_sdm_setup)
 
+
+# --- Elemental / Resto Shaman
+for account, character in [
+    (AccountEnum.fat02, CharacterEnum.fat02_acore_rb),
+]:
+    account_sdm_setup = AccountSDMSetup(
+        account=account,
+        macros=[
+            Macros.sdm_00_common____2002_buff_caster_dps.macro,
+            Macros.sdm_00_common____2004_buff_healer.macro,
+            Macros.sdm_05_shaman____0_common____14101_consumable.macro,
+            Macros.sdm_05_shaman____0_common____14102_interrupt.macro,
+
+            Macros.sdm_05_shaman____0_common____14111_elemental_rotation_zhTW.macro,
+            Macros.sdm_05_shaman____0_common____14112_resto_rotation_zhTW.macro,
+
+            Macros.sdm_05_shaman____1_elemental_resto____14311_buff_self_zhTW.macro,
+            Macros.sdm_05_shaman____1_elemental_resto____14312_burst_zhTW.macro,
+        ],
+    )
+    for macro in account_sdm_setup.macros:
+        macro.set_char(name=character.character, realm=character.server)
+    accounts.append(account_sdm_setup)
+
+
+# --- Arcane / Fire Mage
+for account, character in [
+    (AccountEnum.fat04, CharacterEnum.fat04_acore_rd),
+]:
+    account_sdm_setup = AccountSDMSetup(
+        account=account,
+        macros=[
+            Macros.sdm_00_common____2002_buff_caster_dps.macro,
+            Macros.sdm_09_mage____0_common____19101_consumable.macro,
+            Macros.sdm_09_mage____0_common____19102_interrupt.macro,
+
+            Macros.sdm_09_mage____0_common____19103_buff_self_zhTW.macro,
+            Macros.sdm_09_mage____0_common____19104_buff_team_zhTW.macro,
+
+            Macros.sdm_09_mage____1_arcane_fire____19311_burst_zhTW.macro,
+            Macros.sdm_09_mage____1_arcane_fire____19312_rotation_zhTW.macro,
+            Macros.sdm_09_mage____1_arcane_fire____19321_add_debuff_zhTW.macro,
+        ],
+    )
+    for macro in account_sdm_setup.macros:
+        macro.set_char(name=character.character, realm=character.server)
+    accounts.append(account_sdm_setup)
+
+
+# --- Demonology / Affiliation Warlock
+for account, character in [
+    (AccountEnum.fat06, CharacterEnum.fat06_acore_rf),
+]:
+    account_sdm_setup = AccountSDMSetup(
+        account=account,
+        macros=[
+            Macros.sdm_00_common____2002_buff_caster_dps.macro,
+            Macros.sdm_08_warlock____0_common____18101_consumable.macro,
+            Macros.sdm_08_warlock____0_common____18102_elemental_curse.macro,
+            Macros.sdm_08_warlock____0_common____18103_tongue_curse.macro,
+
+            Macros.sdm_08_warlock____0_common____18104_corruption.macro,
+            Macros.sdm_08_warlock____0_common____18111_demonology_rotation_zhTW.macro,
+            Macros.sdm_08_warlock____0_common____18112_affiliation_rotation_zhTW.macro,
+            Macros.sdm_08_warlock____0_common____18114_spell_stone_zhTW.macro,
+
+            Macros.sdm_08_warlock____1_demonology_affiliation____18311_burst_zhTW.macro,
+            Macros.sdm_08_warlock____1_demonology_affiliation____18321_add_debuff_zhTW.macro,
+        ],
+    )
+    for macro in account_sdm_setup.macros:
+        macro.set_char(name=character.character, realm=character.server)
+    accounts.append(account_sdm_setup)
+
+
 # --- Balance Druid
 for account, character in [
     (AccountEnum.fat11, CharacterEnum.fat11_acore_rk),

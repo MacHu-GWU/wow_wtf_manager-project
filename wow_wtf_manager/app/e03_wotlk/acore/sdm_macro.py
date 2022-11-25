@@ -17,7 +17,6 @@ class Macros:
     sdm_08_warlock____0_common____18102_elemental_curse = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "08-warlock", "0-common", "18102-elemental-curse.yml"))
     sdm_08_warlock____0_common____18103_tongue_curse = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "08-warlock", "0-common", "18103-tongue-curse.yml"))
     sdm_08_warlock____0_common____18104_corruption = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "08-warlock", "0-common", "18104-corruption.yml"))
-    sdm_08_warlock____0_common____18105_add_debuff = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "08-warlock", "0-common", "18105-add-debuff.yml"))
     sdm_08_warlock____0_common____18111_demonology_rotation_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "08-warlock", "0-common", "18111-demonology-rotation-zhTW.yml"))
     sdm_08_warlock____0_common____18112_affiliation_rotation_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "08-warlock", "0-common", "18112-affiliation-rotation-zhTW.yml"))
     sdm_08_warlock____0_common____18113_destruction_rotation_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "08-warlock", "0-common", "18113-destruction-rotation-zhTW.yml"))
