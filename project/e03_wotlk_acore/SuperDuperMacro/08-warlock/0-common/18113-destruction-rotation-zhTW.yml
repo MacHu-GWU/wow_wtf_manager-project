@@ -1,0 +1,12 @@
+name: Destruction-Rotate
+character:
+  name:
+  realm:
+type: b
+id: 18113
+icon:
+description: |
+  毁灭术的输出循环. 这是在 BIS 装备的急速和蓝量下的情况. 急速越低, 技能总数越少, 装备越好, 生命分流频率越低.
+text: |
+  #showtooltip
+  /castsequence [nochanneling] reset=10

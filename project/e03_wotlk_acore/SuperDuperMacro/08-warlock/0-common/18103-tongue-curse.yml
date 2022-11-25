@@ -1,0 +1,12 @@
+name: Tongue-Curse
+character:
+  name:
+  realm:
+type: b
+id: 18103
+icon:
+description: |
+  对敌人, 平时语言诅咒, Alt 是疲劳诅咒. 对队友, 平时是 生命通道, Alt 是灵魂链接.
+text: |
+  #showtooltip
+  /cast [mod:alt,help] 靈魂鏈結; [mod:alt,harm] 疲劳诅咒; [help] 生命通道; [harm] 語言詛咒; [mod:alt] 靈魂鏈結; [] 生命通道

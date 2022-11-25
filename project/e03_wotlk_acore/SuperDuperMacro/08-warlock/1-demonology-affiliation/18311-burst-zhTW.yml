@@ -1,0 +1,14 @@
+name: Burst
+character:
+  name:
+  realm:
+type: b
+id: 18311
+icon:
+description: |
+  开爆发技能.
+text: |
+  #showtooltip
+  /stopcasting
+  /cast 惡魔化身
+  /cast 魔性活化

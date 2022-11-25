@@ -1,0 +1,12 @@
+name: Elemental-Curse
+character:
+  name:
+  realm:
+type: b
+id: 18102
+icon:
+description: |
+  对敌人, 平时是元素诅咒, Alt 是虚弱诅咒. 对队友, 平时是 水下呼吸, Alt 是侦测隐形.
+text: |
+  #showtooltip
+  /cast [mod:alt,help] 偵測隱形; [mod:alt,harm] 虛弱詛咒; [help] 魔息術; [harm] 元素詛咒; [mod:alt] 偵測隱形; [] 魔息術

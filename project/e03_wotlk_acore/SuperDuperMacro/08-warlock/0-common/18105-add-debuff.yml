@@ -1,0 +1,12 @@
+name: Corruption
+character:
+  name:
+  realm:
+type: b
+id: 18104
+icon:
+description: |
+  释放常用的 Dot 伤害技能.
+text: |
+  #showtooltip
+  /cast [mod:alt] 痛苦詛咒; 腐蝕術
