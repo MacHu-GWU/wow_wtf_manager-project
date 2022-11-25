@@ -1,28 +1,4 @@
-MACRO 25427393 "Act1" INV_Misc_QuestionMark
-#showtooltip
-#spec1=prot, spec2=retri
-/startattack
-/cast [mod:alt] 清算聖禦; [spec:1] 智慧審判; [spec:2] 智慧審判
-/cast [mod:alt] 清算聖禦; [spec:1] 智慧審判; [spec:2] 光明審判
-#/cast [mod:alt] 清算聖禦; [spec:1] 智慧審判; [spec:2] 公正審判
-END
-MACRO 23627824 "Act2" INV_Misc_QuestionMark
-#showtooltip
-#spec1=prot, spec2=retri
-/startattack
-/cast [mod:alt]公正之盾; [spec:1]公正之錘;[spec:2]十字軍聖擊
-END
-MACRO 17547459 "Act3" INV_Misc_QuestionMark
-#showtooltip
-#spec1=prot, spec2=retri
-/startattack
-/cast [spec:1,mod:alt]復仇之盾; [spec:1]神聖之盾;[spec:2]神性風暴
-END
-MACRO 22981087 "Act4" INV_Misc_QuestionMark
-#showtooltip
-/startattack
-/cast [mod:alt]神聖憤怒; 奉獻
-END
+
 MACRO 25427396 "BuffAllDPS" Spell_Holy_PrayerOfFortitude
 /target player
 .aura 48161
@@ -86,17 +62,6 @@ MACRO 18418611 "BuffCrazy" Spell_Holy_PrayerOfFortitude
 .aura 29660
 .aura 29660
 END
-MACRO 25427390 "BuffSelf" INV_Misc_QuestionMark
-#showtooltip
-/target player
-/castsequence [spec:1] reset=target 正義之怒, 復仇聖印, !虔誠光環, 強效庇護祝福
-/castsequence [spec:2] reset=target 復仇聖印, !懲罰光環, 強效王者祝福
-END
-MACRO 23276965 "ClearDebuff" INV_Misc_QuestionMark
-#showtooltip
-/cancelaura 聖盾術
-/cast 聖盾術
-END
 MACRO 25427394 "Consumable" Ability_Mage_ConjureFoodRank12
 /target player
 .add 40093 -20
@@ -110,22 +75,6 @@ MACRO 25427394 "Consumable" Ability_Mage_ConjureFoodRank12
 .add 21177 -400
 .add 21177 400
 /targetlasttarget
-END
-MACRO 25427392 "MainRotate" INV_Misc_QuestionMark
-#showtooltip
-/startattack
-/castsequence reset=10 公正之錘,公正之盾,智慧審判,神聖之盾,公正之錘,公正之盾,智慧審判,公正之錘,公正之盾,神聖之盾
-END
-MACRO 25427389 "MountDown" ability_rogue_cheatdeath
-#showtooltip
-/cancelaura [mounted] X-53型觀光火箭
-/cancelaura [mounted] 旅者的凍原長毛象
-END
-MACRO 20332334 "MountUp" INV_Misc_QuestionMark
-#showtooltip
-/stopmacro [mounted]
-/cast [flyable] X-53型觀光火箭
-/cast [noflyable] 旅者的凍原長毛象
 END
 MACRO 25427395 "团队整体变态Buff" Spell_Shadow_SpectralSight
 /target player

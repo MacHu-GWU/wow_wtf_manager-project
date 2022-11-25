@@ -4,6 +4,13 @@ from wow_wtf_manager.paths import dir_wotlk_acore_project
 from wow_wtf_manager.exp.e03_wotlk.sdm import SDMMacroFile
 
 class Macros:
+    sdm_02_paladin____0_common____11101_clear_debuff_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "0-common", "11101-clear-debuff-zhTW.yml"))
+    sdm_02_paladin____1_protect_retri____11301_act1_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "1-protect-retri", "11301-act1-zhTW.yml"))
+    sdm_02_paladin____1_protect_retri____11302_act2_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "1-protect-retri", "11302-act2-zhTW.yml"))
+    sdm_02_paladin____1_protect_retri____11303_act3_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "1-protect-retri", "11303-act3-zhTW.yml"))
+    sdm_02_paladin____1_protect_retri____11304_act4_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "1-protect-retri", "11304-act4-zhTW.yml"))
+    sdm_02_paladin____1_protect_retri____11305_rotation_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "1-protect-retri", "11305-rotation-zhTW.yml"))
+    sdm_02_paladin____1_protect_retri____11311_buff_self_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "1-protect-retri", "11311-buff-self-zhTW.yml"))
     sdm_10_priest____0_common____19101_consumable = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "10-priest", "0-common", "19101-consumable.yml"))
     sdm_10_priest____0_common____19102_buff_raid_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "10-priest", "0-common", "19102-buff-raid-zhTW.yml"))
     sdm_10_priest____1_shadow_disco____19301_buff_self_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "10-priest", "1-shadow-disco", "19301-buff-self-zhTW.yml"))

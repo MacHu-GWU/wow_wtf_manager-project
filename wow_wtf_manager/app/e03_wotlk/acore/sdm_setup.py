@@ -17,6 +17,25 @@ accounts: T.List[AccountSDMSetup] = list()
 # ------------------------------------------------------------------------------
 # Character
 # ------------------------------------------------------------------------------
+# --- Protect / Retribution Paladin
+for account, character in [
+    (AccountEnum.fat01, CharacterEnum.fat01_acore_ra),
+]:
+    account_sdm_setup = AccountSDMSetup(
+        account=account,
+        macros=[
+            Macros.sdm_02_paladin____1_protect_retri____11301_act1_zhTW.macro,
+            Macros.sdm_02_paladin____1_protect_retri____11302_act2_zhTW.macro,
+            Macros.sdm_02_paladin____1_protect_retri____11303_act3_zhTW.macro,
+            Macros.sdm_02_paladin____1_protect_retri____11304_act4_zhTW.macro,
+            Macros.sdm_02_paladin____1_protect_retri____11305_rotation_zhTW.macro,
+            Macros.sdm_02_paladin____1_protect_retri____11311_buff_self_zhTW.macro,
+        ],
+    )
+    for macro in account_sdm_setup.macros:
+        macro.set_char(name=character.character, realm=character.server)
+    accounts.append(account_sdm_setup)
+
 # --- Balance Druid
 for account, character in [
     (AccountEnum.fat11, CharacterEnum.fat11_acore_rk),
