@@ -24,6 +24,11 @@ for account, character in [
     account_sdm_setup = AccountSDMSetup(
         account=account,
         macros=[
+            Macros.sdm_00_common____2003_buff_tank.macro,
+            Macros.sdm_00_common____2001_buff_physics_dps.macro,
+            Macros.sdm_02_paladin____0_common____11101_consumable,
+            Macros.sdm_02_paladin____0_common____11111_clear_debuff_zhTW,
+
             Macros.sdm_02_paladin____1_protect_retri____11301_act1_zhTW.macro,
             Macros.sdm_02_paladin____1_protect_retri____11302_act2_zhTW.macro,
             Macros.sdm_02_paladin____1_protect_retri____11303_act3_zhTW.macro,

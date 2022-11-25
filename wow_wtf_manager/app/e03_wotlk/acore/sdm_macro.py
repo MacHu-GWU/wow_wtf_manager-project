@@ -4,7 +4,8 @@ from wow_wtf_manager.paths import dir_wotlk_acore_project
 from wow_wtf_manager.exp.e03_wotlk.sdm import SDMMacroFile
 
 class Macros:
-    sdm_02_paladin____0_common____11101_clear_debuff_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "0-common", "11101-clear-debuff-zhTW.yml"))
+    sdm_02_paladin____0_common____11101_consumable = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "0-common", "11101-consumable.yml"))
+    sdm_02_paladin____0_common____11111_clear_debuff_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "0-common", "11111-clear-debuff-zhTW.yml"))
     sdm_02_paladin____1_protect_retri____11301_act1_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "1-protect-retri", "11301-act1-zhTW.yml"))
     sdm_02_paladin____1_protect_retri____11302_act2_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "1-protect-retri", "11302-act2-zhTW.yml"))
     sdm_02_paladin____1_protect_retri____11303_act3_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "1-protect-retri", "11303-act3-zhTW.yml"))
