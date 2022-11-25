@@ -26,6 +26,7 @@ for dir in dir_sdm.select_dir(recursive=False):
             str(relpath)[:-4]
                 .replace("-", "_")
                 .replace("/", "____")
+                .replace("\\", "____")
         )
         value = "dir_wotlk_acore_project.joinpath({}, {})".format(
             '"SuperDuperMacro"',

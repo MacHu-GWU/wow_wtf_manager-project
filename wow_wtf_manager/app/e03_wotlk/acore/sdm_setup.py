@@ -34,7 +34,7 @@ for account, character in [
             Macros.sdm_02_paladin____1_protect_retri____11303_act3_zhTW.macro,
             Macros.sdm_02_paladin____1_protect_retri____11304_act4_zhTW.macro,
             Macros.sdm_02_paladin____1_protect_retri____11305_rotation_zhTW.macro,
-            Macros.sdm_02_paladin____1_protect_retri____11311_buff_self_zhTW.macro,
+            Macros.sdm_02_paladin____1_protect_retri____11311_buff_self_alliance_zhTW.macro,
         ],
     )
     for macro in account_sdm_setup.macros:
