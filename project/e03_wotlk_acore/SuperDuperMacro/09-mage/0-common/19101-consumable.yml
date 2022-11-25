@@ -1,12 +1,12 @@
-name: Shaman-Consumable
+name: Mage-Consumable
 character:
   name:
   realm:
 type: b
-id: 14101
+id: 19101
 icon: 195
 description: |
-  40211 是速度药水, DPS 爆发用; 33448 是符文法力药水, 治疗时回蓝用; 21537 是春节饺子, 按百分比回复 HP 和 MP 的食物;
+  40211 是速度药水, DPS 爆发用; 33448 是符文法力药水, 回蓝用; 21537 是春节饺子, 按百分比回复 HP 和 MP 的食物;
 text: |
   /target player
   .add 40211 -20
