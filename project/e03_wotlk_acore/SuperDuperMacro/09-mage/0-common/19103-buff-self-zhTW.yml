@@ -11,4 +11,3 @@ text: |
   #showtooltip
   /target rc
   /castsequence reset=target 熔火護甲,魔法凝聚
-  END
