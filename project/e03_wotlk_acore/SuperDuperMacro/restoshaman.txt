@@ -1,0 +1,69 @@
+MACRO 16777223 "BuffResto" Spell_Holy_PrayerOfFortitude
+/target player
+.aura 56525
+.aura 48161
+.aura 42995
+.aura 48073
+.aura 48469
+.aura 24907
+.aura 19746
+.unaura 58777
+.aura 58777
+.unaura 57663
+.aura 57663
+.unaura 2895
+.aura 2895
+.aura 57399
+.aura 54212
+/targetlasttarget
+END
+MACRO 16777218 "BuffSelf" INV_Misc_QuestionMark
+#showtooltip
+/castsequence [spec:2] reset=target 火舌武器,水之盾
+/castsequence [spec:1] reset=target 大地生命武器,水之盾
+END
+MACRO 16777221 "Burst" INV_Misc_QuestionMark
+#showtooltips
+/stopcasting
+/cast [spec:1] 精通元素
+/cast [spec:2] 潮汐之力
+END
+MACRO 16777224 "Consumable" Ability_Mage_ConjureFoodRank12
+/target player
+.add 40211 -20
+.add 40211 20
+.add 34767 -20
+.add 34767 20
+.add 46376 -20
+.add 46376 20
+/targetlasttarget
+END
+MACRO 16777219 "Interrupt" INV_Misc_QuestionMark
+#showtooltip
+/stopcasting
+/cast [target=focus,harm] 削風術; [target=focustarget,harm] 削風術; [] 削風術
+END
+MACRO 16777227 "MB-Act4" INV_Misc_QuestionMark
+#showtooltip
+/castsequence 大地之盾,,大地之盾,,水之盾,,
+END
+MACRO 16777217 "MB-HealRaid" INV_Misc_QuestionMark
+#showtooltip
+/castsequence reset=6 激流,治療鍊,治療波,次級治療波
+END
+MACRO 16777225 "MB-HealRaidSlow" INV_Misc_QuestionMark
+#showtooltip
+/targetraid
+/castsequence reset=6 激流,治療鍊,水之盾,治療波,次級治療波
+END
+MACRO 16777220 "MountDown" INV_Misc_QuestionMark
+#showtooltip
+/cancelaura [mounted] X-53型觀光火箭
+/cancelaura [mounted] 旅者的凍原長毛象
+END
+MACRO 16777222 "MountUp" INV_Misc_QuestionMark
+#showtooltip
+/stopmacro [mounted]
+/cast [flyable] X-53型觀光火箭
+/cast [noflyable] 旅者的凍原長毛象
+END
