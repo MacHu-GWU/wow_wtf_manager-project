@@ -80,9 +80,12 @@ for account, character in [
             Macros.sdm_09_mage____0_common____19103_buff_self_zhTW.macro,
             Macros.sdm_09_mage____0_common____19104_buff_team_zhTW.macro,
 
-            Macros.sdm_09_mage____1_arcane_fire____19311_burst_zhTW.macro,
-            Macros.sdm_09_mage____1_arcane_fire____19312_rotation_zhTW.macro,
-            Macros.sdm_09_mage____1_arcane_fire____19321_add_debuff_zhTW.macro,
+            Macros.sdm_09_mage____1_arcane_fire____19311_act1_zhTW.macro,
+            Macros.sdm_09_mage____1_arcane_fire____19312_act2_zhTW.macro,
+            Macros.sdm_09_mage____0_common____19105_act3_zhTW.macro,
+
+            Macros.sdm_09_mage____1_arcane_fire____19319_rotation_zhTW.macro,
+            Macros.sdm_09_mage____1_arcane_fire____19322_add_debuff_zhTW.macro,
         ],
     )
     for macro in account_sdm_setup.macros:
