@@ -47,7 +47,6 @@ for account, character in [
 # --- Elemental / Resto Shaman
 for account, character in [
     (AccountEnum.fat02, CharacterEnum.fat02_acore_rb),
-    (AccountEnum.fat23, CharacterEnum.fat23_acore_rw),
 ]:
     account_sdm_setup = AccountSDMSetup(
         account=account,
