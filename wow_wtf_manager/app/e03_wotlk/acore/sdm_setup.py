@@ -58,6 +58,7 @@ for account, character in [
 
             Macros.sdm_05_shaman____0_common____14111_elemental_rotation_zhTW.macro,
             Macros.sdm_05_shaman____0_common____14112_resto_rotation_zhTW.macro,
+            Macros.sdm_05_shaman____0_common____14114_mb_resto_earth_shield_zhTW.macro,
 
             Macros.sdm_05_shaman____1_elemental_resto____14311_buff_self_zhTW.macro,
             Macros.sdm_05_shaman____1_elemental_resto____14312_burst_zhTW.macro,
@@ -202,6 +203,31 @@ for account, character in [
             Macros.sdm_00_common____6001_mb_special1.macro,
             Macros.sdm_00_common____6002_mb_special2.macro,
             Macros.sdm_00_common____6003_mb_special3.macro,
+        ],
+    )
+    for macro in account_sdm_setup.macros:
+        macro.set_char(name=character.character, realm=character.server)
+    accounts.append(account_sdm_setup)
+
+
+# --- Resto / Enhancement Shaman
+for account, character in [
+    (AccountEnum.fat23, CharacterEnum.fat23_acore_rw),
+]:
+    account_sdm_setup = AccountSDMSetup(
+        account=account,
+        macros=[
+            Macros.sdm_00_common____2004_buff_healer.macro,
+            Macros.sdm_00_common____2001_buff_physics_dps.macro,
+            Macros.sdm_05_shaman____0_common____14101_consumable.macro,
+            Macros.sdm_05_shaman____0_common____14102_interrupt.macro,
+
+            Macros.sdm_05_shaman____0_common____14112_resto_rotation_zhTW.macro,
+            Macros.sdm_05_shaman____0_common____14113_enhancement_rotation_zhTW.macro,
+            Macros.sdm_05_shaman____0_common____14114_mb_resto_earth_shield_zhTW.macro,
+
+            Macros.sdm_05_shaman____1_elemental_resto____14311_buff_self_zhTW.macro,
+            Macros.sdm_05_shaman____1_elemental_resto____14312_burst_zhTW.macro,
         ],
     )
     for macro in account_sdm_setup.macros:

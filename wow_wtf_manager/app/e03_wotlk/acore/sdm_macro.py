@@ -119,6 +119,7 @@ class Macros:
     sdm_05_shaman____0_common____14111_elemental_rotation_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "05-shaman", "0-common", "14111-elemental-rotation-zhTW.yml"))
     sdm_05_shaman____0_common____14112_resto_rotation_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "05-shaman", "0-common", "14112-resto-rotation-zhTW.yml"))
     sdm_05_shaman____0_common____14113_enhancement_rotation_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "05-shaman", "0-common", "14113-enhancement-rotation-zhTW.yml"))
+    sdm_05_shaman____0_common____14114_mb_resto_earth_shield_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "05-shaman", "0-common", "14114-mb-resto-earth-shield-zhTW.yml"))
     sdm_05_shaman____1_elemental_resto____14311_buff_self_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "05-shaman", "1-elemental-resto", "14311-buff-self-zhTW.yml"))
     sdm_05_shaman____1_elemental_resto____14312_burst_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "05-shaman", "1-elemental-resto", "14312-burst-zhTW.yml"))
     sdm_05_shaman____2_resto_enhancement____14511_buff_self_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "05-shaman", "2-resto-enhancement", "14511-buff-self-zhTW.yml"))
