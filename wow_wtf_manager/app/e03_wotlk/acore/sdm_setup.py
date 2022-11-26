@@ -53,15 +53,15 @@ for account, character in [
         macros=[
             Macros.sdm_00_common____2002_buff_caster_dps.macro,
             Macros.sdm_00_common____2004_buff_healer.macro,
-            Macros.sdm_05_shaman____0_common____14101_consumable.macro,
-            Macros.sdm_05_shaman____0_common____14102_interrupt.macro,
+            Macros.sdm_05_shaman____0_common____15101_consumable.macro,
+            Macros.sdm_05_shaman____0_common____15102_interrupt.macro,
 
-            Macros.sdm_05_shaman____0_common____14111_elemental_rotation_zhTW.macro,
-            Macros.sdm_05_shaman____0_common____14112_resto_rotation_zhTW.macro,
-            Macros.sdm_05_shaman____0_common____14114_mb_resto_earth_shield_zhTW.macro,
+            Macros.sdm_05_shaman____0_common____15111_elemental_rotation_zhTW.macro,
+            Macros.sdm_05_shaman____0_common____15112_resto_rotation_zhTW.macro,
+            Macros.sdm_05_shaman____0_common____15114_mb_resto_earth_shield_zhTW.macro,
 
-            Macros.sdm_05_shaman____1_elemental_resto____14311_buff_self_zhTW.macro,
-            Macros.sdm_05_shaman____1_elemental_resto____14312_burst_zhTW.macro,
+            Macros.sdm_05_shaman____1_elemental_resto____15311_buff_self_zhTW.macro,
+            Macros.sdm_05_shaman____1_elemental_resto____15312_burst_zhTW.macro,
         ],
     )
     for macro in account_sdm_setup.macros:
@@ -95,6 +95,31 @@ for account, character in [
         macro.set_char(name=character.character, realm=character.server)
     accounts.append(account_sdm_setup)
 
+# --- Shadow / Disco Priest
+for account, character in [
+    (AccountEnum.fat05, CharacterEnum.fat14_acore_rn),
+]:
+    account_sdm_setup = AccountSDMSetup(
+        account=account,
+        macros=[
+            Macros.sdm_00_common____2002_buff_caster_dps.macro,
+            Macros.sdm_10_priest____0_common____19101_consumable.macro,
+
+            Macros.sdm_10_priest____1_shadow_disco____19301_buff_self_zhTW.macro,
+            Macros.sdm_10_priest____0_common____19102_buff_raid_zhTW.macro,
+
+            Macros.sdm_10_priest____1_shadow_disco____19302_act1_zhTW.macro,
+            Macros.sdm_10_priest____1_shadow_disco____19303_act2_zhTW.macro,
+            Macros.sdm_10_priest____1_shadow_disco____19306_multibox_main_rotate_zhTW.macro,
+
+            # Macros.sdm_00_common____6001_mb_special1.macro,
+            # Macros.sdm_00_common____6002_mb_special2.macro,
+            # Macros.sdm_00_common____6003_mb_special3.macro,
+        ],
+    )
+    for macro in account_sdm_setup.macros:
+        macro.set_char(name=character.character, realm=character.server)
+    accounts.append(account_sdm_setup)
 
 # --- Demonology / Affiliation Warlock
 for account, character in [
@@ -219,15 +244,40 @@ for account, character in [
         macros=[
             Macros.sdm_00_common____2004_buff_healer.macro,
             Macros.sdm_00_common____2001_buff_physics_dps.macro,
-            Macros.sdm_05_shaman____0_common____14101_consumable.macro,
-            Macros.sdm_05_shaman____0_common____14102_interrupt.macro,
+            Macros.sdm_05_shaman____0_common____15101_consumable.macro,
+            Macros.sdm_05_shaman____0_common____15102_interrupt.macro,
 
-            Macros.sdm_05_shaman____0_common____14112_resto_rotation_zhTW.macro,
-            Macros.sdm_05_shaman____0_common____14113_enhancement_rotation_zhTW.macro,
-            Macros.sdm_05_shaman____0_common____14114_mb_resto_earth_shield_zhTW.macro,
+            Macros.sdm_05_shaman____0_common____15112_resto_rotation_zhTW.macro,
+            Macros.sdm_05_shaman____0_common____15113_enhancement_rotation_zhTW.macro,
+            Macros.sdm_05_shaman____0_common____15114_mb_resto_earth_shield_zhTW.macro,
 
-            Macros.sdm_05_shaman____1_elemental_resto____14311_buff_self_zhTW.macro,
-            Macros.sdm_05_shaman____1_elemental_resto____14312_burst_zhTW.macro,
+            Macros.sdm_05_shaman____1_elemental_resto____15311_buff_self_zhTW.macro,
+            Macros.sdm_05_shaman____1_elemental_resto____15312_burst_zhTW.macro,
+        ],
+    )
+    for macro in account_sdm_setup.macros:
+        macro.set_char(name=character.character, realm=character.server)
+    accounts.append(account_sdm_setup)
+
+
+# --- Disco / Holy Priest
+for account, character in [
+    (AccountEnum.fat25, CharacterEnum.fat25_acore_ry),
+]:
+    account_sdm_setup = AccountSDMSetup(
+        account=account,
+        macros=[
+            Macros.sdm_00_common____2004_buff_healer.macro,
+
+            Macros.sdm_10_priest____0_common____19101_consumable.macro,
+            Macros.sdm_10_priest____2_disco_holy____19501_buff_self_zhTW.macro,
+            Macros.sdm_10_priest____0_common____19102_buff_raid_zhTW.macro,
+            Macros.sdm_10_priest____2_disco_holy____19521_mb_periodical_prayer_of_mending.macro,
+            Macros.sdm_10_priest____2_disco_holy____19521_heal_rotate.macro,
+
+            # Macros.sdm_00_common____6001_mb_special1.macro,
+            # Macros.sdm_00_common____6002_mb_special2.macro,
+            # Macros.sdm_00_common____6003_mb_special3.macro,
         ],
     )
     for macro in account_sdm_setup.macros:

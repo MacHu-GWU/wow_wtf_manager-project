@@ -1,0 +1,12 @@
+name: Act1
+character:
+  name:
+  realm:
+type: b
+id: 19302
+icon:
+description: |
+
+text: |
+  #showtooltip
+  /castsequence 癒合禱言,,懺悟,,癒合禱言,,
