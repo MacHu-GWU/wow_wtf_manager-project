@@ -68,6 +68,27 @@ for account, character in [
         macro.set_char(name=character.character, realm=character.server)
     accounts.append(account_sdm_setup)
 
+# --- Feral / Balance Druid
+# for account, character in [
+#     (AccountEnum.fat03, CharacterEnum.fat03_acore_rc),
+# ]:
+#     account_sdm_setup = AccountSDMSetup(
+#         account=account,
+#         macros=[
+#             Macros.sdm_00_common____2002_buff_caster_dps.macro,
+#             Macros.sdm_07_druid____0_common____17101_consumable.macro,
+#             Macros.sdm_07_druid____3_feral_and_balance____17701_buff_self_zhTW.macro,
+#             Macros.sdm_07_druid____3_feral_and_balance____17702_buff_raid_zhTW.macro,
+#             Macros.sdm_07_druid____3_feral_and_balance____17703_multibox_main_rotate_zhTW.macro,
+#
+#             # Macros.sdm_00_common____6001_mb_special1.macro,
+#             # Macros.sdm_00_common____6002_mb_special2.macro,
+#             # Macros.sdm_00_common____6003_mb_special3.macro,
+#         ],
+#     )
+#     for macro in account_sdm_setup.macros:
+#         macro.set_char(name=character.character, realm=character.server)
+#     accounts.append(account_sdm_setup)
 
 # --- Arcane / Fire Mage
 for account, character in [
@@ -188,10 +209,10 @@ for account, character in [
         account=account,
         macros=[
             Macros.sdm_00_common____2002_buff_caster_dps.macro,
-            Macros.sdm_07_druid____0_common____16101_consumable.macro,
-            Macros.sdm_07_druid____1_balance_resto____16301_buff_self_zhTW.macro,
-            Macros.sdm_07_druid____1_balance_resto____16302_buff_raid_zhTW.macro,
-            Macros.sdm_07_druid____1_balance_resto____16303_multibox_main_rotate_zhTW.macro,
+            Macros.sdm_07_druid____0_common____17101_consumable.macro,
+            Macros.sdm_07_druid____1_balance_resto____17301_buff_self_zhTW.macro,
+            Macros.sdm_07_druid____1_balance_resto____17302_buff_raid_zhTW.macro,
+            Macros.sdm_07_druid____1_balance_resto____17303_multibox_main_rotate_zhTW.macro,
 
             Macros.sdm_00_common____6001_mb_special1.macro,
             Macros.sdm_00_common____6002_mb_special2.macro,
