@@ -6,7 +6,10 @@ type: b
 id: 11311
 icon:
 description: |
-  给自己上 Buff. 防骑为开 正义之怒, 圣印, 虔诚光环, 庇护祝福. 而惩戒骑为开 圣印, 惩戒光环, 王者祝福.
+  给自己上 Buff. 
+  
+  - 防骑: 正义之怒, 圣印, 虔诚光环, 庇护祝福
+  - 惩戒骑: 圣印, 惩戒光环, 王者祝福.
 text: |
   #showtooltip
   /target player
