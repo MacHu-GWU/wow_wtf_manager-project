@@ -1,0 +1,15 @@
+name: MB-Periodical-Judgement
+character:
+  name:
+  realm:
+type: b
+id: 11752
+icon:
+description: |
+  此宏只用于多开的时候使用. 奶骑是按概率对焦点目标施放光明审判.
+text: |
+  #showtooltip
+  /assist focus
+  /startattack
+  /castsequence [spec:1] 光明審判,,光明審判,,崇聖護盾,,
+  /cast [spec:2,mod:alt] 神聖憤怒; 奉獻

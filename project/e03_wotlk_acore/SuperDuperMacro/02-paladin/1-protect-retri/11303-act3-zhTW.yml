@@ -10,4 +10,4 @@ description: |
 text: |
   #showtooltip
   /startattack
-  /cast [spec:1,mod:alt]復仇之盾; [spec:1]神聖之盾;[spec:2]神性風暴
+  /cast [spec:1,mod:alt]復仇之盾;[spec:1]神聖之盾;[spec:2]神性風暴

@@ -33,8 +33,10 @@ for account, character in [
             Macros.sdm_02_paladin____1_protect_retri____11302_act2_zhTW.macro,
             Macros.sdm_02_paladin____1_protect_retri____11303_act3_zhTW.macro,
             Macros.sdm_02_paladin____1_protect_retri____11304_act4_zhTW.macro,
-            Macros.sdm_02_paladin____1_protect_retri____11305_rotation_zhTW.macro,
             Macros.sdm_02_paladin____1_protect_retri____11311_buff_self_alliance_zhTW.macro,
+
+            Macros.sdm_02_paladin____0_common____11131_protect_rotation_zhTW.macro,
+            Macros.sdm_02_paladin____0_common____11132_retribution_rotation_zhTW.macro,
         ],
     )
     for macro in account_sdm_setup.macros:
@@ -112,6 +114,36 @@ for account, character in [
 
             Macros.sdm_08_warlock____1_demonology_affiliation____18311_burst_zhTW.macro,
             Macros.sdm_08_warlock____1_demonology_affiliation____18321_add_debuff_zhTW.macro,
+        ],
+    )
+    for macro in account_sdm_setup.macros:
+        macro.set_char(name=character.character, realm=character.server)
+    accounts.append(account_sdm_setup)
+
+
+# --- Holy / Protect Paladin
+for account, character in [
+    (AccountEnum.fat09, CharacterEnum.fat09_acore_ri),
+]:
+    account_sdm_setup = AccountSDMSetup(
+        account=account,
+        macros=[
+            Macros.sdm_00_common____2003_buff_tank.macro,
+            Macros.sdm_00_common____2004_buff_healer.macro,
+            Macros.sdm_02_paladin____0_common____11101_consumable.macro,
+            Macros.sdm_02_paladin____0_common____11111_clear_debuff_zhTW.macro,
+
+            Macros.sdm_02_paladin____0_common____11151_high_int_heal_rotation_zhTW.macro,
+            Macros.sdm_02_paladin____0_common____11152_high_crt_heal_rotation_zhTW.macro,
+            Macros.sdm_02_paladin____3_holy_protect____11751_mb_periodical_beacon_zhTW.macro,
+            Macros.sdm_02_paladin____3_holy_protect____11752_mb_periodical_judgement_zhTW.macro,
+
+            Macros.sdm_02_paladin____3_holy_protect____11711_act1_zhTW.macro,
+            Macros.sdm_02_paladin____3_holy_protect____11712_act2_zhTW.macro,
+            Macros.sdm_02_paladin____0_common____11133_holy_rotation_zhTW.macro,
+            Macros.sdm_02_paladin____0_common____11131_protect_rotation_zhTW.macro,
+
+            Macros.sdm_02_paladin____3_holy_protect____11731_buff_self_alliance_zhTW.macro,
         ],
     )
     for macro in account_sdm_setup.macros:
