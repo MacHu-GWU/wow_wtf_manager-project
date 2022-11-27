@@ -116,10 +116,12 @@ def s_03_balance_resto_druid():
             CharacterEnum.fat03_acore_rc,
         ],
         files=[
+            # Buff
             Macros.sdm_00_common____2002_buff_caster_dps,
             Macros.sdm_07_druid____0_common____17101_consumable,
             Macros.sdm_07_druid____1_balance_resto____17301_buff_self_zhTW,
             Macros.sdm_07_druid____1_balance_resto____17302_buff_raid_zhTW,
+            # Act
             Macros.sdm_07_druid____1_balance_resto____17303_multibox_main_rotate_zhTW,
         ],
     )
