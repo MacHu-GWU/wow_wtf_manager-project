@@ -98,7 +98,7 @@ def s_04_arcane_fire_mage():
         macros=[
             Macros.sdm_00_common____2002_buff_caster_dps.macro,
             Macros.sdm_09_mage____0_common____19101_consumable.macro,
-            Macros.sdm_09_mage____0_common____19102_interrupt.macro,
+            Macros.sdm_09_mage____0_common____19102_interrupt_zhTW.macro,
             Macros.sdm_09_mage____0_common____19103_buff_self_zhTW.macro,
             Macros.sdm_09_mage____0_common____19104_buff_team_zhTW.macro,
             Macros.sdm_09_mage____1_arcane_fire____19311_act1_zhTW.macro,
@@ -150,9 +150,9 @@ def s_06_demonology_affiliation_warlock():
         macros=[
             Macros.sdm_00_common____2002_buff_caster_dps.macro,
             Macros.sdm_08_warlock____0_common____18101_consumable.macro,
-            Macros.sdm_08_warlock____0_common____18102_elemental_curse.macro,
-            Macros.sdm_08_warlock____0_common____18103_tongue_curse.macro,
-            Macros.sdm_08_warlock____0_common____18104_corruption.macro,
+            Macros.sdm_08_warlock____0_common____18102_elemental_curse_zhTW.macro,
+            Macros.sdm_08_warlock____0_common____18103_tongue_curse_zhTW.macro,
+            Macros.sdm_08_warlock____0_common____18104_corruption_zhTW.macro,
             Macros.sdm_08_warlock____0_common____18111_demonology_rotation_zhTW.macro,
             Macros.sdm_08_warlock____0_common____18112_affiliation_rotation_zhTW.macro,
             Macros.sdm_08_warlock____0_common____18114_spell_stone_zhTW.macro,
