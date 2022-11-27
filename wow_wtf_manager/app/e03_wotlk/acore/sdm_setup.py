@@ -244,10 +244,13 @@ def s_09_holy_protect_paladin():
             CharacterEnum.fat24_acore_rx,
         ],
         files=[
+            # Buff
             Macros.sdm_00_common____2003_buff_tank,
             Macros.sdm_00_common____2004_buff_healer,
             Macros.sdm_02_paladin____0_common____11101_consumable,
             Macros.sdm_02_paladin____0_common____11111_clear_debuff_zhTW,
+            Macros.sdm_02_paladin____0_common____11112_raid_divine_sacrifice_zhTW,
+            # Act
             Macros.sdm_02_paladin____0_common____11151_high_int_heal_rotation_zhTW,
             Macros.sdm_02_paladin____0_common____11152_high_crt_heal_rotation_zhTW,
             Macros.sdm_02_paladin____3_holy_protect____11751_mb_periodical_beacon_zhTW,
@@ -356,10 +359,13 @@ def s_24_holy_protect_paladin():
             CharacterEnum.fat24_acore_rx,
         ],
         files=[
+            # Buff
             Macros.sdm_00_common____2003_buff_tank,
             Macros.sdm_00_common____2004_buff_healer,
             Macros.sdm_02_paladin____0_common____11101_consumable,
             Macros.sdm_02_paladin____0_common____11111_clear_debuff_zhTW,
+            Macros.sdm_02_paladin____0_common____11112_raid_divine_sacrifice_zhTW,
+            # Act
             Macros.sdm_02_paladin____0_common____11151_high_int_heal_rotation_zhTW,
             Macros.sdm_02_paladin____0_common____11152_high_crt_heal_rotation_zhTW,
             Macros.sdm_02_paladin____3_holy_protect____11751_mb_periodical_beacon_zhTW,

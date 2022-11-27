@@ -6,6 +6,7 @@ from wow_wtf_manager.exp.e03_wotlk.sdm import SDMMacroFile
 class Macros:
     sdm_02_paladin____0_common____11101_consumable = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "0-common", "11101-consumable.yml"))
     sdm_02_paladin____0_common____11111_clear_debuff_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "0-common", "11111-clear-debuff-zhTW.yml"))
+    sdm_02_paladin____0_common____11112_raid_divine_sacrifice_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "0-common", "11112-raid-divine-sacrifice-zhTW.yml"))
     sdm_02_paladin____0_common____11131_protect_rotation_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "0-common", "11131-protect-rotation-zhTW.yml"))
     sdm_02_paladin____0_common____11132_retribution_rotation_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "0-common", "11132-retribution-rotation-zhTW.yml"))
     sdm_02_paladin____0_common____11133_holy_rotation_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "0-common", "11133-holy-rotation-zhTW.yml"))
