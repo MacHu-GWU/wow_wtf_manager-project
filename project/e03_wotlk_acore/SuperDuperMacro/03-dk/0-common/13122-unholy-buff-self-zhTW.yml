@@ -1,0 +1,12 @@
+name: Unholy-Buff-Self
+character:
+  name:
+  realm:
+type: b
+id: 13122
+icon:
+description: |
+  给自己上 Buff.
+text: |
+  #showtooltip
+  /castsequence [spec:1] reset=6 !穢邪領域,凜冬號角,,,,,,

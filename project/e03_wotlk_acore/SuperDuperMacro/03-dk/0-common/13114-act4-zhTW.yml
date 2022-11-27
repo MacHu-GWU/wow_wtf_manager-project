@@ -1,0 +1,13 @@
+name: Act4
+character:
+  name:
+  realm:
+type: b
+id: 13114
+icon:
+description: |
+  死亡骑士全天赋适用 (不是最优) 的 4 号按键技能宏.
+text: |
+  #showtooltip
+  /startattack
+  /cast [mod:alt] 滅寂; 死亡打擊

@@ -1,9 +1,9 @@
-name: Warlock-Consumable
+name: DK-Consumable
 character:
   name:
   realm:
 type: b
-id: 18101
+id: 13101
 icon: 195
 description: |
   40211 是速度药水, DPS 爆发用; 33447 是符文治疗药水, 回蓝用; 21537 是春节饺子, 按百分比回复 HP 和 MP 的食物;

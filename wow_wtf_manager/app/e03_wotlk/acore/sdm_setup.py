@@ -259,6 +259,29 @@ def s_09_holy_protect_paladin():
     )
 
 
+def s_10_blood_unholy_dk():
+    client_sdm_setup.add_macros_for_many_chars(
+        chars=[
+            CharacterEnum.fat10_acore_rj,
+        ],
+        macros=[
+            # Buff
+            Macros.sdm_00_common____2003_buff_tank.macro,
+            Macros.sdm_00_common____2001_buff_physics_dps.macro,
+            Macros.sdm_03_dk____0_common____13101_consumable.macro,
+            Macros.sdm_03_dk____0_common____13123_frost_buff_self_zhTW.macro,
+            Macros.sdm_03_dk____0_common____13122_unholy_buff_self_zhTW.macro,
+            # Act
+            Macros.sdm_03_dk____0_common____13111_act1_zhTW.macro,
+            Macros.sdm_03_dk____0_common____13112_act2_zhTW.macro,
+            Macros.sdm_03_dk____0_common____13113_act3_zhTW.macro,
+            Macros.sdm_03_dk____0_common____13114_act4_zhTW.macro,
+            Macros.sdm_03_dk____0_common____13131_tank_rotation_zhTW.macro,
+            Macros.sdm_03_dk____0_common____13132_tank_survival_rotation_zhTW.macro,
+        ],
+    )
+
+
 def s_11_to_13_balance_resto_druid():
     client_sdm_setup.add_macros_for_many_chars(
         chars=[
@@ -279,20 +302,35 @@ def s_11_to_13_balance_resto_druid():
 # ------------------------------------------------------------------------------
 # Normal
 # ------------------------------------------------------------------------------
-def normal():
-    pass
-    # for character in CharacterGroup.cg_all_character:
-    #     for macro in account_sdm_setup.macros:
-    #         macro.set_char(name=character.character, realm=character.server)
-    #     account_sdm_setup.macros.extend([
-    #         Macros.sdm_00_common____6001_mb_special1.macro,
-    #         Macros.sdm_00_common____6002_mb_special2.macro,
-    #         Macros.sdm_00_common____6003_mb_special3.macro,
-    #     ])
+def special_act_placeholder():
+    client_sdm_setup.add_macros_for_many_chars(
+        # chars=CharacterGroup.cg_all_character,
+        chars=[
+            CharacterEnum.fat07_acore_rg,
+        ],
+        macros=[
+            Macros.sdm_00_common____6001_mb_special1.macro,
+            Macros.sdm_00_common____6002_mb_special2.macro,
+            Macros.sdm_00_common____6003_mb_special3.macro,
+        ],
+    )
 
 
+def special_act_ICC_1():
+    client_sdm_setup.add_macros_for_many_chars(
+        chars=CharacterGroup.cg_all_character,
+        macros=[
+            Macros.sdm_00_common____6001_mb_special1.macro,
+            Macros.sdm_00_common____6002_mb_special2.macro,
+            Macros.sdm_00_common____6003_mb_special3.macro,
+        ],
+    )
+
+
+# --- global
 global_macro()
 
+# --- charactor
 # s_01_protect_retribution_paladin()
 # s_02_elemental_resto_shaman()
 # s_04_arcane_fire_mage()
@@ -301,4 +339,9 @@ global_macro()
 # s_06_demonology_affiliation_warlock()
 s_07_marksmanship_survival_hunter()
 # s_09_holy_protect_paladin()
+# s_10_blood_unholy_dk()
 # s_11_to_13_balance_resto_druid()
+
+# --- special
+special_act_placeholder()
+# special_act_ICC_1()
