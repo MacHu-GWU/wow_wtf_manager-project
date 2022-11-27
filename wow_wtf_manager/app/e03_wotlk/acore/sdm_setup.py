@@ -124,7 +124,7 @@ def s_03_balance_resto_druid():
             Macros.sdm_07_druid____1_balance_resto____17303_rotation_zhTW,
             # Act
             Macros.sdm_07_druid____1_balance_resto____17303_rotation_zhTW,
-            Macros.sdm_07_druid____2_resto_and_feral____17504_multibox_slow_heal_zhTW,
+            Macros.sdm_07_druid____1_balance_resto____17304_multibox_slow_heal_zhTW,
         ],
     )
 
@@ -232,7 +232,7 @@ def s_08_balance_resto_druid():
             Macros.sdm_07_druid____1_balance_resto____17302_buff_raid_zhTW,
             # Act
             Macros.sdm_07_druid____1_balance_resto____17303_rotation_zhTW,
-            Macros.sdm_07_druid____2_resto_and_feral____17504_multibox_slow_heal_zhTW,
+            Macros.sdm_07_druid____1_balance_resto____17304_multibox_slow_heal_zhTW,
         ],
     )
 
@@ -297,6 +297,7 @@ def s_11_to_13_balance_resto_druid():
             Macros.sdm_07_druid____1_balance_resto____17301_buff_self_zhTW,
             Macros.sdm_07_druid____1_balance_resto____17302_buff_raid_zhTW,
             Macros.sdm_07_druid____1_balance_resto____17303_rotation_zhTW,
+            Macros.sdm_07_druid____1_balance_resto____17304_multibox_slow_heal_zhTW,
         ],
     )
 
