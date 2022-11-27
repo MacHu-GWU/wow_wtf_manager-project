@@ -211,7 +211,7 @@ class ClientSDMSetup(AttrsClass):
     def add_macros_for_many_accounts(
         self,
         accounts: T.Iterable[Account],
-        macros: T.Iterable[SDMMacro],
+        files: T.Iterable[SDMMacroFile],
     ):
         """
         为一批 Account 添加一堆一样的 SDMMacro 对象. 这些 Macro 将会成为 Global Macro.
@@ -220,12 +220,13 @@ class ClientSDMSetup(AttrsClass):
         """
         for account in accounts:
             account_sdm_setup = self.get_or_init_setup(account)
+            macros = [file.macro for file in files]
             account_sdm_setup.add_macros(macros)
 
     def add_macros_for_many_chars(
         self,
         chars: T.Iterable[Character],
-        macros: T.Iterable[SDMMacro],
+        files: T.Iterable[SDMMacroFile],
     ):
         """
         为一批 Character 添加一堆一样的 SDMMacro 对象. 这些 Macro 将会成为
@@ -235,9 +236,11 @@ class ClientSDMSetup(AttrsClass):
         """
         for character in chars:
             account_sdm_setup = self.get_or_init_setup(character.acc_obj)
-            account_sdm_setup.add_macros(macros)
+            macros = [file.macro for file in files]
             for macro in macros:
                 macro.set_char(
                     name=character.character,
                     realm=character.server,
                 )
+            account_sdm_setup.add_macros(macros)
+
