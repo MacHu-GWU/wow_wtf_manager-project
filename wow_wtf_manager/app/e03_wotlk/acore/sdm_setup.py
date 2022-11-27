@@ -16,8 +16,28 @@ client_sdm_setup = ClientSDMSetup(
 )
 
 # ------------------------------------------------------------------------------
-# Global
+# Global Macro
 # ------------------------------------------------------------------------------
+def global_macro():
+    client_sdm_setup.add_macros_for_many_chars(
+        # chars=CharacterGroup.cg_all_character,
+        chars=[
+            CharacterEnum.fat07_acore_rg,
+        ],
+        macros=[
+            Macros.sdm_00_common____2003_buff_tank.macro,
+            Macros.sdm_00_common____2001_buff_physics_dps.macro,
+            Macros.sdm_02_paladin____0_common____11101_consumable.macro,
+            Macros.sdm_02_paladin____0_common____11111_clear_debuff_zhTW.macro,
+            Macros.sdm_02_paladin____1_protect_retri____11311_buff_self_alliance_zhTW.macro,
+            Macros.sdm_02_paladin____1_protect_retri____11301_act1_zhTW.macro,
+            Macros.sdm_02_paladin____1_protect_retri____11302_act2_zhTW.macro,
+            Macros.sdm_02_paladin____1_protect_retri____11303_act3_zhTW.macro,
+            Macros.sdm_02_paladin____1_protect_retri____11304_act4_zhTW.macro,
+            Macros.sdm_02_paladin____0_common____11131_protect_rotation_zhTW.macro,
+            Macros.sdm_02_paladin____0_common____11132_retribution_rotation_zhTW.macro,
+        ],
+    )
 
 
 # ------------------------------------------------------------------------------
@@ -62,6 +82,7 @@ def s_02_elemental_resto_shaman():
         ],
     )
 
+
 # # --- Feral / Balance Druid
 # # for account, character in [
 # #     (AccountEnum.fat03, CharacterEnum.fat03_acore_rc),
@@ -105,8 +126,6 @@ def s_04_arcane_fire_mage():
     )
 
 
-
-
 def s_05_and_14_to_22_shadow_disco_priest():
     client_sdm_setup.add_macros_for_many_chars(
         chars=[
@@ -133,8 +152,6 @@ def s_05_and_14_to_22_shadow_disco_priest():
     )
 
 
-
-
 def s_06_demonology_affiliation_warlock():
     client_sdm_setup.add_macros_for_many_chars(
         chars=[
@@ -153,8 +170,6 @@ def s_06_demonology_affiliation_warlock():
             Macros.sdm_08_warlock____1_demonology_affiliation____18321_add_debuff_zhTW.macro,
         ],
     )
-
-
 
 
 def s_07_marksmanship_survival_hunter():
@@ -182,8 +197,6 @@ def s_07_marksmanship_survival_hunter():
     )
 
 
-
-
 def s_09_holy_protect_paladin():
     client_sdm_setup.add_macros_for_many_chars(
         chars=[
@@ -208,8 +221,6 @@ def s_09_holy_protect_paladin():
     )
 
 
-
-
 def s_11_to_13_balance_resto_druid():
     client_sdm_setup.add_macros_for_many_chars(
         chars=[
@@ -227,8 +238,6 @@ def s_11_to_13_balance_resto_druid():
     )
 
 
-
-
 # ------------------------------------------------------------------------------
 # Normal
 # ------------------------------------------------------------------------------
@@ -242,6 +251,9 @@ def normal():
     #         Macros.sdm_00_common____6002_mb_special2.macro,
     #         Macros.sdm_00_common____6003_mb_special3.macro,
     #     ])
+
+
+global_macro()
 
 # s_01_protect_retribution_paladin()
 # s_02_elemental_resto_shaman()

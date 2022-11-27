@@ -147,47 +147,50 @@ class AccountSDMSetup(AttrsClass):
     代表着一个 WTF 文件夹下一个 魔兽世界账号中的 SuperDuperMacro 插件的 Lua 配置的对象.
 
     :param account: 是一个 Account 对象, 代表它输于哪一个 Account.
-    :param macros: 配置中包含的 SDM 宏命令列表.
+    :param macro_mapper: key = macro id, value = SDMMacro
     """
-    account: Account = Account.ib_nested()
-    macros: T.Dict[int, SDMMacro] = attr.ib(factory=dict)
 
-    def add_macros(self, macros: T.Iterable[SDMMacro], overwrite: bool=False):
+    account: Account = Account.ib_nested()
+    macro_mapper: T.Dict[int, SDMMacro] = attr.ib(factory=dict)
+
+    def add_macros(self, macros: T.Iterable[SDMMacro], overwrite: bool = False):
         for macro in macros:
             if macro in macros:
                 if overwrite:
                     raise Exception
                 else:
-                    self.macros[macro.id] = macro
+                    self.macro_mapper[macro.id] = macro
             else:
-                self.macros[macro.id] = macro
+                self.macro_mapper[macro.id] = macro
+
 
 @attr.s
 class ClientSDMSetup(AttrsClass):
     """
     代表着一个魔兽世界客户端下所有的账号的 SuperDuperMacro 插件的配置.
+
+    :param dir_wow:
+    :param account_sdm_setup_mapper: key = account name, value = AccountSDMSetup
     """
 
     dir_wow: Path = attr.ib()
-    account_sdm_setup_list: T.List[
-        AccountSDMSetup
-    ] = AccountSDMSetup.ib_list_of_nested()
+    account_sdm_setup_mapper: T.Dict[str, AccountSDMSetup] = attr.ib(factory=dict)
 
     def apply(self, plan=True):
         """
         将插件实际应用到 WTF 文件夹, 该操作会覆盖掉已有的 SuperDuperMacro 插件配置.
         """
-        for account in self.account_sdm_setup_list:
-            print(f"working on account: {account.account}")
+        for account_sdm_setup in self.account_sdm_setup_mapper.values():
+            print(f"working on account: {account_sdm_setup.account}")
             path = (
                 self.dir_wow
                 / "WTF"
                 / "Account"
-                / account.account.account
+                / account_sdm_setup.account.account
                 / "SavedVariables"
                 / "SuperDuperMacro.lua"
             )
-            content = render_sdm_lua(list(account.macros.values()))
+            content = render_sdm_lua(list(account_sdm_setup.macro_mapper.values()))
             if plan is False:
                 path.write_text(content)
 
@@ -202,13 +205,20 @@ class ClientSDMSetup(AttrsClass):
         例如你有一个 法师 的焦点打断目标宏. 那么你可以一次性将这个宏给许多个法师角色.
         """
         for character in chars:
-            account_sdm_setup = AccountSDMSetup(
-                account=character.acc_obj,
-            )
+            if character.acc_obj.account in self.account_sdm_setup_mapper:
+                account_sdm_setup = self.account_sdm_setup_mapper[
+                    character.acc_obj.account
+                ]
+            else:
+                account_sdm_setup = AccountSDMSetup(
+                    account=character.acc_obj,
+                )
+                self.account_sdm_setup_mapper[
+                    character.acc_obj.account
+                ] = account_sdm_setup
             account_sdm_setup.add_macros(macros)
-            for macro in account_sdm_setup.macros.values():
+            for macro in macros:
                 macro.set_char(
                     name=character.character,
                     realm=character.server,
                 )
-            self.account_sdm_setup_list.append(account_sdm_setup)
