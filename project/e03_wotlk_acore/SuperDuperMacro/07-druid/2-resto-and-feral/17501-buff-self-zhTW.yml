@@ -10,6 +10,6 @@ description: |
 text: |
   #showtooltip
   /target player
-  /castsequence [spec:1] reset=3 !生命之树,荊棘術,,,,,,,,
+  /castsequence [spec:1] reset=3 !生命之樹,荊棘術,,,,,,,,
   #/castsequence [spec:2] reset=3 荊棘術,!巨熊形態,,,,,,,,
   /castsequence [spec:2] reset=3 荊棘術,!獵豹形態,,,,,,,,

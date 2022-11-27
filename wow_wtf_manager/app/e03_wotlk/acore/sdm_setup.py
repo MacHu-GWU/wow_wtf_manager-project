@@ -120,7 +120,7 @@ def s_03_balance_resto_druid():
             Macros.sdm_07_druid____0_common____17101_consumable,
             Macros.sdm_07_druid____1_balance_resto____17301_buff_self_zhTW,
             Macros.sdm_07_druid____1_balance_resto____17302_buff_raid_zhTW,
-            Macros.sdm_07_druid____1_balance_resto____17303_multibox_main_rotate_zhTW,
+            Macros.sdm_07_druid____1_balance_resto____17303_rotation_zhTW,
         ],
     )
 
@@ -225,7 +225,7 @@ def s_08_balance_resto_druid():
             Macros.sdm_07_druid____0_common____17101_consumable,
             Macros.sdm_07_druid____1_balance_resto____17301_buff_self_zhTW,
             Macros.sdm_07_druid____1_balance_resto____17302_buff_raid_zhTW,
-            Macros.sdm_07_druid____1_balance_resto____17303_multibox_main_rotate_zhTW,
+            Macros.sdm_07_druid____1_balance_resto____17303_rotation_zhTW,
         ],
     )
 
@@ -289,7 +289,7 @@ def s_11_to_13_balance_resto_druid():
             Macros.sdm_07_druid____0_common____17101_consumable,
             Macros.sdm_07_druid____1_balance_resto____17301_buff_self_zhTW,
             Macros.sdm_07_druid____1_balance_resto____17302_buff_raid_zhTW,
-            Macros.sdm_07_druid____1_balance_resto____17303_multibox_main_rotate_zhTW,
+            Macros.sdm_07_druid____1_balance_resto____17303_rotation_zhTW,
         ],
     )
 
@@ -396,7 +396,7 @@ def special_act_placeholder():
     )
 
 
-def special_act_ICC_1():
+def special_act_icc_1():
     client_sdm_setup.add_macros_for_many_chars(
         chars=CharacterGroup.cg_all_character,
         files=[

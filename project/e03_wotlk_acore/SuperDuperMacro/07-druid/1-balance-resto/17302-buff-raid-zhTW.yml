@@ -6,7 +6,7 @@ type: b
 id: 17302
 icon:
 description: |
-  给团队上 Buff; 作为平衡和恢复德, 则全团上野性赐福, 并且加荆棘术;
+  给团队上 Buff. 作为平衡和恢复德, 都是全团上野性赐福, 并且加荆棘术;
 text: |
   #showtooltip
   /targetraid
