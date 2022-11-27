@@ -10,7 +10,7 @@ description: |
 text: |
   #showtooltip
   /cast [spec:2,stance:0/1/2/3/4] 生命之树
-  /castsequence [spec:2] reset=15 回春術,回春術,回春術,回春術,回春術,野性痊愈
+  /castsequence [spec:2] reset=15 回春術,回春術,回春術,回春術,回春術,野性痊癒
   /stopmacro [spec:1]
   #/cast [spec:2,stance:0/1/2/4/5] 巨熊形態
   #/castsequence [spec:2] reset=15
