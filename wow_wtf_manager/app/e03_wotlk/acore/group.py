@@ -88,44 +88,51 @@ class AccountGroup:
     ``ag_`` stands for account group is the common prefix,
     can be used for search using PyCharm.
     """
-    ag_fat_01_to_10 = OrderedSet([
-        AccountEnum.fat01,
-        AccountEnum.fat02,
-        AccountEnum.fat03,
-        AccountEnum.fat04,
-        AccountEnum.fat05,
-        AccountEnum.fat06,
-        AccountEnum.fat07,
-        AccountEnum.fat08,
-        AccountEnum.fat09,
-        AccountEnum.fat10,
-    ])
 
-    ag_fat_11_to_25 = OrderedSet([
-        AccountEnum.fat11,
-        AccountEnum.fat12,
-        AccountEnum.fat13,
-        AccountEnum.fat14,
-        AccountEnum.fat15,
-        AccountEnum.fat16,
-        AccountEnum.fat17,
-        AccountEnum.fat18,
-        AccountEnum.fat19,
-        AccountEnum.fat20,
-        AccountEnum.fat21,
-        AccountEnum.fat22,
-        AccountEnum.fat23,
-        AccountEnum.fat24,
-        AccountEnum.fat25,
-    ])
+    ag_fat_01_to_10 = OrderedSet(
+        [
+            AccountEnum.fat01,
+            AccountEnum.fat02,
+            AccountEnum.fat03,
+            AccountEnum.fat04,
+            AccountEnum.fat05,
+            AccountEnum.fat06,
+            AccountEnum.fat07,
+            AccountEnum.fat08,
+            AccountEnum.fat09,
+            AccountEnum.fat10,
+        ]
+    )
 
-    ag_rab_01_to_05 = OrderedSet([
-        AccountEnum.rab01,
-        AccountEnum.rab02,
-        AccountEnum.rab03,
-        AccountEnum.rab04,
-        AccountEnum.rab05,
-    ])
+    ag_fat_11_to_25 = OrderedSet(
+        [
+            AccountEnum.fat11,
+            AccountEnum.fat12,
+            AccountEnum.fat13,
+            AccountEnum.fat14,
+            AccountEnum.fat15,
+            AccountEnum.fat16,
+            AccountEnum.fat17,
+            AccountEnum.fat18,
+            AccountEnum.fat19,
+            AccountEnum.fat20,
+            AccountEnum.fat21,
+            AccountEnum.fat22,
+            AccountEnum.fat23,
+            AccountEnum.fat24,
+            AccountEnum.fat25,
+        ]
+    )
+
+    ag_rab_01_to_05 = OrderedSet(
+        [
+            AccountEnum.rab01,
+            AccountEnum.rab02,
+            AccountEnum.rab03,
+            AccountEnum.rab04,
+            AccountEnum.rab05,
+        ]
+    )
 
     ag_fat_01_to_25 = ag_fat_01_to_10 | ag_fat_11_to_25
     ag_all_account = ag_fat_01_to_25 | ag_rab_01_to_05
@@ -136,172 +143,253 @@ class CharacterGroup:
     ``cg_`` stands for character group is the common prefix,
     can be used for search using PyCharm.
     """
-    # --- by accounts 按照账号分类
-    cg_all_character = OrderedSet([
-        CharacterEnum.fat01_acore_ra,
-        CharacterEnum.fat02_acore_rb,
-        CharacterEnum.fat03_acore_rc,
-        CharacterEnum.fat04_acore_rd,
-        CharacterEnum.fat05_acore_re,
-        CharacterEnum.fat06_acore_rf,
-        CharacterEnum.fat07_acore_rg,
-        CharacterEnum.fat08_acore_rh,
-        CharacterEnum.fat09_acore_ri,
-        CharacterEnum.fat10_acore_rj,
-        CharacterEnum.fat11_acore_rk,
-        CharacterEnum.fat12_acore_rl,
-        CharacterEnum.fat13_acore_rm,
-        CharacterEnum.fat14_acore_rn,
-        CharacterEnum.fat15_acore_ro,
-        CharacterEnum.fat16_acore_rp,
-        CharacterEnum.fat17_acore_rq,
-        CharacterEnum.fat18_acore_rr,
-        CharacterEnum.fat19_acore_rs,
-        CharacterEnum.fat20_acore_rt,
-        CharacterEnum.fat21_acore_ru,
-        CharacterEnum.fat22_acore_rv,
-        CharacterEnum.fat23_acore_rw,
-        CharacterEnum.fat24_acore_rx,
-        CharacterEnum.fat25_acore_ry,
 
-        CharacterEnum.rab01_acore_sa,
-        CharacterEnum.rab02_acore_sb,
-        CharacterEnum.rab03_acore_sc,
-        CharacterEnum.rab04_acore_sd,
-        CharacterEnum.rab05_acore_se,
-    ])
+    # --- by accounts 按照账号分类
+    cg_all_character = OrderedSet(
+        [
+            CharacterEnum.fat01_acore_ra,
+            CharacterEnum.fat02_acore_rb,
+            CharacterEnum.fat03_acore_rc,
+            CharacterEnum.fat04_acore_rd,
+            CharacterEnum.fat05_acore_re,
+            CharacterEnum.fat06_acore_rf,
+            CharacterEnum.fat07_acore_rg,
+            CharacterEnum.fat08_acore_rh,
+            CharacterEnum.fat09_acore_ri,
+            CharacterEnum.fat10_acore_rj,
+            CharacterEnum.fat11_acore_rk,
+            CharacterEnum.fat12_acore_rl,
+            CharacterEnum.fat13_acore_rm,
+            CharacterEnum.fat14_acore_rn,
+            CharacterEnum.fat15_acore_ro,
+            CharacterEnum.fat16_acore_rp,
+            CharacterEnum.fat17_acore_rq,
+            CharacterEnum.fat18_acore_rr,
+            CharacterEnum.fat19_acore_rs,
+            CharacterEnum.fat20_acore_rt,
+            CharacterEnum.fat21_acore_ru,
+            CharacterEnum.fat22_acore_rv,
+            CharacterEnum.fat23_acore_rw,
+            CharacterEnum.fat24_acore_rx,
+            CharacterEnum.fat25_acore_ry,
+            CharacterEnum.rab01_acore_sa,
+            CharacterEnum.rab02_acore_sb,
+            CharacterEnum.rab03_acore_sc,
+            CharacterEnum.rab04_acore_sd,
+            CharacterEnum.rab05_acore_se,
+        ]
+    )
 
     # 前 10 个角色
-    cg_ra_to_rj = OrderedSet([
-        CharacterEnum.fat01_acore_ra,
-        CharacterEnum.fat02_acore_rb,
-        CharacterEnum.fat03_acore_rc,
-        CharacterEnum.fat04_acore_rd,
-        CharacterEnum.fat05_acore_re,
-        CharacterEnum.fat06_acore_rf,
-        CharacterEnum.fat07_acore_rg,
-        CharacterEnum.fat08_acore_rh,
-        CharacterEnum.fat09_acore_ri,
-        CharacterEnum.fat10_acore_rj,
-    ])
+    cg_ra_to_rj = OrderedSet(
+        [
+            CharacterEnum.fat01_acore_ra,
+            CharacterEnum.fat02_acore_rb,
+            CharacterEnum.fat03_acore_rc,
+            CharacterEnum.fat04_acore_rd,
+            CharacterEnum.fat05_acore_re,
+            CharacterEnum.fat06_acore_rf,
+            CharacterEnum.fat07_acore_rg,
+            CharacterEnum.fat08_acore_rh,
+            CharacterEnum.fat09_acore_ri,
+            CharacterEnum.fat10_acore_rj,
+        ]
+    )
 
     # 后 15 个角色
-    cg_rk_to_ry = OrderedSet([
-        CharacterEnum.fat11_acore_rk,
-        CharacterEnum.fat12_acore_rl,
-        CharacterEnum.fat13_acore_rm,
-        CharacterEnum.fat14_acore_rn,
-        CharacterEnum.fat15_acore_ro,
-        CharacterEnum.fat16_acore_rp,
-        CharacterEnum.fat17_acore_rq,
-        CharacterEnum.fat18_acore_rr,
-        CharacterEnum.fat19_acore_rs,
-        CharacterEnum.fat20_acore_rt,
-        CharacterEnum.fat21_acore_ru,
-        CharacterEnum.fat22_acore_rv,
-        CharacterEnum.fat23_acore_rw,
-        CharacterEnum.fat24_acore_rx,
-        CharacterEnum.fat25_acore_ry,
-    ])
+    cg_rk_to_ry = OrderedSet(
+        [
+            CharacterEnum.fat11_acore_rk,
+            CharacterEnum.fat12_acore_rl,
+            CharacterEnum.fat13_acore_rm,
+            CharacterEnum.fat14_acore_rn,
+            CharacterEnum.fat15_acore_ro,
+            CharacterEnum.fat16_acore_rp,
+            CharacterEnum.fat17_acore_rq,
+            CharacterEnum.fat18_acore_rr,
+            CharacterEnum.fat19_acore_rs,
+            CharacterEnum.fat20_acore_rt,
+            CharacterEnum.fat21_acore_ru,
+            CharacterEnum.fat22_acore_rv,
+            CharacterEnum.fat23_acore_rw,
+            CharacterEnum.fat24_acore_rx,
+            CharacterEnum.fat25_acore_ry,
+        ]
+    )
 
-    cg_sa_to_se = OrderedSet([
-        CharacterEnum.rab01_acore_sa,
-        CharacterEnum.rab02_acore_sb,
-        CharacterEnum.rab03_acore_sc,
-        CharacterEnum.rab04_acore_sd,
-        CharacterEnum.rab05_acore_se,
-    ])
+    cg_sa_to_se = OrderedSet(
+        [
+            CharacterEnum.rab01_acore_sa,
+            CharacterEnum.rab02_acore_sb,
+            CharacterEnum.rab03_acore_sc,
+            CharacterEnum.rab04_acore_sd,
+            CharacterEnum.rab05_acore_se,
+        ]
+    )
 
     # --- by class 按照职业分类
-    cg_paladin = OrderedSet([
-        CharacterEnum.fat01_acore_ra,
-        CharacterEnum.fat09_acore_ri,
-        CharacterEnum.fat24_acore_rx,
-
-        CharacterEnum.rab01_acore_sa,
-    ])
+    cg_paladin = OrderedSet(
+        [
+            CharacterEnum.fat01_acore_ra,
+            CharacterEnum.fat09_acore_ri,
+            CharacterEnum.fat24_acore_rx,
+            CharacterEnum.rab01_acore_sa,
+        ]
+    )
 
     cg_non_paladin = cg_all_character.difference(cg_paladin)
 
-    cg_warrior_and_dk = OrderedSet([
-        CharacterEnum.fat10_acore_rj,
-    ])
+    cg_warrior_and_dk = OrderedSet(
+        [
+            CharacterEnum.fat10_acore_rj,
+        ]
+    )
 
     cg_non_warrior_and_dk = cg_all_character.difference(cg_warrior_and_dk)
 
     # --- by talent 按照天赋分类
-    cg_paladin_prot_pve_and_retri_pve = OrderedSet([
-        CharacterEnum.fat01_acore_ra,
-    ])
+    cg_paladin_prot_pve_and_retri_pve = OrderedSet(
+        [
+            CharacterEnum.fat01_acore_ra,
+        ]
+    )
 
-    cg_shaman_element_pve_and_restore_pve = OrderedSet([
-        CharacterEnum.fat02_acore_rb,
-    ])
+    cg_shaman_element_pve_and_restore_pve = OrderedSet(
+        [
+            CharacterEnum.fat02_acore_rb,
+        ]
+    )
 
-    cg_druid_balance_pve_and_bear_pve = OrderedSet([
-        CharacterEnum.fat03_acore_rc,
-    ])
+    cg_druid_balance_pve_and_bear_pve = OrderedSet(
+        [
+            CharacterEnum.fat03_acore_rc,
+        ]
+    )
 
-    cg_mage_arcane_pve_and_fire_pve = OrderedSet([
-        CharacterEnum.fat04_acore_rd,
-    ])
+    cg_mage_arcane_pve_and_fire_pve = OrderedSet(
+        [
+            CharacterEnum.fat04_acore_rd,
+        ]
+    )
 
-    cg_priest_shadow_pve_and_holy_pve = OrderedSet([
-        CharacterEnum.fat05_acore_re,
-        CharacterEnum.fat19_acore_rs,
-        CharacterEnum.fat20_acore_rt,
-        CharacterEnum.fat21_acore_ru,
-        CharacterEnum.fat22_acore_rv,
-    ])
+    cg_priest_shadow_pve_and_holy_pve = OrderedSet(
+        [
+            CharacterEnum.fat05_acore_re,
+            CharacterEnum.fat19_acore_rs,
+            CharacterEnum.fat20_acore_rt,
+            CharacterEnum.fat21_acore_ru,
+            CharacterEnum.fat22_acore_rv,
+        ]
+    )
 
-    cg_priest_shadow_pve_and_disco_pve = OrderedSet([
-        CharacterEnum.fat14_acore_rn,
-        CharacterEnum.fat15_acore_ro,
-        CharacterEnum.fat16_acore_rp,
-        CharacterEnum.fat17_acore_rq,
-        CharacterEnum.fat25_acore_ry,
-    ])
+    cg_priest_shadow_pve_and_disco_pve = OrderedSet(
+        [
+            CharacterEnum.fat14_acore_rn,
+            CharacterEnum.fat15_acore_ro,
+            CharacterEnum.fat16_acore_rp,
+            CharacterEnum.fat17_acore_rq,
+            CharacterEnum.fat25_acore_ry,
+        ]
+    )
 
-    cg_warlock_demon_pve_and_destruct_pve = OrderedSet([
-        CharacterEnum.fat06_acore_rf,
-    ])
+    cg_warlock_demon_pve_and_destruct_pve = OrderedSet(
+        [
+            CharacterEnum.fat06_acore_rf,
+        ]
+    )
 
-    cg_hunter_marksman_pve_and_beast_pve = OrderedSet([
-        CharacterEnum.fat07_acore_rg,
-    ])
+    cg_hunter_marksman_pve_and_beast_pve = OrderedSet(
+        [
+            CharacterEnum.fat07_acore_rg,
+        ]
+    )
 
-    cg_druid_resto_pve_and_balance_pve = OrderedSet([
-        CharacterEnum.fat08_acore_rh,
-    ])
+    cg_druid_resto_pve_and_balance_pve = OrderedSet(
+        [
+            CharacterEnum.fat08_acore_rh,
+        ]
+    )
 
-    cg_paladin_holy_pve_and_retri_pve = OrderedSet([
-        CharacterEnum.fat09_acore_ri,
-    ])
+    cg_paladin_holy_pve_and_retri_pve = OrderedSet(
+        [
+            CharacterEnum.fat09_acore_ri,
+        ]
+    )
 
-    cg_dk_blood_tank_pve_and_unholy_dps_pve = OrderedSet([
-        CharacterEnum.fat10_acore_rj,
-    ])
+    cg_dk_blood_tank_pve_and_unholy_dps_pve = OrderedSet(
+        [
+            CharacterEnum.fat10_acore_rj,
+        ]
+    )
 
-    cg_druid_balance_pve_and_resto_pve = OrderedSet([
-        CharacterEnum.fat11_acore_rk,
-        CharacterEnum.fat12_acore_rl,
-        CharacterEnum.fat13_acore_rm,
-    ])
+    cg_druid_balance_pve_and_resto_pve = OrderedSet(
+        [
+            CharacterEnum.fat11_acore_rk,
+            CharacterEnum.fat12_acore_rl,
+            CharacterEnum.fat13_acore_rm,
+        ]
+    )
 
     # --- by play style
-    cg_multibox_master_paladin = OrderedSet([
-        CharacterEnum.fat01_acore_ra,
+    cg_multibox_master_paladin = OrderedSet(
+        [
+            CharacterEnum.fat01_acore_ra,
+            CharacterEnum.rab01_acore_sa,
+        ]
+    )
 
-        CharacterEnum.rab01_acore_sa,
-    ])
-
-    cg_multibox_master_non_paladin = OrderedSet([
-        CharacterEnum.fat10_acore_rj,
-    ])
+    cg_multibox_master_non_paladin = OrderedSet(
+        [
+            CharacterEnum.fat10_acore_rj,
+        ]
+    )
 
     cg_multibox_slave_paladin = cg_paladin.difference(cg_multibox_master_paladin)
 
-    cg_multibox_slave_non_paladin = cg_non_paladin.difference(cg_multibox_master_non_paladin)
+    cg_multibox_slave_non_paladin = cg_non_paladin.difference(
+        cg_multibox_master_non_paladin
+    )
+
+    # --- by Tank DPS Healer
+    cg_tank = OrderedSet(
+        [
+            CharacterEnum.fat01_acore_ra,
+            CharacterEnum.fat10_acore_rj,
+        ]
+    )
+
+    cg_dps = OrderedSet(
+        [
+            CharacterEnum.fat02_acore_rb,
+            CharacterEnum.fat03_acore_rc,
+            CharacterEnum.fat04_acore_rd,
+            CharacterEnum.fat05_acore_re,
+            CharacterEnum.fat06_acore_rf,
+            CharacterEnum.fat07_acore_rg,
+            CharacterEnum.fat11_acore_rk,
+            CharacterEnum.fat12_acore_rl,
+            CharacterEnum.fat13_acore_rm,
+            CharacterEnum.fat14_acore_rn,
+            CharacterEnum.fat15_acore_ro,
+            CharacterEnum.fat16_acore_rp,
+            CharacterEnum.fat17_acore_rq,
+            CharacterEnum.fat18_acore_rr,
+            CharacterEnum.fat19_acore_rs,
+            CharacterEnum.fat20_acore_rt,
+            CharacterEnum.fat21_acore_ru,
+            CharacterEnum.fat22_acore_rv,
+        ]
+    )
+
+    cg_healer = OrderedSet(
+        [
+            CharacterEnum.fat08_acore_rh,
+            CharacterEnum.fat09_acore_ri,
+            CharacterEnum.fat23_acore_rw,
+            CharacterEnum.fat24_acore_rx,
+            CharacterEnum.fat25_acore_ry,
+        ]
+    )
 
 
 class SavedVariableEnum:
@@ -323,18 +411,20 @@ class SavedVariableEnum:
 
 
 class AccountSavedVariableGroup:
-    common_include_list = OrderedSet([
-        SavedVariableEnum.AtlasLoot,
-        SavedVariableEnum.Combuctor,
-        SavedVariableEnum.Dominos,
-        SavedVariableEnum.HealBot,
-        SavedVariableEnum.Mappy,
-        SavedVariableEnum.oCC,
-        SavedVariableEnum.Omen,
-        SavedVariableEnum.Parrot,
-        SavedVariableEnum.Postal,
-        SavedVariableEnum.Quartz,
-        SavedVariableEnum.RatingBuster,
-        SavedVariableEnum.Skada,
-        SavedVariableEnum.SlideBar,
-    ])
+    common_include_list = OrderedSet(
+        [
+            SavedVariableEnum.AtlasLoot,
+            SavedVariableEnum.Combuctor,
+            SavedVariableEnum.Dominos,
+            SavedVariableEnum.HealBot,
+            SavedVariableEnum.Mappy,
+            SavedVariableEnum.oCC,
+            SavedVariableEnum.Omen,
+            SavedVariableEnum.Parrot,
+            SavedVariableEnum.Postal,
+            SavedVariableEnum.Quartz,
+            SavedVariableEnum.RatingBuster,
+            SavedVariableEnum.Skada,
+            SavedVariableEnum.SlideBar,
+        ]
+    )

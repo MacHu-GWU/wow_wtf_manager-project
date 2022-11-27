@@ -1,0 +1,14 @@
+name: Act3
+character:
+  name:
+  realm:
+type: b
+id: 14313
+icon:
+description: |
+  射击 / 生存 猎人的 3 号键位.
+text: |
+  #showtooltip
+  /cast [help] 誤導; [mod:alt] 秘法射擊; [spec:1] 奇美拉射擊; [spec:2] 黑蝕箭
+  /cast 擊殺命令
+  /cast [spec:1] 沉默射擊

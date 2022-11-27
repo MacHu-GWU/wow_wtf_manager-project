@@ -1,0 +1,14 @@
+name: Act4
+character:
+  name:
+  realm:
+type: b
+id: 14314
+icon:
+description: |
+  射击 / 生存 猎人的 4 号键位.
+text: |
+  #showtooltip
+  /cast [help] 誤導; [mod:alt] 多重射擊; [spec:1] 瞄準射擊; [spec:2] 爆裂射擊
+  /cast 擊殺命令
+  /cast [spec:1] 沉默射擊

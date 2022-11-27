@@ -1,0 +1,14 @@
+name: Act2
+character:
+  name:
+  realm:
+type: b
+id: 14312
+icon:
+description: |
+  射击 / 生存 猎人的 2 号键位.
+text: |
+  #showtooltip
+  /cast 穩固射擊
+  /cast 擊殺命令
+  /cast [spec:1] 沉默射擊

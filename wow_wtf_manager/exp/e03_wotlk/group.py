@@ -64,3 +64,7 @@ class Character(AttrsClass):
 
     def __gt__(self, other: 'Character'):
         return self.sort_key > other.sort_key
+
+    @property
+    def acc_obj(self) -> 'Account':
+        return Account(account=self.account)

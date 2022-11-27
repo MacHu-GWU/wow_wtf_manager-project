@@ -1,0 +1,25 @@
+name: Add-Debuff
+character:
+  name:
+  realm:
+type: b
+id: 14321
+icon:
+description: |
+  给猎人的中频输出循环技能添加给敌人上 Debuff 的功能. 只能用于单机 GM, 用来模拟团队 Debuff. 该技能放在 3 号键位上.
+text: |
+  #showtooltip
+  /cast [help] 誤導; [mod:alt] 秘法射擊; [spec:1] 奇美拉射擊; [spec:2] Explosive Shot
+  /cast 擊殺命令
+  /cast 沉默射擊
+  /stopmacro [noharm]
+  .aura 54499
+  .aura 71554
+  .aura 71554
+  .aura 71554
+  .aura 71554
+  .aura 71554
+  .aura 16857
+  .aura 58683
+  .aura 33983
+  .aura 20185

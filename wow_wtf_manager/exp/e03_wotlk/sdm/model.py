@@ -11,7 +11,7 @@ from attrs_mate import AttrsClass
 from pathlib_mate import Path
 from jinja2 import Template
 
-from ..group import Account
+from ..group import Account, Character
 
 dir_here = Path.dir_here(__file__)
 path_sdm_template = dir_here / "sdm.tpl"
@@ -41,6 +41,7 @@ class SDMMacro(AttrsClass):
     """
     定义了一个魔兽世界中的 SDM 宏命令的抽象, 目前只支持 Button + Global 这一种模式.
     """
+
     name: str = attr.ib()
     character: SDMCharacter = AttrsClass.ib_nested()
     type: str = attr.ib(default=_DEFAULT_TYPE)
@@ -48,11 +49,17 @@ class SDMMacro(AttrsClass):
     icon: int = attr.ib(default=_DEFAULT_ICON)  # 1 is the Question Mark Icon
     text: str = attr.ib(default="")
 
-    def set_id(self, id: int) -> 'SDMMacro':
+    def set_id(self, id: int) -> "SDMMacro":
+        """
+        Update it's attributes value.
+        """
         self.id = id
         return self
 
-    def set_char(self, name: str, realm: str) -> 'SDMMacro':
+    def set_char(self, name: str, realm: str) -> "SDMMacro":
+        """
+        Update it's attributes value.
+        """
         self.character.name = name
         self.character.realm = realm
         return self
@@ -75,7 +82,7 @@ class SDMMacro(AttrsClass):
         return self.text.replace("\n", "\\n")
 
     @classmethod
-    def parse_yml(cls, content: str) -> 'SDMMacro':
+    def parse_yml(cls, content: str) -> "SDMMacro":
         data = load(content, Loader)
         return cls(
             name=data["name"],
@@ -98,11 +105,11 @@ class SDMMacro(AttrsClass):
             lines.append(f'    ["character"] = {{')
             lines.append(f'        ["name"] = "{self.character.name}",')
             lines.append(f'        ["realm"] = "{self.character.realm}",')
-            lines.append(f'    }},')
+            lines.append(f"    }},")
         lines.append(f'    ["ID"] = {self.id},')
         lines.append(f'    ["icon"] = {self.icon},')
         lines.append(f'    ["text"] = "{self.encode_text()}",')
-        lines.append(f'}},')
+        lines.append(f"}},")
         return "\n".join(lines)
 
 
@@ -111,6 +118,7 @@ class SDMMacroFile(AttrsClass):
     """
     以 YAML 文件形式存在的一个 SDM 宏.
     """
+
     path: Path = attr.ib()
 
     @cached_property
@@ -135,19 +143,72 @@ def render_sdm_lua(macro_list: T.List[SDMMacro]) -> str:
 
 @attr.s
 class AccountSDMSetup(AttrsClass):
-    account: Account = Account.ib_nested()
-    macros: T.List[SDMMacro] = SDMMacro.ib_list_of_nested()
+    """
+    代表着一个 WTF 文件夹下一个 魔兽世界账号中的 SuperDuperMacro 插件的 Lua 配置的对象.
 
+    :param account: 是一个 Account 对象, 代表它输于哪一个 Account.
+    :param macros: 配置中包含的 SDM 宏命令列表.
+    """
+    account: Account = Account.ib_nested()
+    macros: T.Dict[int, SDMMacro] = attr.ib(factory=dict)
+
+    def add_macros(self, macros: T.Iterable[SDMMacro], overwrite: bool=False):
+        for macro in macros:
+            if macro in macros:
+                if overwrite:
+                    raise Exception
+                else:
+                    self.macros[macro.id] = macro
+            else:
+                self.macros[macro.id] = macro
 
 @attr.s
 class ClientSDMSetup(AttrsClass):
+    """
+    代表着一个魔兽世界客户端下所有的账号的 SuperDuperMacro 插件的配置.
+    """
+
     dir_wow: Path = attr.ib()
-    accounts: T.List[AccountSDMSetup] = AccountSDMSetup.ib_list_of_nested()
+    account_sdm_setup_list: T.List[
+        AccountSDMSetup
+    ] = AccountSDMSetup.ib_list_of_nested()
 
     def apply(self, plan=True):
-        for account in self.accounts:
+        """
+        将插件实际应用到 WTF 文件夹, 该操作会覆盖掉已有的 SuperDuperMacro 插件配置.
+        """
+        for account in self.account_sdm_setup_list:
             print(f"working on account: {account.account}")
-            path = self.dir_wow / "WTF" / "Account" / account.account.account / "SavedVariables" / "SuperDuperMacro.lua"
-            content = render_sdm_lua(account.macros)
+            path = (
+                self.dir_wow
+                / "WTF"
+                / "Account"
+                / account.account.account
+                / "SavedVariables"
+                / "SuperDuperMacro.lua"
+            )
+            content = render_sdm_lua(list(account.macros.values()))
             if plan is False:
                 path.write_text(content)
+
+    def add_macros_for_many_chars(
+        self,
+        chars: T.Iterable[Character],
+        macros: T.Iterable[SDMMacro],
+    ):
+        """
+        为一批 Character 添加一堆一样的 SDMMacro 对象.
+
+        例如你有一个 法师 的焦点打断目标宏. 那么你可以一次性将这个宏给许多个法师角色.
+        """
+        for character in chars:
+            account_sdm_setup = AccountSDMSetup(
+                account=character.acc_obj,
+            )
+            account_sdm_setup.add_macros(macros)
+            for macro in account_sdm_setup.macros.values():
+                macro.set_char(
+                    name=character.character,
+                    realm=character.server,
+                )
+            self.account_sdm_setup_list.append(account_sdm_setup)

@@ -1,0 +1,13 @@
+name: Survival-Rotation
+character:
+  name:
+  realm:
+type: b
+id: 14122
+icon:
+description: |
+  生存猎人的一键输出循环.
+text: |
+  #showtooltip
+  /castsequence [mod:alt,nochanneling] reset=9 誤導; [nochanneling]
+  /cast 擊殺命令

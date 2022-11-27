@@ -1,0 +1,13 @@
+name: Beast-Rotation
+character:
+  name:
+  realm:
+type: b
+id: 14123
+icon:
+description: |
+  兽王猎人的一键输出循环.
+text: |
+  #showtooltip
+  /castsequence [mod:alt,nochanneling] reset=9 誤導; [nochanneling]
+  /cast 擊殺命令

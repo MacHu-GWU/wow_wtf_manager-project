@@ -1,0 +1,12 @@
+name: Viper Aspect
+character:
+  name:
+  realm:
+type: b
+id: 14105
+icon:
+description: |
+  所有天赋下 猎人的 切换蝮蛇守护宏.
+text: |
+  #showtooltip
+  /castsequence !蝮蛇守護, !龍鷹守護
