@@ -124,6 +124,7 @@ def s_03_balance_resto_druid():
             Macros.sdm_07_druid____1_balance_resto____17303_rotation_zhTW,
             # Act
             Macros.sdm_07_druid____1_balance_resto____17303_rotation_zhTW,
+            Macros.sdm_07_druid____2_resto_and_feral____17504_multibox_slow_heal_zhTW,
         ],
     )
 
