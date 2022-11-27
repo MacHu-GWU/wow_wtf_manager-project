@@ -20,10 +20,7 @@ client_sdm_setup = ClientSDMSetup(
 # ------------------------------------------------------------------------------
 def global_macro():
     client_sdm_setup.add_macros_for_many_accounts(
-        # accounts=AccountGroup.ag_all_account,
-        accounts=[
-            AccountEnum.fat07,
-        ],
+        accounts=AccountGroup.ag_all_account,
         macros=[
             # GM command
             Macros.sdm_00_common____1001_respawn.macro,
@@ -390,10 +387,7 @@ def s_25_disco_holy_priest():
 # ------------------------------------------------------------------------------
 def special_act_placeholder():
     client_sdm_setup.add_macros_for_many_chars(
-        # chars=CharacterGroup.cg_all_character,
-        chars=[
-            CharacterEnum.fat07_acore_rg,
-        ],
+        chars=CharacterGroup.cg_all_character,
         macros=[
             Macros.sdm_00_common____6001_mb_special1.macro,
             Macros.sdm_00_common____6002_mb_special2.macro,
