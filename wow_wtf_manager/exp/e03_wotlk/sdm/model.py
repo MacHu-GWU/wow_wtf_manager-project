@@ -194,28 +194,41 @@ class ClientSDMSetup(AttrsClass):
             if plan is False:
                 path.write_text(content)
 
+    def get_or_init_setup(self, account: Account) -> AccountSDMSetup:
+        if account.account in self.account_sdm_setup_mapper:
+            return self.account_sdm_setup_mapper[account.account]
+        else:
+            account_sdm_setup = AccountSDMSetup(account=account)
+            self.account_sdm_setup_mapper[account.account] = account_sdm_setup
+            return account_sdm_setup
+
+    def add_macros_for_many_accounts(
+        self,
+        accounts: T.Iterable[Account],
+        macros: T.Iterable[SDMMacro],
+    ):
+        """
+        为一批 Account 添加一堆一样的 SDMMacro 对象. 这些 Macro 将会成为 Global Macro.
+
+        例如你有一堆账号的 Global Macro 都需要邀请组队宏.
+        """
+        for account in accounts:
+            account_sdm_setup = self.get_or_init_setup(account)
+            account_sdm_setup.add_macros(macros)
+
     def add_macros_for_many_chars(
         self,
         chars: T.Iterable[Character],
         macros: T.Iterable[SDMMacro],
     ):
         """
-        为一批 Character 添加一堆一样的 SDMMacro 对象.
+        为一批 Character 添加一堆一样的 SDMMacro 对象. 这些 Macro 将会成为
+        Character Macro.
 
         例如你有一个 法师 的焦点打断目标宏. 那么你可以一次性将这个宏给许多个法师角色.
         """
         for character in chars:
-            if character.acc_obj.account in self.account_sdm_setup_mapper:
-                account_sdm_setup = self.account_sdm_setup_mapper[
-                    character.acc_obj.account
-                ]
-            else:
-                account_sdm_setup = AccountSDMSetup(
-                    account=character.acc_obj,
-                )
-                self.account_sdm_setup_mapper[
-                    character.acc_obj.account
-                ] = account_sdm_setup
+            account_sdm_setup = self.get_or_init_setup(character.acc_obj)
             account_sdm_setup.add_macros(macros)
             for macro in macros:
                 macro.set_char(

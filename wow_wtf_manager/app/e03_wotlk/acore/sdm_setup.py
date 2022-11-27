@@ -19,10 +19,10 @@ client_sdm_setup = ClientSDMSetup(
 # Global Macro
 # ------------------------------------------------------------------------------
 def global_macro():
-    client_sdm_setup.add_macros_for_many_chars(
-        # chars=CharacterGroup.cg_all_character,
-        chars=[
-            CharacterEnum.fat07_acore_rg,
+    client_sdm_setup.add_macros_for_many_accounts(
+        # accounts=AccountGroup.ag_all_account,
+        accounts=[
+            AccountEnum.fat07,
         ],
         macros=[
             # GM command
@@ -75,11 +75,13 @@ def s_01_protect_retribution_paladin():
             CharacterEnum.fat01_acore_ra,
         ],
         macros=[
+            # Buff
             Macros.sdm_00_common____2003_buff_tank.macro,
             Macros.sdm_00_common____2001_buff_physics_dps.macro,
             Macros.sdm_02_paladin____0_common____11101_consumable.macro,
             Macros.sdm_02_paladin____0_common____11111_clear_debuff_zhTW.macro,
             Macros.sdm_02_paladin____1_protect_retri____11311_buff_self_alliance_zhTW.macro,
+            # Act
             Macros.sdm_02_paladin____1_protect_retri____11301_act1_zhTW.macro,
             Macros.sdm_02_paladin____1_protect_retri____11302_act2_zhTW.macro,
             Macros.sdm_02_paladin____1_protect_retri____11303_act3_zhTW.macro,
@@ -96,11 +98,13 @@ def s_02_elemental_resto_shaman():
             CharacterEnum.fat02_acore_rb,
         ],
         macros=[
+            # Buff
             Macros.sdm_00_common____2002_buff_caster_dps.macro,
             Macros.sdm_00_common____2004_buff_healer.macro,
             Macros.sdm_05_shaman____0_common____15101_consumable.macro,
             Macros.sdm_05_shaman____0_common____15102_interrupt.macro,
             Macros.sdm_05_shaman____1_elemental_resto____15311_buff_self_zhTW.macro,
+            # Act
             Macros.sdm_05_shaman____0_common____15111_elemental_rotation_zhTW.macro,
             Macros.sdm_05_shaman____0_common____15112_resto_rotation_zhTW.macro,
             Macros.sdm_05_shaman____0_common____15114_mb_resto_earth_shield_zhTW.macro,
@@ -138,11 +142,13 @@ def s_04_arcane_fire_mage():
             CharacterEnum.fat04_acore_rd,
         ],
         macros=[
+            # Buff
             Macros.sdm_00_common____2002_buff_caster_dps.macro,
             Macros.sdm_09_mage____0_common____19101_consumable.macro,
             Macros.sdm_09_mage____0_common____19102_interrupt_zhTW.macro,
             Macros.sdm_09_mage____0_common____19103_buff_self_zhTW.macro,
             Macros.sdm_09_mage____0_common____19104_buff_team_zhTW.macro,
+            # Act
             Macros.sdm_09_mage____1_arcane_fire____19311_act1_zhTW.macro,
             Macros.sdm_09_mage____1_arcane_fire____19312_act2_zhTW.macro,
             Macros.sdm_09_mage____0_common____19105_act3_zhTW.macro,
@@ -167,10 +173,12 @@ def s_05_and_14_to_22_shadow_disco_priest():
             CharacterEnum.fat22_acore_rv,
         ],
         macros=[
+            # Buff
             Macros.sdm_00_common____2002_buff_caster_dps.macro,
             Macros.sdm_10_priest____0_common____19101_consumable.macro,
             Macros.sdm_10_priest____1_shadow_disco____19301_buff_self_zhTW.macro,
             Macros.sdm_10_priest____0_common____19102_buff_raid_zhTW.macro,
+            # Act
             Macros.sdm_10_priest____1_shadow_disco____19302_act1_zhTW.macro,
             Macros.sdm_10_priest____1_shadow_disco____19303_act2_zhTW.macro,
             Macros.sdm_10_priest____1_shadow_disco____19306_multibox_main_rotate_zhTW.macro,
@@ -184,8 +192,10 @@ def s_06_demonology_affiliation_warlock():
             CharacterEnum.fat06_acore_rf,
         ],
         macros=[
+            # Buff
             Macros.sdm_00_common____2002_buff_caster_dps.macro,
             Macros.sdm_08_warlock____0_common____18101_consumable.macro,
+            # Act
             Macros.sdm_08_warlock____0_common____18102_elemental_curse_zhTW.macro,
             Macros.sdm_08_warlock____0_common____18103_tongue_curse_zhTW.macro,
             Macros.sdm_08_warlock____0_common____18104_corruption_zhTW.macro,
@@ -204,8 +214,10 @@ def s_07_marksmanship_survival_hunter():
             CharacterEnum.fat07_acore_rg,
         ],
         macros=[
+            # Buff
             Macros.sdm_00_common____2001_buff_physics_dps.macro,
             Macros.sdm_04_hunter____0_common____14101_consumable.macro,
+            # Act
             Macros.sdm_04_hunter____0_common____14102_misdirect_zhTW.macro,
             Macros.sdm_04_hunter____0_common____14103_tranquil_zhTW.macro,
             Macros.sdm_04_hunter____0_common____14104_pack_aspect_zhTW.macro,
