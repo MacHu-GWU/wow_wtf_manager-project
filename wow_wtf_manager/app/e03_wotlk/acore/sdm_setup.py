@@ -113,27 +113,19 @@ def s_02_elemental_resto_shaman():
     )
 
 
-# # --- Feral / Balance Druid
-# # for account, character in [
-# #     (AccountEnum.fat03, CharacterEnum.fat03_acore_rc),
-# # ]:
-# #     account_sdm_setup = AccountSDMSetup(
-# #         account=account,
-# #         macros=[
-# #             Macros.sdm_00_common____2002_buff_caster_dps.macro,
-# #             Macros.sdm_07_druid____0_common____17101_consumable.macro,
-# #             Macros.sdm_07_druid____3_feral_and_balance____17701_buff_self_zhTW.macro,
-# #             Macros.sdm_07_druid____3_feral_and_balance____17702_buff_raid_zhTW.macro,
-# #             Macros.sdm_07_druid____3_feral_and_balance____17703_multibox_main_rotate_zhTW.macro,
-# #
-# #             # Macros.sdm_00_common____6001_mb_special1.macro,
-# #             # Macros.sdm_00_common____6002_mb_special2.macro,
-# #             # Macros.sdm_00_common____6003_mb_special3.macro,
-# #         ],
-# #     )
-# #     for macro in account_sdm_setup.macros:
-# #         macro.set_char(name=character.character, realm=character.server)
-# #     accounts.append(account_sdm_setup)
+def s_03_balance_resto_druid():
+    client_sdm_setup.add_macros_for_many_chars(
+        chars=[
+            CharacterEnum.fat03_acore_rc,
+        ],
+        macros=[
+            Macros.sdm_00_common____2002_buff_caster_dps.macro,
+            Macros.sdm_07_druid____0_common____17101_consumable.macro,
+            Macros.sdm_07_druid____1_balance_resto____17301_buff_self_zhTW.macro,
+            Macros.sdm_07_druid____1_balance_resto____17302_buff_raid_zhTW.macro,
+            Macros.sdm_07_druid____1_balance_resto____17303_multibox_main_rotate_zhTW.macro,
+        ],
+    )
 
 
 def s_04_arcane_fire_mage():
@@ -158,19 +150,10 @@ def s_04_arcane_fire_mage():
     )
 
 
-def s_05_and_14_to_22_shadow_disco_priest():
+def s_05_shadow_disco_priest():
     client_sdm_setup.add_macros_for_many_chars(
         chars=[
             CharacterEnum.fat05_acore_re,
-            CharacterEnum.fat14_acore_rn,
-            CharacterEnum.fat15_acore_ro,
-            CharacterEnum.fat16_acore_rp,
-            CharacterEnum.fat17_acore_rq,
-            CharacterEnum.fat18_acore_rr,
-            CharacterEnum.fat19_acore_rs,
-            CharacterEnum.fat20_acore_rt,
-            CharacterEnum.fat21_acore_ru,
-            CharacterEnum.fat22_acore_rv,
         ],
         macros=[
             # Buff
@@ -231,6 +214,21 @@ def s_07_marksmanship_survival_hunter():
             Macros.sdm_04_hunter____0_common____14121_marksmanship_rotation_zhTW.macro,
             Macros.sdm_04_hunter____0_common____14122_survival_rotation_zhTW.macro,
             Macros.sdm_04_hunter____1_marksmanship_survival____14321_add_debuff_zhTW.macro,
+        ],
+    )
+
+
+def s_08_balance_resto_druid():
+    client_sdm_setup.add_macros_for_many_chars(
+        chars=[
+            CharacterEnum.fat08_acore_rh,
+        ],
+        macros=[
+            Macros.sdm_00_common____2002_buff_caster_dps.macro,
+            Macros.sdm_07_druid____0_common____17101_consumable.macro,
+            Macros.sdm_07_druid____1_balance_resto____17301_buff_self_zhTW.macro,
+            Macros.sdm_07_druid____1_balance_resto____17302_buff_raid_zhTW.macro,
+            Macros.sdm_07_druid____1_balance_resto____17303_multibox_main_rotate_zhTW.macro,
         ],
     )
 
@@ -299,6 +297,94 @@ def s_11_to_13_balance_resto_druid():
     )
 
 
+def s_14_to_22_shadow_disco_priest():
+    client_sdm_setup.add_macros_for_many_chars(
+        chars=[
+            CharacterEnum.fat14_acore_rn,
+            CharacterEnum.fat15_acore_ro,
+            CharacterEnum.fat16_acore_rp,
+            CharacterEnum.fat17_acore_rq,
+            CharacterEnum.fat18_acore_rr,
+            CharacterEnum.fat19_acore_rs,
+            CharacterEnum.fat20_acore_rt,
+            CharacterEnum.fat21_acore_ru,
+            CharacterEnum.fat22_acore_rv,
+        ],
+        macros=[
+            # Buff
+            Macros.sdm_00_common____2002_buff_caster_dps.macro,
+            Macros.sdm_10_priest____0_common____19101_consumable.macro,
+            Macros.sdm_10_priest____1_shadow_disco____19301_buff_self_zhTW.macro,
+            Macros.sdm_10_priest____0_common____19102_buff_raid_zhTW.macro,
+            # Act
+            Macros.sdm_10_priest____1_shadow_disco____19302_act1_zhTW.macro,
+            Macros.sdm_10_priest____1_shadow_disco____19303_act2_zhTW.macro,
+            Macros.sdm_10_priest____1_shadow_disco____19306_multibox_main_rotate_zhTW.macro,
+        ],
+    )
+
+
+def s_23_elemental_resto_shaman():
+    client_sdm_setup.add_macros_for_many_chars(
+        chars=[
+            CharacterEnum.fat23_acore_rw,
+        ],
+        macros=[
+            # Buff
+            Macros.sdm_00_common____2002_buff_caster_dps.macro,
+            Macros.sdm_00_common____2004_buff_healer.macro,
+            Macros.sdm_05_shaman____0_common____15101_consumable.macro,
+            Macros.sdm_05_shaman____0_common____15102_interrupt.macro,
+            Macros.sdm_05_shaman____1_elemental_resto____15311_buff_self_zhTW.macro,
+            # Act
+            Macros.sdm_05_shaman____0_common____15111_elemental_rotation_zhTW.macro,
+            Macros.sdm_05_shaman____0_common____15112_resto_rotation_zhTW.macro,
+            Macros.sdm_05_shaman____0_common____15114_mb_resto_earth_shield_zhTW.macro,
+            Macros.sdm_05_shaman____1_elemental_resto____15312_burst_zhTW.macro,
+        ],
+    )
+
+
+def s_24_holy_protect_paladin():
+    client_sdm_setup.add_macros_for_many_chars(
+        chars=[
+            CharacterEnum.fat24_acore_rx,
+        ],
+        macros=[
+            Macros.sdm_00_common____2003_buff_tank.macro,
+            Macros.sdm_00_common____2004_buff_healer.macro,
+            Macros.sdm_02_paladin____0_common____11101_consumable.macro,
+            Macros.sdm_02_paladin____0_common____11111_clear_debuff_zhTW.macro,
+            Macros.sdm_02_paladin____0_common____11151_high_int_heal_rotation_zhTW.macro,
+            Macros.sdm_02_paladin____0_common____11152_high_crt_heal_rotation_zhTW.macro,
+            Macros.sdm_02_paladin____3_holy_protect____11751_mb_periodical_beacon_zhTW.macro,
+            Macros.sdm_02_paladin____3_holy_protect____11752_mb_periodical_judgement_zhTW.macro,
+            Macros.sdm_02_paladin____3_holy_protect____11711_act1_zhTW.macro,
+            Macros.sdm_02_paladin____3_holy_protect____11712_act2_zhTW.macro,
+            Macros.sdm_02_paladin____0_common____11133_holy_rotation_zhTW.macro,
+            Macros.sdm_02_paladin____0_common____11131_protect_rotation_zhTW.macro,
+            Macros.sdm_02_paladin____3_holy_protect____11731_buff_self_alliance_zhTW.macro,
+        ],
+    )
+
+
+def s_25_disco_holy_priest():
+    client_sdm_setup.add_macros_for_many_chars(
+        chars=[
+            CharacterEnum.fat25_acore_ry,
+        ],
+        macros=[
+            # Buff
+            Macros.sdm_00_common____2002_buff_caster_dps.macro,
+            Macros.sdm_10_priest____0_common____19101_consumable.macro,
+            Macros.sdm_10_priest____2_disco_holy____19501_buff_self_zhTW.macro,
+            # Act
+            Macros.sdm_10_priest____2_disco_holy____19521_heal_rotate_zhTW.macro,
+            Macros.sdm_10_priest____2_disco_holy____19522_mb_periodical_prayer_of_mending_zhTW.macro,
+        ],
+    )
+
+
 # ------------------------------------------------------------------------------
 # Normal
 # ------------------------------------------------------------------------------
@@ -331,16 +417,23 @@ def special_act_ICC_1():
 global_macro()
 
 # --- charactor
-# s_01_protect_retribution_paladin()
-# s_02_elemental_resto_shaman()
-# s_04_arcane_fire_mage()
-# s_05_and_14_to_22_shadow_disco_priest()
-
-# s_06_demonology_affiliation_warlock()
+s_01_protect_retribution_paladin()
+s_02_elemental_resto_shaman()
+s_03_balance_resto_druid()
+s_04_arcane_fire_mage()
+s_05_shadow_disco_priest()
+s_06_demonology_affiliation_warlock()
 s_07_marksmanship_survival_hunter()
-# s_09_holy_protect_paladin()
-# s_10_blood_unholy_dk()
-# s_11_to_13_balance_resto_druid()
+s_08_balance_resto_druid()
+s_09_holy_protect_paladin()
+s_10_blood_unholy_dk()
+
+s_11_to_13_balance_resto_druid()
+s_14_to_22_shadow_disco_priest()
+
+s_23_elemental_resto_shaman()
+s_24_holy_protect_paladin()
+s_25_disco_holy_priest()
 
 # --- special
 special_act_placeholder()
