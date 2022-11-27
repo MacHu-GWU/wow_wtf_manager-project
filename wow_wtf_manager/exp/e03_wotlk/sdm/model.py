@@ -60,8 +60,14 @@ class SDMMacro(AttrsClass):
         """
         Update it's attributes value.
         """
-        self.character.name = name
-        self.character.realm = realm
+        if self.character is None:
+            self.character = SDMCharacter(
+                name=name,
+                realm=realm,
+            )
+        else:
+            self.character.name = name
+            self.character.realm = realm
         return self
 
     def is_global(self) -> bool:

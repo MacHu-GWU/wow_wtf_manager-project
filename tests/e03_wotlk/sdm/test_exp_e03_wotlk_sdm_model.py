@@ -3,7 +3,9 @@
 import os
 from pathlib_mate import Path
 from wow_wtf_manager.exp.e03_wotlk.sdm.model import (
-    SDMMacroTypeEnum, SDMMacro, SDMMacroFile,
+    SDMMacroTypeEnum,
+    SDMMacro,
+    SDMMacroFile,
     render_sdm_lua,
 )
 
@@ -11,7 +13,11 @@ dir_here = Path.dir_here(__file__)
 
 
 class TestSDMMacroFile:
-    def test(self):
+    def test_init(self):
+        macro = SDMMacro(name="test")
+        assert macro.character is None
+
+    def test_parser(self):
         macro_list = list()
         # --- sample-global.yml
         path = dir_here / "parser" / "sample-global.yml"
@@ -24,11 +30,7 @@ class TestSDMMacroFile:
         assert macro.id == 0
         assert macro.type == SDMMacroTypeEnum.button
         assert macro.icon == 1
-        assert macro.text == (
-            "#showtooltip\n"
-            "/stopcasting\n"
-            "/cast Counterspell"
-        )
+        assert macro.text == ("#showtooltip\n" "/stopcasting\n" "/cast Counterspell")
         lua_code = macro.render()
         _ = lua_code
         macro_list.append(macro)
@@ -45,11 +47,7 @@ class TestSDMMacroFile:
         assert macro.id == 0
         assert macro.type == SDMMacroTypeEnum.button
         assert macro.icon == 1
-        assert macro.text == (
-            "#showtooltip\n"
-            "/stopcasting\n"
-            "/cast Counterspell"
-        )
+        assert macro.text == ("#showtooltip\n" "/stopcasting\n" "/cast Counterspell")
         lua_code = macro.render()
         _ = lua_code
 
@@ -78,11 +76,14 @@ if __name__ == "__main__":
 
     args = [
         bin_pytest,
-        "-s", "--tb=native",
+        "-s",
+        "--tb=native",
         f"--rootdir={dir_project_root}",
         "--cov=wow_wtf_manager.exp.e03_wotlk.sdm.model",
-        "--cov-report", "term-missing",
-        "--cov-report", f"html:{dir_htmlcov}",
+        "--cov-report",
+        "term-missing",
+        "--cov-report",
+        f"html:{dir_htmlcov}",
         abspath,
     ]
     subprocess.run(args)
