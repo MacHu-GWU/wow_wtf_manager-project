@@ -15,5 +15,6 @@ text: |
   #showtooltip
   /cast [spec:1,stance:0/1/2/3/4] 梟獸形態
   /castsequence [spec:1] reset=15 月火術,憤怒,星火術,憤怒,星火術,蟲群,憤怒,星火術,憤怒,星火術,憤怒,星火術,憤怒,星火術,憤怒,星火術,蟲群,憤怒,星火術,憤怒,星火術
+  /targetraid [spec:2]
   /cast [spec:2,stance:0/1/2/3/4] 生命之樹
   /castsequence [spec:2] reset=15 回春術,回春術,回春術,回春術,回春術,野性痊癒

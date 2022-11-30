@@ -26,5 +26,5 @@ description: |
 
 text: |
   #showtooltip
-  #/targetraid
+  /targetraid
   /castsequence reset=6 激流,治療鍊,水之盾,治療波,次級治療波
