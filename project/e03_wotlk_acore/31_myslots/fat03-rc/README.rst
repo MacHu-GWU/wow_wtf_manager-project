@@ -1,2 +1,0 @@
-- spec1 = balance
-- spec2 = bear
