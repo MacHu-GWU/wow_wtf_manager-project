@@ -3,7 +3,7 @@ character:
   name:
   realm:
 type: b
-id: 9151
+id: 27171
 icon:
 description: |
   奶骑自动治疗循环. 其核心是以 1 分钟为周期, 每分钟开一次 神性恳求 回蓝. 然后 奥杜尔 饰品 CD 一好就用. 该 Build 急速较高, HPS 较高. 带饰品.
