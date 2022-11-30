@@ -252,7 +252,7 @@ def s_09_holy_protect_paladin():
             Macros.sdm_02_paladin____0_common____11112_raid_divine_sacrifice_zhTW,
             # Act
             Macros.sdm_02_paladin____0_common____9151_high_int_heal_rotation_zhTW,
-            Macros.sdm_02_paladin____0_common____9152_high_crt_heal_rotation_zhTW,
+            Macros.sdm_02_paladin____0_common____9998_high_crt_heal_rotation_zhTW,
             Macros.sdm_02_paladin____3_holy_protect____11751_mb_periodical_beacon_zhTW,
             Macros.sdm_02_paladin____3_holy_protect____11752_mb_periodical_judgement_zhTW,
             Macros.sdm_02_paladin____3_holy_protect____11711_act1_zhTW,
@@ -367,7 +367,7 @@ def s_24_holy_protect_paladin():
             Macros.sdm_02_paladin____0_common____11112_raid_divine_sacrifice_zhTW,
             # Act
             Macros.sdm_02_paladin____0_common____9151_high_int_heal_rotation_zhTW,
-            Macros.sdm_02_paladin____0_common____9152_high_crt_heal_rotation_zhTW,
+            Macros.sdm_02_paladin____0_common____9998_high_crt_heal_rotation_zhTW,
             Macros.sdm_02_paladin____3_holy_protect____11751_mb_periodical_beacon_zhTW,
             Macros.sdm_02_paladin____3_holy_protect____11752_mb_periodical_judgement_zhTW,
             Macros.sdm_02_paladin____3_holy_protect____11711_act1_zhTW,

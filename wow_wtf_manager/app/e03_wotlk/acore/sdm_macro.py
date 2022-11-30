@@ -24,7 +24,7 @@ class Macros:
     sdm_02_paladin____3_holy_protect____11751_mb_periodical_beacon_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "3-holy-protect", "11751-mb-periodical-beacon-zhTW.yml"))
     sdm_02_paladin____3_holy_protect____11752_mb_periodical_judgement_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "3-holy-protect", "11752-mb-periodical-judgement-zhTW.yml"))
     sdm_02_paladin____0_common____9151_high_int_heal_rotation_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "0-common", "9151-high-int-heal-rotation-zhTW.yml"))
-    sdm_02_paladin____0_common____9152_high_crt_heal_rotation_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "0-common", "9152-high-crt-heal-rotation-zhTW.yml"))
+    sdm_02_paladin____0_common____9998_high_crt_heal_rotation_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "02-paladin", "0-common", "9998-high-crt-heal-rotation-zhTW.yml"))
     sdm_08_warlock____0_common____18101_consumable = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "08-warlock", "0-common", "18101-consumable.yml"))
     sdm_08_warlock____0_common____18102_elemental_curse_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "08-warlock", "0-common", "18102-elemental-curse-zhTW.yml"))
     sdm_08_warlock____0_common____18103_tongue_curse_zhTW = SDMMacroFile(path=dir_wotlk_acore_project.joinpath("SuperDuperMacro", "08-warlock", "0-common", "18103-tongue-curse-zhTW.yml"))
