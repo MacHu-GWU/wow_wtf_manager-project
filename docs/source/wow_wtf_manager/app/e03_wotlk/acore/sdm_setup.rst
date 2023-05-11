@@ -1,0 +1,5 @@
+sdm_setup
+=========
+
+.. automodule:: wow_wtf_manager.app.e03_wotlk.acore.sdm_setup
+    :members:
