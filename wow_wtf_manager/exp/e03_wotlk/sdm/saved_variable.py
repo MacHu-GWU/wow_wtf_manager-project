@@ -33,6 +33,7 @@ class SDMCharacter(AttrsClass):
     """
     :class`SDMCharacter` 是 :class:`SDMMacro` 的一个属性, 用来指定宏属于哪个角色.
     """
+
     name: str = attr.ib(default="")
     realm: str = attr.ib(default="")
 
@@ -53,8 +54,9 @@ class SDMMacro(AttrsClass):
     """
     定义了一个魔兽世界中的 SDM 宏命令的抽象, 目前只支持 Button + Global 这一种模式.
     """
+
     name: str = attr.ib()
-    character: SDMCharacter = AttrsClass.ib_nested()
+    character: T.Optional[SDMCharacter] = AttrsClass.ib_nested()
     type: str = attr.ib(default=_DEFAULT_TYPE)
     id: int = attr.ib(default=_DEFAULT_ID)  # SDM macro ID starts from 0
     icon: int = attr.ib(default=_DEFAULT_ICON)  # 1 is the Question Mark Icon
@@ -101,8 +103,11 @@ class SDMMacro(AttrsClass):
     @classmethod
     def parse_yml(cls, content: str) -> "SDMMacro":
         """
+        我们将 SDM lua 文件中一个个的宏定义拆分成了一个个的宏, 并且改成了 Yaml 文件以便编辑.
+        这样就可以一单个宏为单位进行排列组合, 批量管理很多账号很多角色的宏命令了.
 
-        
+        该方法能将 Yaml 文件中的一个宏定义解析成 :class:`SDMMacro` 对象. 下面是一个例子:
+
         .. code-block:: yml
 
             name: Follow-Focus
@@ -129,7 +134,17 @@ class SDMMacro(AttrsClass):
 
     def render(self) -> str:
         """
-        Render the corresponding SuperDupeMacro.lua code
+        将该对象渲染成 SDM lua 文件中的一段代码. 例如:
+
+        .. code-block:: lua
+
+            [0] = {
+                ["type"] = "b",
+                ["name"] = "火球",
+                ["ID"] = 0,
+                ["text"] = "#showtooltip\n/cast 火球术",
+                ["icon"] = 1,
+            },
         """
         lines: T.List[str] = list()
         lines.append(f"[{self.id}] = {{")
@@ -150,7 +165,13 @@ class SDMMacro(AttrsClass):
 @attr.s
 class SDMMacroFile(AttrsClass):
     """
-    以 YAML 文件形式存在的一个 SDM 宏.
+    对应着一个 :class:`SDMMacro` 对象的 YAML 文件. 本质上他是一个工厂函数, 自己本身是
+     immutable 的, 但能生成 mutable 的 :class:`SDMMacro` 对象.
+
+    Example::
+
+        >>> sdm_file = SDMMacroFile(path=Path("test.yml"))
+        >>> sdm_file.macro.render()
     """
 
     path: Path = attr.ib()
@@ -165,6 +186,11 @@ class SDMMacroFile(AttrsClass):
 
 
 def render_sdm_lua(macro_list: T.List[SDMMacro]) -> str:
+    """
+    以一堆 :class:`SDMMacro` 为输入, 输出一个 SDM lua 文件的内容. 一个 SDM lua 文件
+    本质上就是一堆 :class:`SDMMacro`.
+    """
+    # 确保没有重复的 id
     id_set = {macro.id for macro in macro_list}
     if len(id_set) != len(macro_list):
         macro_id_list = [macro.id for macro in macro_list]
@@ -175,100 +201,6 @@ def render_sdm_lua(macro_list: T.List[SDMMacro]) -> str:
     return _sdm_template.render(macro_list=macro_list)
 
 
-@attr.s
-class AccountSDMSetup(AttrsClass):
-    """
-    代表着一个 WTF 文件夹下一个 魔兽世界账号中的 SuperDuperMacro 插件的 Lua 配置的对象.
-
-    :param account: 是一个 Account 对象, 代表它输于哪一个 Account.
-    :param macro_mapper: key = macro id, value = SDMMacro
-    """
-
-    account: Account = Account.ib_nested()
-    macro_mapper: T.Dict[int, SDMMacro] = attr.ib(factory=dict)
-
-    def add_macros(self, macros: T.Iterable[SDMMacro], overwrite: bool = False):
-        for macro in macros:
-            if macro in macros:
-                if overwrite:
-                    raise Exception
-                else:
-                    self.macro_mapper[macro.id] = macro
-            else:
-                self.macro_mapper[macro.id] = macro
-
-
-@attr.s
-class ClientSDMSetup(AttrsClass):
-    """
-    代表着一个魔兽世界客户端下所有的账号的 SuperDuperMacro 插件的配置.
-
-    :param dir_wow:
-    :param account_sdm_setup_mapper: key = account name, value = AccountSDMSetup
-    """
-
-    dir_wow: Path = attr.ib()
-    account_sdm_setup_mapper: T.Dict[str, AccountSDMSetup] = attr.ib(factory=dict)
-
-    def apply(self, plan=True):
-        """
-        将插件实际应用到 WTF 文件夹, 该操作会覆盖掉已有的 SuperDuperMacro 插件配置.
-        """
-        for account_sdm_setup in self.account_sdm_setup_mapper.values():
-            print(f"working on account: {account_sdm_setup.account}")
-            path = (
-                self.dir_wow
-                / "WTF"
-                / "Account"
-                / account_sdm_setup.account.account
-                / "SavedVariables"
-                / "SuperDuperMacro.lua"
-            )
-            content = render_sdm_lua(list(account_sdm_setup.macro_mapper.values()))
-            if plan is False:
-                path.write_text(content)
-
-    def get_or_init_setup(self, account: Account) -> AccountSDMSetup:
-        if account.account in self.account_sdm_setup_mapper:
-            return self.account_sdm_setup_mapper[account.account]
-        else:
-            account_sdm_setup = AccountSDMSetup(account=account)
-            self.account_sdm_setup_mapper[account.account] = account_sdm_setup
-            return account_sdm_setup
-
-    def add_macros_for_many_accounts(
-        self,
-        accounts: T.Iterable[Account],
-        files: T.Iterable[SDMMacroFile],
-    ):
-        """
-        为一批 Account 添加一堆一样的 SDMMacro 对象. 这些 Macro 将会成为 Global Macro.
-
-        例如你有一堆账号的 Global Macro 都需要邀请组队宏.
-        """
-        for account in accounts:
-            account_sdm_setup = self.get_or_init_setup(account)
-            macros = [file.macro for file in files]
-            account_sdm_setup.add_macros(macros)
-
-    def add_macros_for_many_chars(
-        self,
-        chars: T.Iterable[Character],
-        files: T.Iterable[SDMMacroFile],
-    ):
-        """
-        为一批 Character 添加一堆一样的 SDMMacro 对象. 这些 Macro 将会成为
-        Character Macro.
-
-        例如你有一个 法师 的焦点打断目标宏. 那么你可以一次性将这个宏给许多个法师角色.
-        """
-        for character in chars:
-            account_sdm_setup = self.get_or_init_setup(character.acc_obj)
-            macros = [file.macro for file in files]
-            for macro in macros:
-                macro.set_char(
-                    name=character.character,
-                    realm=character.server,
-                )
-            account_sdm_setup.add_macros(macros)
-
+# ------------------------------------------------------------------------------
+# Todo: 添加从 SDM lua 文件中解析出一堆 SDMMacro 的方法.
+# ------------------------------------------------------------------------------
