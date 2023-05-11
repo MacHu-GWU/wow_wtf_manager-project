@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 
-import pytest
 from pathlib_mate import Path
 
+from wow_wtf_manager.logger import logger
 from wow_wtf_manager.exp.e03_wotlk.sdm.setup import (
     Account,
     Character,
     SDMMacroFile,
-    AccountSDMSetup,
     ClientSDMSetup,
 )
 
@@ -18,7 +17,7 @@ character_macro = SDMMacroFile(dir_here / "parser" / "sample-character.yml")
 
 
 class TestClientSDMSetup:
-    def test(self):
+    def _test(self):
         client_setup = ClientSDMSetup(dir_wow=dir_here)
 
         account1 = Account("acc1")
@@ -36,6 +35,12 @@ class TestClientSDMSetup:
         )
 
         client_setup.apply(plan=True)
+
+    def test(self):
+        with logger.disabled(
+            disable=False,
+        ):
+            self._test()
 
 
 if __name__ == "__main__":

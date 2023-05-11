@@ -1,3 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from .paths import PA
+from fixa.nest_logger import NestedLogger
+from .paths import PACKAGE_NAME
+
+logger = NestedLogger(name=PACKAGE_NAME, log_format="%(message)s")

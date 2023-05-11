@@ -8,6 +8,7 @@ import attr
 from attrs_mate import AttrsClass
 from pathlib_mate import Path
 
+from ....logger import logger
 from ..group import Account, Character
 from .saved_variable import SDMMacro, SDMMacroFile, render_sdm_lua
 
@@ -61,7 +62,7 @@ class ClientSDMSetup(AttrsClass):
     account_sdm_setup_mapper: T.Dict[str, AccountSDMSetup] = attr.ib(factory=dict)
 
     def apply_one_account(self, account_sdm_setup: AccountSDMSetup, plan=True):
-        print(f"working on account: {account_sdm_setup.account}")
+        logger.info(f"working on account: {account_sdm_setup.account}")
         path = (
             self.dir_wow
             / "WTF"
