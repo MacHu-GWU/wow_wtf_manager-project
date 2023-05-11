@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*-
 
+"""
+该模块实现了用 Python 来操作 SDM 插件的 SavedVariables lua 文件. 从而允许我们在 Python
+中指定我们需要用到哪些宏, 然后一键生成 ``WTF/Account/${AccountName}/SavedVariables/SuperDuperMacro.lua``
+文件.
+"""
+
 import typing as T
 from functools import cached_property
 
 from rich import print as rprint
-import yaml
-from yaml import load, dump, Loader, Dumper
+from yaml import load, Loader
 import attr
 from attrs_mate import AttrsClass
 from pathlib_mate import Path
