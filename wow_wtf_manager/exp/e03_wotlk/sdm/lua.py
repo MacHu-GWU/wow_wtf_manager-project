@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+"""
+该模块希望实现的功能是, 将 SuperDuperMacro 的 lua 文件解析成 python 对象, 但目前还没有成功.
+"""
+
 import typing as T
 
 from functools import cached_property

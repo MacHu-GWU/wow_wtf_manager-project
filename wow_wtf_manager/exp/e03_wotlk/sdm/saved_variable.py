@@ -2,8 +2,8 @@
 
 """
 该模块实现了用 Python 来操作 SDM 插件的 SavedVariables lua 文件. 从而允许我们在 Python
-中指定我们需要用到哪些宏, 然后一键生成 ``WTF/Account/${AccountName}/SavedVariables/SuperDuperMacro.lua``
-文件.
+中用更自动化的方式指定我们需要用到哪些宏, 然后一键生成它, 免除了在游戏中打开插件界面编辑的麻烦.
+该文件位于 ``WTF/Account/${AccountName}/SavedVariables/SuperDuperMacro.lua``.
 """
 
 import typing as T
@@ -18,6 +18,11 @@ from jinja2 import Template
 
 from ..group import Account, Character
 
+# ------------------------------------------------------------------------------
+# SDM SavedVariables 文件中最小的组成单位是 SDMMacro
+# 这一段代码定义了 SDM Macro 的数据模型.
+# ------------------------------------------------------------------------------
+
 _dir_here = Path.dir_here(__file__)
 _path_sdm_template = _dir_here / "sdm.tpl"
 _sdm_template = Template(_path_sdm_template.read_text())
@@ -25,6 +30,9 @@ _sdm_template = Template(_path_sdm_template.read_text())
 
 @attr.s
 class SDMCharacter(AttrsClass):
+    """
+    :class`SDMCharacter` 是 :class:`SDMMacro` 的一个属性, 用来指定宏属于哪个角色.
+    """
     name: str = attr.ib(default="")
     realm: str = attr.ib(default="")
 
@@ -45,7 +53,6 @@ class SDMMacro(AttrsClass):
     """
     定义了一个魔兽世界中的 SDM 宏命令的抽象, 目前只支持 Button + Global 这一种模式.
     """
-
     name: str = attr.ib()
     character: SDMCharacter = AttrsClass.ib_nested()
     type: str = attr.ib(default=_DEFAULT_TYPE)
@@ -55,14 +62,14 @@ class SDMMacro(AttrsClass):
 
     def set_id(self, id: int) -> "SDMMacro":
         """
-        Update it's attributes value.
+        将该宏的 ID 设置为指定的 ID.
         """
         self.id = id
         return self
 
     def set_char(self, name: str, realm: str) -> "SDMMacro":
         """
-        Update it's attributes value.
+        将该宏的角色信息设置为指定的角色.
         """
         if self.character is None:
             self.character = SDMCharacter(
@@ -76,7 +83,7 @@ class SDMMacro(AttrsClass):
 
     def is_global(self) -> bool:
         """
-        Is this SDM macro a global macro or character macro
+        判断它是否是一个 Global 宏 (当前账号下所有角色通用), 还是一个 Character 专用宏.
         """
         if self.character is None:
             return True
@@ -93,6 +100,23 @@ class SDMMacro(AttrsClass):
 
     @classmethod
     def parse_yml(cls, content: str) -> "SDMMacro":
+        """
+
+        
+        .. code-block:: yml
+
+            name: Follow-Focus
+            character:
+              name:
+              realm:
+            type: b
+            id: 1110
+            icon: 138
+            description: |
+              跟随焦点
+            text: |
+              /follow focus
+        """
         data = load(content, Loader)
         return cls(
             name=data["name"],
