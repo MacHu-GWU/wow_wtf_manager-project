@@ -3,7 +3,7 @@ character:
   name:
   realm:
 type: b
-id:
+id: 1
 icon:
 description: |
   cancel casting spell, interrupt enemy casting immediately!

@@ -9,7 +9,6 @@
 import typing as T
 from functools import cached_property
 
-from rich import print as rprint
 from yaml import load, Loader
 import attr
 from attrs_mate import AttrsClass
@@ -205,8 +204,14 @@ class ClientSDMSetup(AttrsClass):
                 path.write_text(content)
 
     def get_or_init_setup(self, account: Account) -> AccountSDMSetup:
+        """
+        获取或是初始化一个 :class`AccountSDMSetup` 并放到 :attr:`ClientSDMSetup.account_sdm_setup_mapper``
+        属性中.
+        """
+        # 如果已经存在, 那么直接 get
         if account.account in self.account_sdm_setup_mapper:
             return self.account_sdm_setup_mapper[account.account]
+        # 如果还不存在, 则先初始化然后再 get
         else:
             account_sdm_setup = AccountSDMSetup(account=account)
             self.account_sdm_setup_mapper[account.account] = account_sdm_setup
@@ -219,8 +224,10 @@ class ClientSDMSetup(AttrsClass):
     ):
         """
         为一批 Account 添加一堆一样的 SDMMacro 对象. 这些 Macro 将会成为 Global Macro.
+        例如我们可以给所有账号添加一个接受邀请组队宏.
 
-        例如你有一堆账号的 Global Macro 都需要邀请组队宏.
+        我们不希望直接用 list.append 或是 dict.update 的方式来参加, 语义不是很明确.
+        我们专门设计了这个方法, 用来提升代码可读性.
         """
         for account in accounts:
             account_sdm_setup = self.get_or_init_setup(account)
@@ -233,10 +240,11 @@ class ClientSDMSetup(AttrsClass):
         files: T.Iterable[SDMMacroFile],
     ):
         """
-        为一批 Character 添加一堆一样的 SDMMacro 对象. 这些 Macro 将会成为
-        Character Macro.
+        为一批 Character 添加一堆一样的 SDMMacro 对象. 这些 Macro 将会成为 Character Macro.
+        例如我们可以给所有法师角色添加一个打断焦点的目标施法宏.
 
-        例如你有一个 法师 的焦点打断目标宏. 那么你可以一次性将这个宏给许多个法师角色.
+        我们不希望直接用 list.append 或是 dict.update 的方式来参加, 语义不是很明确.
+        我们专门设计了这个方法, 用来提升代码可读性.
         """
         for character in chars:
             account_sdm_setup = self.get_or_init_setup(character.acc_obj)
@@ -247,4 +255,3 @@ class ClientSDMSetup(AttrsClass):
                     realm=character.server,
                 )
             account_sdm_setup.add_macros(macros)
-

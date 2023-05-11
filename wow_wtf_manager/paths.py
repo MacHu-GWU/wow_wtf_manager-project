@@ -2,14 +2,16 @@
 
 from pathlib_mate import Path
 
-dir_project_root = Path.dir_here(__file__).parent
+dir_python_lib = Path.dir_here(__file__)
+PACKAGE_NAME = dir_python_lib.basename
+
+dir_project_root = dir_python_lib.parent
 assert dir_project_root.basename == "wow_wtf_manager-project"
 
-dir_python_lib = dir_project_root / "wow_wtf_manager"
 dir_tests = dir_project_root / "tests"
 
-_dir_project = dir_project_root / "project"
+_dir_app = dir_project_root / "app"
 
-dir_wotlk_warmane_project = _dir_project / "e03_wotlk_warmane"
-dir_wotlk_acore_project = _dir_project / "e03_wotlk_acore"
-dir_mop_project = _dir_project / "e05_mop"
+dir_wotlk_warmane_project = _dir_app / "e03_wotlk_warmane"
+dir_wotlk_acore_project = _dir_app / "e03_wotlk_acore"
+dir_mop_project = _dir_app / "e05_mop"

@@ -23,9 +23,10 @@ class Account(AttrsClass):
     """
     代表着一个具体账号. 也是可哈希, 可排序的.
     """
+
     account: str = attr.ib()
 
-    def __gt__(self, other: 'Account'):
+    def __gt__(self, other: "Account"):
         return self.account > other.account
 
 
@@ -33,17 +34,19 @@ class Account(AttrsClass):
 @attr.s(frozen=True, order=False)
 class Character(AttrsClass):
     """
-    代表着一个具体的游戏角色. 一个角色是唯一的, 可哈希的, 也是可排序的.
-    一个角色的用于排序的 Key 在 ``sort_key`` 的方法中被定义.
+    代表着一个位于具体的 Account 上, 具体的 Server 中, 有具体名字的游戏角色.
+
+    一个角色是唯一的, 可哈希的, 也是可排序的. 用于排序的 Key 在 ``sort_key`` 的方法中被定义.
     同时我们也提供了一个工厂函数, 方便开发者从形如 ``account.server.character``
     的字符串创建对象.
     """
+
     account: str = attr.ib()
     server: str = attr.ib()
     character: str = attr.ib()
 
     @classmethod
-    def from_string(cls, s: str) -> 'Character':
+    def from_string(cls, s: str) -> "Character":
         """
         A factory class that create object "Account.Server.Name"
         """
@@ -53,18 +56,20 @@ class Character(AttrsClass):
     def sort_key(self) -> str:
         """
         逻辑上我们希望先按照 account 排序, 然后按照 server, 最后按照 character 角色名
-        排序. 但是由于字符串的长度可能不一定, 所以我们用 zfill 在右边尾部添 0 直到 20 个
-        字符的长度
+        排序. 但是由于字符串的长度可能不一定, 所以我们用 zfill 给 account, server, character
+        右边尾部添 0, 直到 20 个字符的长度, 因为一般这些名字都不会超过 20 个字符.
         """
-        return ".".join([
-            right_zfill(self.account),
-            right_zfill(self.server),
-            right_zfill(self.character),
-        ])
+        return ".".join(
+            [
+                right_zfill(self.account),
+                right_zfill(self.server),
+                right_zfill(self.character),
+            ]
+        )
 
-    def __gt__(self, other: 'Character'):
+    def __gt__(self, other: "Character"):
         return self.sort_key > other.sort_key
 
     @property
-    def acc_obj(self) -> 'Account':
+    def acc_obj(self) -> "Account":
         return Account(account=self.account)

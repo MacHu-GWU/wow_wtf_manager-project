@@ -3,7 +3,7 @@ character:
   name: Admin
   realm: Azerothcore
 type: b
-id:
+id: 2
 icon:
 description: |
   cancel casting spell, interrupt enemy casting immediately!
