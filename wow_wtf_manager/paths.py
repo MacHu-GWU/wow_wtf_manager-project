@@ -8,7 +8,11 @@ PACKAGE_NAME = dir_python_lib.basename
 dir_project_root = dir_python_lib.parent
 assert dir_project_root.basename == "wow_wtf_manager-project"
 
+# --- Tests
+# unit test
 dir_tests = dir_project_root / "tests"
+# integration test
+dir_tests_int = dir_project_root / "tests_int"
 
 _dir_app = dir_project_root / "app"
 
