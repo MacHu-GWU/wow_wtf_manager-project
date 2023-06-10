@@ -189,6 +189,7 @@ class ClientSDMSetup(AttrsClass):
         """
         将插件实际应用到 WTF 文件夹, 该操作会覆盖掉已有的 SuperDuperMacro 插件配置.
         """
+        print("This")
         for account_sdm_setup in self.account_sdm_setup_mapper.values():
             print(f"working on account: {account_sdm_setup.account}")
             path = (

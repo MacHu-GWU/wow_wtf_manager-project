@@ -1,4 +1,4 @@
-Macro Management for Multibox Using SDM
+Macro Management for Multi-box Using SDM
 ==============================================================================
 
 
@@ -18,4 +18,17 @@ Macro Management for Multibox Using SDM
 1. 服务器宏命令缓存机制可能会导致 macro-cache.txt 文件失效.
 
 游戏角色的宏命令是保存在
+
+
+
+2. 工作原理
+------------------------------------------------------------------------------
+
+
+3. 使用方法
+------------------------------------------------------------------------------
+你要了解两个地方
+
+- ``wow_wtf_manager-project/app/${wow_server}/SuperDuperMacro/...`` 这是你对某个魔兽世界服务器的宏命令管理的工作目录, 里面保存了你的宏命令的数据文件.
+- ``wow_wtf_manager-project/app/${wow_server}/SuperDuperMacro/...`` 这是你对某个魔兽世界服务器的宏命令管理的工作目录, 里面保存了你的宏命令的数据文件.
 
