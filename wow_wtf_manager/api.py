@@ -1,7 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from .base import BaseScope
-from .client import (
+from .models.api import (
+    Client,
+    Account,
+    Realm,
+    Character,
+)
+from .scope.api import (
+    BaseScope,
     ClientScope,
     AccountKeyBindingScope,
     AccountUserInterfaceScope,
