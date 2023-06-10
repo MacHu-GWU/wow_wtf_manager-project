@@ -11,10 +11,11 @@ from ..models.api import (
     Realm,
     Character,
 )
+from .base import BaseScope
 
 
 @attr.define
-class ClientConfig:
+class ClientConfig(BaseScope):
     client: Client = attr.field()
 
     @property
@@ -26,7 +27,7 @@ class ClientConfig:
 # Account Level
 # ------------------------------------------------------------------------------
 @attr.define
-class BaseAccountLevelConfig:
+class BaseAccountLevelConfig(BaseScope):
     client: Client = attr.field()
     account: Account = attr.field()
 
@@ -58,7 +59,7 @@ class AccountUserInterfaceConfig(BaseAccountLevelConfig):
 
 
 @attr.define
-class AccountAddonSavedVariablesConfig:
+class AccountAddonSavedVariablesConfig(BaseScope):
     client: Client = attr.field()
     account: Account = attr.field()
     addon: str = attr.field()
@@ -77,7 +78,7 @@ class AccountAddonSavedVariablesConfig:
 # Character Level
 # ------------------------------------------------------------------------------
 @attr.define
-class BaseCharacterLevelConfig:
+class BaseCharacterLevelConfig(BaseScope):
     client: Client = attr.field()
     character: Character = attr.field()
 
@@ -125,7 +126,7 @@ class CharacterLayoutConfig(BaseCharacterLevelConfig):
 
 
 @attr.define
-class CharacterAddonSavedVariablesConfig:
+class CharacterAddonSavedVariablesConfig(BaseScope):
     client: Client = attr.field()
     character: Character = attr.field()
     addon: str = attr.field()
