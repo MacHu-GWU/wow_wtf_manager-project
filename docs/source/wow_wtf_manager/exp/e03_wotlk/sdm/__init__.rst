@@ -12,4 +12,6 @@ sub packages and modules
 
     lua <lua>
     model <model>
+    saved_variable <saved_variable>
+    setup <setup>
     

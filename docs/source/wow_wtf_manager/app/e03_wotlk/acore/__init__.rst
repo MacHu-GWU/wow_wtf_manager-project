@@ -16,5 +16,6 @@ sub packages and modules
     sdm_macro <sdm_macro>
     sdm_macro_generator <sdm_macro_generator>
     sdm_setup <sdm_setup>
+    sdm_setup_horde <sdm_setup_horde>
     wtf <wtf>
     

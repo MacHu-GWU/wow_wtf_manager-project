@@ -12,6 +12,7 @@ sub packages and modules
 
     app <app/__init__>
     exp <exp/__init__>
+    logger <logger>
     lua_lib <lua_lib>
     paths <paths>
     runtime <runtime>

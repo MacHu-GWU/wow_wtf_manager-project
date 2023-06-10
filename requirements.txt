@@ -16,4 +16,4 @@ six==1.16.0
 superjson==1.0.2
 toml==0.10.2
 typing_extensions==4.3.0
-fixa>=0.7.3,<2.0.0
+fixa>=0.7.1,<2.0.0
