@@ -15,7 +15,7 @@ from .base import BaseScope
 
 
 @attr.define
-class ClientConfig(BaseScope):
+class ClientScope(BaseScope):
     client: Client = attr.field()
 
     @property
@@ -27,7 +27,7 @@ class ClientConfig(BaseScope):
 # Account Level
 # ------------------------------------------------------------------------------
 @attr.define
-class BaseAccountLevelConfig(BaseScope):
+class BaseAccountLevelScope(BaseScope):
     client: Client = attr.field()
     account: Account = attr.field()
 
@@ -45,21 +45,21 @@ class BaseAccountLevelConfig(BaseScope):
 
 
 @attr.define
-class AccountKeyBindingConfig(BaseAccountLevelConfig):
+class AccountKeyBindingScope(BaseAccountLevelScope):
     @property
     def filename(self) -> str:
         return "bindings-cache.wtf"
 
 
 @attr.define
-class AccountUserInterfaceConfig(BaseAccountLevelConfig):
+class AccountUserInterfaceScope(BaseAccountLevelScope):
     @property
     def filename(self) -> str:
         return "config-cache.wtf"
 
 
 @attr.define
-class AccountAddonSavedVariablesConfig(BaseScope):
+class AccountAddonSavedVariablesScope(BaseScope):
     client: Client = attr.field()
     account: Account = attr.field()
     addon: str = attr.field()
@@ -78,7 +78,7 @@ class AccountAddonSavedVariablesConfig(BaseScope):
 # Character Level
 # ------------------------------------------------------------------------------
 @attr.define
-class BaseCharacterLevelConfig(BaseScope):
+class BaseCharacterLevelScope(BaseScope):
     client: Client = attr.field()
     character: Character = attr.field()
 
@@ -98,35 +98,35 @@ class BaseCharacterLevelConfig(BaseScope):
 
 
 @attr.define
-class CharacterKeyBindingConfig(BaseCharacterLevelConfig):
+class CharacterKeyBindingScope(BaseCharacterLevelScope):
     @property
     def filename(self) -> str:
         return "bindings-cache.wtf"
 
 
 @attr.define
-class CharacterChatConfig(BaseCharacterLevelConfig):
+class CharacterChatScope(BaseCharacterLevelScope):
     @property
     def filename(self) -> str:
         return "chat-cache.txt"
 
 
 @attr.define
-class CharacterUserInterfaceConfig(BaseCharacterLevelConfig):
+class CharacterUserInterfaceScope(BaseCharacterLevelScope):
     @property
     def filename(self) -> str:
         return "config-cache.wtf"
 
 
 @attr.define
-class CharacterLayoutConfig(BaseCharacterLevelConfig):
+class CharacterLayoutScope(BaseCharacterLevelScope):
     @property
     def filename(self) -> str:
         return "layout-local.txt"
 
 
 @attr.define
-class CharacterAddonSavedVariablesConfig(BaseScope):
+class CharacterAddonSavedVariablesScope(BaseScope):
     client: Client = attr.field()
     character: Character = attr.field()
     addon: str = attr.field()

@@ -8,15 +8,15 @@ from wow_wtf_manager.scope.client import (
     Account,
     Realm,
     Character,
-    ClientConfig,
-    AccountKeyBindingConfig,
-    AccountUserInterfaceConfig,
-    AccountAddonSavedVariablesConfig,
-    CharacterKeyBindingConfig,
-    CharacterChatConfig,
-    CharacterUserInterfaceConfig,
-    CharacterLayoutConfig,
-    CharacterAddonSavedVariablesConfig,
+    ClientScope,
+    AccountKeyBindingScope,
+    AccountUserInterfaceScope,
+    AccountAddonSavedVariablesScope,
+    CharacterKeyBindingScope,
+    CharacterChatScope,
+    CharacterUserInterfaceScope,
+    CharacterLayoutScope,
+    CharacterAddonSavedVariablesScope,
 )
 
 dir_here = Path.dir_here(__file__)
@@ -32,73 +32,71 @@ class TestClientConfig:
         char1 = Character.new(realm1, character="char1")
 
         # scope enum
-        client_config = ClientConfig(
+        client_scope = ClientScope(
             client=Client.new(
                 locale="enUS",
                 dir_wtf=dir_wtf.abspath,
             )
         )
 
-        account_key_binding_config = AccountKeyBindingConfig(
+        account_key_binding_scope = AccountKeyBindingScope(client=client, account=acc1)
+        account_user_interface_scope = AccountUserInterfaceScope(
             client=client, account=acc1
         )
-        account_user_interface_config = AccountUserInterfaceConfig(
-            client=client, account=acc1
-        )
-        account_addon_saved_variables_config = AccountAddonSavedVariablesConfig(
+        account_addon_saved_variables_scope = AccountAddonSavedVariablesScope(
             client=client, account=acc1, addon="Atlas"
         )
 
-        character_key_binding_config = CharacterKeyBindingConfig(
+        character_key_binding_scope = CharacterKeyBindingScope(
             client=client, character=char1
         )
-        character_chat_config = CharacterChatConfig(client=client, character=char1)
-        character_user_interface_config = CharacterUserInterfaceConfig(
+        character_chat_scope = CharacterChatScope(client=client, character=char1)
+        character_user_interface_scope = CharacterUserInterfaceScope(
             client=client, character=char1
         )
-        character_layout_config = CharacterLayoutConfig(client=client, character=char1)
-        character_addon_saved_variables_config = CharacterAddonSavedVariablesConfig(
+        character_layout_scope = CharacterLayoutScope(client=client, character=char1)
+        character_addon_saved_variables_scope = CharacterAddonSavedVariablesScope(
             client=client, character=char1, addon="Atlas"
         )
 
         # test def path_output(self)
-        assert client_config.path_output.abspath.endswith("WTF/Config.wtf")
-        assert account_key_binding_config.path_output.abspath.endswith(
+        assert client_scope.path_output.abspath.endswith("WTF/Config.wtf")
+        assert account_key_binding_scope.path_output.abspath.endswith(
             "WTF/Account/ACC1/bindings-cache.wtf"
         )
-        assert account_user_interface_config.path_output.abspath.endswith(
+        assert account_user_interface_scope.path_output.abspath.endswith(
             "WTF/Account/ACC1/config-cache.wtf"
         )
-        assert account_addon_saved_variables_config.path_output.abspath.endswith(
+        assert account_addon_saved_variables_scope.path_output.abspath.endswith(
             "WTF/Account/ACC1/SavedVariables/Atlas.lua"
         )
-        assert character_key_binding_config.path_output.abspath.endswith(
+        assert character_key_binding_scope.path_output.abspath.endswith(
             "WTF/Account/ACC1/realm1/Char1/bindings-cache.wtf"
         )
-        assert character_chat_config.path_output.abspath.endswith(
+        assert character_chat_scope.path_output.abspath.endswith(
             "WTF/Account/ACC1/realm1/Char1/chat-cache.txt"
         )
-        assert character_user_interface_config.path_output.abspath.endswith(
+        assert character_user_interface_scope.path_output.abspath.endswith(
             "WTF/Account/ACC1/realm1/Char1/config-cache.wtf"
         )
-        assert character_layout_config.path_output.abspath.endswith(
+        assert character_layout_scope.path_output.abspath.endswith(
             "WTF/Account/ACC1/realm1/Char1/layout-local.txt"
         )
-        assert character_addon_saved_variables_config.path_output.abspath.endswith(
+        assert character_addon_saved_variables_scope.path_output.abspath.endswith(
             "WTF/Account/ACC1/realm1/Char1/SavedVariables/Atlas.lua"
         )
 
         # type typing
         for scope in [
-            client_config,
-            account_key_binding_config,
-            account_user_interface_config,
-            account_addon_saved_variables_config,
-            character_key_binding_config,
-            character_chat_config,
-            character_user_interface_config,
-            character_layout_config,
-            character_addon_saved_variables_config,
+            client_scope,
+            account_key_binding_scope,
+            account_user_interface_scope,
+            account_addon_saved_variables_scope,
+            character_key_binding_scope,
+            character_chat_scope,
+            character_user_interface_scope,
+            character_layout_scope,
+            character_addon_saved_variables_scope,
         ]:
             assert isinstance(scope, BaseScope)
 
