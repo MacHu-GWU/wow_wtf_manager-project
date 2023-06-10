@@ -6,32 +6,11 @@ import attr
 from pathlib_mate import Path
 
 from ..models.api import (
+    Client,
     Account,
     Realm,
     Character,
 )
-
-
-@attr.define
-class Client:
-    """
-    代表着一个具体账号. 是可哈希, 可排序的.
-    """
-
-    locale: str = attr.field()
-    dir_wtf: Path = attr.field()
-
-    @classmethod
-    def new(
-        cls,
-        locale: str,
-        dir_wtf: T.Union[str, Path],
-    ) -> "Client":
-        obj = cls(
-            locale=locale,
-            dir_wtf=Path(dir_wtf).absolute(),
-        )
-        return obj
 
 
 @attr.define
@@ -68,14 +47,14 @@ class BaseAccountLevelConfig:
 class AccountKeyBindingConfig(BaseAccountLevelConfig):
     @property
     def filename(self) -> str:
-        raise "bindings-cache.wtf"
+        return "bindings-cache.wtf"
 
 
 @attr.define
 class AccountUserInterfaceConfig(BaseAccountLevelConfig):
     @property
     def filename(self) -> str:
-        raise "config-cache.wtf"
+        return "config-cache.wtf"
 
 
 @attr.define
@@ -113,6 +92,7 @@ class BaseCharacterLevelConfig:
             self.character.account_name.upper(),
             self.character.realm_name,
             self.character.character[0].upper() + self.character.character[1:],
+            self.filename,
         )
 
 
@@ -120,28 +100,28 @@ class BaseCharacterLevelConfig:
 class CharacterKeyBindingConfig(BaseCharacterLevelConfig):
     @property
     def filename(self) -> str:
-        raise "bindings-cache.wtf"
+        return "bindings-cache.wtf"
 
 
 @attr.define
 class CharacterChatConfig(BaseCharacterLevelConfig):
     @property
     def filename(self) -> str:
-        raise "chat-cache.txt"
+        return "chat-cache.txt"
 
 
 @attr.define
 class CharacterUserInterfaceConfig(BaseCharacterLevelConfig):
     @property
     def filename(self) -> str:
-        raise "config-cache.wtf"
+        return "config-cache.wtf"
 
 
 @attr.define
 class CharacterLayoutConfig(BaseCharacterLevelConfig):
     @property
     def filename(self) -> str:
-        raise "layout-local.txt"
+        return "layout-local.txt"
 
 
 @attr.define
@@ -160,10 +140,3 @@ class CharacterAddonSavedVariablesConfig:
             "SavedVariables",
             f"{self.addon}.lua",
         )
-
-
-@attr.define
-class CharacterLayoutConfig(BaseCharacterLevelConfig):
-    @property
-    def filename(self) -> str:
-        raise "layout-local.txt"
