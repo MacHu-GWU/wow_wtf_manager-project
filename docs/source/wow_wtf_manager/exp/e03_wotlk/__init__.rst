@@ -12,8 +12,12 @@ sub packages and modules
 
     myslot <myslot/__init__>
     sdm <sdm/__init__>
+    api <api>
+    config <config>
     form <form>
     group <group>
     macro <macro>
+    paths <paths>
+    setup <setup>
     wtf <wtf>
     

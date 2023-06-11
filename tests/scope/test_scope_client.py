@@ -2,12 +2,14 @@
 
 from pathlib_mate import Path
 
-from wow_wtf_manager.scope.client import (
-    BaseScope,
+from wow_wtf_manager.models.api import (
     Client,
     Account,
     Realm,
     Character,
+)
+from wow_wtf_manager.scope.client import (
+    BaseScope,
     ClientScope,
     AccountKeyBindingScope,
     AccountUserInterfaceScope,
@@ -44,7 +46,7 @@ class TestClientConfig:
             client=client, account=acc1
         )
         account_addon_saved_variables_scope = AccountAddonSavedVariablesScope(
-            client=client, account=acc1, addon="Atlas"
+            client=client, account=acc1, lua_file="Atlas.lua"
         )
 
         character_key_binding_scope = CharacterKeyBindingScope(
@@ -56,7 +58,7 @@ class TestClientConfig:
         )
         character_layout_scope = CharacterLayoutScope(client=client, character=char1)
         character_addon_saved_variables_scope = CharacterAddonSavedVariablesScope(
-            client=client, character=char1, addon="Atlas"
+            client=client, character=char1, lua_file="Atlas.lua"
         )
 
         # test def path_output(self)

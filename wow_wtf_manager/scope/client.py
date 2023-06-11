@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+"""
+该模块实现了以魔兽世界客户端根目录为跟, 延伸到各个账号, 各个服务器, 各个角色, 各个插件的配置作用域.
+"""
+
 import attr
 from pathlib_mate import Path
 
@@ -63,6 +67,13 @@ class ClientScope(FileScope):
 # ------------------------------------------------------------------------------
 @attr.define
 class BaseAccountLevelScope(FileScope):
+    """
+    作用域为单个账号的基类.
+
+    :param client: 制定了客户端的路径.
+    :param account: 指定了账号的信息.
+    """
+
     client: Client = attr.field()
     account: Account = attr.field()
 
@@ -128,6 +139,13 @@ class AccountAddonSavedVariablesScope(FileScope):
 # ------------------------------------------------------------------------------
 @attr.define
 class BaseCharacterLevelScope(FileScope):
+    """
+    作用域为单个角色的基类.
+
+    :param client: 制定了客户端的路径.
+    :param character: 指定了角色的信息.
+    """
+
     client: Client = attr.field()
     character: Character = attr.field()
 

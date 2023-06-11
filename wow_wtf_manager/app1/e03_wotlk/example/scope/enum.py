@@ -9,7 +9,7 @@ from wow_wtf_manager.api import (
     Realm,
     Character,
 )
-from wow_wtf_manager.paths import dir_tests_int
+from wow_wtf_manager.paths import dir_tests
 
 
 if IS_WINDOWS:  # pragma: no cover
@@ -23,7 +23,7 @@ if IS_WINDOWS:  # pragma: no cover
     )
     client = Client(locale="zhTW", dir_wtf=dir_wtf)
 else:
-    dir_wtf = dir_tests_int.joinpath("app1", "e03_wotlk_acore", "WTF-output")
+    dir_wtf = dir_tests.joinpath("app1", "e03_wotlk_acore", "WTF-output")
     client = Client(locale="zhTW", dir_wtf=dir_wtf)
 
 
@@ -38,7 +38,7 @@ class RealmEnum:
 
 
 class CharacterEnum:
-    wtfaa = Character.new(RealmEnum.wtf1_acore, "wtfaa") # master paladin
+    wtfaa = Character.new(RealmEnum.wtf1_acore, "wtfaa")  # master paladin
     wtfab = Character.new(RealmEnum.wtf1_acore, "wtfab")
     wtfba = Character.new(RealmEnum.wtf2_acore, "wtfba")
     wtfbb = Character.new(RealmEnum.wtf2_acore, "wtfbb")
