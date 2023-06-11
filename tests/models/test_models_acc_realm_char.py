@@ -61,6 +61,7 @@ class Test:
         assert len(self.acc1.sort_key) == 20
         assert len(self.acc1.realms_mapper) == 2
         assert self.acc1.realms == [self.realm1_1, self.realm1_2]
+        assert len(self.acc1.characters) == 4
         assert self.acc1.capitalized_account_name == "ACC1"
 
         assert len(self.realm1_1.sort_key) == 41
