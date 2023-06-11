@@ -71,9 +71,7 @@ class AccountSavedVariablesConfig(FileConfig):
         dry_run: bool = True,
     ) -> bool:
         content = self.build(account=account)
-        scope = AccountAddonSavedVariablesScope(
-            client=client, account=account, addon=self.addon
-        )
+        scope = AccountAddonSavedVariablesScope(client=client, account=account, addon=self.addon)
         if dry_run is False:
             scope.apply(content, dry_run=dry_run)
         return not dry_run
@@ -156,17 +154,21 @@ class CharacterAddonsConfig(FileConfig):
 
 @attr.s
 class CharacterSavedVariablesConfig(FileConfig):
-    def build(
+    @property
+    def addon(self) -> str:
+        basename = self.path_input.basename
+        if basename.endswith(".lua"):
+            basename = basename[:-4]
+        return basename
+
+    def apply(
         self,
-        client: T.Optional[Client] = None,
-        account: T.Optional[Account] = None,
-        account_group: T.Optional[OrderedSet[Account]] = None,
-        character: T.Optional[Character] = None,
-        character_group: T.Optional[OrderedSet[Character]] = None,
-    ) -> str:
-        return self.template.render(
-            account=account,
-            account_group=account_group,
-            character=character,
-            character_group=character_group,
-        )
+        client: Client,
+        character: Character,
+        dry_run: bool = True,
+    ) -> bool:
+        content = self.build()
+        scope = CharacterAddonSavedVariablesScope(client=client, character=character, addon=self.addon)
+        if dry_run is False:
+            scope.apply(content, dry_run=dry_run)
+        return not dry_run
