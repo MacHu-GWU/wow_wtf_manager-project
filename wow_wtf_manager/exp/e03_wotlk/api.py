@@ -11,3 +11,4 @@ from .config import (
     CharacterLayoutConfig,
     CharacterSavedVariablesConfig,
 )
+from .setup import Setup

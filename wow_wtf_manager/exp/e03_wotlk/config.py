@@ -54,6 +54,13 @@ class AccountUserInterfaceConfig(FileConfig):
 
 @attr.s
 class AccountSavedVariablesConfig(FileConfig):
+    @property
+    def addon(self) -> str:
+        basename = self.path_input.basename
+        if basename.endswith(".lua"):
+            basename = basename[:-4]
+        return basename
+
     def build(self, account: Account) -> str:
         return self.template.render(account=account)
 
@@ -61,12 +68,11 @@ class AccountSavedVariablesConfig(FileConfig):
         self,
         client: Client,
         account: Account,
-        addon: str,
         dry_run: bool = True,
     ) -> bool:
         content = self.build(account=account)
         scope = AccountAddonSavedVariablesScope(
-            client=client, account=account, addon=addon
+            client=client, account=account, addon=self.addon
         )
         if dry_run is False:
             scope.path_output.write_text(content)
