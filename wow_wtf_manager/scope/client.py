@@ -105,11 +105,13 @@ class AccountKeyBindingScope(BaseAccountLevelScope):
 class AccountAddonSavedVariablesScope(FileScope):
     """
     作用域为指定 Account 的每个插件的 Lua 数据文件.
+
+    :param lua_file: 在 SavedVariables 文件夹中的文件名.
     """
 
     client: Client = attr.field()
     account: Account = attr.field()
-    addon: str = attr.field()
+    lua_file: str = attr.field()
 
     @property
     def path_output(self) -> Path:
@@ -117,7 +119,7 @@ class AccountAddonSavedVariablesScope(FileScope):
             "Account",
             self.account.account.upper(),
             "SavedVariables",
-            f"{self.addon}.lua",
+            self.lua_file,
         )
 
 
@@ -203,11 +205,13 @@ class CharacterAddonsScope(BaseCharacterLevelScope):
 class CharacterAddonSavedVariablesScope(FileScope):
     """
     作用域为指定 Account 下, 指定 Realm 下, 指定 Character, 指定插件的 Lua 数据文件.
+
+    :param lua_file: 在 SavedVariables 文件夹中的文件名.
     """
 
     client: Client = attr.field()
     character: Character = attr.field()
-    addon: str = attr.field()
+    lua_file: str = attr.field()
 
     @property
     def path_output(self) -> Path:
@@ -217,5 +221,5 @@ class CharacterAddonSavedVariablesScope(FileScope):
             self.character.realm_name,
             self.character.character[0].upper() + self.character.character[1:],
             "SavedVariables",
-            f"{self.addon}.lua",
+            self.lua_file,
         )
