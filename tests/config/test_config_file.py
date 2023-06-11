@@ -11,7 +11,7 @@ class TestFileConfig:
     def test(self):
         path = Path(__file__)
         file_config = FileConfig.new(path_input=path)
-        assert file_config.template.render().strip() == path.read_text().strip()
+        assert file_config.build() == path.read_text()
 
 
 if __name__ == "__main__":

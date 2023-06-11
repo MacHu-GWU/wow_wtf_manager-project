@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from .file_config import FileConfig
+from .file import FileConfig
