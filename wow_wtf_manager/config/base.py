@@ -1,17 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import typing as T
-import attr
-from pathlib_mate import Path
-
-if T.TYPE_CHECKING:
-    from ..scope.api import BaseScope
 
 
 class BaseConfig:
     """
     Base class for all config classes.
     """
+
     # --------------------------------------------------------------------------
     # NOTE:
     #
