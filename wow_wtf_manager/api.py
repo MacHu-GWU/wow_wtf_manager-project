@@ -23,3 +23,7 @@ from .scope.api import (
     CharacterLayoutScope,
     CharacterAddonSavedVariablesScope,
 )
+
+from .models import api as models
+from .config import api as config
+from .scope import api as scope
