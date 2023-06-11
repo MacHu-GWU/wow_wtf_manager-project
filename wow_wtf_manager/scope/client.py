@@ -126,10 +126,10 @@ class BaseCharacterLevelScope(FileScope):
 
 
 @attr.define
-class CharacterKeyBindingScope(BaseCharacterLevelScope):
+class CharacterUserInterfaceScope(BaseCharacterLevelScope):
     @property
     def filename(self) -> str:
-        return "bindings-cache.wtf"
+        return "config-cache.wtf"
 
 
 @attr.define
@@ -140,10 +140,10 @@ class CharacterChatScope(BaseCharacterLevelScope):
 
 
 @attr.define
-class CharacterUserInterfaceScope(BaseCharacterLevelScope):
+class CharacterKeyBindingScope(BaseCharacterLevelScope):
     @property
     def filename(self) -> str:
-        return "config-cache.wtf"
+        return "bindings-cache.wtf"
 
 
 @attr.define
@@ -151,6 +151,13 @@ class CharacterLayoutScope(BaseCharacterLevelScope):
     @property
     def filename(self) -> str:
         return "layout-local.txt"
+
+
+@attr.define
+class CharacterAddonsScope(BaseCharacterLevelScope):
+    @property
+    def filename(self) -> str:
+        return "AddOns.txt"
 
 
 @attr.define

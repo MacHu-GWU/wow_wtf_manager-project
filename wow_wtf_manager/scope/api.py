@@ -6,9 +6,10 @@ from .client import (
     AccountKeyBindingScope,
     AccountUserInterfaceScope,
     AccountAddonSavedVariablesScope,
-    CharacterKeyBindingScope,
-    CharacterChatScope,
     CharacterUserInterfaceScope,
+    CharacterChatScope,
+    CharacterKeyBindingScope,
     CharacterLayoutScope,
+    CharacterAddonsScope,
     CharacterAddonSavedVariablesScope,
 )
