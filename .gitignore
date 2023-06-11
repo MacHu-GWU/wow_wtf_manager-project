@@ -4,7 +4,8 @@ wow_wtf_manager.egg-info/
 wow_wtf_manager-*/
 tmp/
 debug/
-
+WTF/
+WTF-output/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
