@@ -8,7 +8,7 @@ from .config import (
     CharacterUserInterfaceConfig,
     CharacterChatConfig,
     CharacterKeybindingConfig,
-    CharacterAddonConfig,
+    CharacterAddonsConfig,
     CharacterLayoutConfig,
     CharacterSavedVariablesConfig,
 )

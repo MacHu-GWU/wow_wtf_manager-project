@@ -140,7 +140,7 @@ class CharacterLayoutConfig(FileConfig):
 
 
 @attr.s
-class CharacterAddonConfig(FileConfig):
+class CharacterAddonsConfig(FileConfig):
     def apply(
         self,
         client: Client,

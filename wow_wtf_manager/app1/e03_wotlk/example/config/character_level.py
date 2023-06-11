@@ -32,18 +32,18 @@ class CharacterLayoutConfigEnum:
 
 
 class CharacterAddonsConfigEnum:
-    mb_master_pala = wotlk.CharacterAddonConfig.new(
+    mb_master_pala = wotlk.CharacterAddonsConfig.new(
         app_data.dir_25_character_addons.joinpath("01-multiboxer-master-paladin.txt"),
     )
-    mb_master_non_pala = wotlk.CharacterAddonConfig.new(
+    mb_master_non_pala = wotlk.CharacterAddonsConfig.new(
         app_data.dir_25_character_addons.joinpath(
             "02-multiboxer-master-non-paladin.txt"
         ),
     )
-    mb_slave_pala = wotlk.CharacterAddonConfig.new(
+    mb_slave_pala = wotlk.CharacterAddonsConfig.new(
         app_data.dir_25_character_addons.joinpath("03-multiboxer-slave-paladin.txt"),
     )
-    mb_slave_non_pala = wotlk.CharacterAddonConfig.new(
+    mb_slave_non_pala = wotlk.CharacterAddonsConfig.new(
         app_data.dir_25_character_addons.joinpath(
             "04-multiboxer-slave-non-paladin.txt"
         ),
