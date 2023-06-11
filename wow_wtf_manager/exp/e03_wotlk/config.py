@@ -8,13 +8,13 @@ from ...logger import logger
 from ...models.api import Client, Account, Character
 from ...scope.api import (
     ClientScope,
-    AccountKeyBindingScope,
     AccountUserInterfaceScope,
     AccountAddonSavedVariablesScope,
     CharacterKeyBindingScope,
     CharacterChatScope,
     CharacterUserInterfaceScope,
     CharacterLayoutScope,
+    CharacterAddonsScope,
     CharacterAddonSavedVariablesScope,
 )
 from ...config.api import FileConfig
@@ -111,17 +111,47 @@ class CharacterChatConfig(FileConfig):
 
 @attr.define
 class CharacterKeybindingConfig(FileConfig):
-    pass
-
-
-@attr.s
-class CharacterAddonConfig(FileConfig):
-    pass
+    def apply(
+        self,
+        client: Client,
+        character: Character,
+        dry_run: bool = True,
+    ) -> bool:
+        content = self.build()
+        scope = CharacterKeyBindingScope(client=client, character=character)
+        if dry_run is False:
+            scope.apply(content, dry_run=dry_run)
+        return not dry_run
 
 
 @attr.s
 class CharacterLayoutConfig(FileConfig):
-    pass
+    def apply(
+        self,
+        client: Client,
+        character: Character,
+        dry_run: bool = True,
+    ) -> bool:
+        content = self.build()
+        scope = CharacterLayoutScope(client=client, character=character)
+        if dry_run is False:
+            scope.apply(content, dry_run=dry_run)
+        return not dry_run
+
+
+@attr.s
+class CharacterAddonConfig(FileConfig):
+    def apply(
+        self,
+        client: Client,
+        character: Character,
+        dry_run: bool = True,
+    ) -> bool:
+        content = self.build()
+        scope = CharacterAddonsScope(client=client, character=character)
+        if dry_run is False:
+            scope.apply(content, dry_run=dry_run)
+        return not dry_run
 
 
 @attr.s
