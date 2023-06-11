@@ -1,6 +1,18 @@
 # -*- coding: utf-8 -*-
 
-from .runtime import IS_WINDOWS, IS_MACOS, IS_LINUX, OS_NAME, OSEnum
+"""
+Example::
+
+    from wow_wtf_manager.api import ...
+"""
+
+from .runtime import (
+    IS_WINDOWS,
+    IS_MACOS,
+    IS_LINUX,
+    OS_NAME,
+    OSEnum,
+)
 from .models.api import (
     Client,
     Account,
@@ -27,3 +39,5 @@ from .scope.api import (
 from .models import api as models
 from .config import api as config
 from .scope import api as scope
+
+from .exp.e03_wotlk import api as wotlk

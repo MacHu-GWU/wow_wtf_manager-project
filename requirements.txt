@@ -17,3 +17,4 @@ superjson==1.0.2
 toml==0.10.2
 typing_extensions==4.3.0
 fixa>=0.7.1,<2.0.0
+cached-property>=1.5.2; python_version < '3.8'

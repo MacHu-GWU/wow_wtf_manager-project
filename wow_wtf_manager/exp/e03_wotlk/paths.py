@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+"""
+该模块用于更方便的枚举 WTF config 数据文件.
+"""
+
 import attr
 from pathlib_mate import Path
 

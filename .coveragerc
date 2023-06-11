@@ -2,10 +2,12 @@
 # for more info: https://coverage.readthedocs.io/en/latest/config.html
 [run]
 omit =
-    wow_wtf_manager/_version.py
+    wow_wtf_manager/app/*
     wow_wtf_manager/docs/*
     wow_wtf_manager/tests/*
-    wow_wtf_manager/app/*
+    wow_wtf_manager/_version.py
+    wow_wtf_manager/compat.py
+    wow_wtf_manager/runtime.py
 
 [report]
 # Regexes for lines to exclude from consideration
