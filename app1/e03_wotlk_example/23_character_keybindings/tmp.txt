@@ -1,4 +1,3 @@
-
 bind ' STOPATTACK
 bind , TARGETFOCUS
 bind - ACTIONBUTTON11
