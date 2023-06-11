@@ -1,11 +1,28 @@
 # -*- coding: utf-8 -*-
 
-from wow_wtf_manager.app1.e03_wotlk.example import *
+from wow_wtf_manager.logger import logger
+from wow_wtf_manager.app1.e03_wotlk.example.setup import setup
+
+# dry_run = True # for testing
+dry_run = False # *** THIS WILL APPLY CHANGES TO YOUR WTF FILEs ***
+
+
+def _test():
+    setup.client.dir_wtf.remove_if_exists()
+
+    setup.show_game_client()
+    setup.apply_game_client(dry_run=dry_run)
+    setup.apply_account_user_interface(dry_run=dry_run)
+    setup.apply_account_saved_variables(dry_run=dry_run)
 
 
 def test():
-    pass
-
+    with logger.disabled(
+        # disable=True,
+        disable=False,
+    ):
+        print("")
+        _test()
 
 
 if __name__ == "__main__":

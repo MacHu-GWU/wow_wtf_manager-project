@@ -12,7 +12,7 @@ from wow_wtf_manager.api import (
 from wow_wtf_manager.paths import dir_tests_int
 
 
-if IS_WINDOWS:
+if IS_WINDOWS:  # pragma: no cover
     dir_wtf = Path.home().joinpath(
         "Documents",
         "Games",
@@ -23,7 +23,7 @@ if IS_WINDOWS:
     )
     client = Client(locale="zhTW", dir_wtf=dir_wtf)
 else:
-    dir_wtf = dir_tests_int.joinpath("app1", "e03_wotlk_acore", "WTF")
+    dir_wtf = dir_tests_int.joinpath("app1", "e03_wotlk_acore", "WTF-output")
     client = Client(locale="zhTW", dir_wtf=dir_wtf)
 
 

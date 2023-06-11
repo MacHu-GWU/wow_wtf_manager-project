@@ -5,6 +5,7 @@ import typing as T
 import attr
 from pathlib_mate import Path
 
+from ..logger import logger
 from ..models.api import (
     Client,
     Account,
@@ -14,8 +15,35 @@ from ..models.api import (
 from .base import BaseScope
 
 
+class FileScope(BaseScope):
+    """
+    A mixin class for that the scope is a file.
+    """
+
+    @property
+    def path_output(self) -> Path:
+        raise NotImplementedError
+
+    @property
+    def relpath(self) -> Path:
+        for ind, part in enumerate(self.path_output.parts):
+            if part in ["WTF", "WTF-output"]:
+                return Path(*self.path_output.parts[ind + 1 :])
+        raise ValueError(f"Cannot locate WTF or WTF-output in {self.path_output}")
+
+    def apply(
+        self,
+        content: str,
+        dry_run: bool = True,
+    ):
+        logger.info(f"Write to {self.relpath}")
+        if dry_run is False:
+            self.path_output.parent.mkdir_if_not_exists()
+            self.path_output.write_text(content)
+
+
 @attr.define
-class ClientScope(BaseScope):
+class ClientScope(FileScope):
     client: Client = attr.field()
 
     @property
@@ -27,7 +55,7 @@ class ClientScope(BaseScope):
 # Account Level
 # ------------------------------------------------------------------------------
 @attr.define
-class BaseAccountLevelScope(BaseScope):
+class BaseAccountLevelScope(FileScope):
     client: Client = attr.field()
     account: Account = attr.field()
 
@@ -59,7 +87,7 @@ class AccountUserInterfaceScope(BaseAccountLevelScope):
 
 
 @attr.define
-class AccountAddonSavedVariablesScope(BaseScope):
+class AccountAddonSavedVariablesScope(FileScope):
     client: Client = attr.field()
     account: Account = attr.field()
     addon: str = attr.field()
@@ -78,7 +106,7 @@ class AccountAddonSavedVariablesScope(BaseScope):
 # Character Level
 # ------------------------------------------------------------------------------
 @attr.define
-class BaseCharacterLevelScope(BaseScope):
+class BaseCharacterLevelScope(FileScope):
     client: Client = attr.field()
     character: Character = attr.field()
 
@@ -126,7 +154,7 @@ class CharacterLayoutScope(BaseCharacterLevelScope):
 
 
 @attr.define
-class CharacterAddonSavedVariablesScope(BaseScope):
+class CharacterAddonSavedVariablesScope(FileScope):
     client: Client = attr.field()
     character: Character = attr.field()
     addon: str = attr.field()

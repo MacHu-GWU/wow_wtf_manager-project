@@ -30,7 +30,7 @@ class GameClientConfig(FileConfig):
         content = self.build()
         scope = ClientScope(client=client)
         if dry_run is False:
-            scope.path_output.write_text(content)
+            scope.apply(content, dry_run=dry_run)
         return not dry_run
 
 
@@ -48,7 +48,7 @@ class AccountUserInterfaceConfig(FileConfig):
         content = self.build(account=account)
         scope = AccountUserInterfaceScope(client=client, account=account)
         if dry_run is False:
-            scope.path_output.write_text(content)
+            scope.apply(content, dry_run=dry_run)
         return not dry_run
 
 
@@ -75,7 +75,7 @@ class AccountSavedVariablesConfig(FileConfig):
             client=client, account=account, addon=self.addon
         )
         if dry_run is False:
-            scope.path_output.write_text(content)
+            scope.apply(content, dry_run=dry_run)
         return not dry_run
 
 

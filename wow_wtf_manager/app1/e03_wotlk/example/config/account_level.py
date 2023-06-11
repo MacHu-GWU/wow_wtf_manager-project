@@ -6,7 +6,7 @@ from .app_data import app_data
 
 class AccountUserInterfaceConfigEnum:
     default = wotlk.AccountUserInterfaceConfig.new(
-        app_data.dir_11_account_user_interface.joinpath("default")
+        app_data.dir_11_account_user_interface.joinpath("default.txt")
     )
 
 
