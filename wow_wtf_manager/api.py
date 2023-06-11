@@ -7,6 +7,10 @@ from .models.api import (
     Realm,
     Character,
 )
+from .config.api import (
+    BaseConfig,
+    FileConfig,
+)
 from .scope.api import (
     BaseScope,
     ClientScope,
