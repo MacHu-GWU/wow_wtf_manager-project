@@ -40,6 +40,10 @@ class Account(BaseMixin):
     def realms(self) -> T.List["Realm"]:
         return list(self.realms_mapper.values())
 
+    @property
+    def capitalized_account_name(self) -> str:
+        return self.account.upper()
+
 
 @attr.define(frozen=True, eq=True, order=True)
 class Realm(BaseMixin):
@@ -124,3 +128,7 @@ class Character(BaseMixin):
     @property
     def account_name(self) -> str:
         return self.account.account
+
+    @property
+    def titled_character_name(self) -> str:
+        return self.character[0].upper() + self.character[1:].lower()
