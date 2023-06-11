@@ -14,6 +14,8 @@ def _test():
     setup.apply_game_client(dry_run=dry_run)
     setup.apply_account_user_interface(dry_run=dry_run)
     setup.apply_account_saved_variables(dry_run=dry_run)
+    setup.apply_character_user_interface(dry_run=dry_run)
+    setup.apply_character_chat(dry_run=dry_run)
 
 
 def test():

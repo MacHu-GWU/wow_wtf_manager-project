@@ -6,6 +6,7 @@ from .config import (
     AccountUserInterfaceConfig,
     AccountSavedVariablesConfig,
     CharacterUserInterfaceConfig,
+    CharacterChatConfig,
     CharacterKeybindingConfig,
     CharacterAddonConfig,
     CharacterLayoutConfig,

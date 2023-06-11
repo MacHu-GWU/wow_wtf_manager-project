@@ -81,7 +81,32 @@ class AccountSavedVariablesConfig(FileConfig):
 
 @attr.define
 class CharacterUserInterfaceConfig(FileConfig):
-    pass
+    def apply(
+        self,
+        client: Client,
+        character: Character,
+        dry_run: bool = True,
+    ) -> bool:
+        content = self.build()
+        scope = CharacterUserInterfaceScope(client=client, character=character)
+        if dry_run is False:
+            scope.apply(content, dry_run=dry_run)
+        return not dry_run
+
+
+@attr.define
+class CharacterChatConfig(FileConfig):
+    def apply(
+        self,
+        client: Client,
+        character: Character,
+        dry_run: bool = True,
+    ) -> bool:
+        content = self.build()
+        scope = CharacterChatScope(client=client, character=character)
+        if dry_run is False:
+            scope.apply(content, dry_run=dry_run)
+        return not dry_run
 
 
 @attr.define

@@ -4,4 +4,6 @@ from .client_level import ClientConfigEnum
 from .account_level import (
     AccountUserInterfaceConfigEnum,
     AccountSavedVariablesConfigGroup,
+    CharacterUserInterfaceConfigEnum,
+    CharacterChatConfigEnum,
 )
