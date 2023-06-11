@@ -16,6 +16,9 @@ class AccountGroupEnum:
 class CharacterGroupEnum:
     all = OrderedSet(
         [
-            CharacterEnum.fatrab_acore_fatrabbit,
+            CharacterEnum.wtfaa,
+            CharacterEnum.wtfab,
+            CharacterEnum.wtfba,
+            CharacterEnum.wtfbb,
         ]
     )
