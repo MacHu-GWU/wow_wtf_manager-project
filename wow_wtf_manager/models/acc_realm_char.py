@@ -2,6 +2,11 @@
 
 """
 本模块定义了 :class:`Account`, :class:`Realm`, :class:`Character` 三个配置应用场景类.
+
+.. note::
+
+    注意, 这里的类都带有一个 ``def new()`` 的工厂函数, 请不要直接用构造器, 而用这个工厂函数.
+    里面会自动把新建的对象加入到父对象的映射中去.
 """
 
 import typing as T
@@ -38,10 +43,16 @@ class Account(BaseMixin):
 
     @property
     def realms(self) -> T.List["Realm"]:
+        """
+        返回该账号下的所有服务器.
+        """
         return list(self.realms_mapper.values())
 
     @property
     def characters(self) -> T.List["Character"]:
+        """
+        返回该账号下所有服务器上的所有角色.
+        """
         chars = list()
         for realm in self.realms:
             for character in realm.characters:
@@ -87,6 +98,9 @@ class Realm(BaseMixin):
 
     @property
     def account_name(self) -> str:
+        """
+        该服务器所属的账号名.
+        """
         return self.account.account
 
     @property
@@ -127,6 +141,9 @@ class Character(BaseMixin):
 
     @property
     def realm_name(self) -> str:
+        """
+        该角色所属的服务器名.
+        """
         return self.realm.realm
 
     @property
@@ -135,6 +152,9 @@ class Character(BaseMixin):
 
     @property
     def account_name(self) -> str:
+        """
+        该角色所属的账号名.
+        """
         return self.account.account
 
     @property
