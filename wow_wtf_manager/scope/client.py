@@ -73,17 +73,17 @@ class BaseAccountLevelScope(FileScope):
 
 
 @attr.define
-class AccountKeyBindingScope(BaseAccountLevelScope):
-    @property
-    def filename(self) -> str:
-        return "bindings-cache.wtf"
-
-
-@attr.define
 class AccountUserInterfaceScope(BaseAccountLevelScope):
     @property
     def filename(self) -> str:
         return "config-cache.wtf"
+
+
+@attr.define
+class AccountKeyBindingScope(BaseAccountLevelScope):
+    @property
+    def filename(self) -> str:
+        return "bindings-cache.wtf"
 
 
 @attr.define
