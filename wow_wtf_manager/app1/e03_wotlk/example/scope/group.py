@@ -22,3 +22,17 @@ class CharacterGroupEnum:
             CharacterEnum.wtfbb,
         ]
     )
+
+    master_pala = OrderedSet(
+        [
+            CharacterEnum.wtfaa,
+        ]
+    )
+
+    slave_non_pala = OrderedSet(
+        [
+            CharacterEnum.wtfab,
+            CharacterEnum.wtfba,
+            CharacterEnum.wtfbb,
+        ]
+    )

@@ -38,7 +38,7 @@ class RealmEnum:
 
 
 class CharacterEnum:
-    wtfaa = Character.new(RealmEnum.wtf1_acore, "wtfaa")
+    wtfaa = Character.new(RealmEnum.wtf1_acore, "wtfaa") # master paladin
     wtfab = Character.new(RealmEnum.wtf1_acore, "wtfab")
     wtfba = Character.new(RealmEnum.wtf2_acore, "wtfba")
     wtfbb = Character.new(RealmEnum.wtf2_acore, "wtfbb")
