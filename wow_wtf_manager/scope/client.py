@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import typing as T
-
 import attr
 from pathlib_mate import Path
 
@@ -9,7 +7,6 @@ from ..logger import logger
 from ..models.api import (
     Client,
     Account,
-    Realm,
     Character,
 )
 from .base import BaseScope
@@ -17,7 +14,7 @@ from .base import BaseScope
 
 class FileScope(BaseScope):
     """
-    A mixin class for that the scope is a file.
+    作用域为单个文件的基类. 魔兽世界配置大多数都可以用单个文件的排列组合来完成.
     """
 
     @property
@@ -26,6 +23,9 @@ class FileScope(BaseScope):
 
     @property
     def relpath(self) -> Path:
+        """
+        从 WTF/ 文件夹开始的相对路径, 用于在 log 中显式.
+        """
         for ind, part in enumerate(self.path_output.parts):
             if part in ["WTF", "WTF-output"]:
                 return Path(*self.path_output.parts[ind + 1 :])
@@ -36,6 +36,9 @@ class FileScope(BaseScope):
         content: str,
         dry_run: bool = True,
     ):
+        """
+        将配置文件内容应用到目标文件中.
+        """
         logger.info(f"Write to {self.relpath}")
         if dry_run is False:
             self.path_output.parent.mkdir_if_not_exists()
@@ -44,6 +47,10 @@ class FileScope(BaseScope):
 
 @attr.define
 class ClientScope(FileScope):
+    """
+    作用域为客户端配置的文件.
+    """
+
     client: Client = attr.field()
 
     @property
@@ -74,6 +81,10 @@ class BaseAccountLevelScope(FileScope):
 
 @attr.define
 class AccountUserInterfaceScope(BaseAccountLevelScope):
+    """
+    作用域为指定 Account 的客户端配置文件.
+    """
+
     @property
     def filename(self) -> str:
         return "config-cache.wtf"
@@ -81,6 +92,10 @@ class AccountUserInterfaceScope(BaseAccountLevelScope):
 
 @attr.define
 class AccountKeyBindingScope(BaseAccountLevelScope):
+    """
+    作用域为指定 Account 的按键绑定配置文件.
+    """
+
     @property
     def filename(self) -> str:
         return "bindings-cache.wtf"
@@ -88,6 +103,10 @@ class AccountKeyBindingScope(BaseAccountLevelScope):
 
 @attr.define
 class AccountAddonSavedVariablesScope(FileScope):
+    """
+    作用域为指定 Account 的每个插件的 Lua 数据文件.
+    """
+
     client: Client = attr.field()
     account: Account = attr.field()
     addon: str = attr.field()
@@ -127,6 +146,10 @@ class BaseCharacterLevelScope(FileScope):
 
 @attr.define
 class CharacterUserInterfaceScope(BaseCharacterLevelScope):
+    """
+    作用域为指定 Account 下, 指定 Realm 下, 指定 Character 的客户端配置文件.
+    """
+
     @property
     def filename(self) -> str:
         return "config-cache.wtf"
@@ -134,6 +157,10 @@ class CharacterUserInterfaceScope(BaseCharacterLevelScope):
 
 @attr.define
 class CharacterChatScope(BaseCharacterLevelScope):
+    """
+    作用域为指定 Account 下, 指定 Realm 下, 指定 Character 的聊天配置文件.
+    """
+
     @property
     def filename(self) -> str:
         return "chat-cache.txt"
@@ -141,6 +168,10 @@ class CharacterChatScope(BaseCharacterLevelScope):
 
 @attr.define
 class CharacterKeyBindingScope(BaseCharacterLevelScope):
+    """
+    作用域为指定 Account 下, 指定 Realm 下, 指定 Character 的快捷键绑定配置文件.
+    """
+
     @property
     def filename(self) -> str:
         return "bindings-cache.wtf"
@@ -148,6 +179,10 @@ class CharacterKeyBindingScope(BaseCharacterLevelScope):
 
 @attr.define
 class CharacterLayoutScope(BaseCharacterLevelScope):
+    """
+    作用域为指定 Account 下, 指定 Realm 下, 指定 Character 的界面布局配置文件.
+    """
+
     @property
     def filename(self) -> str:
         return "layout-local.txt"
@@ -155,6 +190,10 @@ class CharacterLayoutScope(BaseCharacterLevelScope):
 
 @attr.define
 class CharacterAddonsScope(BaseCharacterLevelScope):
+    """
+    作用域为指定 Account 下, 指定 Realm 下, 指定 Character 所启用的插件列表配置文件.
+    """
+
     @property
     def filename(self) -> str:
         return "AddOns.txt"
@@ -162,6 +201,10 @@ class CharacterAddonsScope(BaseCharacterLevelScope):
 
 @attr.define
 class CharacterAddonSavedVariablesScope(FileScope):
+    """
+    作用域为指定 Account 下, 指定 Realm 下, 指定 Character, 指定插件的 Lua 数据文件.
+    """
+
     client: Client = attr.field()
     character: Character = attr.field()
     addon: str = attr.field()
