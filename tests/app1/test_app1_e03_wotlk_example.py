@@ -24,8 +24,8 @@ def _test():
 
 def test():
     with logger.disabled(
-        # disable=True,
-        disable=False,
+        disable=True,
+        # disable=False,
     ):
         print("")
         _test()
