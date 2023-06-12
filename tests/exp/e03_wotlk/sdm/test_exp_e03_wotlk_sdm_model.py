@@ -4,57 +4,64 @@ from pathlib_mate import Path
 from wow_wtf_manager.exp.e03_wotlk.sdm.model import (
     SDMMacroTypeEnum,
     SDMMacro,
-    SDMMacroFile,
-    render_sdm_lua,
+    SDMLua,
 )
 
 dir_here = Path.dir_here(__file__)
 
+path_global_yml = dir_here / "parser" / "sample-global.yml"
+path_character_yml = dir_here / "parser" / "sample-character.yml"
+path_lua = dir_here / "SuperDuperMacro.lua"
 
-class TestSDMMacroFile:
+
+class TestSDMMacro:
     def test_init(self):
         macro = SDMMacro(name="test")
         assert macro.character is None
 
     def test_parser(self):
-        macro_list = list()
-
-        # --- sample-global.yml
-        path = dir_here / "parser" / "sample-global.yml"
-        content = path.read_text()
-
-        # test parser
-        macro = SDMMacro.parse_yml(content)
-        assert macro.name == "interrupt"
-        assert macro.character.name is None
-        assert macro.id == 1
-        assert macro.type == SDMMacroTypeEnum.button
-        assert macro.icon == 1
-        assert macro.text == ("#showtooltip\n" "/stopcasting\n" "/cast Counterspell")
-        lua_code = macro.render()
+        global_macro = SDMMacro.from_yaml_file(path_global_yml)
+        assert global_macro.name == "interrupt"
+        assert global_macro.character.name is None
+        assert global_macro.id == 1
+        assert global_macro.type == SDMMacroTypeEnum.button
+        assert global_macro.icon == 1
+        assert global_macro.text == (
+            "#showtooltip\n" "/stopcasting\n" "/cast Counterspell"
+        )
+        assert global_macro.is_global() is True
+        lua_code = global_macro.render()
         _ = lua_code
-        macro_list.append(macro)
-
-        # --- sample-character.yml
-        path = dir_here / "parser" / "sample-character.yml"
-        content = path.read_text()
-
-        # test parser
-        macro = SDMMacro.parse_yml(content)
-        assert macro.name == "interrupt"
-        assert macro.character.name == "Admin"
-        assert macro.character.realm == "Azerothcore"
-        assert macro.id == 2
-        assert macro.type == SDMMacroTypeEnum.button
-        assert macro.icon == 1
-        assert macro.text == ("#showtooltip\n" "/stopcasting\n" "/cast Counterspell")
-        lua_code = macro.render()
-        _ = lua_code
-        macro_list.append(macro)
-
-        # --- render sdm.lua
-        lua_code = render_sdm_lua(macro_list)
         # print(lua_code)
+
+        character_macro = SDMMacro.from_yaml_file(path_character_yml)
+        assert character_macro.name == "interrupt"
+        assert character_macro.character.name == "Admin"
+        assert character_macro.character.realm == "Azerothcore"
+        assert character_macro.id == 2
+        assert character_macro.type == SDMMacroTypeEnum.button
+        assert character_macro.icon == 1
+        assert character_macro.text == (
+            "#showtooltip\n" "/stopcasting\n" "/cast Counterspell"
+        )
+        assert character_macro.is_global() is False
+        lua_code = global_macro.render()
+        _ = lua_code
+        # print(lua_code)
+
+
+class TestSDMLua:
+    def test(self):
+        sdm_lua = SDMLua(
+            path_lua=path_lua,
+            macros=[
+                SDMMacro.from_yaml_file(path_global_yml),
+                SDMMacro.from_yaml_file(path_character_yml),
+            ],
+        )
+        lua_code = sdm_lua.render()
+        _ = lua_code
+        print(lua_code)
 
 
 if __name__ == "__main__":

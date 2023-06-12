@@ -1,7 +1,7 @@
 scope
 =====
 
-.. automodule:: wow_wtf_manager.app1.e03_wotlk.example.scope
+.. automodule:: wow_wtf_manager.app.e03_wotlk_example.scope
     :members:
 
 sub packages and modules

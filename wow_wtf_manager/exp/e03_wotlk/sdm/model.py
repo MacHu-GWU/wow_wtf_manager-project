@@ -1,66 +1,92 @@
 # -*- coding: utf-8 -*-
 
 """
-为了能
-该模块实现了用 Python 来操作 SDM 插件的 SavedVariables lua 文件. 从而允许我们在 Python
-中指定我们需要用到哪些宏, 然后一键生成 ``WTF/Account/${AccountName}/SavedVariables/SuperDuperMacro.lua``
-文件.
+为了能实现用 Python 来操作 SDM 插件的 ``SavedVariables/SuperDuperMacro.lua`` 文件,
+我们要对 .lua 文件中的代码块进行数据建模, 定义一些 Python 类来代表这些代码块, 然后实现将
+Python 对象转化为 .lua 代码块的逻辑.
 """
 
 import typing as T
-from functools import cached_property
 
-from yaml import load, Loader
 import attr
-from attrs_mate import AttrsClass
-from pathlib_mate import Path
 from jinja2 import Template
-
-from ..group import Account, Character
+from pathlib_mate import Path
+from yaml import load, Loader
 
 _dir_here = Path.dir_here(__file__)
 _path_sdm_template = _dir_here / "sdm.tpl"
 _sdm_template = Template(_path_sdm_template.read_text())
 
 
-@attr.s
-class SDMCharacter(AttrsClass):
-    name: str = attr.ib(default="")
-    realm: str = attr.ib(default="")
+@attr.define
+class SDMCharacter:
+    """
+    代表 Character Macro 专有宏命令中关于角色信息的部分. 对应着如下代码块:
+
+    .. code-block:: lua
+
+        ["character"] = {
+            ["name"] = "charname",
+            ["realm"] = "realmname",
+        },
+    """
+
+    name: str = attr.field()
+    realm: str = attr.field()
 
 
 class SDMMacroTypeEnum:
+    """
+    枚举 SDM 宏命令的三种类型.
+    """
+
     button = "b"
     floating = "f"
     script = "s"
 
 
-_DEFAULT_TYPE = SDMMacroTypeEnum.button
-_DEFAULT_ID = 0
-_DEFAULT_ICON = 1
+_DEFAULT_TYPE = SDMMacroTypeEnum.button  # 默认的宏命令类型
+_DEFAULT_ID = 0  # 默认的起始 ID
+_DEFAULT_ICON = 1  # 默认的宏命令图标
 
 
-@attr.s
-class SDMMacro(AttrsClass):
+@attr.define
+class SDMMacro:
     """
     定义了一个魔兽世界中的 SDM 宏命令的抽象, 目前只支持 Button + Global 这一种模式.
+
+    代表着如下代码块:
+
+    .. code-block:: lua
+
+        {
+            ["type"] = "f",
+            ["name"] = "macroname",
+            ["character"] = {
+                ["name"] = "charname",
+                ["realm"] = "realmname",
+            },
+            ["ID"] = 1,
+            ["text"] = "/s hello",
+            ["icon"] = 1,
+        }, -- [1]
     """
 
-    name: str = attr.ib()
-    character: SDMCharacter = AttrsClass.ib_nested()
+    name: str = attr.field()
+    character: T.Optional[SDMCharacter] = attr.field(default=None)
     type: str = attr.ib(default=_DEFAULT_TYPE)
     id: int = attr.ib(default=_DEFAULT_ID)  # SDM macro ID starts from 0
     icon: int = attr.ib(default=_DEFAULT_ICON)  # 1 is the Question Mark Icon
     text: str = attr.ib(default="")
 
-    def set_id(self, id: int) -> "SDMMacro":
+    def set_id(self, id: int) -> "SDMMacro":  # pragma: no cover
         """
         Update it's attributes value.
         """
         self.id = id
         return self
 
-    def set_char(self, name: str, realm: str) -> "SDMMacro":
+    def set_char(self, name: str, realm: str) -> "SDMMacro":  # pragma: no cover
         """
         Update it's attributes value.
         """
@@ -87,12 +113,35 @@ class SDMMacro(AttrsClass):
 
     def encode_text(self) -> str:
         """
-        Encode macro text to single-ling Lua string.
+        Encode macro text to single-ling Lua string. The final string of the
+        macro body in lua has to have only one line.
         """
         return self.text.replace("\n", "\\n")
 
     @classmethod
     def parse_yml(cls, content: str) -> "SDMMacro":
+        """
+        从人类可读写的 yaml 文件中读取数据, 创建 :class:`SDMMacro` 对象.
+
+        下面是一个示例的 yaml 文件.
+
+        .. code-block:: yaml
+
+            name: interrupt
+            character:
+              name:
+              realm:
+            type: b
+            id:
+            # you can find icon id on https://wotlk.evowow.com/?icons
+            icon:
+            description: |
+              cancel casting spell, interrupt enemy casting immediately!
+            text: |
+              #showtooltip
+              /stopcasting
+              /cast Counterspell
+        """
         data = load(content, Loader)
         return cls(
             name=data["name"],
@@ -103,9 +152,17 @@ class SDMMacro(AttrsClass):
             text=data["text"].strip(),
         )
 
+    @classmethod
+    def from_yaml_file(cls, path: Path) -> "SDMMacro":
+        """
+        从 yaml 文件中读取数据, 创建 :class:`SDMMacro` 对象.
+        """
+        return cls.parse_yml(path.read_text())
+
     def render(self) -> str:
         """
-        Render the corresponding SuperDupeMacro.lua code
+        Render the corresponding SuperDupeMacro.lua code. See example at
+        :class:`SDMMacro`.
         """
         lines: T.List[str] = list()
         lines.append(f"[{self.id}] = {{")
@@ -123,137 +180,39 @@ class SDMMacro(AttrsClass):
         return "\n".join(lines)
 
 
-@attr.s
-class SDMMacroFile(AttrsClass):
+@attr.define
+class SDMLua:
     """
-    以 YAML 文件形式存在的一个 SDM 宏.
-    """
+    代表了 SuperDupeMacro.lua 文件的抽象. 该类只能用于将数据写入到 SuperDupeMacro.lua,
+    而不能从 SuperDupeMacro.lua 中读取数据.
 
-    path: Path = attr.ib()
-
-    @cached_property
-    def content(self) -> str:
-        return self.path.read_text()
-
-    @property
-    def macro(self) -> SDMMacro:
-        return SDMMacro.parse_yml(self.content)
-
-
-def render_sdm_lua(macro_list: T.List[SDMMacro]) -> str:
-    id_set = {macro.id for macro in macro_list}
-    if len(id_set) != len(macro_list):
-        macro_id_list = [macro.id for macro in macro_list]
-        raise ValueError(
-            "Cannot render SDM lua! Found duplicate id in 'macro_list'."
-            f"macro id list: {macro_id_list}"
-        )
-    return _sdm_template.render(macro_list=macro_list)
-
-
-@attr.s
-class AccountSDMSetup(AttrsClass):
-    """
-    代表着一个 WTF 文件夹下一个 魔兽世界账号中的 SuperDuperMacro 插件的 Lua 配置的对象.
-
-    :param account: 是一个 Account 对象, 代表它输于哪一个 Account.
-    :param macro_mapper: key = macro id, value = SDMMacro
+    :param path_lua: SuperDupeMacro.lua 文件路径.
+    :param macros: :class:`SDMMacro` 对象的列表.
     """
 
-    account: Account = Account.ib_nested()
-    macro_mapper: T.Dict[int, SDMMacro] = attr.ib(factory=dict)
+    path_lua: Path = attr.field()
+    macros: T.List[SDMMacro] = attr.field(factory=list)
 
-    def add_macros(self, macros: T.Iterable[SDMMacro], overwrite: bool = False):
-        for macro in macros:
-            if macro in macros:
-                if overwrite:
-                    raise Exception
-                else:
-                    self.macro_mapper[macro.id] = macro
-            else:
-                self.macro_mapper[macro.id] = macro
+    @path_lua.validator
+    def check_path_lua(self, attribute, value):  # pragma: no cover
+        if value.basename != "SuperDuperMacro.lua":
+            raise ValueError(f"the SDMLua.path_lua has to end with SuperDupeMacro.lua!")
 
-
-@attr.s
-class ClientSDMSetup(AttrsClass):
-    """
-    代表着一个魔兽世界客户端下所有的账号的 SuperDuperMacro 插件的配置.
-
-    :param dir_wow:
-    :param account_sdm_setup_mapper: key = account name, value = AccountSDMSetup
-    """
-
-    dir_wow: Path = attr.ib()
-    account_sdm_setup_mapper: T.Dict[str, AccountSDMSetup] = attr.ib(factory=dict)
-
-    def apply(self, plan=True):
+    def render(self) -> str:
         """
-        将插件实际应用到 WTF 文件夹, 该操作会覆盖掉已有的 SuperDuperMacro 插件配置.
+        将一堆 :class:`SDMMacro` 对象渲染成 SuperDupeMacro.lua 文件的内容 (只是生成内容
+        而不将内容写入文件). 这里面会检查 macro_list 中的 macro id 是否有重复, 如果有重复,
+        则会抛出异常.
         """
-        print("This")
-        for account_sdm_setup in self.account_sdm_setup_mapper.values():
-            print(f"working on account: {account_sdm_setup.account}")
-            path = (
-                self.dir_wow
-                / "WTF"
-                / "Account"
-                / account_sdm_setup.account.account
-                / "SavedVariables"
-                / "SuperDuperMacro.lua"
+        id_set = {macro.id for macro in self.macros}
+        if len(id_set) != len(self.macros):  # pragma: no cover
+            macro_id_list = [macro.id for macro in self.macros]
+            raise ValueError(
+                f"Cannot render SDM lua! Found duplicate id in 'macro_list': {macro_id_list}"
             )
-            content = render_sdm_lua(list(account_sdm_setup.macro_mapper.values()))
-            if plan is False:
-                path.write_text(content)
+        return _sdm_template.render(macros=self.macros)
 
-    def get_or_init_setup(self, account: Account) -> AccountSDMSetup:
-        """
-        获取或是初始化一个 :class`AccountSDMSetup` 并放到 :attr:`ClientSDMSetup.account_sdm_setup_mapper``
-        属性中.
-        """
-        # 如果已经存在, 那么直接 get
-        if account.account in self.account_sdm_setup_mapper:
-            return self.account_sdm_setup_mapper[account.account]
-        # 如果还不存在, 则先初始化然后再 get
-        else:
-            account_sdm_setup = AccountSDMSetup(account=account)
-            self.account_sdm_setup_mapper[account.account] = account_sdm_setup
-            return account_sdm_setup
-
-    def add_macros_for_many_accounts(
-        self,
-        accounts: T.Iterable[Account],
-        files: T.Iterable[SDMMacroFile],
-    ):
-        """
-        为一批 Account 添加一堆一样的 SDMMacro 对象. 这些 Macro 将会成为 Global Macro.
-        例如我们可以给所有账号添加一个接受邀请组队宏.
-
-        我们不希望直接用 list.append 或是 dict.update 的方式来参加, 语义不是很明确.
-        我们专门设计了这个方法, 用来提升代码可读性.
-        """
-        for account in accounts:
-            account_sdm_setup = self.get_or_init_setup(account)
-            macros = [file.macro for file in files]
-            account_sdm_setup.add_macros(macros)
-
-    def add_macros_for_many_chars(
-        self,
-        chars: T.Iterable[Character],
-        files: T.Iterable[SDMMacroFile],
-    ):
-        """
-        为一批 Character 添加一堆一样的 SDMMacro 对象. 这些 Macro 将会成为 Character Macro.
-        例如我们可以给所有法师角色添加一个打断焦点的目标施法宏.
-
-        我们不希望直接用 list.append 或是 dict.update 的方式来参加, 语义不是很明确.
-        我们专门设计了这个方法, 用来提升代码可读性.
-        """
-        for character in chars:
-            account_sdm_setup = self.get_or_init_setup(character.acc_obj)
-            macros = [file.macro for file in files]
-            for macro in macros:
-                macro.set_char(
-                    name=character.character,
-                    realm=character.server,
-                )
-            account_sdm_setup.add_macros(macros)
+    def write(self) -> str:  # pragma: no cover
+        content = self.render()
+        self.path_lua.write_text(content)
+        return content

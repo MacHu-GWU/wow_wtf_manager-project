@@ -11,7 +11,6 @@ sub packages and modules
     :maxdepth: 1
 
     app <app/__init__>
-    app1 <app1/__init__>
     config <config/__init__>
     exp <exp/__init__>
     models <models/__init__>

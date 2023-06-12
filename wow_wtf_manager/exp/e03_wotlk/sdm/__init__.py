@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
 """
-SuperDuperMacro
+SuperDuperMacro addon for WOTLK expansion.
 """
 
-from .model import (
-    SDMMacro,
-    SDMMacroFile,
-    render_sdm_lua,
-    AccountSDMSetup,
-    ClientSDMSetup,
-)
+# from .model import (
+#     SDMMacro,
+#     SDMMacroFile,
+#     render_sdm_lua,
+#     AccountSDMSetup,
+#     ClientSDMSetup,
+# )

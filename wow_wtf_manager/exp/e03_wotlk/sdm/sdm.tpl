@@ -9,12 +9,12 @@ sdm_listFilters = {
 }
 sdm_iconSize = 36
 sdm_mainContents = {
-{%- for macro in macro_list %}
+{%- for macro in macros %}
     {{ macro.id }},
 {%- endfor %}
 }
 sdm_macros = {
-{%- for macro in macro_list %}
+{%- for macro in macros %}
     {{ macro.render() | indent(4) }}
 {%- endfor %}
 }

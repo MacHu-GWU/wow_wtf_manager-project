@@ -1,7 +1,7 @@
 config
 ======
 
-.. automodule:: wow_wtf_manager.app1.e03_wotlk.example.config
+.. automodule:: wow_wtf_manager.app.e03_wotlk_example.config
     :members:
 
 sub packages and modules

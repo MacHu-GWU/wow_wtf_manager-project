@@ -1,7 +1,7 @@
-example
-=======
+e03_wotlk_example
+=================
 
-.. automodule:: wow_wtf_manager.app1.e03_wotlk.example
+.. automodule:: wow_wtf_manager.app.e03_wotlk_example
     :members:
 
 sub packages and modules
