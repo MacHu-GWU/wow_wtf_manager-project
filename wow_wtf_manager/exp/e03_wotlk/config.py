@@ -40,8 +40,7 @@ class GameClientConfig(FileConfig):
     ) -> bool:
         content = self.build()
         scope = ClientScope(client=client)
-        if dry_run is False:
-            scope.apply(content, dry_run=dry_run)
+        scope.apply(content, dry_run=dry_run)
         return not dry_run
 
 
@@ -58,8 +57,7 @@ class AccountUserInterfaceConfig(FileConfig):
     ) -> bool:
         content = self.build(account=account)
         scope = AccountUserInterfaceScope(client=client, account=account)
-        if dry_run is False:
-            scope.apply(content, dry_run=dry_run)
+        scope.apply(content, dry_run=dry_run)
         return not dry_run
 
 
@@ -80,8 +78,7 @@ class AccountSavedVariablesConfig(FileConfig):
             account=account,
             lua_file=self.path_input.basename,
         )
-        if dry_run is False:
-            scope.apply(content, dry_run=dry_run)
+        scope.apply(content, dry_run=dry_run)
         return not dry_run
 
 
@@ -95,8 +92,7 @@ class CharacterUserInterfaceConfig(FileConfig):
     ) -> bool:
         content = self.build()
         scope = CharacterUserInterfaceScope(client=client, character=character)
-        if dry_run is False:
-            scope.apply(content, dry_run=dry_run)
+        scope.apply(content, dry_run=dry_run)
         return not dry_run
 
 
@@ -125,8 +121,7 @@ class CharacterKeybindingConfig(FileConfig):
     ) -> bool:
         content = self.build()
         scope = CharacterKeyBindingScope(client=client, character=character)
-        if dry_run is False:
-            scope.apply(content, dry_run=dry_run)
+        scope.apply(content, dry_run=dry_run)
         return not dry_run
 
 
@@ -140,8 +135,7 @@ class CharacterLayoutConfig(FileConfig):
     ) -> bool:
         content = self.build()
         scope = CharacterLayoutScope(client=client, character=character)
-        if dry_run is False:
-            scope.apply(content, dry_run=dry_run)
+        scope.apply(content, dry_run=dry_run)
         return not dry_run
 
 
@@ -155,8 +149,7 @@ class CharacterAddonsConfig(FileConfig):
     ) -> bool:
         content = self.build()
         scope = CharacterAddonsScope(client=client, character=character)
-        if dry_run is False:
-            scope.apply(content, dry_run=dry_run)
+        scope.apply(content, dry_run=dry_run)
         return not dry_run
 
 
@@ -174,6 +167,5 @@ class CharacterSavedVariablesConfig(FileConfig):
             character=character,
             lua_file=self.path_input.basename,
         )
-        if dry_run is False:
-            scope.apply(content, dry_run=dry_run)
+        scope.apply(content, dry_run=dry_run)
         return not dry_run

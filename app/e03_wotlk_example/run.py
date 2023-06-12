@@ -3,8 +3,8 @@
 from wow_wtf_manager.logger import logger
 from wow_wtf_manager.app.e03_wotlk_example.setup import setup
 
-# dry_run = True # for testing
-dry_run = False  # *** THIS WILL APPLY CHANGES TO YOUR WTF FILEs ***
+dry_run = True # for testing
+# dry_run = False  # *** THIS WILL APPLY CHANGES TO YOUR WTF FILEs ***
 
 with logger.disabled(
     # disable=True, # DON't show log
