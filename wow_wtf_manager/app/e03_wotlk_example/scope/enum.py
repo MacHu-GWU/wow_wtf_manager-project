@@ -23,7 +23,7 @@ if IS_WINDOWS:  # pragma: no cover
     )
     client = Client(locale="zhTW", dir_wtf=dir_wtf)
 else:
-    dir_wtf = dir_tests.joinpath("app1", "e03_wotlk_acore", "WTF-output")
+    dir_wtf = dir_tests.joinpath("app", "e03_wotlk_example", "WTF-output")
     client = Client(locale="zhTW", dir_wtf=dir_wtf)
 
 
