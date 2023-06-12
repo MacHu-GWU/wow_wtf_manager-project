@@ -17,6 +17,7 @@ sub packages and modules
     models <models/__init__>
     scope <scope/__init__>
     api <api>
+    compat <compat>
     logger <logger>
     lua_lib <lua_lib>
     models <models>
