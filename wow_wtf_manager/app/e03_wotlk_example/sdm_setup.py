@@ -12,11 +12,11 @@ from .scope.api import (
 from .sdm_macro import Macros
 
 
-client_sdm_setup = ClientSDMSetup(dir_wtf=client.dir_wtf)
+sdm_setup = ClientSDMSetup(dir_wtf=client.dir_wtf)
 
 
 def global_macro():
-    client_sdm_setup.add_macros_to_account(
+    sdm_setup.add_macros_to_account(
         account=AccountGroupEnum.all,
         sdm_files=[
             # GM command
@@ -61,7 +61,7 @@ def global_macro():
 
 
 def s02_paladin():
-    client_sdm_setup.add_macros_to_character(
+    sdm_setup.add_macros_to_character(
         character=[
             CharacterEnum.wtfaa,
         ],
