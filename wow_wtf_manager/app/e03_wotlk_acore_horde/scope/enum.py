@@ -23,22 +23,17 @@ if IS_WINDOWS:  # pragma: no cover
     )
     client = Client(locale="zhTW", dir_wtf=dir_wtf)
 else:
-    dir_wtf = dir_tests.joinpath("app", "e03_wotlk_example", "WTF-output")
+    dir_wtf = dir_tests.joinpath("app", "e03_wotlk_acore_horde", "WTF-output")
     client = Client(locale="zhTW", dir_wtf=dir_wtf)
 
 
 class AccountEnum:
-    wtf1 = Account.new("wtfmanager1")
-    wtf2 = Account.new("wtfmanager2")
+    husanhe = Account.new("husanhe")
 
 
 class RealmEnum:
-    wtf1_acore = Realm.new(AccountEnum.wtf1, "AzerothCore")
-    wtf2_acore = Realm.new(AccountEnum.wtf2, "AzerothCore")
+    husanhe_acore = Realm.new(AccountEnum.husanhe, "AzerothCore")
 
 
 class CharacterEnum:
-    wtfaa = Character.new(RealmEnum.wtf1_acore, "wtfaa")  # master paladin
-    wtfab = Character.new(RealmEnum.wtf1_acore, "wtfab")
-    wtfba = Character.new(RealmEnum.wtf2_acore, "wtfba")
-    wtfbb = Character.new(RealmEnum.wtf2_acore, "wtfbb")
+    shootingrab = Character.new(RealmEnum.husanhe_acore, "shootingrab")

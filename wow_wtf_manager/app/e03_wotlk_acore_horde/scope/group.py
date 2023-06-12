@@ -7,8 +7,7 @@ from .enum import client, AccountEnum, CharacterEnum
 class AccountGroupEnum:
     all = OrderedSet(
         [
-            AccountEnum.wtf1,
-            AccountEnum.wtf2,
+            AccountEnum.husanhe,
         ]
     )
 
@@ -16,23 +15,18 @@ class AccountGroupEnum:
 class CharacterGroupEnum:
     all = OrderedSet(
         [
-            CharacterEnum.wtfaa,
-            CharacterEnum.wtfab,
-            CharacterEnum.wtfba,
-            CharacterEnum.wtfbb,
+            CharacterEnum.shootingrab,
         ]
     )
 
-    master_pala = OrderedSet(
+    master_pala = OrderedSet([])
+
+    master_non_pala = OrderedSet(
         [
-            CharacterEnum.wtfaa,
+            CharacterEnum.shootingrab,
         ]
     )
 
-    slave_non_pala = OrderedSet(
-        [
-            CharacterEnum.wtfab,
-            CharacterEnum.wtfba,
-            CharacterEnum.wtfbb,
-        ]
-    )
+    slave_pala = OrderedSet([])
+
+    slave_non_pala = OrderedSet([])

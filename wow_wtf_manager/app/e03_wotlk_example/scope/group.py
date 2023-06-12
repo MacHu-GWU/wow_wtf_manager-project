@@ -29,6 +29,10 @@ class CharacterGroupEnum:
         ]
     )
 
+    master_non_pala = OrderedSet([])
+
+    slave_pala = OrderedSet([])
+
     slave_non_pala = OrderedSet(
         [
             CharacterEnum.wtfab,
