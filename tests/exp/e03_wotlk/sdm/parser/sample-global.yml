@@ -1,0 +1,13 @@
+name: interrupt
+character:
+  name:
+  realm:
+type: b
+id: 1
+icon:
+description: |
+  cancel casting spell, interrupt enemy casting immediately!
+text: |
+  #showtooltip
+  /stopcasting
+  /cast Counterspell
