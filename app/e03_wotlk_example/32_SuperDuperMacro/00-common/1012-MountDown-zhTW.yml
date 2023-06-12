@@ -1,0 +1,13 @@
+name: Mount-Down
+character:
+  name:
+  realm:
+type: b
+id: 1012
+icon: 340
+description: |
+  取消当前的坐骑
+text: |
+  #showtooltip
+  /cancelaura [mounted] X-53型觀光火箭
+  /cancelaura [mounted] 旅者的凍原長毛象

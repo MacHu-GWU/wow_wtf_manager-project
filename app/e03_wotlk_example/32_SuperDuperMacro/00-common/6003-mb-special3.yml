@@ -1,0 +1,12 @@
+name: MB-Special3
+character:
+  name:
+  realm:
+type: b
+id: 6003
+icon:
+description: |
+  在不同场景下应用不同的特殊宏 3 号
+text: |
+  #showtooltip
+  /s special act 3

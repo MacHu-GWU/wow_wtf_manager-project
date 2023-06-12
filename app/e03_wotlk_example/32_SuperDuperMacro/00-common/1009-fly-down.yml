@@ -1,0 +1,16 @@
+name: Fly-Down
+character:
+  name:
+  realm:
+type: b
+id: 1009
+icon: 239
+description: |
+  GM命令, 取消坐骑, 并重置移动速度为 1. 其中 39870 是 "暴速" buff, 使你的移动速度变为正常的 4 倍. 可用可不用.
+text: |
+  /target player
+  /dismount
+  .modify speed all 1
+  #.unaura 39870
+  #.aura 39870
+  /targetlasttarget

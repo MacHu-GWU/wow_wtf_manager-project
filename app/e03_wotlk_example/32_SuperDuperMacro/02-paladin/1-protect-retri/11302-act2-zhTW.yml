@@ -1,0 +1,13 @@
+name: Act2
+character:
+  name:
+  realm:
+type: b
+id: 11302
+icon:
+description: |
+  防骑 / 惩戒骑 的 按键 2. 防骑为公正之锤, 惩戒骑为十字军打击, 两者都是按下 Alt 为公正之盾 (防护技能)
+text: |
+  #showtooltip
+  /startattack
+  /cast [mod:alt]公正之盾; [spec:1]公正之錘;[spec:2]十字軍聖擊

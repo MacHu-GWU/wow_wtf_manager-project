@@ -28,6 +28,8 @@ class AppData:
     - ``${dir_root}/25_character_addons``
     - ``${dir_root}/26_character_macros``
     - ``${dir_root}/27_character_saved_variables``
+    - ``${dir_root}/31_myslots``
+    - ``${dir_root}/32_SuperDuperMacro``
     """
 
     dir_root: Path = attr.field()
@@ -75,3 +77,17 @@ class AppData:
     @property
     def dir_27_character_saved_variables(self) -> Path:
         return self.dir_root.joinpath("27_character_saved_variables")
+
+    @property
+    def dir_31_myslots(self) -> Path:
+        """
+        用来保存 MySlot 插件的数据文件.
+        """
+        return self.dir_root.joinpath("31_myslots")
+
+    @property
+    def dir_32_SuperDuperMacro(self) -> Path:
+        """
+        用来保存 SuperDuperMacro 插件的数据文件.
+        """
+        return self.dir_root.joinpath("32_SuperDuperMacro")

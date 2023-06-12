@@ -1,0 +1,11 @@
+name: Tele-Darnassus
+character:
+  name:
+  realm:
+type: b
+id: 1171
+icon: 528
+description: |
+  GM 命令, 传送达纳苏斯飞行点
+text: |
+  .go xyz 8643 845 23.5 1

@@ -1,0 +1,13 @@
+name: Invisibility
+character:
+  name:
+  realm:
+type: b
+id: 1006
+icon: 814
+description: |
+  GM Command, 给玩家隐身效果. 这里的 .npcbot 只有在你的服务端启用了 NPC Bot 模块才能使用. 效果是进入隐身状态后, 让 NPC Bot 停止跟随玩家.
+text: |
+  /target player
+  #.npcbot command stay
+  .aura 32612
