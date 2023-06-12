@@ -7,6 +7,7 @@ omit =
     wow_wtf_manager/_version.py
     wow_wtf_manager/compat.py
     wow_wtf_manager/runtime.py
+    wow_wtf_manager/**/sdm_macro_generator.py
 
 [report]
 # Regexes for lines to exclude from consideration

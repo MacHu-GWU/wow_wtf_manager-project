@@ -61,7 +61,7 @@ class TestSDMLua:
         )
         lua_code = sdm_lua.render()
         _ = lua_code
-        print(lua_code)
+        # print(lua_code)
 
 
 if __name__ == "__main__":
