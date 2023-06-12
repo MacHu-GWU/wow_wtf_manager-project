@@ -60,28 +60,32 @@ def global_macro():
     )
 
 
-def s02_paladin():
+def s04_hunter():
     sdm_setup.add_macros_to_character(
         character=[
-            CharacterEnum.wtfaa,
+            CharacterEnum.shootingrab,
         ],
         sdm_files=[
             # Buff
-            Macros.sdm_00_common____2003_buff_tank,
             Macros.sdm_00_common____2001_buff_physics_dps,
-            Macros.sdm_02_paladin____0_common____11101_consumable,
-            Macros.sdm_02_paladin____0_common____11111_clear_debuff_zhTW,
-            Macros.sdm_02_paladin____1_protect_retri____11311_buff_self_alliance_zhTW,
+            Macros.sdm_04_hunter____0_common____14101_consumable,
             # Act
-            Macros.sdm_02_paladin____1_protect_retri____11301_act1_zhTW,
-            Macros.sdm_02_paladin____1_protect_retri____11302_act2_zhTW,
-            Macros.sdm_02_paladin____1_protect_retri____11303_act3_zhTW,
-            Macros.sdm_02_paladin____1_protect_retri____11304_act4_zhTW,
-            Macros.sdm_02_paladin____0_common____11131_protect_rotation_zhTW,
-            Macros.sdm_02_paladin____0_common____11132_retribution_rotation_zhTW,
+            Macros.sdm_04_hunter____0_common____14102_misdirect_zhTW,
+            Macros.sdm_04_hunter____0_common____14103_tranquil_zhTW,
+            Macros.sdm_04_hunter____0_common____14104_pack_aspect_zhTW,
+            Macros.sdm_04_hunter____0_common____14105_viper_aspect_zhTW,
+            Macros.sdm_04_hunter____0_common____14106_burst_zhTW,
+            Macros.sdm_04_hunter____1_marksmanship_survival____14301_buff_self_zhTW,
+            Macros.sdm_04_hunter____0_common____14111_act1_zhTW,
+            Macros.sdm_04_hunter____1_marksmanship_survival____14312_act2_zhTW,
+            Macros.sdm_04_hunter____1_marksmanship_survival____14313_act3_zhTW,
+            Macros.sdm_04_hunter____1_marksmanship_survival____14314_act4_zhTW,
+            Macros.sdm_04_hunter____0_common____14121_marksmanship_rotation_zhTW,
+            Macros.sdm_04_hunter____0_common____14122_survival_rotation_zhTW,
+            Macros.sdm_04_hunter____1_marksmanship_survival____14321_add_debuff_zhTW,
         ],
     )
 
 
 global_macro()
-s02_paladin()
+s04_hunter()
