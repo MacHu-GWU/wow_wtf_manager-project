@@ -11,3 +11,6 @@ from .setup import (
     AccountSDMSetup,
     ClientSDMSetup,
 )
+from .enum_generator import (
+    SDMMacroModuleGenerator,
+)

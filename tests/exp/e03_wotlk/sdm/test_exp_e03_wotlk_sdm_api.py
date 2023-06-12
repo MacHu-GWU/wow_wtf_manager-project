@@ -11,6 +11,7 @@ def test():
     _ = api.SDMMacroFile
     _ = api.AccountSDMSetup
     _ = api.ClientSDMSetup
+    _ = api.SDMMacroModuleGenerator
 
 
 if __name__ == "__main__":
