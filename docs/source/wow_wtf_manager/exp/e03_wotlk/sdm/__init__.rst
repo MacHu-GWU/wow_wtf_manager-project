@@ -13,4 +13,5 @@ sub packages and modules
     api <api>
     model <model>
     model_backup <model_backup>
+    setup <setup>
     
