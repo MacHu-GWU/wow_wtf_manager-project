@@ -1,0 +1,11 @@
+name: Set-Low-FPS
+character:
+  name:
+  realm:
+type: b
+id: 1109
+icon: 40
+description: |
+  设置高帧数模式
+text: |
+  /console maxfps 5

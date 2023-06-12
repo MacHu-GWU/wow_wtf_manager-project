@@ -1,0 +1,11 @@
+name: Follow-Focus
+character:
+  name:
+  realm:
+type: b
+id: 1110
+icon: 138
+description: |
+  跟随焦点
+text: |
+  /follow focus

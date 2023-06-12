@@ -1,0 +1,13 @@
+name: Fly-Up
+character:
+  name:
+  realm:
+type: b
+id: 1008
+icon: 239
+description: |
+  GM命令, 坐上可以在室内使用的 其拉飞行坦克 (安其拉坐骑, GM专用)
+text: |
+  /target player
+  .aura 31700
+  /targetlasttarget

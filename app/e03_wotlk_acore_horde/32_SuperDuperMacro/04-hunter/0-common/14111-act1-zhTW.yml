@@ -1,0 +1,14 @@
+name: Act1
+character:
+  name:
+  realm:
+type: b
+id: 14111
+icon:
+description: |
+  所有天赋下 猎人的 1 号键位.
+text: |
+  #showtooltip
+  /cast [help] 誤導; [mod:alt] 獵人印記; 毒蛇釘刺
+  /stopmacro [nohelp]
+  #/s Misdirect on %t

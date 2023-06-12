@@ -1,0 +1,24 @@
+name: Hunter-Consumable
+character:
+  name:
+  realm:
+type: b
+id: 14101
+icon: 195
+description: |
+  40211 是速度药水, DPS 爆发用; 33448 是符文法力药水, 治疗时回蓝用; 21537 是春节饺子, 按百分比回复 HP 和 MP 的食物; 35953 是宠物食物肉类; 52021 是猎人用的冰刃箭;
+text: |
+  /target player
+  .add 40211 -20
+  .add 40211 20
+  .add 33448 -20
+  .add 33448 20
+  .add 21537 -20
+  .add 21537 20
+  .add 35953 -20
+  .add 35953 20
+  .add 21537 -20
+  .add 21537 20
+  .add 52021 -5000
+  .add 52021 5000
+  /targetlasttarget

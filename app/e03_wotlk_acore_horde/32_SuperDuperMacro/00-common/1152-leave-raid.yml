@@ -1,0 +1,11 @@
+name: Leave-Raid
+character:
+  name:
+  realm:
+type: b
+id: 1152
+icon: 1081
+description: |
+  退出你所在的队伍
+text: |
+  /script LeaveParty()

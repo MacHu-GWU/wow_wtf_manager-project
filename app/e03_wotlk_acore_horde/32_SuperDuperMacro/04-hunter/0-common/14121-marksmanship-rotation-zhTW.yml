@@ -1,0 +1,14 @@
+name: Marksmanship-Rotation
+character:
+  name:
+  realm:
+type: b
+id: 14121
+icon:
+description: |
+  射击猎人的一键输出循环.
+text: |
+  #showtooltip
+  /castsequence [mod:alt,nochanneling] reset=9 誤導; [nochanneling] 毒蛇釘刺,奇美拉射擊,瞄準射擊,穩固射擊,穩固射擊,穩固射擊,穩固射擊,穩固射擊,奇美拉射擊,瞄準射擊,穩固射擊,穩固射擊,穩固射擊,穩固射擊,穩固射擊,奇美拉射擊,瞄準射擊,穩固射擊,穩固射擊,穩固射擊,穩固射擊,穩固射擊
+  /cast 擊殺命令
+  /cast 沉默射擊

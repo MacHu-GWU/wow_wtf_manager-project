@@ -1,0 +1,15 @@
+name: Misdirect
+character:
+  name:
+  realm:
+type: b
+id: 14102
+icon:
+description: |
+  所有天赋下 猎人的 焦点误导宏.
+  
+  - 当坦克为焦点时, 按下就是给坦克误导. 用于单坦场景.
+  - 当焦点为怪物时, 按下就是给怪物的目标误导. 用于频繁换坦场景.
+text: |
+  #showtooltip
+  /cast [target=focus,noharm] 誤導; [target=focustarget,noharm] 誤導

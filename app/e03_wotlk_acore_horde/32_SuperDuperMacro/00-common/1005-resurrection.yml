@@ -1,0 +1,11 @@
+name: Resurrection
+character:
+  name:
+  realm:
+type: b
+id: 1005
+icon: 771
+description: |
+  GM Command, 复活指定目标. 如果自己死了, 你需要先选中自己才能按这个宏. /g 是因为默认的频道是 /s, 在死亡下是打不出字的.
+text: |
+  /g .revive

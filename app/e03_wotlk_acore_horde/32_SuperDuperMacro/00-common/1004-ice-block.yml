@@ -1,0 +1,14 @@
+name: Ice-Block
+character:
+  name:
+  realm:
+type: b
+id: 1004
+icon: 644
+description: |
+  GM Command, 给玩家寒冰屏障效果, 按 1 下进入冰箱, 按 2 下退出冰箱
+text: |
+  /target player
+  .aura 45438
+  .unaura 45438
+  /targetlasttarget
