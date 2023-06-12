@@ -198,21 +198,29 @@ class SDMLua:
         if value.basename != "SuperDuperMacro.lua":
             raise ValueError(f"the SDMLua.path_lua has to end with SuperDupeMacro.lua!")
 
+    def validate_macros(self):  # pragma: no cover
+        """
+        Todo: add doc string
+        """
+        id_set = {macro.id for macro in self.macros}
+        if len(id_set) != len(self.macros):
+            macro_id_list = [macro.id for macro in self.macros]
+            raise ValueError(
+                f"Cannot render SDM lua! Found duplicate id in 'macro_list': {macro_id_list}"
+            )
+
     def render(self) -> str:
         """
         将一堆 :class:`SDMMacro` 对象渲染成 SuperDupeMacro.lua 文件的内容 (只是生成内容
         而不将内容写入文件). 这里面会检查 macro_list 中的 macro id 是否有重复, 如果有重复,
         则会抛出异常.
         """
-        id_set = {macro.id for macro in self.macros}
-        if len(id_set) != len(self.macros):  # pragma: no cover
-            macro_id_list = [macro.id for macro in self.macros]
-            raise ValueError(
-                f"Cannot render SDM lua! Found duplicate id in 'macro_list': {macro_id_list}"
-            )
+        self.validate_macros()
         return _sdm_template.render(macros=self.macros)
 
-    def write(self) -> str:  # pragma: no cover
+    def write(self, dry_run: bool = True) -> str:  # pragma: no cover
         content = self.render()
-        self.path_lua.write_text(content)
+        if dry_run is False:
+            self.path_lua.parent.mkdir_if_not_exists()
+            self.path_lua.write_text(content)
         return content
