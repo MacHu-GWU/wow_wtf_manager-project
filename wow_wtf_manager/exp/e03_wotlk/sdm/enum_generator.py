@@ -58,14 +58,16 @@ class SDMMacroModuleGenerator:
             "",
             "class Macros:",
         ]
-        for path in self.dir_root.select_by_ext(".yml"):
+        for path in Path.sort_by_abspath(
+            self.dir_root.select_by_ext(".yml")
+        ):
             line = SDMMacroYamlFile(
                 dir_root_var_name=self.dir_root_var_name,
                 dir_root=self.dir_root,
                 path=path,
             ).render()
-            lines.append(line)
+            lines.append(" " * 4 + line)
         return "\n".join(lines)
 
-    def write(self):
+    def generate(self):
         self.path_sdm_macro_py.write_text(self.render())
