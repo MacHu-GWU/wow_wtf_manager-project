@@ -1,0 +1,13 @@
+name: Buff-Raid
+character:
+  name:
+  realm:
+type: b
+id: 17302
+icon:
+description: |
+  给团队上 Buff. 作为平衡和恢复德, 都是全团上野性赐福, 并且加荆棘术;
+text: |
+  #showtooltip
+  /targetraid
+  /castsequence reset=30 野性賜福,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,,,,,,,,,,

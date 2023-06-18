@@ -1,0 +1,20 @@
+name: MB-Main-Rotate
+character:
+  name:
+  realm:
+type: b
+id: 17703
+icon:
+description: |
+  作为平衡德, 变形后, 使用输出循环;
+text: |
+  #showtooltip
+  #/cast [spec:1,stance:0/1/2/4/5] 巨熊形態
+  #/castsequence [spec:1] reset=15
+  /cast [spec:1,stance:0/1/2/4/5] 獵豹形態
+  /castsequence [spec:1] reset=15 
+  /stopmacro [spec:1]
+  /cast [spec:2,stance:0/1/2/3/4] 梟獸形態
+  # 6500 gs
+  /castsequence [spec:2] reset=15 月火術,憤怒,星火術,憤怒,星火術,蟲群,憤怒,星火術,憤怒,星火術,憤怒,星火術,憤怒,星火術,憤怒,星火術,蟲群,憤怒,星火術,憤怒,星火術
+  

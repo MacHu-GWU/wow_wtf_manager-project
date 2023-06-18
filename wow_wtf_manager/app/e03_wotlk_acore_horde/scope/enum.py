@@ -37,3 +37,4 @@ class RealmEnum:
 
 class CharacterEnum:
     shootingrab = Character.new(RealmEnum.husanhe_acore, "shootingrab")
+    fatbird = Character.new(RealmEnum.husanhe_acore, "fatbird")

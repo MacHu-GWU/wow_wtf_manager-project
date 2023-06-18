@@ -1,0 +1,18 @@
+name: MB-Main-Rotate
+character:
+  name:
+  realm:
+type: b
+id: 17503
+icon:
+description: |
+  作为恢复德, 变形后, 使用 5 回春 1 野性生长 随机奶团;
+text: |
+  #showtooltip
+  /cast [spec:2,stance:0/1/2/3/4] 生命之树
+  /castsequence [spec:2] reset=15 回春術,回春術,回春術,回春術,回春術,野性痊癒
+  /stopmacro [spec:1]
+  #/cast [spec:2,stance:0/1/2/4/5] 巨熊形態
+  #/castsequence [spec:2] reset=15
+  /cast [spec:2,stance:0/1/2/4/5] 獵豹形態
+  /castsequence [spec:2] reset=15 

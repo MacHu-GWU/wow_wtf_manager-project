@@ -1,0 +1,14 @@
+name: Buff-Self
+character:
+  name:
+  realm:
+type: b
+id: 17301
+icon:
+description: |
+  给自己上 Buff, 作为平衡德和恢复德, 变形后给自己上荆棘术即可;
+text: |
+  #showtooltip
+  /target player
+  /castsequence [spec:1] reset=3 !梟獸形態,荊棘術,,,,,,,,
+  /castsequence [spec:2] reset=3 !生命之樹,荊棘術,,,,,,,,

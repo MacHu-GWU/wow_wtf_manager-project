@@ -16,6 +16,7 @@ class CharacterGroupEnum:
     all = OrderedSet(
         [
             CharacterEnum.shootingrab,
+            CharacterEnum.fatbird,
         ]
     )
 
@@ -24,6 +25,7 @@ class CharacterGroupEnum:
     master_non_pala = OrderedSet(
         [
             CharacterEnum.shootingrab,
+            CharacterEnum.fatbird,
         ]
     )
 

@@ -1,0 +1,14 @@
+name: MB-Slow-Heal
+character:
+  name:
+  realm:
+type: b
+id: 17304
+icon:
+description: |
+  只在多开模式下使用
+  
+  - 恢复德: 对坦克使用 HOT 恢复技能
+text: |
+  #showtooltip
+  /castsequence [spec:2,nochanneling] reset=target 回春術,癒合,生命之花,生命之花,生命之花,,,,
