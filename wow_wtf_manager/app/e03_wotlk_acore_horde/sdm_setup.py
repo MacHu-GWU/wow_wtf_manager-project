@@ -52,8 +52,8 @@ def global_macro():
             Macros.sdm_00_common____1152_leave_raid,
             Macros.sdm_00_common____1153_summon,
             # Teleport
-            Macros.sdm_00_common____1171_tele_darnassus,
-            Macros.sdm_00_common____1172_tele_ironforge,
+            Macros.sdm_00_common____1173_tele_orgrimmar,
+            Macros.sdm_00_common____1174_tele_undercity,
             Macros.sdm_00_common____1175_tele_shattrath,
             Macros.sdm_00_common____1176_tele_dalaran,
         ],
