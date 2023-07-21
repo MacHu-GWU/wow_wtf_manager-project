@@ -67,14 +67,42 @@ def s_01_protect_retribution_paladin():
         ],
         sdm_files=[
             # Buff
-            Macros.sdm_00_common____2002_buff_caster_dps,
-            Macros.sdm_07_druid____0_common____17101_consumable,
-            Macros.sdm_07_druid____1_balance_resto____17301_buff_self_zhTW,
-            Macros.sdm_07_druid____1_balance_resto____17302_buff_raid_zhTW,
-            Macros.sdm_07_druid____1_balance_resto____17303_rotation_zhTW,
+            Macros.sdm_00_common____2003_buff_tank,
+            Macros.sdm_00_common____2001_buff_physics_dps,
+            Macros.sdm_02_paladin____0_common____11101_consumable,
+            Macros.sdm_02_paladin____0_common____11111_clear_debuff_zhCN,
+            Macros.sdm_02_paladin____1_protect_retri____11311_buff_self_alliance_zhCN,
             # Act
-            Macros.sdm_07_druid____1_balance_resto____17303_rotation_zhTW,
-            Macros.sdm_07_druid____1_balance_resto____17304_multibox_slow_heal_zhTW,
+            Macros.sdm_02_paladin____1_protect_retri____11301_act1_zhCN,
+            Macros.sdm_02_paladin____1_protect_retri____11302_act2_zhCN,
+            Macros.sdm_02_paladin____1_protect_retri____11303_act3_zhCN,
+            Macros.sdm_02_paladin____1_protect_retri____11304_act4_zhCN,
+            Macros.sdm_02_paladin____0_common____11131_protect_rotation_zhCN,
+            Macros.sdm_02_paladin____0_common____11132_retribution_rotation_zhCN,
+        ],
+    )
+
+
+def s_02_elemental_resto_shaman():
+    sdm_setup.add_macros_to_character(
+        character=[
+            CharacterEnum.sb,
+            CharacterEnum.sc,
+            CharacterEnum.sd,
+            CharacterEnum.se,
+        ],
+        sdm_files=[
+            # Buff
+            Macros.sdm_00_common____2002_buff_caster_dps,
+            Macros.sdm_00_common____2004_buff_healer,
+            Macros.sdm_05_shaman____0_common____15101_consumable,
+            Macros.sdm_05_shaman____0_common____15102_interrupt_zhCN,
+            Macros.sdm_05_shaman____1_elemental_resto____15311_buff_self_zhCN,
+            # Act
+            Macros.sdm_05_shaman____0_common____15111_elemental_rotation_zhCN,
+            Macros.sdm_05_shaman____0_common____15112_resto_rotation_zhCN,
+            Macros.sdm_05_shaman____0_common____15114_mb_resto_earth_shield_zhCN,
+            Macros.sdm_05_shaman____1_elemental_resto____15312_burst_zhCN,
         ],
     )
 
