@@ -12,4 +12,4 @@ description: |
   - 当焦点为怪物时, 按下就是给怪物的目标误导. 用于频繁换坦场景.
 text: |
   #showtooltip
-  /cast [target=focus,noharm] 誤導; [target=focustarget,noharm] 誤導
+  /cast [target=focus,noharm] 误导; [target=focustarget,noharm] 误导
