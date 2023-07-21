@@ -8,31 +8,6 @@ icon: 1068
 description: |
   GM 命令, 召唤你指定的人到你的位置
 text: |
-  .summon ra
-  .summon rb
-  .summon rc
-  .summon rd
-  .summon re
-  .summon rf
-  .summon rg
-  .summon rh
-  .summon ri
-  .summon rj
-  .summon rk
-  .summon rl
-  .summon rm
-  .summon rn
-  .summon ro
-  .summon rp
-  .summon rq
-  .summon rr
-  .summon rs
-  .summon rt
-  .summon ru
-  .summon rv
-  .summon rw
-  .summon rx
-  .summon ry
   .summon sa
   .summon sb
   .summon sc
