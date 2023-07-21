@@ -155,5 +155,7 @@ def s04_hunter():
 
 global_macro()
 
+s_01_protect_retribution_paladin()
+s_02_elemental_resto_shaman()
 s_03_balance_resto_druid()
 s04_hunter()
