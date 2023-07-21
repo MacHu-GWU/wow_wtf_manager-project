@@ -10,4 +10,4 @@ description: |
 text: |
   #showtooltip
   /startattack
-  /castsequence reset=10 公正之錘,公正之盾,智慧審判,神聖之盾,公正之錘,公正之盾,智慧審判,公正之錘,公正之盾,神聖之盾
+  /castsequence reset=10 正义之锤,正义盾击,智慧审判,神圣之盾,正义之锤,正义盾击,智慧审判,正义之锤,正义盾击,神圣之盾
