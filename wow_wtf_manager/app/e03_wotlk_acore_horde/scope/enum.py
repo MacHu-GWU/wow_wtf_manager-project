@@ -18,7 +18,8 @@ if IS_WINDOWS:  # pragma: no cover
         "Games",
         "WoW-Root",
         "Client",
-        "World-of-Warcraft-3.3.5-zhTW",
+        # "World-of-Warcraft-3.3.5-zhTW",
+        "World-of-Warcraft-3.3.5-zhCN",
         "WTF",
     )
     client = Client(locale="zhTW", dir_wtf=dir_wtf)
