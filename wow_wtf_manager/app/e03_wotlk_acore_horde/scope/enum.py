@@ -19,7 +19,7 @@ if IS_WINDOWS:  # pragma: no cover
         "WoW-Root",
         "Client",
         # "World-of-Warcraft-3.3.5-zhTW",
-        "World-of-Warcraft-3.3.5-zhCN",
+        "World-of-Warcraft-3.3.5-zhCN", # 之所以选用 CN 是因为 azerothcore 的 CN 任务文本壁 TW 丰富, 有更好的游戏体验
         "WTF",
     )
     client = Client(locale="zhTW", dir_wtf=dir_wtf)

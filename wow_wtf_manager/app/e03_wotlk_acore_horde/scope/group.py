@@ -8,6 +8,11 @@ class AccountGroupEnum:
     all = OrderedSet(
         [
             AccountEnum.husanhe,
+            AccountEnum.rab01,
+            AccountEnum.rab02,
+            AccountEnum.rab03,
+            AccountEnum.rab04,
+            AccountEnum.rab05,
         ]
     )
 
