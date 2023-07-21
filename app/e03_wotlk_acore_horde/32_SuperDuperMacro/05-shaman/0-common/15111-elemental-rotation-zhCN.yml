@@ -1,0 +1,12 @@
+name: Elemental-Rotate
+character:
+  name:
+  realm:
+type: b
+id: 15111
+icon:
+description: |
+  元素萨的输出循环
+text: |
+  #showtooltip
+  /castsequence reset=15 烈焰震擊,熔岩爆發,閃電鏈,閃電箭,閃電箭,閃電箭,閃電鏈,閃電箭,熔岩爆發,閃電箭,閃電鏈,閃電箭,閃電箭,閃電箭

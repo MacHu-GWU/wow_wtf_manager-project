@@ -1,0 +1,14 @@
+name: MB-Retro-Earth-Shield
+character:
+  name:
+  realm:
+type: b
+id: 15114
+icon:
+description: |
+  该宏只用于多开
+  
+  恢复萨周期性的施放大地之盾. 不断按这个键的情况下, 只有 1/3 的概率会施法. 通常该宏放在 4 号按键上, 因为 4 号按键的使用频率一般是 8 秒一次, 再加上卡 GCD 可能会导致这个技能放不出来, 平均每 16 秒会放出来一次大地之盾, 每 24 秒会放出来一次水之盾.
+text: |
+  #showtooltip
+  /castsequence 大地之盾,,大地之盾,,水之盾,,

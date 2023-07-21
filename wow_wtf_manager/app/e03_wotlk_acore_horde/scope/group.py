@@ -17,10 +17,19 @@ class CharacterGroupEnum:
         [
             CharacterEnum.shootingrab,
             CharacterEnum.fatbird,
+            CharacterEnum.sa,
+            CharacterEnum.sb,
+            CharacterEnum.sc,
+            CharacterEnum.sd,
+            CharacterEnum.se,
         ]
     )
 
-    master_pala = OrderedSet([])
+    master_pala = OrderedSet(
+        [
+            CharacterEnum.sa,
+        ]
+    )
 
     master_non_pala = OrderedSet(
         [
@@ -31,4 +40,11 @@ class CharacterGroupEnum:
 
     slave_pala = OrderedSet([])
 
-    slave_non_pala = OrderedSet([])
+    slave_non_pala = OrderedSet(
+        [
+            CharacterEnum.sb,
+            CharacterEnum.sc,
+            CharacterEnum.sd,
+            CharacterEnum.se,
+        ]
+    )

@@ -60,6 +60,25 @@ def global_macro():
     )
 
 
+def s_01_protect_retribution_paladin():
+    sdm_setup.add_macros_to_character(
+        character=[
+            CharacterEnum.sa,
+        ],
+        sdm_files=[
+            # Buff
+            Macros.sdm_00_common____2002_buff_caster_dps,
+            Macros.sdm_07_druid____0_common____17101_consumable,
+            Macros.sdm_07_druid____1_balance_resto____17301_buff_self_zhTW,
+            Macros.sdm_07_druid____1_balance_resto____17302_buff_raid_zhTW,
+            Macros.sdm_07_druid____1_balance_resto____17303_rotation_zhTW,
+            # Act
+            Macros.sdm_07_druid____1_balance_resto____17303_rotation_zhTW,
+            Macros.sdm_07_druid____1_balance_resto____17304_multibox_slow_heal_zhTW,
+        ],
+    )
+
+
 def s_03_balance_resto_druid():
     sdm_setup.add_macros_to_character(
         character=[

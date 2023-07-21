@@ -1,0 +1,14 @@
+name: MB-Periodical-Beacon
+character:
+  name:
+  realm:
+type: b
+id: 11751
+icon:
+description: |
+  此宏只用于多开的时候使用. 奶骑是按概率施放道标. 大多数的时候按下是没反应的. 偶尔按下去是放道标.
+text: |
+  #showtooltip
+  /startattack
+  /castsequence [spec:1] 聖光信標,,,,,,,,,,,,,,,,,,
+  /cast [spec:2,mod:alt] 復仇之盾;神聖之盾

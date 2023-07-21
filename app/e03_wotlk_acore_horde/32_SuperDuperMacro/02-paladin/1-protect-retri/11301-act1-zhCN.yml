@@ -1,0 +1,15 @@
+name: Act1
+character:
+  name:
+  realm:
+type: b
+id: 11301
+icon:
+description: |
+  防骑 / 惩戒骑 的 按键 1. 平时为审判, 按下 Alt 为嘲讽
+text: |
+  #showtooltip
+  /startattack
+  /cast [mod:alt] 清算聖禦; [spec:1] 智慧審判; [spec:2] 智慧審判
+  #/cast [mod:alt] 清算聖禦; [spec:1] 智慧審判; [spec:2] 光明審判
+  #/cast [mod:alt] 清算聖禦; [spec:1] 智慧審判; [spec:2] 公正審判
