@@ -1,0 +1,13 @@
+name: Buff-Self
+character:
+  name:
+  realm:
+type: b
+id: 19104
+icon:
+description: |
+  给团队上 Buff. 上 奥术智慧, 然后自己开 3 次冰霜防护结界. 这是为了在多开的时候, 圣骑士要给团队上祝福 Buff 要按这个按键很多下, 这样可以让法师在 30 秒内只刷一次奥术智慧, 防止重复.
+text: |
+  #showtooltip
+  /target player
+  /castsequence reset=30 秘法光輝,防護冰霜結界,防護冰霜結界,防護冰霜結界

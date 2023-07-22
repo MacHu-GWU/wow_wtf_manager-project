@@ -1,0 +1,12 @@
+name: Rotation
+character:
+  name:
+  realm:
+type: b
+id: 19319
+icon:
+description: |
+  法师的输出循环
+text: |
+  #showtooltip
+  /castsequence [spec:1,nochanneling] reset=15 秘法衝擊,秘法衝擊,秘法衝擊,秘法飛彈

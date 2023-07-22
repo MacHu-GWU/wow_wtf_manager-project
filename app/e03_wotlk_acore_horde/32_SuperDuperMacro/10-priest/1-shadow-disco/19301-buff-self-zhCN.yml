@@ -1,0 +1,14 @@
+name: Buff-Self
+character:
+  name:
+  realm:
+type: b
+id: 19301
+icon:
+description: |
+  给自己上 Buff;
+text: |
+  #showtooltip
+  /cast [spec:1,nostance] 暗影形態
+  /castsequence [spec:1] reset=target 吸血鬼的擁抱, 心靈之火
+  /castsequence [spec:2] reset=target 心靈之火

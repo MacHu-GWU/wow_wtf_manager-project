@@ -1,0 +1,14 @@
+name: MB-Special1
+character:
+  name:
+  realm:
+type: b
+id: 6001
+icon:
+description: |
+  ICC 1号 优先打骨刺
+text: |
+  #showtooltip
+  /target 瑪洛嘉領主
+  /target 骸骨尖刺
+  /castsequence 憤怒,星火術

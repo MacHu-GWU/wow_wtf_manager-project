@@ -1,0 +1,12 @@
+name: Act3
+character:
+  name:
+  realm:
+type: b
+id: 19105
+icon:
+description: |
+  法师的 3 号键位. 所有天赋的法师的 3 号键位都是这个.
+text: |
+  #showtooltip
+  /cast [mod:alt,help] 魔法增效; [mod:alt,harm] 灼燒; [help] 魔法抑制; [harm] 火焰衝擊; [mod:alt] 魔法增效; [] 魔法抑制

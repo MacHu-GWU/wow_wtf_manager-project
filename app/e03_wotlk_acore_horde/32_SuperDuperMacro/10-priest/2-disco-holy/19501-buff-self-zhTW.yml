@@ -1,0 +1,12 @@
+name: Buff-Self
+character:
+  name:
+  realm:
+type: b
+id: 19501
+icon:
+description: |
+  给自己上 Buff;
+text: |
+  #showtooltip
+  /castsequence reset=target 心靈之火

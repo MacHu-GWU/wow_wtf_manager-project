@@ -1,0 +1,19 @@
+name: Add-Debuff
+character:
+  name:
+  realm:
+type: b
+id: 19522
+icon:
+description: |
+  给法师的中频输出循环技能添加给敌人上 Debuff 的功能. 只能用于单机 GM, 用来模拟团队 Debuff. 该技能放在 1 号键位上.
+text: |
+  #showtooltip
+  /cast [spec:1] 炎爆术 
+  /cast [spec:2] 霜火箭
+  /stopmacro [noharm]
+  .aura 54499
+  .aura 47865
+  .aura 22959
+  .aura 33198
+  .aura 31589

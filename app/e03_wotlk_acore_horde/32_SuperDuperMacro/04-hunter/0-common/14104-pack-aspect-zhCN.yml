@@ -1,0 +1,12 @@
+name: Pack Aspect
+character:
+  name:
+  realm:
+type: b
+id: 14104
+icon:
+description: |
+  所有天赋下 猎人的 切换豹群守护宏.
+text: |
+  #showtooltip
+  /castsequence !豹群守护, !龙鹰守护

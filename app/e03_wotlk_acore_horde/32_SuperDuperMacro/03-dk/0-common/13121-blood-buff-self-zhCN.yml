@@ -1,0 +1,12 @@
+name: Blood-Buff-Self
+character:
+  name:
+  realm:
+type: b
+id: 13121
+icon:
+description: |
+  给自己上 Buff.
+text: |
+  #showtooltip
+  /castsequence [spec:1] reset=6 !鲜血灵气,寒冬号角,,,,,,

@@ -1,0 +1,14 @@
+name: MB-Main-Rotate
+character:
+  name:
+  realm:
+type: b
+id: 19306
+icon:
+description: |
+  作为暗牧, 使用 DPS 循环;
+text: |
+  #showtooltip
+  /cast [spec:1,nochanneling,nostance] 暗影形態
+  #6500GS
+  /castsequence [spec:1,nochanneling] reset=15 吸血之觸,心靈震爆,噬靈瘟疫,精神鞭笞,精神鞭笞,精神鞭笞,精神鞭笞,吸血之觸,心靈震爆,精神鞭笞,精神鞭笞,精神鞭笞,精神鞭笞

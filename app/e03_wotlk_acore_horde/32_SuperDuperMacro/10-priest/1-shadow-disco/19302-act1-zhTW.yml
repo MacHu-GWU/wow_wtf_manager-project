@@ -1,0 +1,12 @@
+name: Act1
+character:
+  name:
+  realm:
+type: b
+id: 19302
+icon:
+description: |
+
+text: |
+  #showtooltip
+  /cast [mod:alt] 暗言術:死; 暗言術:痛

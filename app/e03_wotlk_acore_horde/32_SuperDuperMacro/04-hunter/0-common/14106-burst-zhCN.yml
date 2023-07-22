@@ -1,0 +1,13 @@
+name: Burst
+character:
+  name:
+  realm:
+type: b
+id: 14106
+icon:
+description: |
+  所有天赋下 猎人的 开急速射击爆发宏.
+text: |
+  #showtooltip
+  /stopcasting
+  /cast 急速射击

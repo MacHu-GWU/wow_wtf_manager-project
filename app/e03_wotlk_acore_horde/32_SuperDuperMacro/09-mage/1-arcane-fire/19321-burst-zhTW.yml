@@ -1,0 +1,16 @@
+name: Burst
+character:
+  name:
+  realm:
+type: b
+id: 19321
+icon:
+description: |
+  开爆发技能.
+text: |
+  #showtooltip
+  /stopcasting
+  /cast 幻鏡之像
+  /cast [spec:1] 冰寒脈動
+  /cast [spec:1] 秘法強化
+  /cast [spec:2] 燃烧

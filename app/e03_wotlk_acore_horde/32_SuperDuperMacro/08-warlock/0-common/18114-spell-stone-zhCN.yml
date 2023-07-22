@@ -1,0 +1,14 @@
+name: Spell-Stone
+character:
+  name:
+  realm:
+type: b
+id: 18114
+icon:
+description: |
+  制造法术石并给主手武器上该效果
+text: |
+  #showtooltip 極大法術石
+  /cast 製造法術石
+  /use 極大法術石
+  /use 16

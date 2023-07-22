@@ -1,0 +1,14 @@
+name: Tank-Rotation
+character:
+  name:
+  realm:
+type: b
+id: 13131
+icon:
+description: |
+  死亡骑士坦克循环一鍵宏. 以持续 15 秒一次的传染为周期使用技能
+text: |
+  #showtooltip
+  /startattack
+  /castsequence reset=9 冰冷触摸,暗影打击,传染,冰冷触摸,暗影打击,鲜血打击,冰冷触摸,暗影打击,鲜血打击,冰冷触摸,暗影打击,鲜血打击
+  /cast 符文打击

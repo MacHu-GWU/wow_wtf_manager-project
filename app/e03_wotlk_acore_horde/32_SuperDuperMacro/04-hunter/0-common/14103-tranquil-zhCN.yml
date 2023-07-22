@@ -1,0 +1,13 @@
+name: Tranquil
+character:
+  name:
+  realm:
+type: b
+id: 14103
+icon:
+description: |
+  所有天赋下 猎人的 焦点宁神宏.
+text: |  
+  #showtooltip
+  /stopcasting
+  /cast [target=focus] 凝神射击

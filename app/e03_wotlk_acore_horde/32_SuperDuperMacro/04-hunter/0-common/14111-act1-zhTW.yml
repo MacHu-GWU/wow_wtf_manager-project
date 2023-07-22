@@ -9,6 +9,6 @@ description: |
   所有天赋下 猎人的 1 号键位.
 text: |
   #showtooltip
-  /cast [help] 误导; [mod:alt] 猎人印记; 毒蛇钉刺
+  /cast [help] 誤導; [mod:alt] 獵人印記; 毒蛇釘刺
   /stopmacro [nohelp]
   #/s Misdirect on %t

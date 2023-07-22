@@ -9,6 +9,6 @@ description: |
   射击 / 生存 猎人的 4 号键位.
 text: |
   #showtooltip
-  /cast [help] 误导; [mod:alt] 多重射击; [spec:1] 瞄准射击; [spec:2] 爆炸射击
-  /cast 击杀命令
-  /cast [spec:1] 沉默射击
+  /cast [help] 誤導; [mod:alt] 多重射擊; [spec:1] 瞄準射擊; [spec:2] 爆裂射擊
+  /cast 擊殺命令
+  /cast [spec:1] 沉默射擊

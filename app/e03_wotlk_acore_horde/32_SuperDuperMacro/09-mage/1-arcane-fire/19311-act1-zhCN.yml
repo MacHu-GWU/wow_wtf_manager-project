@@ -1,0 +1,13 @@
+name: Act1
+character:
+  name:
+  realm:
+type: b
+id: 19311
+icon:
+description: |
+  法师的 1 号键位
+text: |
+  #showtooltip
+  /cast [spec:1,nochanneling] 秘法飛彈
+  /cast [spec:2] 炎爆术

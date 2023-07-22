@@ -1,0 +1,19 @@
+name: Add-Debuff
+character:
+  name:
+  realm:
+type: b
+id: 18521
+icon:
+description: |
+  给术士的中频输出循环技能添加给敌人上 Debuff 的功能. 只能用于单机 GM, 用来模拟团队 Debuff.
+text: |
+  #showtooltip
+  /cast [spec:1,mod:alt] 灼熱之痛; 暗影箭
+  /cast [spec:2,mod:alt] 灼熱之痛; 燒盡
+  /stopmacro [noharm]
+  .aura 54499
+  .aura 47865
+  .aura 22959
+  .aura 33198
+  .aura 31589

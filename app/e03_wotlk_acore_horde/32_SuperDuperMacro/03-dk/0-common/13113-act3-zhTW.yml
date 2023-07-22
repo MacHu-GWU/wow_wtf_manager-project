@@ -1,0 +1,13 @@
+name: Act3
+character:
+  name:
+  realm:
+type: b
+id: 13113
+icon:
+description: |
+  死亡骑士全天赋适用 (不是最优) 的 3 号按键技能宏.
+text: |
+  #showtooltip
+  /startattack
+  /cast [mod:alt] 死亡纏繞; 瘟疫打擊

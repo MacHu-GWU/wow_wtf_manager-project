@@ -1,0 +1,13 @@
+name: Act1
+character:
+  name:
+  realm:
+type: b
+id: 13111
+icon:
+description: |
+  死亡骑士全天赋适用 (不是最优) 的 1 号按键技能宏.
+text: |
+  #showtooltip
+  /startattack
+  /cast [mod:alt] 传染; 鲜血打击

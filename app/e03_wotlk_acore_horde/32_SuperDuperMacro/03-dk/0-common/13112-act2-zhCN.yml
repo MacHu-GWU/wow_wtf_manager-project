@@ -1,0 +1,14 @@
+name: Act2
+character:
+  name:
+  realm:
+type: b
+id: 13112
+icon:
+description: |
+  死亡骑士全天赋适用 (不是最优) 的 2 号按键技能宏.
+text: |
+  #showtooltip
+  /startattack
+  /cast [mod:alt] 寒冰锁链; 冰冷触摸
+  /cast 符文打击

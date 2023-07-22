@@ -1,0 +1,14 @@
+name: MB-Special1
+character:
+  name:
+  realm:
+type: b
+id: 6001
+icon:
+description: |
+  ICC 4号 优先打血兽, 负责第 2 个使用 台风 技能将血兽击退.
+text: |
+  #showtooltip
+  /target 萨鲁法尔
+  /target 血獸
+  /castsequence 憤怒,星火術,憤怒,星火術,颱风,憤怒,星火術,憤怒,星火術,憤怒,星火術,憤怒,星火術,憤怒,星火術,憤怒,星火術

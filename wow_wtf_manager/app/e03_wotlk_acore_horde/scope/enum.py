@@ -18,8 +18,9 @@ if IS_WINDOWS:  # pragma: no cover
         "Games",
         "WoW-Root",
         "Client",
-        # "World-of-Warcraft-3.3.5-zhTW",
-        "World-of-Warcraft-3.3.5-zhCN", # 之所以选用 CN 是因为 azerothcore 的 CN 任务文本壁 TW 丰富, 有更好的游戏体验
+        # 之所以选用 CN 客户端是因为 azerothcore 的部落方主要用来体验升级, 刷装备的过程
+        # CN 任务文本比较全, TW 很多任务都只有英文, 会有更好的游戏体验
+        "World-of-Warcraft-3.3.5-zhCN",
         "WTF",
     )
     client = Client(locale="zhTW", dir_wtf=dir_wtf)

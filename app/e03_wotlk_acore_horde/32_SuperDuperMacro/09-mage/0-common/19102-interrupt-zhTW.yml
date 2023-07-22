@@ -1,0 +1,13 @@
+name: Interrupt
+character:
+  name:
+  realm:
+type: b
+id: 19102
+icon:
+description: |
+  取消当前施法并智能打断目标施法. 如果焦点存在且是敌人则打断它的施法, 如果焦点的目标存在且是敌人则打断它的施法.
+text: |
+  #showtooltip
+  /stopcasting
+  /cast [target=focus,harm] 法術反制; [target=focustarget,harm] 法術反制; [] 法術反制

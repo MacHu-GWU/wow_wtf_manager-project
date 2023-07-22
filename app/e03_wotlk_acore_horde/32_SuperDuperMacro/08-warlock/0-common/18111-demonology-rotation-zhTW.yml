@@ -1,0 +1,13 @@
+name: Demonology-Rotate
+character:
+  name:
+  realm:
+type: b
+id: 18111
+icon:
+description: |
+  恶魔术的输出循环. 这是在 BIS 装备的急速和蓝量下的情况. 急速越低, 技能总数越少, 装备越好, 生命分流频率越低.
+text: |
+  #showtooltip
+  /castsequence [nochanneling] reset=10 獻祭,腐蝕術,暗影箭,生命分流,暗影箭,暗影箭,燒盡,燒盡,燒盡,腐蝕術,暗影箭,暗影箭,暗影箭,生命分流,燒盡,燒盡,燒盡,獻祭,腐蝕術,暗影箭,暗影箭,暗影箭,暗影箭,燒盡,燒盡,燒盡,腐蝕術,暗影箭,生命分流,暗影箭,暗影箭,燒盡,燒盡,燒盡
+  /cast 魔性活化

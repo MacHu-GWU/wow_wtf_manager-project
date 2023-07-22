@@ -1,0 +1,13 @@
+name: Buff-Self
+character:
+  name:
+  realm:
+type: b
+id: 14301
+icon:
+description: |
+  射击 / 生存 猎人给自己加 Buff.
+text: |
+  #showtooltip
+  /target rc
+  /castsequence reset=target !龍鷹守護,强击光环

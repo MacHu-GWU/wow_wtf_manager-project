@@ -1,0 +1,12 @@
+name: Frost-Buff-Self
+character:
+  name:
+  realm:
+type: b
+id: 13123
+icon:
+description: |
+  给自己上 Buff.
+text: |
+  #showtooltip
+  /castsequence [spec:1] reset=6 !冰霜灵气,寒冬号角,,,,,,

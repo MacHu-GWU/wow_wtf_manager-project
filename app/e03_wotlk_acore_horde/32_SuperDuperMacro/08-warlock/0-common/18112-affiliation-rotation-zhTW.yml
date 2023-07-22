@@ -1,0 +1,12 @@
+name: Affiliation-Rotate
+character:
+  name:
+  realm:
+type: b
+id: 18112
+icon:
+description: |
+  痛苦术的输出循环. 这是在 BIS 装备的急速和蓝量下的情况. 急速越低, 技能总数越少, 装备越好, 生命分流频率越低.
+text: |
+  #showtooltip
+  /castsequence [nochanneling] reset=10 痛苦動盪,蝕魂術,痛苦詛咒,暗影箭,生命分流,暗影箭,暗影箭,暗影箭,暗影箭,暗影箭,暗影箭,痛苦動盪,蝕魂術,暗影箭,生命分流,暗影箭,暗影箭,暗影箭,暗影箭,暗影箭,暗影箭,暗影箭

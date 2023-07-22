@@ -1,0 +1,13 @@
+name: Periodical-Prayer-of-Mending
+character:
+  name:
+  realm:
+type: b
+id: 19522
+icon:
+description: |
+  该宏只用于多开时使用. 周期性的给坦克上愈合祷言, 用的概率实现. 该宏一般放在 4 号键位上.
+text: |
+  #showtooltip
+  /castsequence [spec:1] 癒合禱言,,懺悟,,癒合禱言,,
+  /castsequence [spec:2] 癒合禱言,,快速治療,,癒合禱言,,

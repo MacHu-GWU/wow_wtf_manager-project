@@ -1,0 +1,15 @@
+name: Buff-Raid
+character:
+  name:
+  realm:
+type: b
+id: 17502
+icon:
+description: |
+  给团队上 Buff; 作为恢复德, 则全团上野性赐福, 并且加荆棘术; 作为野德, 则全团上野性赐福, 变形回来即可.
+text: |
+  #showtooltip
+  /targetraid
+  /castsequence [spec:1] reset=30 野性賜福,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,荊棘術,,,,,,,,,,
+  #/castsequence [spec:2] reset=30 野性賜福,!巨熊形態,,,,,,,,,,,,,,,,,,,
+  /castsequence [spec:2] reset=30 野性賜福,!獵豹形態,,,,,,,,,,,,,,,,,,,

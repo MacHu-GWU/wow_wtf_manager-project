@@ -1,0 +1,13 @@
+name: Act2
+character:
+  name:
+  realm:
+type: b
+id: 19312
+icon:
+description: |
+  法师的 2 号键位
+text: |
+  #showtooltip
+  /cast [spec:1,nochanneling] 秘法衝擊
+  /cast [spec:2] 火球術

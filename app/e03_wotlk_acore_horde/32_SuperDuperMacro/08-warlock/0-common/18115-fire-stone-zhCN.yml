@@ -1,0 +1,14 @@
+name: Fire-Stone
+character:
+  name:
+  realm:
+type: b
+id: 18115
+icon:
+description: |
+  制造火焰石并给主手武器上该效果
+text: |
+  #showtooltip 極大火焰石
+  /cast 製造火焰石
+  /use 極大火焰石
+  /use 16

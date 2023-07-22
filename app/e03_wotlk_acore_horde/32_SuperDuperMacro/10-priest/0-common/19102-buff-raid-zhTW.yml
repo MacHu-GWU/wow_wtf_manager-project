@@ -1,0 +1,13 @@
+name: Buff-Team
+character:
+  name:
+  realm:
+type: b
+id: 19102
+icon:
+description: |
+  给团队上 Buff; 按顺序上群体耐, 群体精神, 群体暗抗. 接下来的 3 个盾会在第一个盾卡住. 这是有意为之, 因为这个 Buff Team 宏命令对于骑士而言需要按 10 次, 我们希望按这个宏 10 次, 但是只施放一轮团队 Buff 技能.
+text: |
+  #showtooltip
+  /target player
+  /castsequence reset=target 堅韌禱言,精神禱言,暗影防護禱言,真言術:盾,真言術:盾,真言術:盾
