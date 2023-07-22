@@ -10,4 +10,4 @@ description: |
 text: |
   #showtooltip
   /stopcasting
-  /cast [target=focus,harm] 削風術; [target=focustarget,harm] 风剪; [] 风剪
+  /cast [target=focus,harm] 风剪; [target=focustarget,harm] 风剪; [] 风剪
