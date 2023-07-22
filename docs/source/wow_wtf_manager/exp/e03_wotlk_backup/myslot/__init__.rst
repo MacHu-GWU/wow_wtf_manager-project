@@ -1,7 +1,7 @@
 myslot
 ======
 
-.. automodule:: wow_wtf_manager.exp.e03_wotlk.myslot
+.. automodule:: wow_wtf_manager.exp.e03_wotlk_backup.myslot
     :members:
 
 sub packages and modules

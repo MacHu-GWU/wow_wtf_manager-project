@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from wow_wtf_manager.logger import logger
-from wow_wtf_manager.app.e03_wotlk_acore_horde.api import setup, sdm_setup
+from wow_wtf_manager.app.e03_wotlk_example.api import setup, sdm_setup
 
 # dry_run = True # for testing
 dry_run = False  # *** THIS WILL APPLY CHANGES TO YOUR WTF FILEs ***
@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     run_cov_test(
         __file__,
-        "wow_wtf_manager.app.e03_wotlk_acore_horde",
+        "wow_wtf_manager.app.e03_wotlk_example",
         is_folder=True,
         preview=False,
     )

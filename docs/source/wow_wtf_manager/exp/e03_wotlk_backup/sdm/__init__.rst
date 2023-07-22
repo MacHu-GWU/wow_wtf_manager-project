@@ -1,7 +1,7 @@
-e03_wotlk
-=========
+sdm
+===
 
-.. automodule:: wow_wtf_manager.exp.e03_wotlk
+.. automodule:: wow_wtf_manager.exp.e03_wotlk_backup.sdm
     :members:
 
 sub packages and modules
@@ -10,9 +10,8 @@ sub packages and modules
 .. toctree::
     :maxdepth: 1
 
-    sdm <sdm/__init__>
     api <api>
-    config <config>
-    paths <paths>
+    enum_generator <enum_generator>
+    model <model>
     setup <setup>
     
