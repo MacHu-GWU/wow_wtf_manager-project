@@ -7,8 +7,7 @@ Example::
 """
 
 from .client import Client
-from .acc_realm_char import (
-    Account,
-    Realm,
-    Character,
-)
+from .acc_realm_char import Account
+from .acc_realm_char import Realm
+from .acc_realm_char import Character
+

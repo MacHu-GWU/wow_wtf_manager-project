@@ -21,6 +21,9 @@ from .base import BaseMixin
 class Account(BaseMixin):
     """
     代表着一个具体账号. 是可哈希, 可排序的.
+
+    :param account: 账号名
+    :param realms_mapper: 该账号下的所有服务器从名字到对象的映射
     """
 
     account: str = attr.field()
@@ -36,9 +39,15 @@ class Account(BaseMixin):
 
     @property
     def sort_key(self) -> str:
+        """
+        创建账号的排序键. 本质是左对齐并在尾部添加 "0" 的字符串.
+        """
         return right_zfill(self.account, 20)
 
     def __hash__(self):
+        """
+        判断账号是否相同的哈希函数.
+        """
         return hash(self.sort_key)
 
     @property
@@ -61,6 +70,11 @@ class Account(BaseMixin):
 
     @property
     def capitalized_account_name(self) -> str:
+        r"""
+        返回账号名的全部大写形式. 用于 WTF 文件夹中的路径名. 例如:
+
+        ``C:\...\WTF\Account\MYACCOUNT\...``
+        """
         return self.account.upper()
 
 
@@ -68,6 +82,10 @@ class Account(BaseMixin):
 class Realm(BaseMixin):
     """
     代表着一个具体账号下的具体的服务器. 是可哈希, 可排序的.
+
+    :param account: 该服务器所属的账号.
+    :param realm: 服务器名.
+    :param characters_mapper: 该服务器下的所有角色从名字到对象的映射.
     """
 
     account: Account = attr.ib()
@@ -86,6 +104,10 @@ class Realm(BaseMixin):
 
     @property
     def sort_key(self) -> str:
+        """
+        服务器名排序键. 本质是先对账号排序, 再对服务器名排序. 和账号的排序键一样, 也是左对齐
+        并在尾部添加 "0" 的字符串.
+        """
         return ".".join(
             [
                 self.account.sort_key,
@@ -94,6 +116,9 @@ class Realm(BaseMixin):
         )
 
     def __hash__(self):
+        """
+        判断服务器是否相同的哈希函数.
+        """
         return hash(self.sort_key)
 
     @property
@@ -112,6 +137,9 @@ class Realm(BaseMixin):
 class Character(BaseMixin):
     """
     代表着一个具体账号下的具体的服务器上的具体游戏角色. 是可哈希, 可排序的.
+
+    :param realm: 该角色所属的服务器对象.
+    :param character: 角色名.
     """
 
     realm: Realm = attr.define()
@@ -129,6 +157,10 @@ class Character(BaseMixin):
 
     @property
     def sort_key(self) -> str:
+        """
+        角色名排序键. 本质是先对服务器排序, 再对角色名排序. 和服务器的排序键一样, 也是左对齐
+        并在尾部添加 "0" 的字符串.
+        """
         return ".".join(
             [
                 self.realm.sort_key,
@@ -137,6 +169,9 @@ class Character(BaseMixin):
         )
 
     def __hash__(self):
+        """
+        判断角色是否相同的哈希函数.
+        """
         return hash(self.sort_key)
 
     @property
@@ -159,4 +194,10 @@ class Character(BaseMixin):
 
     @property
     def titled_character_name(self) -> str:
+        r"""
+        角色名的首字母大写形式. 例如 "mycharacter" -> "Mycharacter". 用于
+        WTF 文件夹中的路径名. 例如:
+
+        ``C:\...\WTF\Account\MYACCOUNT\MyServer\Mycharacter\...``
+        """
         return self.character[0].upper() + self.character[1:].lower()

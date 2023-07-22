@@ -23,6 +23,9 @@ class FileScope(BaseScope):
 
     @property
     def path_output(self) -> Path:
+        """
+        作用域的目标文件路径. 该函数必须被子类实现.
+        """
         raise NotImplementedError
 
     @property
@@ -59,6 +62,9 @@ class ClientScope(FileScope):
 
     @property
     def path_output(self) -> Path:
+        """
+        Example: ``C:\...\WTF\Config.wtf``
+        """
         return self.client.dir_wtf.joinpath("Config.wtf")
 
 
@@ -83,6 +89,9 @@ class BaseAccountLevelScope(FileScope):
 
     @property
     def path_output(self) -> Path:
+        """
+        Example: ``C:\...\WTF\Account\MYACCOUNT\*.*``
+        """
         return self.client.dir_wtf.joinpath(
             "Account",
             self.account.account.upper(),
@@ -98,6 +107,9 @@ class AccountUserInterfaceScope(BaseAccountLevelScope):
 
     @property
     def filename(self) -> str:
+        """
+        Example: ``C:\...\WTF\Account\MYACCOUNT\config-cache.wtf``
+        """
         return "config-cache.wtf"
 
 
@@ -109,6 +121,9 @@ class AccountKeyBindingScope(BaseAccountLevelScope):
 
     @property
     def filename(self) -> str:
+        """
+        Example: ``C:\...\WTF\Account\MYACCOUNT\bindings-cache.wtf``
+        """
         return "bindings-cache.wtf"
 
 
@@ -126,6 +141,9 @@ class AccountAddonSavedVariablesScope(FileScope):
 
     @property
     def path_output(self) -> Path:
+        """
+        Example: ``C:\...\WTF\Account\MYACCOUNT\SavedVariables\*.lua``
+        """
         return self.client.dir_wtf.joinpath(
             "Account",
             self.account.account.upper(),
@@ -155,6 +173,9 @@ class BaseCharacterLevelScope(FileScope):
 
     @property
     def path_output(self) -> Path:
+        """
+        Example: ``C:\...\WTF\Account\MYACCOUNT\MyServer\Mycharacter\*.*``
+        """
         return self.client.dir_wtf.joinpath(
             "Account",
             self.character.account_name.upper(),
@@ -172,6 +193,9 @@ class CharacterUserInterfaceScope(BaseCharacterLevelScope):
 
     @property
     def filename(self) -> str:
+        """
+        Example: ``C:\...\WTF\Account\MYACCOUNT\MyServer\Mycharacter\config-cache.wtf``
+        """
         return "config-cache.wtf"
 
 
@@ -183,6 +207,9 @@ class CharacterChatScope(BaseCharacterLevelScope):
 
     @property
     def filename(self) -> str:
+        """
+        Example: ``C:\...\WTF\Account\MYACCOUNT\MyServer\Mycharacter\chat-cache.txt``
+        """
         return "chat-cache.txt"
 
 
@@ -194,6 +221,9 @@ class CharacterKeyBindingScope(BaseCharacterLevelScope):
 
     @property
     def filename(self) -> str:
+        """
+        Example: ``C:\...\WTF\Account\MYACCOUNT\MyServer\Mycharacter\bindings-cache.wtf``
+        """
         return "bindings-cache.wtf"
 
 
@@ -205,6 +235,9 @@ class CharacterLayoutScope(BaseCharacterLevelScope):
 
     @property
     def filename(self) -> str:
+        """
+        Example: ``C:\...\WTF\Account\MYACCOUNT\MyServer\Mycharacter\layout-local.txt``
+        """
         return "layout-local.txt"
 
 
@@ -216,6 +249,9 @@ class CharacterAddonsScope(BaseCharacterLevelScope):
 
     @property
     def filename(self) -> str:
+        """
+        Example: ``C:\...\WTF\Account\MYACCOUNT\MyServer\Mycharacter\AddOns.txt``
+        """
         return "AddOns.txt"
 
 
@@ -233,6 +269,9 @@ class CharacterAddonSavedVariablesScope(FileScope):
 
     @property
     def path_output(self) -> Path:
+        """
+        Example: ``C:\...\WTF\Account\MYACCOUNT\MyServer\Mycharacter\SavedVariables\*.lua``
+        """
         return self.client.dir_wtf.joinpath(
             "Account",
             self.character.account_name.upper(),

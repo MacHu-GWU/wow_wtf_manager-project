@@ -11,7 +11,7 @@ sub packages and modules
     :maxdepth: 1
 
     api <api>
+    enum_generator <enum_generator>
     model <model>
-    model_backup <model_backup>
     setup <setup>
     

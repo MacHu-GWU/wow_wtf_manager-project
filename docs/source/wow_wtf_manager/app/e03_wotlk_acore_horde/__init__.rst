@@ -1,7 +1,7 @@
-e03_wotlk_example
-=================
+e03_wotlk_acore_horde
+=====================
 
-.. automodule:: wow_wtf_manager.app.e03_wotlk_example
+.. automodule:: wow_wtf_manager.app.e03_wotlk_acore_horde
     :members:
 
 sub packages and modules

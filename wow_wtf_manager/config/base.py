@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 
+"""
+该模块定义了所有的配置类的基类. 所有的配置类都必须继承自该基类. 该基类不应该被直接使用.
+"""
+
 import typing as T
 
 
 class BaseConfig:
     """
-    Base class for all config classes.
+    Base class for all config classes. This class should not be used directly.
     """
 
     # --------------------------------------------------------------------------

@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+"""
+todo: doc string here
+"""
+
 
 class BaseMixin:
     @property
@@ -9,7 +13,7 @@ class BaseMixin:
         """
         raise NotImplementedError
 
-    def __hash__(self):
+    def __hash__(self):  # pragma: no cover
         """
         Copy the following snippet to all subclass of this. Attrs will remove
         the __hash__ method when you subclass it.
@@ -21,8 +25,14 @@ class BaseMixin:
         # raise NotImplementedError
         return hash(self.sort_key)
 
-    def __eq__(self, other):
+    def __eq__(self, other): # pragma: no cover
+        """
+        Copy the following snippet to all subclass of this. Attrs will remove
+        """
         return self.sort_key == other.sort_key
 
-    def __gt__(self, other):
+    def __gt__(self, other): # pragma: no cover
+        """
+        Copy the following snippet to all subclass of this. Attrs will remove
+        """
         return self.sort_key > other.sort_key

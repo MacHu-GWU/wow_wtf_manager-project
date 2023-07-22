@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-该模块实现了对单个配置文件的类型的管理. 所谓管理的本质就是:
-
-1. 从数据中读取配置的模板
-2. 然后输入参数生成最终的数据
-3. 将数据文件写入到指定的位置
+该模块实现了对单个配置文件的抽象, 以便于进行管理.
 """
 
 import typing as T
@@ -18,6 +14,16 @@ from .base import BaseConfig
 
 @attr.define
 class FileConfig(BaseConfig):
+    """
+    单个配置文件的抽象.
+
+    例如, 游戏的按键绑定 bindings-cache.wtf 文件就是单个配置文件的实例. 而对多个账号的这个的
+    文件进行管理的本质就是:
+
+    1. 从数据中读取配置的模板.
+    2. 根据输入参数 (包括账号名, 服务器名, 角色名) 生成最终的数据.
+    3. 将最终数据文件写入到指定的位置.
+    """
     path_input: Path = attr.field(converter=Path)
     template: T.Optional[jinja2.Template] = attr.field()
 

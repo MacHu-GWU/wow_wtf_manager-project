@@ -27,13 +27,13 @@ Project Folder Structure 项目文件目录结构
 
 我们按照这个框架来介绍一下涉及的具体模块.
 
-**底层通用型模块**:
+**底层通用型模块**
 
 - ``wow_wtf_manager/models``: 最底层的数据模型, 相当于是一个工具包. 所有的稳定功能都可以从 ``wow_wtf_manager/models/api.py`` 导入.
 - ``wow_wtf_manager/config``: 跟配置数据有关的抽象, 相当于是一个工具包. 所有的稳定功能都可以从 ``wow_wtf_manager/config/api.py`` 导入.
 - ``wow_wtf_manager/scope``: 跟作用域有关的抽象, 相当于是一个工具包. 所有的稳定功能都可以从 ``wow_wtf_manager/scope/api.py`` 导入.
 
-**底层专用型模块**::
+**底层专用型模块**
 
 - ``wow_wtf_manager/exp/`` 模块对于不同的资料片的将核心逻辑用抽象类, 方法来实现. 它不涉及到具体的服务器, 具体的配置, 具体的宏. 例如它不会实现你在巫妖王之怒官方怀旧服上具体的角色名, 具体的宏命令. 这个模块里面又按照资料片分成了多个子模块. 这是因为不同的资料片 WTF 的目录结构, 文件格式什么的都不一样, 需要为不同的资料片设计单独的模块. 具体的目录结构是 ``wow_wtf_manager/exp/${expansion_name}``.
     - ``wow_wtf_manager/exp/e03_wotlk`` 例如这是巫妖王之怒版本的底层模块, 定义了巫妖王之怒版本的配置文件列表, 格式等信息.
