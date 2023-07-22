@@ -10,5 +10,5 @@ description: |
 text: |
   #showtooltip
   /target player
-  /castsequence [spec:1] reset=3 !梟獸形態,荊棘術,,,,,,,,
-  /castsequence [spec:2] reset=3 !生命之樹,荊棘術,,,,,,,,
+  /castsequence [spec:1] reset=3 !枭兽形态,荆棘术,,,,,,,,
+  /castsequence [spec:2] reset=3 !生命之树,荆棘术,,,,,,,,

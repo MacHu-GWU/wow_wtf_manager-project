@@ -10,5 +10,5 @@ description: |
 text: |
   #showtooltip
   /stopcasting
-  /cast [spec:1] 精通元素
+  /cast [spec:1] 元素掌握
   /cast [spec:2] 潮汐之力

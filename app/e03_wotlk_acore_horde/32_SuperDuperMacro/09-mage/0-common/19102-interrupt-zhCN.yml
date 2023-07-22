@@ -10,4 +10,4 @@ description: |
 text: |
   #showtooltip
   /stopcasting
-  /cast [target=focus,harm] 法術反制; [target=focustarget,harm] 法術反制; [] 法術反制
+  /cast [target=focus,harm] 法术反制; [target=focustarget,harm] 法术反制; [] 法术反制

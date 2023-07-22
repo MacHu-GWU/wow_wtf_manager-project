@@ -10,4 +10,4 @@ description: |
 text: |
   #showtooltip
   /target rc
-  /castsequence reset=target 熔火護甲,魔法凝聚
+  /castsequence reset=target 熔岩护甲,专注魔法
