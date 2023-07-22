@@ -3,7 +3,6 @@ Project Folder Structure 项目文件目录结构
 该项目是一个 Git 仓库, 本文介绍了里面的文件都是做什么的.
 
 
-
 目录结构
 ------------------------------------------------------------------------------
 该项目是一个 Python 项目, 所以它符合标准的 Python 项目结构规范. Git 仓库名称是 ``wow_wtf_manager-project``, 我们称这个目录为项目根目录, 之后用 ``${dir_project_root}`` 或 ``root`` 来指代.
@@ -45,3 +44,45 @@ Project Folder Structure 项目文件目录结构
 
 应用层源代码目录结构
 ------------------------------------------------------------------------------
+这里我们以示例项目 ``e03_wotlk_example`` 为例. 该项目是基于本项目开发的一个用于管理我在一个巫妖王之怒服务器上的所有账号角色的配置管理工具. 每个类似于这样的项目都有两个关键目录:
+
+1. **数据文件目录**: 位于 ``app/e03_wotlk_example/`` 目录下. 所谓数据文件就是具体的配置文件模板, 插件 lua 文件的拷贝, 宏命令的拷贝等等.
+2. **配置管理源代码**: 位于 ``wow_wtf_manager/app/e03_wotlk_example`` 目录下. 所谓源代码就是指将这些数据文件组合起来的逻辑代码实现.
+
+下面我们一一来讲解一下这两个目录的结构:
+
+**数据文件目录**
+
+- ``app/e03_wotlk_example/01_game_client``: 游戏客户端的配置, 分辨率, 图像, 声音, 国家地区等.
+- ``app/e03_wotlk_example/11_account_user_interface``: 账号级的用户界面配置.
+- ``app/e03_wotlk_example/12_account_keybindings``: 该目录已废弃, 账号级的按键绑定配置. 现在全部的按键绑定配置都是角色级的.
+- ``app/e03_wotlk_example/13_account_saved_variables``: 账号级的插件数据.
+- ``app/e03_wotlk_example/14_account_macro``: 该目录已废弃, 原本是账号级的宏命令管理, 而现在的宏命令管理已经全部交给了 SDM 插件, 所以不再需要.
+- ``app/e03_wotlk_example/21_character_user_interface``: 角色级的用户界面配置.
+- ``app/e03_wotlk_example/22_character_chat``: 角色级的聊天配置.
+- ``app/e03_wotlk_example/23_character_keybindings``: 角色级的按键绑定配置.
+- ``app/e03_wotlk_example/24_character_layout``: 角色级的界面布局配置.
+- ``app/e03_wotlk_example/25_character_addons``: 角色级的插件管理, 开启哪些关闭哪些.
+- ``app/e03_wotlk_example/26_character_macro``: 该目录已废弃, 原本是角色级的宏命令管理, 而现在的宏命令管理已经全部交给了 SDM 插件, 所以不再需要.
+- ``app/e03_wotlk_example/27_character_saved_variables``: 角色级的插件数据管理.
+- ``app/e03_wotlk_example/31_myslots``: 每个角色的动作条按钮配置.
+- ``app/e03_wotlk_example/32_SuperDuperMacro``: SDM 插件的宏命令配置.
+- ``app/e03_wotlk_example/32_SuperDuperMacro/run.py``: 将 SDM 插件的宏命令配置应用到游戏客户端的 WTF 目录中.
+- ``app/e03_wotlk_example/run.py``: 运行该脚本可将所有的配置应用到游戏客户端的 WTF 目录中.
+
+**配置管理源代码**
+
+- ``wow_wtf_manager/app/e03_wotlk_example/config/...``: 对数据文件目录中的配置文件进行管理的源代码, 主要是用变量对其一一进行枚举.
+- ``wow_wtf_manager/app/e03_wotlk_example/config/client_level.py``: 对 client 级的配置文件进行枚举.
+- ``wow_wtf_manager/app/e03_wotlk_example/config/account_level.py``: 对 account 级的配置文件进行枚举.
+- ``wow_wtf_manager/app/e03_wotlk_example/config/character_level.py``: 对 character 级的配置文件进行枚举.
+- ``wow_wtf_manager/app/e03_wotlk_example/scope/...``: 对配置文件的作用域进行管理的源代码, 主要是枚举账号, 服务器, 角色, 并对它们进行分组.
+- ``wow_wtf_manager/app/e03_wotlk_example/scope/enum.py``: 对单个的账号, 服务器, 角色进行枚举.
+- ``wow_wtf_manager/app/e03_wotlk_example/scope/group.py``: 将账号, 服务器, 角色进行分组, 以便于批量管理.
+- ``wow_wtf_manager/app/e03_wotlk_example/scope/setup.py``: 将 ``config`` 和 ``scope`` 中的代码 import 进来, 对其进行排列组合, 完成 setup.
+
+**SDM 宏命令管理源代码**
+
+- ``wow_wtf_manager/app/e03_wotlk_example/scope/sdm_macro_generator.py``: 扫描 ``app/e03_wotlk_example/32_SuperDuperMacro`` 目录中的宏命令数据文件, 自动生成对它们进行枚举的源代码.
+- ``wow_wtf_manager/app/e03_wotlk_example/scope/sdm_macro.py``: 被 ``sdm_macro_generator.py`` 自动生成的源代码, 对所有的宏命令数据文件进行了枚举.
+- ``wow_wtf_manager/app/e03_wotlk_example/scope/sdm_setup.py``: 将 scope 中的角色枚举和宏命令枚举进行排列组合, 决定每个角色用什么宏.

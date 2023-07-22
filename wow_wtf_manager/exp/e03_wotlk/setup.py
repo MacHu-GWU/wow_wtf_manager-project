@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+"""
+todo: add docstring
+"""
+
 import typing as T
 import attr
 
@@ -25,6 +29,13 @@ from .config import (
 
 @attr.define
 class Setup:
+    """
+    代表了一个魔兽世界客户端中被管理的所有配置文件的设定. 也就是配置文件模板, 配置文件参数,
+    以及作用域之间的排列组合的详细关系. 在对两个不同的 entity 之间的关系进行数据建模时, 参考
+    数据库中的 many-to-many 的数据模型标准设计, 我们采用了 association table 的模型.
+    举例来说, 我们要制定哪个角色开启了哪些插件, 那么 ``character_addons`` 这个列表中存储了
+    许多的 (addons, character) 的元祖.
+    """
     client: Client = attr.ib()
 
     game_client: GameClientConfig = attr.ib()
