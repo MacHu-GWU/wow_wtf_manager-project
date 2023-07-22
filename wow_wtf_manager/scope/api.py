@@ -7,18 +7,13 @@ Example::
 """
 
 from .base import BaseScope
-from .client import (
-    # client level
-    ClientScope,
-    # account level
-    AccountKeyBindingScope,
-    AccountUserInterfaceScope,
-    AccountAddonSavedVariablesScope,
-    # character level
-    CharacterUserInterfaceScope,
-    CharacterChatScope,
-    CharacterKeyBindingScope,
-    CharacterLayoutScope,
-    CharacterAddonsScope,
-    CharacterAddonSavedVariablesScope,
-)
+from .client import ClientScope
+from .client import AccountKeyBindingScope
+from .client import AccountUserInterfaceScope
+from .client import AccountAddonSavedVariablesScope
+from .client import CharacterUserInterfaceScope
+from .client import CharacterChatScope
+from .client import CharacterKeyBindingScope
+from .client import CharacterLayoutScope
+from .client import CharacterAddonsScope
+from .client import CharacterAddonSavedVariablesScope

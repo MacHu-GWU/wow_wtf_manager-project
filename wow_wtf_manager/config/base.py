@@ -31,7 +31,7 @@ class BaseConfig:
             f"    def build(self, **kwargs):\n"
             f"        ...\n"
         )
-        raise NotImplementedError
+        raise NotImplementedError(msg)
 
     def apply(
         self,

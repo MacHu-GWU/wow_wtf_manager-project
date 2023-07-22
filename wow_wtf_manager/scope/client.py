@@ -45,6 +45,8 @@ class FileScope(BaseScope):
     ):
         """
         将配置文件内容应用到目标文件中.
+
+        :param content: 配置文件内容.
         """
         logger.info(f"Write to {self.relpath}")
         if dry_run is False:
