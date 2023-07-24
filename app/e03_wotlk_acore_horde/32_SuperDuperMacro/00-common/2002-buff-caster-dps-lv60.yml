@@ -1,0 +1,17 @@
+name: Buff-Caster-DPS
+character:
+  name:
+  realm:
+type: b
+id: 2002
+icon: 806
+description: |
+  GM 命令, 法系 DPS Buff (法师, 术士, 暗影牧师, 元素萨满, 平衡德鲁伊)
+text: |
+  /target player
+  .aura 56525
+  .aura 10938
+  .aura 10157
+  .aura 27841
+  .aura 9885
+  /targetlasttarget

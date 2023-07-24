@@ -1,0 +1,17 @@
+name: Buff-Healer
+character:
+  name:
+  realm:
+type: b
+id: 2004
+icon: 806
+description: |
+  GM 命令, 治疗 Buff (戒律/神圣牧师, 神圣圣骑士, 恢复萨满, 恢复德鲁伊)
+text: |
+  /target player
+  .aura 56525
+  .aura 10938
+  .aura 10157
+  .aura 27841
+  .aura 9885
+  /targetlasttarget

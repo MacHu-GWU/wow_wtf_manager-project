@@ -99,7 +99,7 @@ def s_02_elemental_resto_shaman():
             Macros.sdm_05_shaman____0_common____15102_interrupt_zhCN,
             Macros.sdm_05_shaman____1_elemental_resto____15311_buff_self_zhCN,
             # Act
-            Macros.sdm_05_shaman____0_common____15111_elemental_rotation_zhCN,
+            Macros.sdm_05_shaman____0_common____15111_elemental_rotation_lv60_zhCN,
             Macros.sdm_05_shaman____0_common____15112_resto_rotation_zhCN,
             Macros.sdm_05_shaman____0_common____15114_mb_resto_earth_shield_zhCN,
             Macros.sdm_05_shaman____1_elemental_resto____15312_burst_zhCN,

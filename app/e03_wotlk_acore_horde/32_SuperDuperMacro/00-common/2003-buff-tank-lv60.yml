@@ -1,0 +1,17 @@
+name: Buff-Tank
+character:
+  name:
+  realm:
+type: b
+id: 2003
+icon: 806
+description: |
+  GM 命令, Tank Buff (防御战士, 防御圣骑士, 防御死亡骑士, 熊坦德鲁伊)
+text: |
+  /target player
+  .aura 56525
+  .aura 10938
+  .aura 10157
+  .aura 27841
+  .aura 9885
+  /targetlasttarget
