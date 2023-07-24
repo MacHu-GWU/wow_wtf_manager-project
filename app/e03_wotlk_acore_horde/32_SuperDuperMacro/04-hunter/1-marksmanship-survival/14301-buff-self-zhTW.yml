@@ -9,5 +9,5 @@ description: |
   射击 / 生存 猎人给自己加 Buff.
 text: |
   #showtooltip
-  /target rc
+  /target player
   /castsequence reset=target !龍鷹守護,強擊光環

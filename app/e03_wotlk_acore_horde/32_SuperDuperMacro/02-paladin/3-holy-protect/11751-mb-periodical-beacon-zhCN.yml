@@ -10,5 +10,5 @@ description: |
 text: |
   #showtooltip
   /startattack
-  /castsequence [spec:1] 聖光信標,,,,,,,,,,,,,,,,,,
-  /cast [spec:2,mod:alt] 復仇之盾;神聖之盾
+  /castsequence [spec:1] 圣光道标,,,,,,,,,,,,,,,,,,
+  /cast [spec:2,mod:alt] 正义盾击;神圣之盾

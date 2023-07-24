@@ -11,5 +11,5 @@ text: |
   #showtooltip
   /assist focus
   /startattack
-  /castsequence [spec:1] 光明審判,,光明審判,,崇聖護盾,,
-  /cast [spec:2,mod:alt] 神聖憤怒; 奉獻
+  /castsequence [spec:1] 光明审判,,光明审判,,圣洁护盾,,
+  /cast [spec:2,mod:alt] 神圣愤怒; 奉献

@@ -10,7 +10,7 @@ description: |
 text: |
   #showtooltip
   /cast [help] 误导; [mod:alt] 奥术射击; [spec:1] 奇美拉射击; [spec:2] Explosive Shot
-  /cast 击杀命令
+  /cast 杀戮命令
   /cast 沉默射击
   /stopmacro [noharm]
   .aura 54499

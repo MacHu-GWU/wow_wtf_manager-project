@@ -9,6 +9,6 @@ description: |
   射击猎人的一键输出循环.
 text: |
   #showtooltip
-  /castsequence [mod:alt,nochanneling] reset=9 误导; [nochanneling] 毒蛇釘刺,奇美拉射擊,瞄準射擊,穩固射擊,穩固射擊,穩固射擊,穩固射擊,穩固射擊,奇美拉射擊,瞄準射擊,穩固射擊,穩固射擊,穩固射擊,穩固射擊,穩固射擊,奇美拉射擊,瞄準射擊,穩固射擊,穩固射擊,穩固射擊,穩固射擊,穩固射擊
-  /cast 擊殺命令
-  /cast 沉默射擊
+  /castsequence [mod:alt,nochanneling] reset=9 误导; [nochanneling] 毒蛇钉刺,奇美拉射击,瞄准射击,稳固射击,稳固射击,稳固射击,稳固射击,稳固射击,奇美拉射击,瞄准射击,稳固射击,稳固射击,稳固射击,稳固射击,稳固射击,奇美拉射击,瞄准射击,稳固射击,稳固射击,稳固射击,稳固射击,稳固射击
+  /cast 杀戮命令
+  /cast 沉默射击

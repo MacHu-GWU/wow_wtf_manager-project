@@ -10,6 +10,6 @@ description: |
 text: |
   #showtooltip
   /startattack
-  /cast [mod:alt] 清算聖禦; 智慧審判
-  #/cast [mod:alt] 清算聖禦; 光明審判
-  #/cast [mod:alt] 清算聖禦; 公正審判
+  /cast [mod:alt] 清算之手; 智慧审判
+  #/cast [mod:alt] 清算之手; 光明审判
+  #/cast [mod:alt] 清算之手; 公正审判

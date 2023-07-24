@@ -9,6 +9,6 @@ description: |
   射击 / 生存 猎人的 3 号键位.
 text: |
   #showtooltip
-  /cast [help] 误导; [mod:alt] 奥术射击; [spec:1] 奇美拉射击; [spec:2] 黑蝕箭
-  /cast 击杀命令
+  /cast [help] 误导; [mod:alt] 奥术射击; [spec:1] 奇美拉射击; [spec:2] 黑箭
+  /cast 杀戮命令
   /cast [spec:1] 沉默射击
