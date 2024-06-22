@@ -20,6 +20,5 @@ sub packages and modules
     logger <logger>
     lua_lib <lua_lib>
     models <models>
-    paths <paths>
     runtime <runtime>
     
