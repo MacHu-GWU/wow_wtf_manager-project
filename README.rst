@@ -50,9 +50,7 @@
 
 Welcome to ``wow_wtf_manager`` Documentation
 ==============================================================================
-这个项目是我用来管理 2 个不同的魔兽世界资料片 (WotLK 和 MOP), 4 个不同的服务器 (包括一个 retail 官服和 3 个不同的私服), 共计 50 多个游戏账号, 180 多个人物角色的配置文件 (我喜欢玩多开单刷) 的源代码. 这个 Git 仓库记录了我的配置不断演化过程中的所有历史版本.
-
-注: 该项目基于 `wow_wtf <https://github.com/MacHu-GWU/wow_wtf-project>`_.
+这个项目是我用来管理 2 个不同的魔兽世界资料片 (WotLK 和 MOP), 4 个不同的服务器 (包括一个 retail 官服和 3 个不同的私服), 共计 50 多个游戏账号, 180 多个人物角色的配置文件 (我喜欢玩多开单刷) 的源代码. 这个 Git 仓库记录了我的配置不断演化过程中的所有历史版本. 我的配置文件源代码在 `wow_wtf_manager/app/ <https://github.com/MacHu-GWU/wow_wtf_manager-project/tree/main/wow_wtf_manager/app>`_ 目录下. 该项目基于 `wow_wtf <https://github.com/MacHu-GWU/wow_wtf-project>`_. 如果你不理解为什么 ``wow_wtf_manager/app/`` 中的目录和代码结构, 建议你先阅读 ``wow_wtf`` 项目的文档.
 
 
 .. _install:
