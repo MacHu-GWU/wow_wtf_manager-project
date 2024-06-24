@@ -1,12 +1,73 @@
-World of Warcraft WTF Manager
+
+.. image:: https://readthedocs.org/projects/wow-wtf-manager/badge/?version=latest
+    :target: https://wow-wtf-manager.readthedocs.io/en/latest/
+    :alt: Documentation Status
+
+.. image:: https://github.com/MacHu-GWU/wow_wtf_manager-project/workflows/CI/badge.svg
+    :target: https://github.com/MacHu-GWU/wow_wtf_manager-project/actions?query=workflow:CI
+
+.. image:: https://codecov.io/gh/MacHu-GWU/wow_wtf_manager-project/branch/main/graph/badge.svg
+    :target: https://codecov.io/gh/MacHu-GWU/wow_wtf_manager-project
+
+.. image:: https://img.shields.io/pypi/v/wow-wtf-manager.svg
+    :target: https://pypi.python.org/pypi/wow-wtf-manager
+
+.. image:: https://img.shields.io/pypi/l/wow-wtf-manager.svg
+    :target: https://pypi.python.org/pypi/wow-wtf-manager
+
+.. image:: https://img.shields.io/pypi/pyversions/wow-wtf-manager.svg
+    :target: https://pypi.python.org/pypi/wow-wtf-manager
+
+.. image:: https://img.shields.io/badge/Release_History!--None.svg?style=social
+    :target: https://github.com/MacHu-GWU/wow_wtf_manager-project/blob/main/release-history.rst
+
+.. image:: https://img.shields.io/badge/STAR_Me_on_GitHub!--None.svg?style=social
+    :target: https://github.com/MacHu-GWU/wow_wtf_manager-project
+
+------
+
+.. image:: https://img.shields.io/badge/Link-Document-blue.svg
+    :target: https://wow-wtf-manager.readthedocs.io/en/latest/
+
+.. image:: https://img.shields.io/badge/Link-API-blue.svg
+    :target: https://wow-wtf-manager.readthedocs.io/en/latest/py-modindex.html
+
+.. image:: https://img.shields.io/badge/Link-Install-blue.svg
+    :target: `install`_
+
+.. image:: https://img.shields.io/badge/Link-GitHub-blue.svg
+    :target: https://github.com/MacHu-GWU/wow_wtf_manager-project
+
+.. image:: https://img.shields.io/badge/Link-Submit_Issue-blue.svg
+    :target: https://github.com/MacHu-GWU/wow_wtf_manager-project/issues
+
+.. image:: https://img.shields.io/badge/Link-Request_Feature-blue.svg
+    :target: https://github.com/MacHu-GWU/wow_wtf_manager-project/issues
+
+.. image:: https://img.shields.io/badge/Link-Download-blue.svg
+    :target: https://pypi.org/pypi/wow-wtf-manager#files
+
+
+Welcome to ``wow_wtf_manager`` Documentation
 ==============================================================================
-该项目是一个用于管理魔兽世界客户端 WTF 配置文件的工具. 该工具本身用 Python 实现, 功能非常强大, 可扩展性也很强. 该工具不是一个图形界面软件, 而是一个编程库, 方便我们编写出用来管理具体的服务器上的账号, 角色的 WTF 配置文件的工具.
+这个项目是我用来管理 2 个不同的魔兽世界资料片 (WotLK 和 MOP), 4 个不同的服务器 (包括一个 retail 官服和 3 个不同的私服), 共计 50 多个游戏账号, 180 多个人物角色的配置文件 (我喜欢玩多开单刷) 的源代码. 这个 Git 仓库记录了我的配置不断演化过程中的所有历史版本.
 
-基于 ``wow_wtf_manager``, 我用它管理着 2 个不同的魔兽世界资料片, 4 个不同的服务器 (不是 Realm 是不同的服务器), 50 多个账号, 180 多个人物角色的配置文件 (我喜欢玩多开单刷).
+注: 该项目基于 `wow_wtf <https://github.com/MacHu-GWU/wow_wtf-project>`_.
 
-若想查看完整文档, 请自定在本地构建文档网站, 或者直接查看 ``docs/source/`` 目录下的 ``*.rst`` 文件:
 
-.. code-block:: bash
+.. _install:
 
-    pyops build-doc
-    pyops view-doc
+Install
+------------------------------------------------------------------------------
+
+``wow_wtf_manager`` is released on PyPI, so all you need is to:
+
+.. code-block:: console
+
+    $ pip install wow-wtf-manager
+
+To upgrade to latest version:
+
+.. code-block:: console
+
+    $ pip install --upgrade wow-wtf-manager

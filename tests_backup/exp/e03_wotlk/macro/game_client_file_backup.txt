@@ -1,6 +1,0 @@
-MACRO 2 "Bob" INV_Misc_QuestionMark
-/s Bob1
-END
-MACRO 3 "Cathy" INV_Misc_QuestionMark
-/s Cathy1
-END

@@ -4,10 +4,10 @@
 omit =
     wow_wtf_manager/docs/*
     wow_wtf_manager/tests/*
+    wow_wtf_manager/vendor/*
     wow_wtf_manager/_version.py
-    wow_wtf_manager/compat.py
-    wow_wtf_manager/runtime.py
-    wow_wtf_manager/**/sdm_macro_generator.py
+    wow_wtf_manager/cli.py
+    wow_wtf_manager/paths.py
 
 [report]
 # Regexes for lines to exclude from consideration

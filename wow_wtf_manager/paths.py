@@ -1,18 +1,22 @@
 # -*- coding: utf-8 -*-
 
-from pathlib_mate import Path
+from pathlib import Path
 
-dir_python_lib = Path.dir_here(__file__)
-PACKAGE_NAME = dir_python_lib.basename
+dir_here = Path(__file__).absolute().parent
+PACKAGE_NAME = dir_here.name
 
-dir_project_root = dir_python_lib.parent
-assert dir_project_root.basename == "wow_wtf_manager-project"
+dir_project_root = dir_here.parent
 
-# --- Tests
-# unit test
-dir_tests = dir_project_root / "tests"
-# integration test
-dir_tests_int = dir_project_root / "tests_int"
+# ------------------------------------------------------------------------------
+# Virtual Environment Related
+# ------------------------------------------------------------------------------
+dir_venv = dir_project_root / ".venv"
+dir_venv_bin = dir_venv / "bin"
 
-# --- App
-dir_app = dir_project_root / "app"
+# virtualenv executable paths
+bin_pytest = dir_venv_bin / "pytest"
+
+# test related
+dir_htmlcov = dir_project_root / "htmlcov"
+path_cov_index_html = dir_htmlcov / "index.html"
+dir_unit_test = dir_project_root / "tests"

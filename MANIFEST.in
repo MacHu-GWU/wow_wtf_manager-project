@@ -8,3 +8,4 @@ include *.txt
 include *.rst
 exclude *.pyc
 exclude *.pyo
+exclude wow_wtf_manager/tests/**

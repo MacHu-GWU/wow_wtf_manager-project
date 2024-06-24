@@ -1,6 +1,0 @@
-MACRO 1 "Alice" INV_Misc_QuestionMark
-/s Alice2
-END
-MACRO 2 "Bob" INV_Misc_QuestionMark
-/s Bob2
-END

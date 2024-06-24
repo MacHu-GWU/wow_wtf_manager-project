@@ -1,9 +1,0 @@
-#showtooltip
-/target Sindragosa
-/cast [nochanneling,nostance] Shadowform
-/castsequence [nochanneling] reset=15 Devouring Plague,Vampiric Touch,Mind Blast,Mind Flay,Mind Flay,Mind Flay,Mind Flay,Vampiric Touch,Mind Flay,Mind Flay,Devouring Plague,Mind Blast,Mind Flay,Vampiric Touch,Mind Flay,Mind Flay,Mind Flay,Mind Flay,Mind Flay
-
-#showtooltip
-#/target name
-/cast [nochanneling,nostance] 暗影形态
-/castsequence [nochanneling] reset=15

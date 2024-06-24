@@ -1,9 +1,0 @@
-VER 3 000000000015331D "InvT1" "Spell_Shadow_Twilight"
-/inv char2
-/inv char3
-/inv char4
-/inv char5
-END
-VER 3 0000000000625EE2 "InvT2" "Spell_Shadow_Twilight"
-/s alice
-END

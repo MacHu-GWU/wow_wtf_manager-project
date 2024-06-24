@@ -1,6 +1,0 @@
-VER 1 000000000012345A "Alice" "INV_Misc_QuestionMark"
-/s Alice2
-END
-VER 1 000000000012345B "Bob" "INV_Misc_QuestionMark"
-/s Bob2
-END
